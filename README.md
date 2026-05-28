@@ -285,3 +285,156 @@ open index.html
 
 © 2025 د. وسام ميسر لطب وتجميل الأسنان. جميع الحقوق محفوظة.
 هذا المشروع ملكية خاصة. يُمنع إعادة التوزيع أو الاستخدام دون إذن كتابي مسبق.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 🦷 د. وسام ميسر – عيادة الأسنان
+### موقع ويب احترافي | Front-end جاهز للتوسع مع Flask
+
+---
+
+## 📁 هيكل المشروع
+
+```
+dental-project/
+│
+├── index.html                  ← الصفحة الرئيسية (Entry Point)
+│
+├── static/
+│   ├── css/
+│   │   ├── variables.css       ← متغيرات الألوان (Dark / Light Themes)
+│   │   ├── base.css            ← Reset، Typography، عناصر مشتركة
+│   │   ├── navbar.css          ← شريط التنقل بالكامل
+│   │   └── sections.css        ← كل الأقسام (Hero, About, Services, ...)
+│   │
+│   ├── js/
+│   │   ├── main.js             ← Cursor, Navbar, Theme, Reveal, Counters
+│   │   └── booking.js          ← نموذج الحجز + إرسال واتساب
+│   │
+│   └── images/                 ← مجلد الصور (أضف صورك هنا)
+│       └── .gitkeep
+│
+└── README.md                   ← هذا الملف
+```
+
+---
+
+## 🚀 تشغيل الموقع (حالياً – Front-end فقط)
+
+افتح `index.html` مباشرةً في المتصفح.
+
+> **ملاحظة:** بسبب `fetch()` قد تحتاج لخادم محلي بسيط:
+> ```bash
+> # Python 3
+> python -m http.server 8000
+> # ثم افتح: http://localhost:8000
+> ```
+
+---
+
+## 🔌 إضافة Flask لاحقاً (Back-end)
+
+هيكل المشروع مصمم ليتحول بسهولة إلى Flask:
+
+### الخطوات:
+
+**1. إنشاء بيئة Python:**
+```bash
+python -m venv venv
+source venv/bin/activate   # Linux/Mac
+venv\Scripts\activate      # Windows
+pip install flask
+```
+
+**2. إنشاء `app.py` في جذر المشروع:**
+```python
+from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
+
+# الصفحة الرئيسية
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# استقبال بيانات الحجز (مستقبلاً)
+@app.route('/api/booking', methods=['POST'])
+def booking():
+    data = request.get_json()
+    name    = data.get('name')
+    phone   = data.get('phone')
+    service = data.get('service')
+    date    = data.get('date')
+    note    = data.get('note', '')
+    # يمكنك هنا: حفظ في قاعدة بيانات، إرسال إيميل، SMS ...
+    return jsonify({'status': 'ok', 'message': 'تم استلام طلبك'})
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+**3. نقل `index.html` إلى مجلد `templates/`:**
+```bash
+mkdir templates
+mv index.html templates/index.html
+```
+
+**4. Flask يخدم `static/` تلقائياً** – لا تغيير على روابط CSS/JS.
+
+**5. تشغيل Flask:**
+```bash
+python app.py
+# http://localhost:5000
+```
+
+---
+
+## 🎨 تخصيص الألوان
+
+افتح `static/css/variables.css` وعدّل المتغيرات:
+
+```css
+/* اللون الرئيسي */
+--accent:  #00c8e8;   /* Dark Theme */
+--accent:  #0077b6;   /* Light Theme */
+```
+
+---
+
+## 📱 المميزات
+
+| الميزة | الوصف |
+|--------|-------|
+| ✅ RTL كامل | Arabic Right-to-Left |
+| ✅ Dark / Light Mode | زر تبديل المظهر مع حفظ في localStorage |
+| ✅ Responsive | موبايل + تابلت + كمبيوتر |
+| ✅ WhatsApp Booking | الحجز يُرسَل مباشرةً عبر واتساب |
+| ✅ Scroll Reveal | أنيميشن عند التمرير |
+| ✅ Animated Counters | أرقام متحركة |
+| ✅ Custom Cursor | مؤشر مخصص |
+| ✅ Progress Bar | شريط تقدم القراءة |
+| ✅ Mobile Drawer | قائمة جانبية للموبايل |
+| ✅ SEO Ready | Meta tags جاهزة |
+
+---
+
+## 📞 معلومات العيادة
+
+- **الطبيب:** د. وسام ميسر
+- **الموقع:** سوريا – حلب – حلب الجديدة  
+- **الهاتف/واتساب:** 0933912076
+- **الدوام:** السبت – الخميس · 9 ص – 8 م

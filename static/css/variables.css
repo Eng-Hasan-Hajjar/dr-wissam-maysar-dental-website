@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════════════
+   variables.css  –  CSS Custom Properties (Themes)
+   د. وسام ميسر – عيادة الأسنان
+═══════════════════════════════════════════════════ */
+
+/* ── DARK THEME (default) ─────────────────────── */
+:root,
+[data-theme="dark"] {
+  --bg-base:      #030d1f;
+  --bg-2:         #061428;
+  --bg-3:         #0a1e38;
+  --bg-card:      rgba(10, 30, 60, 0.55);
+  --bg-nav:       rgba(3, 13, 31, 0.92);
+
+  --accent:       #00c8e8;
+  --accent2:      #0096c7;
+  --accent3:      #00e5ff;
+  --gold:         #c9a84c;
+
+  --text-h:       #ffffff;
+  --text-p:       rgba(255, 255, 255, 0.72);
+  --text-muted:   rgba(255, 255, 255, 0.42);
+
+  --border:       rgba(255, 255, 255, 0.10);
+  --border-accent:rgba(0, 200, 232, 0.35);
+
+  --glass:        rgba(255, 255, 255, 0.05);
+  --glass2:       rgba(255, 255, 255, 0.09);
+
+  --shadow:       0 8px 40px rgba(0, 0, 0, 0.45);
+  --shadow-accent:0 8px 40px rgba(0, 200, 232, 0.20);
+
+  --input-bg:     rgba(255, 255, 255, 0.06);
+  --map-bg:       rgba(0, 200, 232, 0.07);
+}
+
+/* ── LIGHT THEME ──────────────────────────────── */
+[data-theme="light"] {
+  --bg-base:      #f0f7ff;
+  --bg-2:         #e4f0fb;
+  --bg-3:         #d8eaf8;
+  --bg-card:      rgba(255, 255, 255, 0.85);
+  --bg-nav:       rgba(240, 247, 255, 0.95);
+
+  --accent:       #0077b6;
+  --accent2:      #005f94;
+  --accent3:      #00b4d8;
+  --gold:         #b8860b;
+
+  --text-h:       #04213d;
+  --text-p:       rgba(4, 33, 61, 0.75);
+  --text-muted:   rgba(4, 33, 61, 0.45);
+
+  --border:       rgba(0, 119, 182, 0.18);
+  --border-accent:rgba(0, 119, 182, 0.45);
+
+  --glass:        rgba(255, 255, 255, 0.65);
+  --glass2:       rgba(255, 255, 255, 0.88);
+
+  --shadow:       0 8px 40px rgba(0, 80, 160, 0.12);
+  --shadow-accent:0 8px 40px rgba(0, 119, 182, 0.22);
+
+  --input-bg:     rgba(0, 119, 182, 0.07);
+  --map-bg:       rgba(0, 119, 182, 0.07);
+}

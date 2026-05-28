@@ -1,0 +1,315 @@
+/* ═══════════════════════════════════════════════════
+   navbar.css  –  Navigation Bar Styles
+   د. وسام ميسر – عيادة الأسنان
+═══════════════════════════════════════════════════ */
+
+/* ── WRAPPER ──────────────────────────────────── */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9997;
+  padding: 0;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── ANIMATED TOP LINE ────────────────────────── */
+.nav-top-line {
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    var(--accent3),
+    var(--accent),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: line-slide 4s linear infinite;
+}
+@keyframes line-slide {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── INNER CONTAINER ──────────────────────────── */
+.nav-inner {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.45s;
+  padding: 18px 0;
+}
+#navbar.scrolled .nav-inner {
+  background: var(--bg-nav);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* ── BRAND / LOGO ─────────────────────────────── */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-logo {
+  position: relative;
+  width: 52px; height: 52px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 200, 232, 0.4);
+  transition: all 0.4s;
+  overflow: hidden;
+}
+.nav-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+}
+.nav-logo:hover {
+  transform: rotate(8deg) scale(1.1);
+  box-shadow: 0 0 32px rgba(0, 200, 232, 0.6);
+}
+.nav-logo i { color: #fff; font-size: 24px; position: relative; z-index: 1; }
+
+/* spinning dashed ring */
+.nav-logo-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  border: 1.5px dashed rgba(0, 200, 232, 0.4);
+  animation: spin-slow 8s linear infinite;
+}
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+
+/* brand text */
+.nav-brand-text .clinic-name {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--text-h);
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+  transition: color 0.4s;
+}
+.nav-brand-text .clinic-sub {
+  font-size: 11px;
+  color: var(--accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-brand-text .clinic-sub::before {
+  content: '';
+  width: 16px; height: 1.5px;
+  background: var(--accent);
+  animation: expand-line 2s ease-in-out infinite;
+}
+@keyframes expand-line {
+  0%,100% { width: 16px; }
+  50%     { width: 28px; }
+}
+
+/* ── DESKTOP LINKS ────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-link-item {
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-p);
+  transition: all 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+}
+.nav-link-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 200, 232, 0.12),
+    rgba(0, 200, 232, 0.05)
+  );
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s;
+}
+.nav-link-item:hover::before,
+.nav-link-item.active::before { transform: scaleX(1); }
+.nav-link-item:hover,
+.nav-link-item.active         { color: var(--accent); }
+
+/* dot indicator */
+.nav-link-item::after {
+  content: '';
+  position: absolute;
+  bottom: 4px; left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform 0.3s;
+}
+.nav-link-item:hover::after,
+.nav-link-item.active::after { transform: translateX(-50%) scale(1); }
+
+/* ── CTA BUTTON ───────────────────────────────── */
+.btn-nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff !important;
+  border-radius: 12px;
+  padding: 10px 22px;
+  font-size: 13.5px;
+  font-weight: 800;
+  box-shadow: 0 4px 20px rgba(0, 200, 232, 0.35);
+  transition: all 0.35s;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.btn-nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; right: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: right 0.5s;
+}
+.btn-nav-cta:hover::before { right: 100%; }
+.btn-nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0, 200, 232, 0.5);
+  color: #fff;
+}
+
+/* ── THEME TOGGLE ─────────────────────────────── */
+.theme-toggle {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--glass2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.35s;
+  color: var(--text-p);
+  font-size: 17px;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(0, 200, 232, 0.1);
+  transform: rotate(20deg);
+}
+
+/* ── MOBILE HAMBURGER ─────────────────────────── */
+.mob-toggle {
+  display: none;
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--glass2);
+  border: 1px solid var(--border);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.mob-toggle span {
+  display: block;
+  width: 22px; height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transition: all 0.4s;
+  transform-origin: center;
+}
+.mob-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mob-toggle.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.mob-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE DRAWER ────────────────────────────── */
+.mobile-drawer {
+  position: fixed;
+  top: 0; right: -100%;
+  width: min(320px, 90vw);
+  height: 100dvh;
+  background: var(--bg-nav);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-left: 1px solid var(--border);
+  z-index: 9996;
+  transition: right 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 100px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow-y: auto;
+}
+.mobile-drawer.open { right: 0; }
+
+.mob-nav-link {
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-p);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid transparent;
+}
+.mob-nav-link i {
+  color: var(--accent);
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+.mob-nav-link:hover {
+  background: var(--glass2);
+  border-color: var(--border-accent);
+  color: var(--accent);
+}
+
+/* ── MOBILE OVERLAY ───────────────────────────── */
+.mob-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9995;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s;
+  backdrop-filter: blur(4px);
+}
+.mob-overlay.show { opacity: 1; pointer-events: all; }
+
+/* ── RESPONSIVE ───────────────────────────────── */
+@media (max-width: 991px) {
+  .mob-toggle { display: flex; }
+  .nav-links  { display: none; }
+}

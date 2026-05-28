@@ -1,1607 +1,813 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>د. وسام ميسر - لطب وتجميل الأسنان | حلب</title>
-  <meta name="description" content="عيادة د. وسام ميسر لطب وتجميل الأسنان في حلب - زراعة وتقويم وتجميل الأسنان بأحدث التقنيات" />
+
+  <!-- ── SEO ───────────────────────────────────── -->
+  <title>د. وسام ميسر – لطب وتجميل الأسنان | حلب الجديدة</title>
+  <meta name="description"
+        content="عيادة د. وسام ميسر لطب وتجميل الأسنان في حلب الجديدة – زراعة وتقويم وتجميل الأسنان بأحدث التقنيات العالمية. مركز طبي متكامل ومخبر أسنان احترافي." />
+  <meta name="keywords"
+        content="طبيب أسنان حلب, زراعة أسنان, تقويم أسنان, تجميل أسنان, د وسام ميسر, عيادة أسنان حلب الجديدة" />
+  <meta name="author" content="د. وسام ميسر" />
+
+  <!-- ── Open Graph ──────────────────────────── -->
+  <meta property="og:title"       content="د. وسام ميسر – لطب وتجميل الأسنان" />
+  <meta property="og:description" content="مركز طبي متكامل ومخبر أسنان احترافي في حلب الجديدة" />
+  <meta property="og:type"        content="website" />
+
+  <!-- ── Fonts ───────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <style>
-    :root {
-      --primary: #0a2a5e;
-      --primary-light: #1a4a8e;
-      --accent: #00b4d8;
-      --accent-2: #0096c7;
-      --accent-gold: #c9a84c;
-      --white: #ffffff;
-      --light: #f0f6ff;
-      --glass: rgba(255,255,255,0.08);
-      --glass-border: rgba(255,255,255,0.18);
-      --dark-bg: #040f24;
-      --card-bg: rgba(10,42,94,0.45);
-      --text-light: rgba(255,255,255,0.82);
-      --shadow-blue: 0 8px 40px rgba(0,180,216,0.18);
-      --font-main: 'Cairo', 'Tajawal', sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-main);
-      background: var(--dark-bg);
-      color: #fff;
-      overflow-x: hidden;
-      direction: rtl;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet" />
 
-    /* ===== SCROLLBAR ===== */
-    ::-webkit-scrollbar { width: 7px; }
-    ::-webkit-scrollbar-track { background: var(--dark-bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+  <!-- ── Vendors ─────────────────────────────── -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.rtl.min.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    /* ===== NAVBAR ===== */
-    #navbar {
-      position: fixed; top: 0; width: 100%; z-index: 9999;
-      transition: all 0.4s ease;
-      padding: 18px 0;
-    }
-    #navbar.scrolled {
-      background: rgba(4,15,36,0.92);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 10px 0;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-    }
-    .nav-brand {
-      display: flex; align-items: center; gap: 12px; text-decoration: none;
-    }
-    .nav-logo-circle {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 18px rgba(0,180,216,0.45);
-      flex-shrink: 0;
-    }
-    .nav-logo-circle i { color: #fff; font-size: 22px; }
-    .nav-title { line-height: 1.2; }
-    .nav-title .name { font-size: 15px; font-weight: 800; color: #fff; letter-spacing: 0.3px; }
-    .nav-title .sub { font-size: 11px; color: var(--accent); font-weight: 500; }
-    .navbar-toggler { border: 1px solid var(--glass-border); color: #fff; background: var(--glass); padding: 6px 12px; border-radius: 8px; }
-    .navbar-toggler i { color: var(--accent); font-size: 18px; }
-    .nav-link-custom {
-      color: rgba(255,255,255,0.85) !important;
-      font-size: 14px; font-weight: 600;
-      padding: 6px 14px !important;
-      border-radius: 8px;
-      transition: all 0.3s;
-      position: relative;
-    }
-    .nav-link-custom::after {
-      content: ''; position: absolute; bottom: 0; right: 14px;
-      width: 0; height: 2px; background: var(--accent);
-      transition: width 0.3s;
-    }
-    .nav-link-custom:hover::after { width: calc(100% - 28px); }
-    .nav-link-custom:hover { color: var(--accent) !important; }
-    .btn-nav-book {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #fff !important; border-radius: 25px;
-      padding: 8px 22px !important; font-weight: 700;
-      box-shadow: 0 4px 18px rgba(0,180,216,0.35);
-      transition: all 0.3s;
-    }
-    .btn-nav-book:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,180,216,0.5); }
-
-    /* ===== HERO ===== */
-    #hero {
-      min-height: 100vh;
-      background: radial-gradient(ellipse at 70% 50%, rgba(0,150,199,0.18) 0%, transparent 60%),
-                  radial-gradient(ellipse at 20% 80%, rgba(10,42,94,0.6) 0%, transparent 55%),
-                  linear-gradient(135deg, #040f24 0%, #071830 50%, #0a2240 100%);
-      position: relative; overflow: hidden;
-      display: flex; align-items: center;
-      padding-top: 90px;
-    }
-    .hero-particles {
-      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
-    }
-    .particle {
-      position: absolute; border-radius: 50%;
-      animation: float-particle linear infinite;
-      opacity: 0.15;
-    }
-    @keyframes float-particle {
-      0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      10% { opacity: 0.15; }
-      90% { opacity: 0.1; }
-      100% { transform: translateY(-100px) rotate(720deg); opacity: 0; }
-    }
-    .hero-glow {
-      position: absolute; width: 600px; height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 70%);
-      top: 50%; left: 60%; transform: translate(-50%,-50%);
-      animation: pulse-glow 4s ease-in-out infinite;
-      pointer-events: none;
-    }
-    @keyframes pulse-glow {
-      0%,100% { transform: translate(-50%,-50%) scale(1); opacity: 0.8; }
-      50% { transform: translate(-50%,-50%) scale(1.15); opacity: 1; }
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--glass); border: 1px solid var(--glass-border);
-      backdrop-filter: blur(10px); border-radius: 30px;
-      padding: 8px 18px; margin-bottom: 24px;
-      font-size: 13px; color: var(--accent); font-weight: 600;
-      animation: fadeInDown 0.8s ease forwards;
-    }
-    .hero-badge i { animation: spin 3s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    .hero-title {
-      font-size: clamp(2.4rem, 5vw, 4.2rem);
-      font-weight: 900; line-height: 1.2;
-      background: linear-gradient(135deg, #fff 30%, var(--accent) 70%, #00d4ff 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: fadeInUp 0.9s 0.2s ease both;
-      text-shadow: none;
-    }
-    .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.25rem); color: var(--text-light);
-      font-weight: 400; max-width: 520px; line-height: 1.8;
-      animation: fadeInUp 0.9s 0.4s ease both;
-    }
-    .hero-desc {
-      font-size: 14px; color: rgba(255,255,255,0.6);
-      line-height: 1.9; max-width: 480px;
-      animation: fadeInUp 0.9s 0.5s ease both;
-    }
-    .btn-hero-primary {
-      background: linear-gradient(135deg, var(--accent), #006994);
-      color: #fff; border: none; border-radius: 50px;
-      padding: 14px 32px; font-size: 15px; font-weight: 700;
-      font-family: var(--font-main);
-      box-shadow: 0 6px 25px rgba(0,180,216,0.4);
-      transition: all 0.35s; cursor: pointer; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      animation: fadeInUp 0.9s 0.6s ease both;
-    }
-    .btn-hero-primary:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 12px 35px rgba(0,180,216,0.55); color: #fff;
-    }
-    .btn-hero-secondary {
-      background: transparent;
-      color: #fff; border: 1.5px solid var(--glass-border);
-      border-radius: 50px; padding: 13px 30px; font-size: 15px; font-weight: 600;
-      font-family: var(--font-main); backdrop-filter: blur(8px);
-      transition: all 0.35s; cursor: pointer; text-decoration: none;
-      display: inline-flex; align-items: center; gap: 8px;
-      animation: fadeInUp 0.9s 0.7s ease both;
-    }
-    .btn-hero-secondary:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
-    .hero-img-wrapper {
-      position: relative; display: flex; justify-content: center; align-items: center;
-      animation: fadeInRight 1s 0.3s ease both;
-    }
-    .hero-img-ring {
-      position: absolute; border-radius: 50%;
-      border: 1px solid rgba(0,180,216,0.25);
-      animation: ring-expand 3s ease-in-out infinite;
-    }
-    @keyframes ring-expand {
-      0%,100% { transform: scale(1); opacity: 0.6; }
-      50% { transform: scale(1.07); opacity: 0.3; }
-    }
-    .hero-img-card {
-      width: 380px; height: 480px;
-      border-radius: 30px 30px 120px 30px;
-      background: linear-gradient(145deg, rgba(0,180,216,0.15), rgba(10,42,94,0.5));
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(20px);
-      display: flex; align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .hero-img-card img {
-      width: 100%; height: 100%; object-fit: cover; border-radius: inherit;
-    }
-    .hero-img-placeholder {
-      display: flex; flex-direction: column; align-items: center; gap: 16px; color: var(--accent);
-    }
-    .hero-img-placeholder i { font-size: 80px; opacity: 0.5; }
-    .hero-img-placeholder span { font-size: 15px; opacity: 0.6; }
-    .hero-stat-card {
-      position: absolute;
-      background: rgba(4,15,36,0.85);
-      backdrop-filter: blur(15px);
-      border: 1px solid var(--glass-border);
-      border-radius: 16px; padding: 12px 18px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      animation: float-card 3s ease-in-out infinite;
-    }
-    .hero-stat-card.left { left: -50px; bottom: 80px; animation-delay: 0.5s; }
-    .hero-stat-card.top { right: -40px; top: 80px; animation-delay: 1s; }
-    @keyframes float-card {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    .stat-num { font-size: 22px; font-weight: 900; color: var(--accent); }
-    .stat-label { font-size: 11px; color: rgba(255,255,255,0.65); font-weight: 500; }
-    .hero-scroll-hint {
-      position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.4); font-size: 12px;
-      animation: bounce-hint 2s ease-in-out infinite;
-    }
-    @keyframes bounce-hint {
-      0%,100% { transform: translateX(-50%) translateY(0); }
-      50% { transform: translateX(-50%) translateY(8px); }
-    }
-
-    /* ===== SECTIONS COMMON ===== */
-    section { padding: 90px 0; }
-    .section-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(0,180,216,0.12); border: 1px solid rgba(0,180,216,0.3);
-      border-radius: 30px; padding: 6px 18px; margin-bottom: 16px;
-      color: var(--accent); font-size: 13px; font-weight: 700;
-    }
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
-      color: #fff; line-height: 1.25; margin-bottom: 14px;
-    }
-    .section-title span { color: var(--accent); }
-    .section-desc { color: rgba(255,255,255,0.6); font-size: 15px; line-height: 1.9; max-width: 580px; }
-    .divider {
-      width: 60px; height: 3px; border-radius: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      margin: 18px 0;
-    }
-
-    /* ===== ABOUT ===== */
-    #about {
-      background: linear-gradient(180deg, #040f24 0%, #071830 100%);
-      position: relative; overflow: hidden;
-    }
-    #about::before {
-      content: ''; position: absolute;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,180,216,0.07) 0%, transparent 70%);
-      top: -100px; right: -100px; pointer-events: none;
-    }
-    .about-feature-card {
-      background: var(--glass); border: 1px solid var(--glass-border);
-      backdrop-filter: blur(12px); border-radius: 20px;
-      padding: 22px 20px; transition: all 0.35s;
-      position: relative; overflow: hidden;
-    }
-    .about-feature-card::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(0,180,216,0.06), transparent);
-      opacity: 0; transition: opacity 0.35s;
-    }
-    .about-feature-card:hover { transform: translateY(-6px); border-color: rgba(0,180,216,0.4); box-shadow: var(--shadow-blue); }
-    .about-feature-card:hover::before { opacity: 1; }
-    .feature-icon {
-      width: 52px; height: 52px; border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 14px; box-shadow: 0 4px 16px rgba(0,180,216,0.3);
-    }
-    .feature-icon i { color: #fff; font-size: 22px; }
-    .about-feature-card h5 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-    .about-feature-card p { font-size: 13px; color: rgba(255,255,255,0.6); line-height: 1.7; }
-    .about-img-wrap {
-      position: relative; display: flex; justify-content: center;
-    }
-    .about-img-main {
-      width: 100%; max-width: 420px;
-      border-radius: 24px;
-      background: linear-gradient(145deg, rgba(0,180,216,0.12), rgba(10,42,94,0.5));
-      border: 1px solid var(--glass-border);
-      aspect-ratio: 4/5;
-      display: flex; align-items: center; justify-content: center;
-      overflow: hidden; position: relative;
-    }
-    .about-img-badge {
-      position: absolute; bottom: 24px; right: 24px;
-      background: rgba(4,15,36,0.9); backdrop-filter: blur(12px);
-      border: 1px solid var(--glass-border); border-radius: 16px;
-      padding: 14px 20px; text-align: center;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-    }
-    .about-img-badge .num { font-size: 28px; font-weight: 900; color: var(--accent); }
-    .about-img-badge .lbl { font-size: 12px; color: rgba(255,255,255,0.6); }
-
-    /* ===== SERVICES ===== */
-    #services {
-      background: linear-gradient(180deg, #071830 0%, #040f24 100%);
-    }
-    .service-card {
-      background: var(--glass);
-      border: 1px solid var(--glass-border);
-      backdrop-filter: blur(14px); border-radius: 24px;
-      padding: 32px 24px; height: 100%;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative; overflow: hidden; cursor: pointer;
-    }
-    .service-card::before {
-      content: ''; position: absolute; inset: 0; border-radius: 24px;
-      background: linear-gradient(135deg, rgba(0,180,216,0.1), transparent 60%);
-      opacity: 0; transition: opacity 0.4s;
-    }
-    .service-card::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--accent), transparent);
-      transform: scaleX(0); transition: transform 0.4s;
-    }
-    .service-card:hover { transform: translateY(-10px) scale(1.02); border-color: rgba(0,180,216,0.45); box-shadow: 0 20px 50px rgba(0,0,0,0.35), var(--shadow-blue); }
-    .service-card:hover::before { opacity: 1; }
-    .service-card:hover::after { transform: scaleX(1); }
-    .service-icon-wrap {
-      width: 70px; height: 70px; border-radius: 20px;
-      background: linear-gradient(135deg, rgba(0,180,216,0.2), rgba(10,42,94,0.5));
-      border: 1px solid rgba(0,180,216,0.25);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px; transition: all 0.4s;
-    }
-    .service-card:hover .service-icon-wrap {
-      background: linear-gradient(135deg, var(--accent), var(--primary-light));
-      box-shadow: 0 8px 25px rgba(0,180,216,0.4);
-    }
-    .service-icon-wrap i { color: var(--accent); font-size: 28px; transition: color 0.4s; }
-    .service-card:hover .service-icon-wrap i { color: #fff; }
-    .service-card h4 { font-size: 17px; font-weight: 800; color: #fff; margin-bottom: 10px; }
-    .service-card p { font-size: 13.5px; color: rgba(255,255,255,0.6); line-height: 1.75; }
-    .service-tag {
-      display: inline-block; background: rgba(0,180,216,0.12); border: 1px solid rgba(0,180,216,0.25);
-      color: var(--accent); border-radius: 20px; padding: 3px 12px;
-      font-size: 11px; font-weight: 600; margin-top: 14px;
-    }
-
-    /* ===== STATS ===== */
-    #stats {
-      background: linear-gradient(135deg, rgba(0,180,216,0.08) 0%, rgba(10,42,94,0.4) 50%, rgba(0,180,216,0.05) 100%);
-      border-top: 1px solid var(--glass-border);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 70px 0;
-    }
-    .stat-item { text-align: center; padding: 30px 20px; }
-    .stat-number {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900; line-height: 1;
-      background: linear-gradient(135deg, #fff, var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; margin-bottom: 8px;
-    }
-    .stat-text { font-size: 15px; color: rgba(255,255,255,0.7); font-weight: 500; }
-    .stat-icon { font-size: 32px; color: var(--accent); margin-bottom: 12px; opacity: 0.8; }
-    .stat-divider { width: 1px; background: var(--glass-border); height: 80px; margin: auto; }
-
-    /* ===== GALLERY ===== */
-    #gallery { background: linear-gradient(180deg, #040f24 0%, #071830 100%); }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 220px);
-      gap: 16px;
-    }
-    .gallery-item {
-      border-radius: 18px; overflow: hidden; position: relative;
-      background: linear-gradient(145deg, rgba(0,180,216,0.1), rgba(10,42,94,0.4));
-      border: 1px solid var(--glass-border); cursor: pointer;
-      transition: all 0.4s;
-    }
-    .gallery-item:first-child { grid-row: span 2; }
-    .gallery-item:hover { transform: scale(1.02); border-color: rgba(0,180,216,0.5); box-shadow: var(--shadow-blue); }
-    .gallery-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(4,15,36,0.8), transparent 50%);
-      display: flex; align-items: flex-end; padding: 18px;
-      opacity: 0; transition: opacity 0.35s;
-    }
-    .gallery-item:hover .gallery-overlay { opacity: 1; }
-    .gallery-overlay span { font-size: 14px; font-weight: 600; color: #fff; }
-    .gallery-placeholder {
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
-      color: rgba(255,255,255,0.35);
-    }
-    .gallery-placeholder i { font-size: 40px; }
-    .gallery-placeholder span { font-size: 13px; }
-
-    /* ===== TESTIMONIALS ===== */
-    #testimonials { background: linear-gradient(180deg, #071830 0%, #040f24 100%); }
-    .testimonial-card {
-      background: var(--glass); border: 1px solid var(--glass-border);
-      backdrop-filter: blur(14px); border-radius: 24px;
-      padding: 30px 26px; height: 100%; transition: all 0.35s;
-      position: relative; overflow: hidden;
-    }
-    .testimonial-card::before {
-      content: '"'; position: absolute; top: -10px; left: 20px;
-      font-size: 120px; color: rgba(0,180,216,0.06); font-family: Georgia, serif;
-      line-height: 1; pointer-events: none;
-    }
-    .testimonial-card:hover { transform: translateY(-6px); border-color: rgba(0,180,216,0.35); box-shadow: var(--shadow-blue); }
-    .stars { color: #f4c430; margin-bottom: 12px; font-size: 15px; }
-    .testimonial-text { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.85; margin-bottom: 20px; font-style: italic; }
-    .testimonial-author { display: flex; align-items: center; gap: 12px; }
-    .author-avatar {
-      width: 46px; height: 46px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px; font-weight: 800; color: #fff;
-      flex-shrink: 0;
-    }
-    .author-name { font-size: 14px; font-weight: 700; color: #fff; }
-    .author-since { font-size: 12px; color: rgba(255,255,255,0.5); }
-
-    /* ===== BOOKING ===== */
-    #booking {
-      background: radial-gradient(ellipse at 50% 0%, rgba(0,180,216,0.12) 0%, transparent 60%),
-                  linear-gradient(180deg, #040f24 0%, #071830 100%);
-    }
-    .booking-form-wrap {
-      background: var(--glass); border: 1px solid var(--glass-border);
-      backdrop-filter: blur(18px); border-radius: 28px;
-      padding: 42px 40px;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.3);
-    }
-    .form-label-ar { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.8); margin-bottom: 7px; display: block; }
-    .form-control-ar {
-      width: 100%; background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12); border-radius: 12px;
-      padding: 13px 16px; color: #fff; font-family: var(--font-main);
-      font-size: 14px; transition: all 0.3s; outline: none;
-    }
-    .form-control-ar:focus {
-      border-color: var(--accent); background: rgba(0,180,216,0.07);
-      box-shadow: 0 0 0 3px rgba(0,180,216,0.12);
-    }
-    .form-control-ar::placeholder { color: rgba(255,255,255,0.3); }
-    .form-control-ar option { background: #071830; color: #fff; }
-    .btn-submit {
-      width: 100%; background: linear-gradient(135deg, var(--accent), #006994);
-      border: none; border-radius: 14px; padding: 16px;
-      color: #fff; font-size: 16px; font-weight: 800; font-family: var(--font-main);
-      cursor: pointer; transition: all 0.35s;
-      box-shadow: 0 6px 25px rgba(0,180,216,0.4);
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-    }
-    .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,180,216,0.55); }
-    .booking-info-item {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--glass); border: 1px solid var(--glass-border);
-      border-radius: 16px; padding: 18px 20px; margin-bottom: 16px;
-      transition: all 0.3s;
-    }
-    .booking-info-item:hover { border-color: rgba(0,180,216,0.35); }
-    .info-icon {
-      width: 44px; height: 44px; border-radius: 12px;
-      background: linear-gradient(135deg, rgba(0,180,216,0.2), rgba(10,42,94,0.4));
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .info-icon i { color: var(--accent); font-size: 18px; }
-    .info-text .label { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 600; }
-    .info-text .value { font-size: 14px; color: #fff; font-weight: 600; }
-
-    /* ===== CONTACT ===== */
-    #contact { background: linear-gradient(180deg, #071830 0%, #040f24 100%); }
-    .contact-map {
-      border-radius: 20px; overflow: hidden;
-      border: 1px solid var(--glass-border);
-      box-shadow: var(--shadow-blue);
-    }
-    .map-placeholder {
-      height: 350px;
-      background: linear-gradient(145deg, rgba(0,180,216,0.08), rgba(10,42,94,0.4));
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 14px; color: rgba(255,255,255,0.4); cursor: pointer;
-      transition: all 0.3s;
-    }
-    .map-placeholder:hover { background: linear-gradient(145deg, rgba(0,180,216,0.14), rgba(10,42,94,0.5)); }
-    .map-placeholder i { font-size: 48px; color: var(--accent); }
-    .map-placeholder span { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.6); }
-    .contact-detail-card {
-      background: var(--glass); border: 1px solid var(--glass-border);
-      backdrop-filter: blur(12px); border-radius: 18px;
-      padding: 20px 22px; display: flex; align-items: center; gap: 16px;
-      margin-bottom: 14px; transition: all 0.3s; text-decoration: none;
-    }
-    .contact-detail-card:hover { border-color: rgba(0,180,216,0.4); transform: translateX(-4px); box-shadow: var(--shadow-blue); }
-    .contact-icon {
-      width: 50px; height: 50px; border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; box-shadow: 0 4px 16px rgba(0,180,216,0.3);
-    }
-    .contact-icon i { color: #fff; font-size: 20px; }
-    .contact-text .c-label { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 600; }
-    .contact-text .c-value { font-size: 15px; color: #fff; font-weight: 700; }
-
-    /* ===== FOOTER ===== */
-    footer {
-      background: linear-gradient(180deg, #040f24, #020a18);
-      border-top: 1px solid var(--glass-border); padding: 60px 0 30px;
-    }
-    .footer-logo { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-    .footer-logo-circle {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--primary-light));
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 20px rgba(0,180,216,0.4);
-    }
-    .footer-logo-circle i { color: #fff; font-size: 25px; }
-    .footer-name { font-size: 17px; font-weight: 900; color: #fff; }
-    .footer-name-sub { font-size: 12px; color: var(--accent); font-weight: 500; }
-    .footer-desc { color: rgba(255,255,255,0.5); font-size: 14px; line-height: 1.8; margin-bottom: 22px; max-width: 320px; }
-    .footer-social { display: flex; gap: 10px; flex-wrap: wrap; }
-    .social-btn {
-      width: 40px; height: 40px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 17px; transition: all 0.3s; text-decoration: none;
-      background: var(--glass); border: 1px solid var(--glass-border);
-    }
-    .social-btn.fb { color: #1877f2; }
-    .social-btn.fb:hover { background: #1877f2; color: #fff; border-color: #1877f2; transform: translateY(-3px); }
-    .social-btn.ig { color: #e1306c; }
-    .social-btn.ig:hover { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; border-color: #e1306c; transform: translateY(-3px); }
-    .social-btn.tw { color: #1da1f2; }
-    .social-btn.tw:hover { background: #1da1f2; color: #fff; border-color: #1da1f2; transform: translateY(-3px); }
-    .social-btn.yt { color: #ff0000; }
-    .social-btn.yt:hover { background: #ff0000; color: #fff; border-color: #ff0000; transform: translateY(-3px); }
-    .social-btn.wa { color: #25d366; }
-    .social-btn.wa:hover { background: #25d366; color: #fff; border-color: #25d366; transform: translateY(-3px); }
-    .social-btn.snap { color: #fffc00; }
-    .social-btn.snap:hover { background: #fffc00; color: #000; border-color: #fffc00; transform: translateY(-3px); }
-    .footer-links-title { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 18px; }
-    .footer-link {
-      display: flex; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px;
-      padding: 5px 0; transition: all 0.3s;
-    }
-    .footer-link i { font-size: 10px; color: var(--accent); }
-    .footer-link:hover { color: var(--accent); padding-right: 6px; }
-    .footer-bottom {
-      border-top: 1px solid var(--glass-border); margin-top: 40px; padding-top: 24px;
-      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-    }
-    .footer-copy { color: rgba(255,255,255,0.4); font-size: 13px; }
-    .footer-heart { color: var(--accent); }
-
-    /* ===== WHATSAPP FLOAT ===== */
-    .whatsapp-float {
-      position: fixed; bottom: 30px; left: 30px; z-index: 9998;
-      display: flex; flex-direction: column; align-items: flex-start; gap: 10px;
-    }
-    .wa-btn {
-      width: 60px; height: 60px; border-radius: 50%;
-      background: linear-gradient(135deg, #25d366, #128c7e);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 28px; color: #fff; text-decoration: none;
-      box-shadow: 0 6px 25px rgba(37,211,102,0.45);
-      animation: wa-pulse 2s ease-in-out infinite;
-      transition: all 0.3s; position: relative;
-    }
-    .wa-btn:hover { transform: scale(1.12); color: #fff; box-shadow: 0 10px 35px rgba(37,211,102,0.6); }
-    @keyframes wa-pulse {
-      0%,100% { box-shadow: 0 6px 25px rgba(37,211,102,0.45), 0 0 0 0 rgba(37,211,102,0.4); }
-      50% { box-shadow: 0 6px 25px rgba(37,211,102,0.45), 0 0 0 15px rgba(37,211,102,0); }
-    }
-    .wa-tooltip {
-      background: rgba(4,15,36,0.95); backdrop-filter: blur(10px);
-      border: 1px solid rgba(37,211,102,0.3); border-radius: 12px;
-      padding: 10px 16px; color: #fff; font-size: 13px; font-weight: 600;
-      white-space: nowrap; box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-      display: none; position: absolute; left: 72px; bottom: 0;
-    }
-    .wa-tooltip span { color: #25d366; }
-    .wa-btn:hover + .wa-tooltip, .wa-btn:focus + .wa-tooltip { display: block; }
-    .wa-online-dot {
-      position: absolute; top: 2px; right: 2px;
-      width: 14px; height: 14px; background: #4cff72; border-radius: 50%;
-      border: 2px solid #071830;
-    }
-
-    /* ===== ANIMATIONS ===== */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInRight {
-      from { opacity: 0; transform: translateX(40px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    .reveal {
-      opacity: 0; transform: translateY(40px);
-      transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .reveal-left {
-      opacity: 0; transform: translateX(-40px);
-      transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .reveal-left.visible { opacity: 1; transform: translateX(0); }
-    .reveal-right {
-      opacity: 0; transform: translateX(40px);
-      transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .reveal-right.visible { opacity: 1; transform: translateX(0); }
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
-    .delay-5 { transition-delay: 0.5s; }
-    .delay-6 { transition-delay: 0.6s; }
-    .delay-7 { transition-delay: 0.7s; }
-    .delay-8 { transition-delay: 0.8s; }
-
-    /* ===== MODAL ===== */
-    .custom-modal-overlay {
-      position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 99999;
-      display: none; align-items: center; justify-content: center;
-      backdrop-filter: blur(5px);
-    }
-    .custom-modal-overlay.show { display: flex; }
-    .custom-modal-box {
-      background: linear-gradient(145deg, #071830, #0a2240);
-      border: 1px solid var(--glass-border); border-radius: 24px;
-      padding: 36px 32px; max-width: 420px; width: 90%;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-      animation: modalIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-    @keyframes modalIn {
-      from { opacity: 0; transform: scale(0.85) translateY(20px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
-    }
-    .modal-check { font-size: 60px; color: #4cff72; text-align: center; margin-bottom: 14px; }
-    .modal-title-ar { font-size: 20px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 8px; }
-    .modal-sub { color: rgba(255,255,255,0.6); font-size: 14px; text-align: center; line-height: 1.7; margin-bottom: 22px; }
-    .btn-close-modal {
-      width: 100%; background: linear-gradient(135deg, var(--accent), #006994);
-      border: none; border-radius: 12px; padding: 13px;
-      color: #fff; font-family: var(--font-main); font-size: 15px; font-weight: 700;
-      cursor: pointer; transition: all 0.3s;
-    }
-    .btn-close-modal:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,180,216,0.4); }
-
-    /* Glassmorphism shine effect */
-    .glass-shine {
-      position: relative; overflow: hidden;
-    }
-    .glass-shine::after {
-      content: ''; position: absolute; top: -50%; left: -50%;
-      width: 40%; height: 200%;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.04), transparent);
-      transform: rotate(15deg);
-      animation: shine 5s ease-in-out infinite;
-    }
-    @keyframes shine {
-      0%,100% { left: -50%; }
-      50% { left: 120%; }
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 992px) {
-      .hero-img-card { width: 300px; height: 380px; }
-      .hero-stat-card.left { left: -20px; }
-      .hero-stat-card.top { right: -20px; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 180px); }
-      .gallery-item:first-child { grid-row: span 2; }
-    }
-    @media (max-width: 768px) {
-      section { padding: 60px 0; }
-      .hero-title { font-size: 2rem; }
-      .hero-img-card { width: 260px; height: 320px; }
-      .hero-stat-card { display: none; }
-      .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-      .gallery-item:first-child { grid-row: span 1; }
-      .booking-form-wrap { padding: 28px 20px; }
-      .whatsapp-float { bottom: 20px; left: 20px; }
-    }
-    @media (max-width: 576px) {
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-    }
-    /* Animated bg lines */
-    .bg-lines {
-      position: absolute; inset: 0; pointer-events: none; overflow: hidden; opacity: 0.04;
-    }
-    .bg-line {
-      position: absolute; width: 1px; background: linear-gradient(to bottom, transparent, #00b4d8, transparent);
-      animation: line-move linear infinite;
-    }
-    @keyframes line-move {
-      from { transform: translateY(-100%); }
-      to { transform: translateY(100vh); }
-    }
-    /* Tooth animated SVG */
-    .tooth-svg {
-      position: absolute; opacity: 0.04; pointer-events: none;
-      animation: tooth-float 6s ease-in-out infinite;
-    }
-    @keyframes tooth-float {
-      0%,100% { transform: rotate(-5deg) translateY(0); }
-      50% { transform: rotate(5deg) translateY(-15px); }
-    }
-  </style>
+  <!-- ── Project CSS (order matters) ────────── -->
+  <link rel="stylesheet" href="static/css/variables.css" />
+  <link rel="stylesheet" href="static/css/base.css" />
+  <link rel="stylesheet" href="static/css/navbar.css" />
+  <link rel="stylesheet" href="static/css/sections.css" />
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
-<nav id="navbar">
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-between w-100">
-      <a href="#hero" class="nav-brand">
-        <div class="nav-logo-circle">
-          <i class="fas fa-tooth"></i>
+  <!-- ════════════════════════════════════════════
+       GLOBAL UI ELEMENTS
+  ════════════════════════════════════════════ -->
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"  id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Reading Progress Bar -->
+  <div id="progress-bar"></div>
+
+  <!-- ════════════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-top-line"></div>
+    <div class="nav-inner">
+      <div class="container">
+        <div class="d-flex align-items-center justify-content-between">
+
+          <!-- Brand -->
+          <a href="#hero" class="nav-brand">
+            <div class="nav-logo">
+              <div class="nav-logo-ring"></div>
+              <i class="fas fa-tooth"></i>
+            </div>
+            <div class="nav-brand-text">
+              <div class="clinic-name">د. وسام ميسر</div>
+              <div class="clinic-sub">لطب وتجميل الأسنان</div>
+            </div>
+          </a>
+
+          <!-- Desktop Links -->
+          <div class="nav-links">
+            <a href="#about"        class="nav-link-item">من نحن</a>
+            <a href="#services"     class="nav-link-item">خدماتنا</a>
+            <a href="#gallery"      class="nav-link-item">المعرض</a>
+            <a href="#testimonials" class="nav-link-item">المرضى</a>
+            <a href="#contact"      class="nav-link-item">اتصل بنا</a>
+          </div>
+
+          <!-- Actions -->
+          <div class="d-flex align-items-center gap-3">
+            <button class="theme-toggle" id="themeBtn" title="تغيير المظهر">
+              <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <a href="#booking" class="btn-nav-cta d-none d-lg-flex">
+              <i class="fas fa-calendar-plus"></i> احجز موعد
+            </a>
+            <div class="mob-toggle" id="mobToggle">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+
         </div>
-        <div class="nav-title">
-          <div class="name">د. وسام ميسر</div>
-          <div class="sub">لطب وتجميل الأسنان</div>
-        </div>
-      </a>
-      <button class="navbar-toggler d-lg-none" type="button" id="navToggle">
-        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Overlay -->
+  <div class="mob-overlay" id="mobOverlay"></div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#about"        class="mob-nav-link"><i class="fas fa-info-circle"></i>     من نحن</a>
+    <a href="#services"     class="mob-nav-link"><i class="fas fa-teeth"></i>            خدماتنا</a>
+    <a href="#stats"        class="mob-nav-link"><i class="fas fa-chart-bar"></i>        إحصائياتنا</a>
+    <a href="#gallery"      class="mob-nav-link"><i class="fas fa-images"></i>           المعرض</a>
+    <a href="#testimonials" class="mob-nav-link"><i class="fas fa-comment-alt"></i>      آراء المرضى</a>
+    <a href="#booking"      class="mob-nav-link"><i class="fas fa-calendar-plus"></i>    احجز موعد</a>
+    <a href="#contact"      class="mob-nav-link"><i class="fas fa-map-marker-alt"></i>   اتصل بنا</a>
+    <div style="margin-top:20px; padding:0 4px;">
+      <button class="btn-submit" onclick="location.href='#booking'">
+        <i class="fas fa-calendar-check"></i> احجز موعدك الآن
       </button>
-      <div class="d-none d-lg-flex align-items-center gap-2" id="navMenu">
-        <a href="#about" class="nav-link-custom">من نحن</a>
-        <a href="#services" class="nav-link-custom">خدماتنا</a>
-        <a href="#gallery" class="nav-link-custom">المعرض</a>
-        <a href="#testimonials" class="nav-link-custom">آراء المرضى</a>
-        <a href="#contact" class="nav-link-custom">اتصل بنا</a>
-        <a href="#booking" class="nav-link-custom btn-nav-book ms-2">
-          <i class="fas fa-calendar-check me-1"></i> احجز موعد
-        </a>
-      </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div class="d-lg-none mt-3 d-none flex-column gap-1" id="mobileMenu">
-      <a href="#about" class="nav-link-custom">من نحن</a>
-      <a href="#services" class="nav-link-custom">خدماتنا</a>
-      <a href="#gallery" class="nav-link-custom">المعرض</a>
-      <a href="#testimonials" class="nav-link-custom">آراء المرضى</a>
-      <a href="#contact" class="nav-link-custom">اتصل بنا</a>
-      <a href="#booking" class="btn-hero-primary mt-2" style="justify-content:center">احجز موعد</a>
     </div>
   </div>
-</nav>
 
-<!-- ===== HERO ===== -->
-<section id="hero">
-  <div class="hero-particles" id="particles"></div>
-  <div class="hero-glow"></div>
-  <div class="bg-lines" id="bgLines"></div>
+  <!-- ════════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-mesh"></div>
 
-  <!-- Decorative tooth SVG -->
-  <svg class="tooth-svg" style="top:15%;right:5%;width:120px;" viewBox="0 0 100 120" fill="white">
-    <path d="M50 0 C30 0 15 15 15 35 C15 50 20 60 25 75 C28 85 30 95 35 110 C37 118 40 120 45 118 C47 117 48 115 50 110 C52 115 53 117 55 118 C60 120 63 118 65 110 C70 95 72 85 75 75 C80 60 85 50 85 35 C85 15 70 0 50 0Z"/>
-  </svg>
-  <svg class="tooth-svg" style="bottom:20%;left:8%;width:80px;animation-delay:3s;" viewBox="0 0 100 120" fill="white">
-    <path d="M50 0 C30 0 15 15 15 35 C15 50 20 60 25 75 C28 85 30 95 35 110 C37 118 40 120 45 118 C47 117 48 115 50 110 C52 115 53 117 55 118 C60 120 63 118 65 110 C70 95 72 85 75 75 C80 60 85 50 85 35 C85 15 70 0 50 0Z"/>
-  </svg>
+    <!-- Floating Orbs -->
+    <div class="orb" style="width:320px;height:320px;background:rgba(0,200,232,.06);top:10%;left:60%;animation-duration:7s;"></div>
+    <div class="orb" style="width:200px;height:200px;background:rgba(0,100,180,.07);bottom:15%;right:65%;animation-duration:9s;animation-delay:2s;"></div>
 
-  <div class="container">
-    <div class="row align-items-center min-vh-100 py-5">
-      <div class="col-lg-6 mb-5 mb-lg-0">
-        <div class="hero-badge">
-          <i class="fas fa-star-of-life"></i>
-          مركز طبي متكامل · حلب الجديدة
+    <!-- Rings -->
+    <div class="hero-ring" style="width:500px;height:500px;top:50%;left:65%;transform:translate(-50%,-50%);"></div>
+    <div class="hero-ring" style="width:640px;height:640px;top:50%;left:65%;transform:translate(-50%,-50%);animation-delay:2s;opacity:.25;"></div>
+
+    <!-- Particles -->
+    <div class="particle-field" id="particleField"></div>
+
+    <div class="container">
+      <div class="row align-items-center g-4">
+
+        <!-- Left: Text -->
+        <div class="col-lg-6">
+          <div class="hero-badge">
+            <div class="hero-badge-dot"></div>
+            مركز طبي متكامل &bull; حلب الجديدة &bull; سوريا
+          </div>
+
+          <h1 class="hero-title">
+            <span class="grad">ابتسامتك</span><br/>
+            <span class="grad">تبدأ من هنا</span>
+            <span class="line2">د. وسام ميسر &bull; لطب وتجميل الأسنان</span>
+          </h1>
+
+          <p class="hero-desc">
+            نقدم رعاية أسنان متكاملة بأحدث التقنيات الطبية العالمية، مع مخبر أسنان
+            متطور داخل العيادة وفريق متخصص لضمان أجمل ابتسامة وأفضل صحة للأسنان.
+          </p>
+
+          <div class="hero-btns">
+            <button class="btn-primary-hero" onclick="location.href='#booking'">
+              <i class="fas fa-calendar-plus"></i> احجز موعدك الآن
+            </button>
+            <button class="btn-outline-hero" onclick="location.href='#services'">
+              <i class="fas fa-tooth"></i> تعرف على خدماتنا
+            </button>
+          </div>
+
+          <div class="hero-mini-stats">
+            <div class="mini-stat"><div class="num">+5000</div><div class="lbl">مريض راضٍ</div></div>
+            <div class="mini-stat-sep"></div>
+            <div class="mini-stat"><div class="num">+15</div><div class="lbl">سنة خبرة</div></div>
+            <div class="mini-stat-sep"></div>
+            <div class="mini-stat"><div class="num">+1200</div><div class="lbl">عملية ناجحة</div></div>
+            <div class="mini-stat-sep"></div>
+            <div class="mini-stat"><div class="num">98%</div><div class="lbl">رضا المرضى</div></div>
+          </div>
         </div>
-        <h1 class="hero-title mb-4">ابتسامتك<br/>تبدأ من هنا</h1>
-        <p class="hero-subtitle mb-3">
-          عيادة <strong>د. وسام ميسر</strong> لطب وتجميل الأسنان
-        </p>
-        <p class="hero-desc mb-5">
-          نقدم لك رعاية أسنان متكاملة بأحدث التقنيات الطبية العالمية، مع مخبر أسنان متطور داخل العيادة وفريق متخصص لضمان أجمل ابتسامة وأفضل صحة للأسنان.
-        </p>
-        <div class="d-flex gap-3 flex-wrap">
-          <a href="#booking" class="btn-hero-primary">
-            <i class="fas fa-calendar-plus"></i>
-            احجز موعدك الآن
-          </a>
-          <a href="#services" class="btn-hero-secondary">
-            <i class="fas fa-tooth"></i>
-            تعرف على خدماتنا
-          </a>
-        </div>
-        <div class="d-flex gap-4 mt-5 flex-wrap">
-          <div>
-            <div style="font-size:22px;font-weight:900;color:var(--accent)">+5000</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.55)">مريض راضٍ</div>
-          </div>
-          <div style="width:1px;background:var(--glass-border)"></div>
-          <div>
-            <div style="font-size:22px;font-weight:900;color:var(--accent)">+15</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.55)">سنة خبرة</div>
-          </div>
-          <div style="width:1px;background:var(--glass-border)"></div>
-          <div>
-            <div style="font-size:22px;font-weight:900;color:var(--accent)">98%</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.55)">رضا المرضى</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="hero-img-wrapper">
-          <div class="hero-img-ring" style="width:460px;height:460px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
-          <div class="hero-img-ring" style="width:520px;height:520px;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0.4;animation-delay:1.5s;"></div>
-          <div class="hero-img-card glass-shine">
-            <div class="hero-img-placeholder">
-              <i class="fas fa-user-md"></i>
-              <span>د. وسام ميسر</span>
-              <span style="font-size:11px;opacity:0.4">طبيب أسنان متخصص</span>
-            </div>
-          </div>
-          <div class="hero-stat-card left">
-            <div class="d-flex align-items-center gap-10">
-              <i class="fas fa-tooth" style="color:var(--accent);font-size:20px;margin-left:8px"></i>
-              <div>
-                <div class="stat-num">+1200</div>
-                <div class="stat-label">عملية ناجحة</div>
+
+        <!-- Right: Image Card -->
+        <div class="col-lg-6">
+          <div class="hero-img-wrap">
+            <div class="hero-img-card">
+              <div class="hero-placeholder-icon">
+                <i class="fas fa-user-md"></i>
+                <p>د. وسام ميسر</p>
+                <small>طبيب أسنان متخصص</small>
               </div>
             </div>
-          </div>
-          <div class="hero-stat-card top">
-            <div class="d-flex align-items-center gap-10">
-              <i class="fas fa-award" style="color:var(--accent-gold);font-size:20px;margin-left:8px"></i>
-              <div>
-                <div class="stat-num">15+</div>
-                <div class="stat-label">سنة خبرة</div>
+
+            <!-- Floating Stat Cards -->
+            <div class="float-card fc1">
+              <div class="fc-icon" style="background:linear-gradient(135deg,var(--accent),var(--accent2));">
+                <i class="fas fa-tooth"></i>
               </div>
+              <div><div class="fc-num">+1200</div><div class="fc-lbl">عملية ناجحة</div></div>
+            </div>
+
+            <div class="float-card fc2">
+              <div class="fc-icon" style="background:linear-gradient(135deg,var(--gold),#a0692e);">
+                <i class="fas fa-award"></i>
+              </div>
+              <div><div class="fc-num">15+</div><div class="fc-lbl">سنة خبرة</div></div>
+            </div>
+
+            <div class="float-card fc3">
+              <div class="fc-icon" style="background:linear-gradient(135deg,#4dff6e,#1a9e2e);">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div><div class="fc-num">98%</div><div class="fc-lbl">رضا المرضى</div></div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
-  </div>
-  <div class="hero-scroll-hint">
-    <span>اكتشف المزيد</span>
-    <i class="fas fa-chevron-down"></i>
-  </div>
-</section>
 
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <div class="container">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-5 reveal-left">
-        <div class="about-img-wrap">
-          <div class="about-img-main glass-shine">
-            <div class="hero-img-placeholder" style="color:rgba(255,255,255,0.3)">
-              <i class="fas fa-hospital" style="font-size:70px;color:var(--accent);opacity:0.4"></i>
-              <span style="font-size:15px">المركز الطبي المتكامل</span>
+    <div class="scroll-hint">
+      <div class="mouse"><div class="mouse-dot"></div></div>
+      <span>اكتشف المزيد</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       ABOUT
+  ════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- Image -->
+        <div class="col-lg-5">
+          <div class="about-img reveal left">
+            <div style="color:var(--text-muted);text-align:center;">
+              <i class="fas fa-hospital"
+                 style="font-size:80px;color:var(--accent);opacity:.35;display:block;margin-bottom:14px;animation:icon-pulse 3s ease-in-out infinite;"></i>
+              <p style="font-size:15px;font-weight:700;">المركز الطبي المتكامل</p>
             </div>
             <div class="about-img-badge">
-              <div class="num">15+</div>
-              <div class="lbl">سنة من التميز</div>
+              <div class="bn">15+</div>
+              <div class="bl">سنة من التميز</div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-7 reveal-right">
-        <div class="section-badge"><i class="fas fa-info-circle"></i> من نحن</div>
-        <h2 class="section-title">مركز طبي متكامل<br/><span>بمعايير عالمية</span></h2>
-        <div class="divider"></div>
-        <p class="section-desc mb-4">
-          يجمع مركز <strong style="color:#fff">د. وسام ميسر</strong> بين الخبرة الطبية الممتازة والتقنيات الحديثة، لنقدم لمرضانا في حلب وسوريا رعاية أسنان لا مثيل لها. عيادتنا مجهزة بأحدث الأجهزة الطبية الأوروبية.
-        </p>
-        <div class="row g-3">
-          <div class="col-sm-6 reveal delay-1">
-            <div class="about-feature-card">
-              <div class="feature-icon"><i class="fas fa-microscope"></i></div>
-              <h5>مخبر أسنان متطور</h5>
-              <p>مخبر داخلي مجهز بأحدث التقنيات لصناعة التركيبات والزراعة.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 reveal delay-2">
-            <div class="about-feature-card">
-              <div class="feature-icon"><i class="fas fa-x-ray"></i></div>
-              <h5>تصوير ثلاثي الأبعاد</h5>
-              <p>أجهزة تصوير CBCT ثلاثية الأبعاد لتشخيص دقيق ونتائج مثالية.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 reveal delay-3">
-            <div class="about-feature-card">
-              <div class="feature-icon"><i class="fas fa-user-md"></i></div>
-              <h5>فريق طبي متخصص</h5>
-              <p>أطباء متخصصون في كافة مجالات طب الأسنان بخبرات دولية.</p>
-            </div>
-          </div>
-          <div class="col-sm-6 reveal delay-4">
-            <div class="about-feature-card">
-              <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-              <h5>معايير تعقيم عالية</h5>
-              <p>أعلى معايير التعقيم والنظافة لضمان سلامة وصحة مرضانا.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== SERVICES ===== -->
-<section id="services">
-  <div class="container">
-    <div class="text-center mb-5 reveal">
-      <div class="section-badge"><i class="fas fa-teeth"></i> خدماتنا الطبية</div>
-      <h2 class="section-title">خدمات <span>متكاملة</span> لأسنانك</h2>
-      <p class="section-desc mx-auto">نقدم طيفاً شاملاً من خدمات طب وتجميل الأسنان باستخدام أحدث التقنيات العالمية</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3 reveal delay-1">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-tooth"></i></div>
-          <h4>زراعة الأسنان</h4>
-          <p>زراعة أسنان فورية ودائمة بأحدث تقنيات الغرسات السويسرية والكورية.</p>
-          <span class="service-tag">الأكثر طلباً</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal delay-2">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-teeth-open"></i></div>
-          <h4>تقويم الأسنان</h4>
-          <p>تقويم ثابت وشفاف Invisalign لابتسامة مثالية دون إزعاج.</p>
-          <span class="service-tag">تقنية حديثة</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal delay-3">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-star"></i></div>
-          <h4>تجميل الأسنان</h4>
-          <p>قشور البورسلين والفينيرز والابتسامة الهوليودية بنتائج مذهلة.</p>
-          <span class="service-tag">تجميل فاخر</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal delay-4">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-magic"></i></div>
-          <h4>تبييض الأسنان</h4>
-          <p>تبييض احترافي بتقنية الليزر ونتائج فورية تدوم سنوات.</p>
-          <span class="service-tag">نتائج فورية</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal delay-1">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-crown"></i></div>
-          <h4>التركيبات السنية</h4>
-          <p>تيجان وجسور البورسلين والزيركون بأعلى جودة ودقة عالية.</p>
-          <span class="service-tag">جودة عالية</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal delay-2">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-flask"></i></div>
-          <h4>مخبر الأسنان</h4>
-          <p>مخبر متطور داخل العيادة لصناعة التركيبات بدقة عالية وسرعة.</p>
-          <span class="service-tag">متطور</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal delay-3">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-baby"></i></div>
-          <h4>معالجة الأطفال</h4>
-          <p>رعاية أسنان الأطفال في بيئة ودية ومريحة لتجربة ممتعة.</p>
-          <span class="service-tag">ودي للأطفال</span>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3 reveal delay-4">
-        <div class="service-card">
-          <div class="service-icon-wrap"><i class="fas fa-procedures"></i></div>
-          <h4>علاج الجذور</h4>
-          <p>معالجة قنوات الجذر بتقنية الروتاري الحديثة بدون ألم.</p>
-          <span class="service-tag">بلا ألم</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Text -->
+        <div class="col-lg-7">
+          <div class="reveal right">
+            <div class="sec-badge"><i class="fas fa-info-circle"></i> من نحن</div>
+            <h2 class="sec-title">مركز طبي متكامل<br/><span>بمعايير عالمية</span></h2>
+            <div class="divider"></div>
+            <p class="sec-desc mb-4">
+              يجمع مركز <strong style="color:var(--text-h)">د. وسام ميسر</strong> بين الخبرة الطبية الممتازة
+              والتقنيات الحديثة، لنقدم رعاية أسنان لا مثيل لها في حلب وسوريا. عيادتنا مجهزة بأحدث
+              الأجهزة الطبية الأوروبية ومخبر متطور داخلي.
+            </p>
+          </div>
 
-<!-- ===== STATS ===== -->
-<section id="stats">
-  <div class="container">
-    <div class="row align-items-center text-center">
-      <div class="col-6 col-lg-3 reveal delay-1">
-        <div class="stat-item">
-          <div class="stat-icon"><i class="fas fa-users"></i></div>
-          <div class="stat-number" data-target="5000">0</div>
-          <div class="stat-text">مريض سعيد</div>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3 reveal delay-2">
-        <div class="stat-item">
-          <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
-          <div class="stat-number" data-target="15">0</div>
-          <div class="stat-text">سنة خبرة طبية</div>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3 reveal delay-3">
-        <div class="stat-item">
-          <div class="stat-icon"><i class="fas fa-award"></i></div>
-          <div class="stat-number" data-target="1200">0</div>
-          <div class="stat-text">عملية ناجحة</div>
-        </div>
-      </div>
-      <div class="col-6 col-lg-3 reveal delay-4">
-        <div class="stat-item">
-          <div class="stat-icon"><i class="fas fa-heart"></i></div>
-          <div class="stat-number" data-target="98">0</div>
-          <div class="stat-text">% رضا المرضى</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== GALLERY ===== -->
-<section id="gallery">
-  <div class="container">
-    <div class="text-center mb-5 reveal">
-      <div class="section-badge"><i class="fas fa-images"></i> معرض الصور</div>
-      <h2 class="section-title">قبل <span>وبعد</span> العلاج</h2>
-      <p class="section-desc mx-auto">شاهد تحولات مذهلة حقيقية أنجزتها عيادتنا لمرضانا الكرام</p>
-    </div>
-    <div class="gallery-grid reveal">
-      <div class="gallery-item">
-        <div class="gallery-placeholder">
-          <i class="fas fa-tooth"></i>
-          <span>زراعة أسنان</span>
-        </div>
-        <div class="gallery-overlay"><span>✨ قبل وبعد الزراعة</span></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">
-          <i class="fas fa-star"></i>
-          <span>الابتسامة الهوليودية</span>
-        </div>
-        <div class="gallery-overlay"><span>⭐ ابتسامة هوليودية</span></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">
-          <i class="fas fa-magic"></i>
-          <span>تبييض الأسنان</span>
-        </div>
-        <div class="gallery-overlay"><span>🌟 تبييض ليزر</span></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">
-          <i class="fas fa-crown"></i>
-          <span>تركيبات الزيركون</span>
-        </div>
-        <div class="gallery-overlay"><span>👑 تركيبات فاخرة</span></div>
-      </div>
-      <div class="gallery-item">
-        <div class="gallery-placeholder">
-          <i class="fas fa-flask"></i>
-          <span>مخبر الأسنان</span>
-        </div>
-        <div class="gallery-overlay"><span>🔬 مخبرنا المتطور</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== TESTIMONIALS ===== -->
-<section id="testimonials">
-  <div class="container">
-    <div class="text-center mb-5 reveal">
-      <div class="section-badge"><i class="fas fa-comment-alt"></i> آراء المرضى</div>
-      <h2 class="section-title">ماذا يقول <span>مرضانا</span></h2>
-      <p class="section-desc mx-auto">قصص نجاح حقيقية من مرضانا الكرام في حلب وسوريا</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-4 reveal delay-1">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"تجربتي في عيادة د. وسام كانت رائعة جداً. الطاقم الطبي محترف والنتيجة فوق التوقعات. ابتسامتي تغيرت كلياً بعد عملية الزراعة."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">أ</div>
-            <div>
-              <div class="author-name">أحمد الخالد</div>
-              <div class="author-since">مريض منذ 2022 · زراعة أسنان</div>
+          <div class="row g-3 mt-1">
+            <div class="col-sm-6 reveal up d1">
+              <div class="feat-card">
+                <div class="feat-icon"><i class="fas fa-microscope"></i></div>
+                <h5>مخبر أسنان متطور</h5>
+                <p>مخبر داخلي مجهز بأحدث التقنيات لصناعة التركيبات بدقة عالية.</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal delay-2">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"قمت بعملية تبييض الأسنان بالليزر والنتيجة كانت مذهلة! الألوان تغيرت بشكل لافت والعيادة نظيفة جداً ومريحة."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">س</div>
-            <div>
-              <div class="author-name">سارة المحمد</div>
-              <div class="author-since">مريضة منذ 2023 · تبييض ليزر</div>
+            <div class="col-sm-6 reveal up d2">
+              <div class="feat-card">
+                <div class="feat-icon"><i class="fas fa-x-ray"></i></div>
+                <h5>تصوير ثلاثي الأبعاد</h5>
+                <p>أجهزة CBCT ثلاثية الأبعاد لتشخيص دقيق ونتائج مثالية.</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal delay-3">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"عملت الابتسامة الهوليودية وما صدقت شو التغيير! الدكتور وسام خبير ومحترف وشرح لي كل شيء بالتفصيل. أنصح الجميع."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">ر</div>
-            <div>
-              <div class="author-name">رنا العمر</div>
-              <div class="author-since">مريضة منذ 2023 · ابتسامة هوليودية</div>
+            <div class="col-sm-6 reveal up d3">
+              <div class="feat-card">
+                <div class="feat-icon"><i class="fas fa-user-md"></i></div>
+                <h5>فريق طبي متخصص</h5>
+                <p>أطباء متخصصون في كافة مجالات طب الأسنان بخبرات دولية.</p>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal delay-4">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"ابني عمل تقويم الأسنان هنا والنتائج ممتازة. العيادة متخصصة في الأطفال والدكتور صبور جداً معهم."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">م</div>
-            <div>
-              <div class="author-name">منى الأحمد</div>
-              <div class="author-since">مريضة منذ 2021 · تقويم أطفال</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal delay-5">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"التركيبات الزيركون التي صنعوها في المخبر الخاص بهم دقيقة جداً ولونها طبيعي لدرجة أن أحداً لم يعرف أنها تركيبات."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">خ</div>
-            <div>
-              <div class="author-name">خالد السليمان</div>
-              <div class="author-since">مريض منذ 2022 · تركيبات زيركون</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4 reveal delay-6">
-        <div class="testimonial-card">
-          <div class="stars">★★★★★</div>
-          <p class="testimonial-text">"كنت خايفة من علاج الجذور بس الدكتور طمنني وعمل العلاج بدون ألم خالص. جداً ممنونة من الفريق المتميز."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">ل</div>
-            <div>
-              <div class="author-name">لينا الحسن</div>
-              <div class="author-since">مريضة منذ 2023 · علاج جذور</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== BOOKING ===== -->
-<section id="booking">
-  <div class="container">
-    <div class="row g-5 align-items-center">
-      <div class="col-lg-5 reveal-left">
-        <div class="section-badge"><i class="fas fa-calendar-check"></i> حجز موعد</div>
-        <h2 class="section-title">احجز موعدك<br/><span>الآن</span></h2>
-        <div class="divider"></div>
-        <p class="section-desc mb-5">نحن هنا لخدمتك. احجز موعدك الآن وسيتواصل معك فريقنا لتأكيد الموعد.</p>
-        <div class="booking-info-item">
-          <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="info-text">
-            <div class="label">اتصل بنا</div>
-            <div class="value">0933912076</div>
-          </div>
-        </div>
-        <div class="booking-info-item">
-          <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
-          <div class="info-text">
-            <div class="label">واتساب</div>
-            <div class="value">0933912076</div>
-          </div>
-        </div>
-        <div class="booking-info-item">
-          <div class="info-icon"><i class="fas fa-clock"></i></div>
-          <div class="info-text">
-            <div class="label">ساعات الدوام</div>
-            <div class="value">السبت - الخميس · 9 ص – 8 م</div>
-          </div>
-        </div>
-        <div class="booking-info-item">
-          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="info-text">
-            <div class="label">العنوان</div>
-            <div class="value">سوريا - حلب - حلب الجديدة</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-7 reveal-right">
-        <div class="booking-form-wrap glass-shine">
-          <h3 style="font-size:20px;font-weight:800;color:#fff;margin-bottom:24px">
-            <i class="fas fa-calendar-plus" style="color:var(--accent);margin-left:8px"></i>
-            نموذج حجز الموعد
-          </h3>
-          <div class="row g-3">
-            <div class="col-sm-6">
-              <label class="form-label-ar">الاسم الكامل *</label>
-              <input type="text" class="form-control-ar" placeholder="أدخل اسمك الكامل" id="bookName" />
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label-ar">رقم الهاتف *</label>
-              <input type="tel" class="form-control-ar" placeholder="09XXXXXXXX" id="bookPhone" />
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label-ar">نوع الخدمة *</label>
-              <select class="form-control-ar" id="bookService">
-                <option value="">اختر الخدمة</option>
-                <option>زراعة الأسنان</option>
-                <option>تقويم الأسنان</option>
-                <option>تجميل الأسنان</option>
-                <option>تبييض الأسنان</option>
-                <option>التركيبات السنية</option>
-                <option>مخبر الأسنان</option>
-                <option>معالجة الأطفال</option>
-                <option>علاج الجذور</option>
-                <option>كشف عام</option>
-              </select>
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label-ar">التاريخ المطلوب *</label>
-              <input type="date" class="form-control-ar" id="bookDate" />
-            </div>
-            <div class="col-12">
-              <label class="form-label-ar">ملاحظات إضافية</label>
-              <textarea class="form-control-ar" rows="3" placeholder="أي تفاصيل أو ملاحظات تود إضافتها..." id="bookNote" style="resize:none"></textarea>
-            </div>
-            <div class="col-12">
-              <button class="btn-submit" onclick="submitBooking()">
-                <i class="fas fa-paper-plane"></i>
-                إرسال طلب الحجز
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <div class="container">
-    <div class="text-center mb-5 reveal">
-      <div class="section-badge"><i class="fas fa-map-marker-alt"></i> تواصل معنا</div>
-      <h2 class="section-title">نحن هنا<br/><span>لخدمتك</span></h2>
-    </div>
-    <div class="row g-5">
-      <div class="col-lg-6 reveal-left">
-        <a href="tel:0933912076" class="contact-detail-card" style="color:inherit">
-          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-          <div class="contact-text">
-            <div class="c-label">هاتف العيادة</div>
-            <div class="c-value">0933912076</div>
-          </div>
-        </a>
-        <a href="https://wa.me/963933912076" target="_blank" class="contact-detail-card" style="color:inherit">
-          <div class="contact-icon" style="background:linear-gradient(135deg,#25d366,#128c7e)"><i class="fab fa-whatsapp"></i></div>
-          <div class="contact-text">
-            <div class="c-label">واتساب</div>
-            <div class="c-value">0933912076</div>
-          </div>
-        </a>
-        <div class="contact-detail-card">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div class="contact-text">
-            <div class="c-label">العنوان</div>
-            <div class="c-value">سوريا - حلب - حلب الجديدة</div>
-          </div>
-        </div>
-        <div class="contact-detail-card">
-          <div class="contact-icon"><i class="fas fa-clock"></i></div>
-          <div class="contact-text">
-            <div class="c-label">ساعات الدوام</div>
-            <div class="c-value">السبت – الخميس · 9:00 ص – 8:00 م</div>
-          </div>
-        </div>
-        <div class="contact-detail-card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div class="contact-text">
-            <div class="c-label">البريد الإلكتروني</div>
-            <div class="c-value">info@drwissam-dental.com</div>
-          </div>
-        </div>
-        <div class="d-flex gap-3 mt-4 flex-wrap">
-          <a href="https://wa.me/963933912076" target="_blank" class="btn-hero-primary" style="text-decoration:none;padding:12px 24px">
-            <i class="fab fa-whatsapp"></i> واتساب
-          </a>
-          <a href="tel:0933912076" class="btn-hero-secondary" style="text-decoration:none;padding:11px 22px;color:#fff">
-            <i class="fas fa-phone-alt"></i> اتصل الآن
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6 reveal-right">
-        <div class="contact-map">
-          <div class="map-placeholder" onclick="window.open('https://maps.google.com/?q=حلب+الجديدة+سوريا','_blank')">
-            <i class="fas fa-map-marked-alt"></i>
-            <span>حلب الجديدة - سوريا</span>
-            <small style="font-size:12px;color:rgba(255,255,255,0.4)">اضغط لفتح الخريطة</small>
-            <div style="margin-top:8px">
-              <div style="display:flex;align-items:center;gap:8px;color:var(--accent);font-size:13px">
-                <i class="fas fa-location-arrow"></i>
-                <span>انقر لعرض الموقع على خرائط Google</span>
+            <div class="col-sm-6 reveal up d4">
+              <div class="feat-card">
+                <div class="feat-icon"><i class="fas fa-shield-alt"></i></div>
+                <h5>معايير تعقيم عالية</h5>
+                <p>أعلى معايير التعقيم والنظافة لضمان سلامة وصحة مرضانا.</p>
               </div>
             </div>
           </div>
         </div>
-        <!-- Decorative info -->
-        <div class="row g-3 mt-3">
-          <div class="col-6">
-            <div class="about-feature-card text-center" style="padding:16px">
-              <i class="fas fa-parking" style="font-size:24px;color:var(--accent);margin-bottom:8px;display:block"></i>
-              <div style="font-size:13px;font-weight:700;color:#fff">موقف سيارات</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.5)">متاح مجاناً</div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       SERVICES
+  ════════════════════════════════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="text-center mb-5 reveal up">
+        <div class="sec-badge"><i class="fas fa-teeth"></i> خدماتنا الطبية</div>
+        <h2 class="sec-title">خدمات <span>متكاملة</span> لأسنانك</h2>
+        <p class="sec-desc mx-auto">نقدم طيفاً شاملاً من خدمات طب وتجميل الأسنان باستخدام أحدث التقنيات العالمية</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal up d1">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-tooth"></i></div>
+            <h4>زراعة الأسنان</h4>
+            <p>زراعة فورية ودائمة بأحدث تقنيات الغرسات السويسرية والكورية.</p>
+            <span class="srv-tag"><i class="fas fa-fire"></i> الأكثر طلباً</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal up d2">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-teeth-open"></i></div>
+            <h4>تقويم الأسنان</h4>
+            <p>تقويم ثابت وشفاف Invisalign لابتسامة مثالية بدون إزعاج.</p>
+            <span class="srv-tag"><i class="fas fa-star"></i> تقنية حديثة</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal up d3">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-star"></i></div>
+            <h4>تجميل الأسنان</h4>
+            <p>قشور البورسلين والفينيرز والابتسامة الهوليودية بنتائج مذهلة.</p>
+            <span class="srv-tag"><i class="fas fa-gem"></i> تجميل فاخر</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal up d4">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-magic"></i></div>
+            <h4>تبييض الأسنان</h4>
+            <p>تبييض احترافي بتقنية الليزر ونتائج فورية تدوم سنوات.</p>
+            <span class="srv-tag"><i class="fas fa-bolt"></i> نتائج فورية</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal up d1">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-crown"></i></div>
+            <h4>التركيبات السنية</h4>
+            <p>تيجان وجسور البورسلين والزيركون بأعلى جودة ودقة عالية.</p>
+            <span class="srv-tag"><i class="fas fa-check-circle"></i> جودة عالية</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal up d2">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-flask"></i></div>
+            <h4>مخبر الأسنان</h4>
+            <p>مخبر متطور داخل العيادة لصناعة التركيبات بدقة وسرعة عالية.</p>
+            <span class="srv-tag"><i class="fas fa-microscope"></i> متطور</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal up d3">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-baby"></i></div>
+            <h4>معالجة الأطفال</h4>
+            <p>رعاية أسنان الأطفال في بيئة ودية ومريحة لتجربة ممتعة.</p>
+            <span class="srv-tag"><i class="fas fa-smile"></i> ودي للأطفال</span>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal up d4">
+          <div class="srv-card">
+            <div class="srv-icon"><i class="fas fa-procedures"></i></div>
+            <h4>علاج الجذور</h4>
+            <p>معالجة قنوات الجذر بتقنية الروتاري الحديثة بدون ألم.</p>
+            <span class="srv-tag"><i class="fas fa-heart"></i> بلا ألم</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       STATS
+  ════════════════════════════════════════════ -->
+  <section id="stats">
+    <div class="container">
+      <div class="row text-center g-2">
+        <div class="col-6 col-lg-3 reveal scale d1">
+          <div class="stat-block">
+            <div class="stat-icon-wrap"><i class="fas fa-users"></i></div>
+            <div class="stat-number" data-target="5000" data-prefix="+">0</div>
+            <div class="stat-label">مريض سعيد</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal scale d2">
+          <div class="stat-block">
+            <div class="stat-icon-wrap"><i class="fas fa-calendar-alt"></i></div>
+            <div class="stat-number" data-target="15" data-prefix="+">0</div>
+            <div class="stat-label">سنة خبرة طبية</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal scale d3">
+          <div class="stat-block">
+            <div class="stat-icon-wrap"><i class="fas fa-award"></i></div>
+            <div class="stat-number" data-target="1200" data-prefix="+">0</div>
+            <div class="stat-label">عملية ناجحة</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal scale d4">
+          <div class="stat-block">
+            <div class="stat-icon-wrap"><i class="fas fa-heart"></i></div>
+            <div class="stat-number" data-target="98" data-suffix="%">0</div>
+            <div class="stat-label">رضا المرضى</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       GALLERY
+  ════════════════════════════════════════════ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="text-center mb-5 reveal up">
+        <div class="sec-badge"><i class="fas fa-images"></i> معرض الصور</div>
+        <h2 class="sec-title">قبل <span>وبعد</span> العلاج</h2>
+        <p class="sec-desc mx-auto">تحولات مذهلة حقيقية أنجزتها عيادتنا لمرضانا الكرام</p>
+      </div>
+      <div class="gallery-grid reveal up">
+        <div class="g-item">
+          <div class="g-placeholder"><i class="fas fa-tooth"></i><span>زراعة أسنان</span></div>
+          <div class="g-overlay"><div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>قبل وبعد الزراعة</span></div></div>
+        </div>
+        <div class="g-item">
+          <div class="g-placeholder"><i class="fas fa-star"></i><span>الابتسامة الهوليودية</span></div>
+          <div class="g-overlay"><div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>ابتسامة هوليودية</span></div></div>
+        </div>
+        <div class="g-item">
+          <div class="g-placeholder"><i class="fas fa-magic"></i><span>تبييض الأسنان</span></div>
+          <div class="g-overlay"><div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>تبييض ليزر</span></div></div>
+        </div>
+        <div class="g-item">
+          <div class="g-placeholder"><i class="fas fa-crown"></i><span>تركيبات الزيركون</span></div>
+          <div class="g-overlay"><div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>تركيبات فاخرة</span></div></div>
+        </div>
+        <div class="g-item">
+          <div class="g-placeholder"><i class="fas fa-flask"></i><span>مخبر الأسنان</span></div>
+          <div class="g-overlay"><div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>مخبرنا المتطور</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       TESTIMONIALS
+  ════════════════════════════════════════════ -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5 reveal up">
+        <div class="sec-badge"><i class="fas fa-comment-alt"></i> آراء المرضى</div>
+        <h2 class="sec-title">ماذا يقول <span>مرضانا</span></h2>
+        <p class="sec-desc mx-auto">قصص نجاح حقيقية من مرضانا الكرام في حلب وسوريا</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4 reveal up d1">
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="test-text">"تجربتي في عيادة د. وسام كانت رائعة جداً. الطاقم الطبي محترف والنتيجة فوق التوقعات. ابتسامتي تغيرت كلياً بعد عملية الزراعة."</p>
+            <div class="test-author">
+              <div class="author-av">أ</div>
+              <div><div class="author-name">أحمد الخالد</div><div class="author-since">مريض منذ 2022 · زراعة أسنان</div></div>
             </div>
           </div>
-          <div class="col-6">
-            <div class="about-feature-card text-center" style="padding:16px">
-              <i class="fas fa-wheelchair" style="font-size:24px;color:var(--accent);margin-bottom:8px;display:block"></i>
-              <div style="font-size:13px;font-weight:700;color:#fff">وصول سهل</div>
-              <div style="font-size:12px;color:rgba(255,255,255,0.5)">بيئة ملائمة</div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal up d2">
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="test-text">"قمت بعملية تبييض الأسنان بالليزر والنتيجة كانت مذهلة! الألوان تغيرت بشكل لافت والعيادة نظيفة جداً ومريحة."</p>
+            <div class="test-author">
+              <div class="author-av">س</div>
+              <div><div class="author-name">سارة المحمد</div><div class="author-since">مريضة منذ 2023 · تبييض ليزر</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal up d3">
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="test-text">"عملت الابتسامة الهوليودية وما صدقت شو التغيير! الدكتور وسام خبير ومحترف وشرح لي كل شيء بالتفصيل."</p>
+            <div class="test-author">
+              <div class="author-av">ر</div>
+              <div><div class="author-name">رنا العمر</div><div class="author-since">مريضة منذ 2023 · ابتسامة هوليودية</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal up d4">
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="test-text">"ابني عمل تقويم الأسنان هنا والنتائج ممتازة. العيادة متخصصة في الأطفال والدكتور صبور جداً معهم."</p>
+            <div class="test-author">
+              <div class="author-av">م</div>
+              <div><div class="author-name">منى الأحمد</div><div class="author-since">مريضة منذ 2021 · تقويم أطفال</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal up d5">
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="test-text">"التركيبات الزيركون دقيقة جداً ولونها طبيعي لدرجة أن أحداً لم يعرف أنها تركيبات. شكراً للمخبر المتطور."</p>
+            <div class="test-author">
+              <div class="author-av">خ</div>
+              <div><div class="author-name">خالد السليمان</div><div class="author-since">مريض منذ 2022 · تركيبات زيركون</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4 reveal up d6">
+          <div class="test-card">
+            <div class="stars">★★★★★</div>
+            <p class="test-text">"كنت خايفة من علاج الجذور بس الدكتور طمنني وعمل العلاج بدون ألم خالص. جداً ممنونة من الفريق المتميز."</p>
+            <div class="test-author">
+              <div class="author-av">ل</div>
+              <div><div class="author-name">لينا الحسن</div><div class="author-since">مريضة منذ 2023 · علاج جذور</div></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="container">
-    <div class="row g-5">
-      <div class="col-lg-4">
-        <div class="footer-logo">
-          <div class="footer-logo-circle"><i class="fas fa-tooth"></i></div>
-          <div>
-            <div class="footer-name">د. وسام ميسر</div>
-            <div class="footer-name-sub">لطب وتجميل الأسنان</div>
+  <!-- ════════════════════════════════════════════
+       BOOKING
+  ════════════════════════════════════════════ -->
+  <section id="booking">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+
+        <!-- Info Side -->
+        <div class="col-lg-5 reveal left">
+          <div class="sec-badge"><i class="fas fa-calendar-check"></i> حجز موعد</div>
+          <h2 class="sec-title">احجز موعدك<br/><span>الآن</span></h2>
+          <div class="divider"></div>
+          <p class="sec-desc mb-5">
+            نحن هنا لخدمتك. احجز موعدك وسيُرسَل طلبك مباشرةً عبر واتساب للتأكيد الفوري.
+          </p>
+
+          <div class="info-tile">
+            <div class="info-icon-w"><i class="fas fa-phone-alt"></i></div>
+            <div><div class="info-lbl">اتصل بنا</div><div class="info-val">0933912076</div></div>
+          </div>
+          <div class="info-tile">
+            <div class="info-icon-w" style="background:linear-gradient(135deg,#25d366,#128c7e)">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div><div class="info-lbl">واتساب مباشر</div><div class="info-val">0933912076</div></div>
+          </div>
+          <div class="info-tile">
+            <div class="info-icon-w"><i class="fas fa-clock"></i></div>
+            <div><div class="info-lbl">ساعات الدوام</div><div class="info-val">السبت – الخميس · 9 ص – 8 م</div></div>
+          </div>
+          <div class="info-tile">
+            <div class="info-icon-w"><i class="fas fa-map-marker-alt"></i></div>
+            <div><div class="info-lbl">العنوان</div><div class="info-val">سوريا - حلب - حلب الجديدة</div></div>
           </div>
         </div>
-        <p class="footer-desc">
-          مركز طبي متكامل في قلب حلب الجديدة، نقدم أرقى خدمات طب الأسنان والتجميل السني بأحدث التقنيات العالمية وفريق طبي متخصص.
-        </p>
-        <div class="footer-social">
-          <a href="#" class="social-btn fb" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-btn ig" title="انستغرام"><i class="fab fa-instagram"></i></a>
-          <a href="https://wa.me/963933912076" target="_blank" class="social-btn wa" title="واتساب"><i class="fab fa-whatsapp"></i></a>
-          <a href="#" class="social-btn tw" title="تويتر X"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" class="social-btn yt" title="يوتيوب"><i class="fab fa-youtube"></i></a>
-          <a href="#" class="social-btn snap" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+
+        <!-- Form Side -->
+        <div class="col-lg-7 reveal right">
+          <div class="booking-wrap">
+            <h3 style="font-size:20px;font-weight:900;color:var(--text-h);margin-bottom:26px;">
+              <i class="fas fa-calendar-plus" style="color:var(--accent);margin-left:10px;"></i>
+              نموذج حجز الموعد
+            </h3>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label class="flabel">الاسم الكامل *</label>
+                <input type="text" class="finput" placeholder="أدخل اسمك الكامل" id="bName" />
+              </div>
+              <div class="col-sm-6">
+                <label class="flabel">رقم الهاتف *</label>
+                <input type="tel" class="finput" placeholder="09XXXXXXXX" id="bPhone" />
+              </div>
+              <div class="col-sm-6">
+                <label class="flabel">نوع الخدمة *</label>
+                <select class="finput" id="bService">
+                  <option value="">اختر الخدمة</option>
+                  <option>زراعة الأسنان</option>
+                  <option>تقويم الأسنان</option>
+                  <option>تجميل الأسنان (فينيرز)</option>
+                  <option>تبييض الأسنان بالليزر</option>
+                  <option>التركيبات السنية (زيركون)</option>
+                  <option>مخبر الأسنان</option>
+                  <option>معالجة أسنان الأطفال</option>
+                  <option>علاج قنوات الجذور</option>
+                  <option>كشف وفحص عام</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label class="flabel">التاريخ المطلوب *</label>
+                <input type="date" class="finput" id="bDate" />
+              </div>
+              <div class="col-12">
+                <label class="flabel">ملاحظات إضافية</label>
+                <textarea class="finput" rows="3"
+                          placeholder="أي تفاصيل أو ملاحظات..." id="bNote"
+                          style="resize:none;"></textarea>
+              </div>
+              <div class="col-12">
+                <button class="btn-submit" onclick="submitBooking()">
+                  <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+                  إرسال عبر واتساب
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-6 col-lg-2">
-        <div class="footer-links-title">روابط سريعة</div>
-        <a href="#hero" class="footer-link"><i class="fas fa-chevron-left"></i> الرئيسية</a>
-        <a href="#about" class="footer-link"><i class="fas fa-chevron-left"></i> من نحن</a>
-        <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> خدماتنا</a>
-        <a href="#gallery" class="footer-link"><i class="fas fa-chevron-left"></i> المعرض</a>
-        <a href="#testimonials" class="footer-link"><i class="fas fa-chevron-left"></i> آراء المرضى</a>
-        <a href="#contact" class="footer-link"><i class="fas fa-chevron-left"></i> اتصل بنا</a>
-      </div>
-      <div class="col-6 col-lg-3">
-        <div class="footer-links-title">خدماتنا</div>
-        <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> زراعة الأسنان</a>
-        <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تقويم الأسنان</a>
-        <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تجميل الأسنان</a>
-        <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تبييض الأسنان</a>
-        <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> التركيبات السنية</a>
-        <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> مخبر الأسنان</a>
-      </div>
-      <div class="col-lg-3">
-        <div class="footer-links-title">معلومات التواصل</div>
-        <div class="d-flex flex-column gap-3">
-          <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.6);font-size:13px">
-            <i class="fas fa-map-marker-alt" style="color:var(--accent);width:16px"></i>
-            سوريا - حلب - حلب الجديدة
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.6);font-size:13px">
-            <i class="fas fa-phone" style="color:var(--accent);width:16px"></i>
-            0933912076
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.6);font-size:13px">
-            <i class="fas fa-clock" style="color:var(--accent);width:16px"></i>
-            السبت – الخميس · 9 ص – 8 م
-          </div>
-        </div>
-        <a href="#booking" class="btn-hero-primary mt-4" style="text-decoration:none;font-size:13px;padding:11px 20px">
-          <i class="fas fa-calendar-plus"></i> احجز موعد
-        </a>
+
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">
-        © 2025 د. وسام ميسر لطب وتجميل الأسنان · جميع الحقوق محفوظة
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="text-center mb-5 reveal up">
+        <div class="sec-badge"><i class="fas fa-map-marker-alt"></i> تواصل معنا</div>
+        <h2 class="sec-title">نحن هنا <span>لخدمتك</span></h2>
       </div>
-      <div class="footer-copy">
-        صُنع بـ <span class="footer-heart">❤</span> في سوريا
+      <div class="row g-5">
+
+        <!-- Contact Cards -->
+        <div class="col-lg-6 reveal left">
+          <a href="tel:0933912076" class="c-card" style="color:inherit;">
+            <div class="c-icon"><i class="fas fa-phone-alt"></i></div>
+            <div><div class="c-lbl">هاتف العيادة</div><div class="c-val">0933912076</div></div>
+          </a>
+          <a href="https://wa.me/963933912076" target="_blank" class="c-card" style="color:inherit;">
+            <div class="c-icon" style="background:linear-gradient(135deg,#25d366,#128c7e);">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div><div class="c-lbl">واتساب</div><div class="c-val">0933912076</div></div>
+          </a>
+          <div class="c-card">
+            <div class="c-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div><div class="c-lbl">العنوان</div><div class="c-val">سوريا - حلب - حلب الجديدة</div></div>
+          </div>
+          <div class="c-card">
+            <div class="c-icon"><i class="fas fa-clock"></i></div>
+            <div><div class="c-lbl">ساعات الدوام</div><div class="c-val">السبت – الخميس · 9:00 ص – 8:00 م</div></div>
+          </div>
+          <div class="c-card">
+            <div class="c-icon"><i class="fas fa-envelope"></i></div>
+            <div><div class="c-lbl">البريد الإلكتروني</div><div class="c-val">info@drwissam-dental.com</div></div>
+          </div>
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="https://wa.me/963933912076" target="_blank"
+               class="btn-primary-hero" style="font-size:14px;padding:12px 24px;">
+              <i class="fab fa-whatsapp"></i> واتساب
+            </a>
+            <a href="tel:0933912076" class="btn-outline-hero" style="font-size:14px;padding:11px 22px;">
+              <i class="fas fa-phone-alt"></i> اتصل الآن
+            </a>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="col-lg-6 reveal right">
+          <div class="map-wrap">
+            <div class="map-ph"
+                 onclick="window.open('https://maps.google.com/?q=حلب+الجديدة+سوريا','_blank')">
+              <i class="fas fa-map-marked-alt"></i>
+              <span>حلب الجديدة - سوريا</span>
+              <small>اضغط لفتح الخريطة على Google Maps</small>
+            </div>
+          </div>
+          <div class="row g-3 mt-3">
+            <div class="col-6">
+              <div class="feat-card text-center" style="padding:18px;">
+                <i class="fas fa-parking" style="font-size:26px;color:var(--accent);margin-bottom:10px;display:block;"></i>
+                <div style="font-size:13px;font-weight:800;color:var(--text-h);">موقف سيارات</div>
+                <div style="font-size:12px;color:var(--text-muted);">متاح مجاناً</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="feat-card text-center" style="padding:18px;">
+                <i class="fas fa-wheelchair" style="font-size:26px;color:var(--accent);margin-bottom:10px;display:block;"></i>
+                <div style="font-size:13px;font-weight:800;color:var(--text-h);">وصول سهل</div>
+                <div style="font-size:12px;color:var(--text-muted);">بيئة ملائمة</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-</footer>
+  </section>
 
-<!-- ===== WHATSAPP FLOAT ===== -->
-<div class="whatsapp-float">
-  <div style="position:relative;display:inline-block">
-    <a href="https://wa.me/963933912076" target="_blank" class="wa-btn" title="تواصل عبر واتساب">
+  <!-- ════════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Brand + Socials -->
+        <div class="col-lg-4">
+          <div class="footer-logo">
+            <div class="footer-logo-ico"><i class="fas fa-tooth"></i></div>
+            <div>
+              <div class="footer-name">د. وسام ميسر</div>
+              <div class="footer-name-sub">لطب وتجميل الأسنان</div>
+            </div>
+          </div>
+          <p class="footer-desc">
+            مركز طبي متكامل في قلب حلب الجديدة، نقدم أرقى خدمات طب الأسنان
+            والتجميل السني بأحدث التقنيات العالمية.
+          </p>
+          <div class="socials">
+            <a href="#" class="soc fb" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="soc ig" title="انستغرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/963933912076" target="_blank" class="soc wa" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="soc tw" title="تويتر X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="soc yt" title="يوتيوب"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="soc sn" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+            <a href="#" class="soc tk" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-lg-2">
+          <div class="footer-links-title">روابط سريعة</div>
+          <a href="#hero"         class="footer-link"><i class="fas fa-chevron-left"></i> الرئيسية</a>
+          <a href="#about"        class="footer-link"><i class="fas fa-chevron-left"></i> من نحن</a>
+          <a href="#services"     class="footer-link"><i class="fas fa-chevron-left"></i> خدماتنا</a>
+          <a href="#gallery"      class="footer-link"><i class="fas fa-chevron-left"></i> المعرض</a>
+          <a href="#testimonials" class="footer-link"><i class="fas fa-chevron-left"></i> آراء المرضى</a>
+          <a href="#contact"      class="footer-link"><i class="fas fa-chevron-left"></i> اتصل بنا</a>
+        </div>
+
+        <!-- Services Links -->
+        <div class="col-6 col-lg-3">
+          <div class="footer-links-title">خدماتنا</div>
+          <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> زراعة الأسنان</a>
+          <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تقويم الأسنان</a>
+          <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تجميل الأسنان</a>
+          <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تبييض الأسنان</a>
+          <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> التركيبات السنية</a>
+          <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> مخبر الأسنان</a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-3">
+          <div class="footer-links-title">معلومات التواصل</div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:13px;">
+              <i class="fas fa-map-marker-alt" style="color:var(--accent);width:16px;"></i>
+              سوريا - حلب - حلب الجديدة
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:13px;">
+              <i class="fas fa-phone" style="color:var(--accent);width:16px;"></i>
+              0933912076
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:13px;">
+              <i class="fas fa-clock" style="color:var(--accent);width:16px;"></i>
+              السبت – الخميس · 9 ص – 8 م
+            </div>
+          </div>
+          <a href="#booking" class="btn-primary-hero mt-4" style="font-size:13px;padding:11px 20px;">
+            <i class="fas fa-calendar-plus"></i> احجز موعد
+          </a>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2025 د. وسام ميسر لطب وتجميل الأسنان · جميع الحقوق محفوظة</div>
+        <div class="footer-copy">صُنع بـ <span class="footer-heart">❤</span> في سوريا</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════
+       WHATSAPP FLOAT BUTTON
+  ════════════════════════════════════════════ -->
+  <div class="wa-float">
+    <a href="https://wa.me/963933912076" target="_blank"
+       class="wa-btn" title="تواصل عبر واتساب">
       <i class="fab fa-whatsapp"></i>
-      <div class="wa-online-dot"></div>
+      <div class="wa-online"></div>
     </a>
-    <div class="wa-tooltip">
-      تواصل معنا<br/><span>0933912076</span>
+    <div class="wa-label">تواصل معنا&nbsp;<span>0933912076</span></div>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       SUCCESS MODAL
+  ════════════════════════════════════════════ -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box">
+      <div class="modal-check"><i class="fas fa-check-circle"></i></div>
+      <div class="modal-title">تم إرسال طلب الحجز!</div>
+      <p class="modal-sub">
+        جاري تحويلك إلى واتساب لإتمام الحجز مع فريقنا.<br/>
+        سيتواصل معك الدكتور وسام لتأكيد الموعد.
+      </p>
+      <button class="modal-close" onclick="closeModal()">
+        <i class="fas fa-thumbs-up" style="margin-left:8px;"></i> رائع، شكراً!
+      </button>
     </div>
   </div>
-</div>
 
-<!-- ===== BOOKING SUCCESS MODAL ===== -->
-<div class="custom-modal-overlay" id="successModal">
-  <div class="custom-modal-box">
-    <div class="modal-check"><i class="fas fa-check-circle"></i></div>
-    <div class="modal-title-ar">تم إرسال طلب الحجز!</div>
-    <p class="modal-sub">
-      شكراً لك! تم استلام طلب حجزك بنجاح.<br/>
-      سيتواصل معك فريقنا خلال 24 ساعة لتأكيد الموعد.
-    </p>
-    <button class="btn-close-modal" onclick="closeModal()">
-      <i class="fas fa-thumbs-up me-2"></i> رائع، شكراً!
-    </button>
-  </div>
-</div>
+  <!-- ════════════════════════════════════════════
+       VENDORS JS
+  ════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script>
-  // ===== NAVBAR SCROLL =====
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 50);
-  });
+  <!-- ════════════════════════════════════════════
+       PROJECT JS (order matters)
+  ════════════════════════════════════════════ -->
+  <script src="static/js/booking.js"></script>
+  <script src="static/js/main.js"></script>
 
-  // ===== MOBILE MENU =====
-  const navToggle = document.getElementById('navToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-  navToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('d-none');
-    mobileMenu.classList.toggle('d-flex');
-  });
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobileMenu.classList.add('d-none');
-      mobileMenu.classList.remove('d-flex');
-    });
-  });
-
-  // ===== PARTICLES =====
-  const particlesContainer = document.getElementById('particles');
-  for (let i = 0; i < 18; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 4 + 2;
-    p.style.cssText = `
-      width:${size}px; height:${size}px;
-      background:${Math.random() > 0.5 ? '#00b4d8' : '#ffffff'};
-      left:${Math.random() * 100}%;
-      animation-duration:${Math.random() * 15 + 10}s;
-      animation-delay:${Math.random() * 10}s;
-    `;
-    particlesContainer.appendChild(p);
-  }
-
-  // ===== BG LINES =====
-  const bgLines = document.getElementById('bgLines');
-  for (let i = 0; i < 8; i++) {
-    const l = document.createElement('div');
-    l.className = 'bg-line';
-    l.style.cssText = `
-      left:${i * 13 + 2}%;
-      height:${Math.random() * 200 + 100}px;
-      animation-duration:${Math.random() * 8 + 6}s;
-      animation-delay:${Math.random() * 5}s;
-    `;
-    bgLines.appendChild(l);
-  }
-
-  // ===== SCROLL REVEAL =====
-  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
-    });
-  }, { threshold: 0.12 });
-  reveals.forEach(r => observer.observe(r));
-
-  // ===== ANIMATED COUNTERS =====
-  const counters = document.querySelectorAll('.stat-number[data-target]');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !entry.target.dataset.animated) {
-        entry.target.dataset.animated = true;
-        animateCounter(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-  counters.forEach(c => counterObserver.observe(c));
-
-  function animateCounter(el) {
-    const target = parseInt(el.dataset.target);
-    const duration = 2000;
-    const step = target / (duration / 16);
-    let current = 0;
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      const suffix = el.textContent.includes('%') ? '' : (target > 100 ? '+' : '');
-      const prefix = el.parentElement.querySelector('.stat-text').textContent.includes('%') ? '' : '';
-      el.textContent = Math.floor(current) + (target >= 98 && target <= 100 ? '' : '+');
-      if (target > 100) el.textContent = '+' + Math.floor(current);
-      else if (target === 15) el.textContent = '+' + Math.floor(current);
-      else if (target === 98) el.textContent = Math.floor(current);
-    }, 16);
-  }
-
-  // ===== BOOKING SUBMIT =====
-  function submitBooking() {
-    const name = document.getElementById('bookName').value.trim();
-    const phone = document.getElementById('bookPhone').value.trim();
-    const service = document.getElementById('bookService').value;
-    const date = document.getElementById('bookDate').value;
-    if (!name || !phone || !service || !date) {
-      alert('يرجى ملء جميع الحقول المطلوبة (*)');
-      return;
-    }
-    // Build WhatsApp message
-    const note = document.getElementById('bookNote').value.trim();
-    const msg = `مرحباً، أود حجز موعد:\n👤 الاسم: ${name}\n📞 الهاتف: ${phone}\n🦷 الخدمة: ${service}\n📅 التاريخ: ${date}${note ? '\n📝 ملاحظات: ' + note : ''}`;
-    const waUrl = `https://wa.me/963933912076?text=${encodeURIComponent(msg)}`;
-    document.getElementById('successModal').classList.add('show');
-    setTimeout(() => { window.open(waUrl, '_blank'); }, 800);
-  }
-
-  function closeModal() {
-    document.getElementById('successModal').classList.remove('show');
-  }
-
-  // Close modal on overlay click
-  document.getElementById('successModal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-  });
-
-  // ===== SMOOTH ACTIVE NAV =====
-  const sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    sections.forEach(sec => {
-      const top = sec.offsetTop - 100;
-      const bottom = top + sec.offsetHeight;
-      const link = document.querySelector(`.nav-link-custom[href="#${sec.id}"]`);
-      if (link) {
-        if (scrollY >= top && scrollY < bottom) {
-          link.style.color = 'var(--accent)';
-        } else {
-          link.style.color = '';
-        }
-      }
-    });
-  });
-</script>
 </body>
 </html>
