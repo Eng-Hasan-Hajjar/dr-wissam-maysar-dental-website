@@ -157,3 +157,187 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   waBtn.addEventListener('mouseenter', () => { waLabel.style.opacity='1'; waLabel.style.transform='translateX(0) scale(1)'; });
   waBtn.addEventListener('mouseleave', () => { waLabel.style.opacity='0'; waLabel.style.transform='translateX(-10px) scale(.9)'; });
 })();
+
+
+// ════════════════════════════
+// 12. TESTIMONIALS SLIDER
+// ════════════════════════════
+(function initTestimonialSlider() {
+  const track    = document.getElementById('tsTrack');
+  const stage    = document.getElementById('tsStage');
+  const dotsWrap = document.getElementById('tsDots');
+  const prevBtn  = document.getElementById('tsPrev');
+  const nextBtn  = document.getElementById('tsNext');
+  const progBar  = document.getElementById('tsProgress');
+  if (!track) return;
+
+  const slides     = Array.from(track.querySelectorAll('.ts-slide'));
+  const TOTAL      = slides.length;
+  const AUTO_MS    = 5000;   // autoplay interval
+  let current      = 0;
+  let autoTimer    = null;
+  let progTimer    = null;
+  let progStart    = null;
+  let isDragging   = false;
+  let dragStartX   = 0;
+  let dragDelta    = 0;
+
+  // ── Per-view count ───────────────────────
+  function getPerView() {
+    const w = window.innerWidth;
+    if (w < 769)  return 1;
+    if (w < 1025) return 2;
+    return 3;
+  }
+
+  // ── Build dots ───────────────────────────
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const pv = getPerView();
+    const pages = Math.ceil(TOTAL / pv);
+    for (let i = 0; i < pages; i++) {
+      const d = document.createElement('button');
+      d.className = 'ts-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'الصفحة ' + (i + 1));
+      d.addEventListener('click', () => goTo(i * pv));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  // ── Update dot active ─────────────────────
+  function updateDots() {
+    const pv   = getPerView();
+    const page = Math.floor(current / pv);
+    dotsWrap.querySelectorAll('.ts-dot').forEach((d, i) => d.classList.toggle('active', i === page));
+  }
+
+  // ── Apply slide states ───────────────────
+  function updateSlides() {
+    const pv = getPerView();
+    slides.forEach((s, i) => {
+      s.classList.remove('active', 'adjacent');
+      if (i >= current && i < current + pv) {
+        s.classList.add('active');
+      } else if (i === current - 1 || i === current + pv) {
+        s.classList.add('adjacent');
+      }
+    });
+  }
+
+  // ── Move track ───────────────────────────
+  function moveTrack(extra) {
+    const pv       = getPerView();
+    const slideW   = slides[0].offsetWidth + 24; // gap=24
+    const offset   = -(current * slideW) + (extra || 0);
+    // RTL: positive offset moves right
+    track.style.transform = `translateX(${offset}px)`;
+  }
+
+  // ── Go to index ──────────────────────────
+  function goTo(idx) {
+    const pv = getPerView();
+    const maxIdx = Math.max(0, TOTAL - pv);
+    current = Math.min(Math.max(idx, 0), maxIdx);
+    track.style.transition = 'transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94)';
+    moveTrack();
+    updateSlides();
+    updateDots();
+  }
+
+  // ── Navigate ─────────────────────────────
+  function prev() { goTo(current - getPerView()); resetAutoPlay(); }
+  function next() {
+    const pv = getPerView();
+    if (current + pv >= TOTAL) goTo(0);
+    else goTo(current + pv);
+    resetAutoPlay();
+  }
+
+  // ── Progress bar animation ───────────────
+  function startProgress() {
+    clearInterval(progTimer);
+    progStart = Date.now();
+    progBar.style.transition = 'none';
+    progBar.style.width = '0%';
+    requestAnimationFrame(() => {
+      progTimer = setInterval(() => {
+        const elapsed = Date.now() - progStart;
+        const pct = Math.min((elapsed / AUTO_MS) * 100, 100);
+        progBar.style.width = pct + '%';
+        if (pct >= 100) clearInterval(progTimer);
+      }, 30);
+    });
+  }
+
+  // ── AutoPlay ─────────────────────────────
+  function startAutoPlay() {
+    clearInterval(autoTimer);
+    startProgress();
+    autoTimer = setInterval(() => {
+      const pv = getPerView();
+      if (current + pv >= TOTAL) goTo(0);
+      else goTo(current + pv);
+      startProgress();
+    }, AUTO_MS);
+  }
+  function resetAutoPlay() { startAutoPlay(); }
+
+  // ── Touch / Mouse drag ───────────────────
+  function onDragStart(x) {
+    isDragging = true;
+    dragStartX = x;
+    dragDelta  = 0;
+    track.style.transition = 'none';
+  }
+  function onDragMove(x) {
+    if (!isDragging) return;
+    dragDelta = x - dragStartX;
+    moveTrack(dragDelta);
+  }
+  function onDragEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    const threshold = 60;
+    if (dragDelta < -threshold) next();
+    else if (dragDelta > threshold) prev();
+    else goTo(current);
+  }
+
+  // Touch events
+  stage.addEventListener('touchstart', e => onDragStart(e.touches[0].clientX), { passive: true });
+  stage.addEventListener('touchmove',  e => onDragMove(e.touches[0].clientX),  { passive: true });
+  stage.addEventListener('touchend',   onDragEnd);
+
+  // Mouse drag
+  stage.addEventListener('mousedown',  e => onDragStart(e.clientX));
+  window.addEventListener('mousemove', e => isDragging && onDragMove(e.clientX));
+  window.addEventListener('mouseup',   onDragEnd);
+
+  // Buttons
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  next();
+    if (e.key === 'ArrowRight') prev();
+  });
+
+  // Pause on hover
+  stage.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  stage.addEventListener('mouseleave', resetAutoPlay);
+
+  // Resize
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      buildDots(); goTo(0); startAutoPlay();
+    }, 200);
+  });
+
+  // ── Init ─────────────────────────────────
+  buildDots();
+  goTo(0);
+  startAutoPlay();
+})();
