@@ -1,0 +1,312 @@
+/* ═══════════════════════════════════════════════════
+   mobile.css  –  Mobile-First Complete Fix
+   مُحسَّن بالكامل لإصلاح مشكلة القطع على الموبايل
+═══════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════
+   FIX ROOT – منع أي overflow أفقي
+══════════════════════════════════════════ */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+.container, .container-fluid {
+  overflow-x: hidden;
+}
+/* منع أي عنصر من تجاوز عرض الشاشة */
+* { max-width: 100%; }
+img, video, iframe, embed, object { max-width: 100%; }
+
+/* ══════════════════════════
+   NAVBAR – MOBILE
+══════════════════════════ */
+@media (max-width: 991px) {
+  .nav-logo            { width: 42px; height: 42px; border-radius: 12px; }
+  .nav-logo i          { font-size: 20px; }
+  .nav-brand-text .clinic-name { font-size: 14px; }
+  .nav-brand-text .clinic-sub  { font-size: 10px; }
+  .theme-toggle        { width: 38px; height: 38px; font-size: 15px; }
+  .mob-toggle          { width: 38px; height: 38px; }
+  .nav-inner           { padding: 10px 0; }
+  #navbar.scrolled .nav-inner { padding: 8px 0; }
+  /* prevent navbar overflow */
+  .nav-inner .container { padding-left: 12px; padding-right: 12px; }
+}
+
+/* ══════════════════════════
+   HERO – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  #hero {
+    padding-top: 80px;
+    min-height: 100svh;
+    padding-bottom: 50px;
+    overflow: hidden;
+  }
+  /* hide heavy bg elements */
+  .hero-ring, .orb { display: none !important; }
+
+  /* badge */
+  .hero-badge {
+    font-size: 11px; padding: 6px 12px;
+    margin-bottom: 14px; flex-wrap: wrap;
+    text-align: center; justify-content: center;
+    max-width: calc(100vw - 48px);
+  }
+
+  /* title – key fix: no negative margins */
+  .hero-title {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem) !important;
+    margin-bottom: 12px; text-align: center;
+    word-break: break-word; overflow-wrap: break-word;
+    padding: 0 4px;
+  }
+  .hero-title .line2 {
+    font-size: clamp(0.95rem, 4vw, 1.3rem) !important;
+    margin-top: 6px; display: block;
+  }
+  .hero-title .grad { display: inline; }
+
+  /* desc */
+  .hero-desc {
+    font-size: 14px; text-align: center;
+    margin-bottom: 22px; max-width: 100%;
+    padding: 0 4px; line-height: 1.8;
+  }
+
+  /* buttons – full width stacked */
+  .hero-btns {
+    flex-direction: column; gap: 10px;
+    align-items: stretch;
+  }
+  .hero-btns .btn-primary-hero,
+  .hero-btns .btn-outline-hero {
+    width: 100%; justify-content: center;
+    padding: 13px 16px; font-size: 14.5px;
+    border-radius: 12px;
+  }
+
+  /* mini stats → 2×2 grid */
+  .hero-mini-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px; margin-top: 24px;
+    flex-direction: unset; flex-wrap: unset;
+  }
+  .mini-stat-sep { display: none !important; }
+  .mini-stat {
+    background: var(--glass2);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 8px; text-align: center;
+  }
+  .mini-stat .num { font-size: 19px; }
+  .mini-stat .lbl { font-size: 11px; }
+
+  /* image card */
+  .hero-img-wrap   { margin-top: 30px; }
+  .hero-img-card   {
+    width: min(260px, 78vw) !important;
+    border-radius: 22px 22px 55px 22px !important;
+  }
+  .float-card      { display: none !important; }
+  .scroll-hint     { display: none !important; }
+
+  /* hero column centering */
+  .col-12.col-lg-6.text-center { text-align: center !important; }
+}
+
+/* ══════════════════════════
+   ABOUT – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  .about-img {
+    max-width: min(320px, 90vw);
+    aspect-ratio: 3/2; margin-bottom: 20px;
+  }
+  .about-img-badge {
+    bottom: 10px; right: 10px;
+    padding: 8px 12px;
+  }
+  .about-img-badge .bn { font-size: 20px; }
+}
+
+/* ══════════════════════════
+   SERVICES – MOBILE
+══════════════════════════ */
+@media (max-width: 576px) {
+  .srv-card       { padding: 18px 14px; border-radius: 18px; }
+  .srv-icon       { width: 56px; height: 56px; border-radius: 15px; margin-bottom: 14px; }
+  .srv-icon i     { font-size: 22px; }
+  .srv-card h4    { font-size: 14px; margin-bottom: 7px; }
+  .srv-card p     { font-size: 12.5px; }
+  .srv-tag        { font-size: 11px; padding: 3px 10px; margin-top: 10px; }
+}
+
+/* ══════════════════════════
+   STATS – MOBILE
+══════════════════════════ */
+@media (max-width: 576px) {
+  #stats { padding: 45px 0; }
+  .stat-number  { font-size: clamp(1.8rem, 7vw, 2.6rem) !important; }
+  .stat-label   { font-size: 12px; }
+  .stat-icon-wrap { width: 46px; height: 46px; border-radius: 12px; margin-bottom: 10px; }
+  .stat-icon-wrap i { font-size: 19px; }
+  .stat-block { padding: 16px 8px; }
+}
+
+/* ══════════════════════════
+   GALLERY – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 150px);
+    gap: 10px;
+  }
+  .gallery-grid .g-item:first-child { grid-row: span 1; }
+}
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 130px); }
+}
+
+/* ══════════════════════════
+   TESTIMONIALS SLIDER – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  .ts-rating-bar { padding: 14px 16px; gap: 14px; flex-direction: column; align-items: flex-start; }
+  .ts-rating-divider { display: none; }
+  .ts-big-num { font-size: 2.4rem; }
+  .ts-platforms { gap: 16px; }
+  .ts-stage::before, .ts-stage::after { width: 16px; }
+  .ts-card { padding: 22px 18px 20px; }
+  .ts-text { font-size: 13.5px; min-height: unset; }
+  .ts-btn  { width: 42px; height: 42px; font-size: 15px; }
+}
+
+/* ══════════════════════════
+   BOOKING – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  .booking-wrap { padding: 22px 16px !important; border-radius: 18px; }
+  .info-tile    { padding: 12px 14px; margin-bottom: 10px; }
+  .info-icon-w  { width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; }
+  .info-icon-w i{ font-size: 15px; }
+  .info-lbl     { font-size: 10px; }
+  .info-val     { font-size: 13px; }
+  .btn-submit   { padding: 13px; font-size: 14.5px; }
+  .finput       { padding: 11px 13px; font-size: 13.5px; }
+  .flabel       { font-size: 12.5px; }
+}
+
+/* ══════════════════════════
+   CONTACT – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  .c-card   { padding: 13px 14px; margin-bottom: 10px; }
+  .c-icon   { width: 42px; height: 42px; border-radius: 11px; flex-shrink: 0; }
+  .c-icon i { font-size: 17px; }
+  .c-lbl    { font-size: 10px; }
+  .c-val    { font-size: 13.5px; }
+  .map-wrap iframe { height: 240px !important; border-radius: 16px !important; }
+  .map-wrap { border-radius: 16px; }
+}
+
+/* ══════════════════════════
+   TEAM – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  .team-card--founder { flex-direction: column !important; }
+  .team-photo-wrap--founder {
+    width: 100% !important; min-width: unset !important;
+    height: 260px; border-radius: 22px 22px 0 0 !important;
+  }
+  .team-card--founder .team-info {
+    padding: 18px 16px !important; text-align: center !important;
+  }
+  .team-card--founder .team-stats-row { justify-content: center; gap: 14px; }
+  .team-card--founder .team-name { font-size: 1.3rem !important; }
+  .team-card   { border-radius: 18px; }
+  .team-photo-wrap { border-radius: 18px 18px 0 0; }
+  .team-name   { font-size: 13px; }
+  .team-specialty { font-size: 11.5px; }
+  .team-role-tag  { font-size: 10px; padding: 2px 8px; }
+  .team-info      { padding: 10px 10px 0; }
+}
+
+/* ══════════════════════════
+   FOOTER – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  footer { padding: 44px 0 22px; }
+  .footer-logo-ico { width: 46px; height: 46px; border-radius: 13px; }
+  .footer-logo-ico i { font-size: 21px; }
+  .footer-name     { font-size: 14px; }
+  .footer-desc     { font-size: 13px; margin-bottom: 16px; }
+  .footer-bottom {
+    flex-direction: column; text-align: center; gap: 6px;
+    margin-top: 30px; padding-top: 18px;
+  }
+  .footer-copy { font-size: 12px; }
+  .socials     { gap: 8px; }
+  .soc         { width: 38px; height: 38px; font-size: 15px; border-radius: 10px; }
+}
+
+/* ══════════════════════════
+   SHARED SECTION – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  section      { padding: 55px 0; }
+  #stats       { padding: 45px 0; }
+  .sec-title   { font-size: clamp(1.55rem, 6vw, 2rem) !important; word-break: break-word; }
+  .sec-desc    { font-size: 13.5px; padding: 0 2px; }
+  .sec-badge   { font-size: 11.5px; padding: 5px 13px; }
+  .divider     { margin: 10px 0; }
+  .feat-card   { padding: 16px 13px; }
+  .feat-icon   { width: 42px; height: 42px; border-radius: 11px; margin-bottom: 11px; }
+  .feat-icon i { font-size: 18px; }
+  .feat-card h5 { font-size: 13.5px; }
+  .feat-card p  { font-size: 12px; }
+}
+
+/* ══════════════════════════
+   MODAL – MOBILE
+══════════════════════════ */
+@media (max-width: 480px) {
+  .modal-box   { padding: 28px 18px; border-radius: 18px; }
+  .modal-check { font-size: 52px; }
+  .modal-title { font-size: 17px; }
+  .modal-sub   { font-size: 13px; }
+}
+
+/* ══════════════════════════
+   WHATSAPP FLOAT – MOBILE
+══════════════════════════ */
+@media (max-width: 768px) {
+  .wa-float  { bottom: 18px; left: 14px; }
+  .wa-btn    { width: 52px; height: 52px; font-size: 23px; }
+  .wa-label  { display: none; }
+}
+
+/* ══════════════════════════
+   TABLET FIXES
+══════════════════════════ */
+@media (min-width: 769px) and (max-width: 991px) {
+  .hero-title { font-size: clamp(1.9rem, 4.5vw, 2.8rem) !important; }
+  .float-card { display: none !important; }
+  .hero-img-card { width: min(300px, 55vw) !important; }
+}
+
+/* ══════════════════════════
+   TOUCH OPTIMIZATIONS
+══════════════════════════ */
+@media (hover: none) and (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+  /* bigger tap targets */
+  .mob-nav-link { padding: 15px 18px; min-height: 48px; }
+  .btn-primary-hero, .btn-outline-hero,
+  .btn-submit, .btn-nav-cta { min-height: 48px; }
+  /* remove hover animations that cause lag */
+  .srv-card:hover, .test-card:hover,
+  .team-card:hover, .feat-card:hover { transform: none; }
+}

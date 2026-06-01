@@ -7,7 +7,7 @@
 'use strict';
 
 // ── CONFIGURATION ────────────────────────────────
-const WHATSAPP_NUMBER = '963933912076'; // Syria country code + number
+const WHATSAPP_NUMBER = '963999020549'; // Syria country code + number
 
 // ── SHAKE ANIMATION KEYFRAME (injected once) ─────
 (function injectShake() {

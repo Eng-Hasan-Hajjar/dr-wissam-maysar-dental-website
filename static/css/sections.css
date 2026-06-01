@@ -1261,3 +1261,109 @@ footer::before {
   .ts-rating-divider { display: none; }
   .ts-stage::before, .ts-stage::after { width: 20px; }
 }
+
+
+/* ════════════════════════════════════════════
+   DESKTOP PAGE WRAPPER – Elegant Side Margins
+   يُعطي الموقع مساحة جانبية على الشاشات الكبيرة
+════════════════════════════════════════════ */
+
+/* Subtle page wrapper on large screens */
+@media (min-width: 1400px) {
+  body {
+    /* light border frame */
+    position: relative;
+  }
+  body::before,
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0; bottom: 0;
+    width: 20px;
+    background: linear-gradient(
+      to bottom,
+      var(--accent) 0%,
+      transparent 8%,
+      transparent 92%,
+      var(--accent) 100%
+    );
+    opacity: 0.06;
+    z-index: 99990;
+    pointer-events: none;
+  }
+  body::before { right: 0; }
+  body::after  { left:  0; }
+}
+
+/* On very large screens: constrain + center the whole site */
+@media (min-width: 1600px) {
+  /* container gets comfortable padding */
+  .container {
+    max-width: 1320px;
+  }
+}
+
+/* Sections get subtle horizontal breathing room on desktop */
+@media (min-width: 1200px) {
+  section > .container {
+    padding-left:  clamp(16px, 3vw, 48px);
+    padding-right: clamp(16px, 3vw, 48px);
+  }
+  #hero > .container {
+    padding-left:  clamp(20px, 4vw, 60px);
+    padding-right: clamp(20px, 4vw, 60px);
+  }
+  footer > .container {
+    padding-left:  clamp(16px, 3vw, 48px);
+    padding-right: clamp(16px, 3vw, 48px);
+  }
+}
+
+
+/* ════════════════════════════════════════════
+   FOOTER ATTRIBUTION – شركة عقل رقمي
+════════════════════════════════════════════ */
+.footer-dev {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+.footer-dev-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(0,180,232,.25);
+  background: rgba(0,180,232,.07);
+  transition: all .3s;
+}
+.footer-dev-link:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,180,232,.35);
+}
+.footer-dev-link i {
+  font-size: 13px;
+  transition: transform .35s;
+}
+.footer-dev-link:hover i {
+  transform: rotate(15deg) scale(1.2);
+}
+
+/* Dark theme: slightly different shade */
+[data-theme="dark"] .footer-dev-link {
+  border-color: rgba(0,200,232,.3);
+  background: rgba(0,200,232,.08);
+}
+
+@media (max-width: 576px) {
+  .footer-dev { font-size: 12px; }
+}
