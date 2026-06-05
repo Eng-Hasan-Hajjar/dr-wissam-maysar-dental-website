@@ -1,312 +1,656 @@
-/* ═══════════════════════════════════════════════════
-   mobile.css  –  Mobile-First Complete Fix
-   مُحسَّن بالكامل لإصلاح مشكلة القطع على الموبايل
-═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════
+   mobile.css  –  Mobile Full Redesign v4  (Performance-First)
+   د. وسام ميسر – عيادة طب وتجميل الأسنان
 
-/* ══════════════════════════════════════════
-   FIX ROOT – منع أي overflow أفقي
-══════════════════════════════════════════ */
-html, body {
-  overflow-x: hidden !important;
-  max-width: 100vw;
-}
-.container, .container-fluid {
-  overflow-x: hidden;
-}
-/* منع أي عنصر من تجاوز عرض الشاشة */
-* { max-width: 100%; }
-img, video, iframe, embed, object { max-width: 100%; }
+   فلسفة هذا الملف:
+   • الديسكتوب لا يتغيّر إطلاقاً — كل شيء محصور داخل @media
+   • على الموبايل: لا blur إطلاقاً + لا أنيميشن لانهائي ثقيل
+     → تمرير (scroll) سلس تماماً وبدون تعليق
+   • تصميم نظيف فاخر بأسطح صلبة بدل الزجاج الشفاف
+═══════════════════════════════════════════════════════════════ */
 
-/* ══════════════════════════
-   NAVBAR – MOBILE
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   0. FOUNDATION  (كل الشاشات – أساسيات منع التمدد الأفقي)
+════════════════════════════════════════════════════════════ */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; max-width: 100vw; position: relative; }
+* { box-sizing: border-box; }
+img, video, iframe, embed, object, svg { max-width: 100%; height: auto; }
+
+
+/* ════════════════════════════════════════════════════════════
+   1. ⚡ PERFORMANCE LAYER  (≤ 991px : موبايل + تابلت)
+      هذا القسم وحده يحل مشكلة تعليق السكول
+════════════════════════════════════════════════════════════ */
 @media (max-width: 991px) {
-  .nav-logo            { width: 42px; height: 42px; border-radius: 12px; }
-  .nav-logo i          { font-size: 20px; }
-  .nav-brand-text .clinic-name { font-size: 14px; }
-  .nav-brand-text .clinic-sub  { font-size: 10px; }
-  .theme-toggle        { width: 38px; height: 38px; font-size: 15px; }
-  .mob-toggle          { width: 38px; height: 38px; }
-  .nav-inner           { padding: 10px 0; }
-  #navbar.scrolled .nav-inner { padding: 8px 0; }
-  /* prevent navbar overflow */
-  .nav-inner .container { padding-left: 12px; padding-right: 12px; }
+
+  /* (أ) أسطح صلبة بدل الزجاج الشفاف
+     نعيد تعريف متغيرات الزجاج لتصبح مُعتمة → نستطيع إزالة الـ blur
+     دون أن يفقد التصميم مظهره */
+  :root,
+  [data-theme="light"] {
+    --glass:   rgba(255,255,255,0.86);
+    --glass2:  rgba(255,255,255,0.95);
+    --bg-nav:  rgba(240,247,255,0.98);
+    --bg-card: rgba(255,255,255,0.95);
+  }
+  [data-theme="dark"] {
+    --glass:   rgba(13,33,61,0.88);
+    --glass2:  rgba(15,36,66,0.94);
+    --bg-nav:  rgba(4,14,32,0.98);
+    --bg-card: rgba(15,36,66,0.94);
+  }
+
+  /* (ب) إيقاف الـ blur على كل عنصر — السبب الأول للتعليق */
+  *,
+  *::before,
+  *::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* (ج) إخفاء العناصر الزخرفية الثقيلة (تعيد الرسم باستمرار) */
+  .hero-mesh,
+  .orb,
+  .hero-ring,
+  .particle-field,
+  .float-card,
+  .scroll-hint,
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  /* (د) إيقاف الأنيميشن اللانهائي (يعمل 24/7 ويستهلك المعالج) */
+  .hero-img-card,
+  .hero-img-card::after,
+  .team-card--founder::before,
+  .stat-block::before,
+  .wa-btn,
+  .wa-online,
+  .hero-badge-dot,
+  .ts-slide.active .ts-card::after,
+  .map-ph::before,
+  .map-ph i {
+    animation: none !important;
+  }
+
+  /* مؤثرات الـ shimmer / sweep — نلغيها على الموبايل */
+  .hero-img-card::after,
+  .team-card--founder::before,
+  .ts-slide.active .ts-card::after,
+  .btn-submit::before,
+  .btn-primary-hero::after,
+  .srv-card::before {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* (هـ) تمرير سلس بقوة العزم + إلغاء طبقات GPU الزائدة */
+  html, body { -webkit-overflow-scrolling: touch; }
+  .hero-img-card,
+  .team-photo,
+  .ts-slide {
+    will-change: auto !important;
+    transform: none;
+    backface-visibility: visible;
+  }
+  /* نُبقي تسريع المسار وحده (هو العنصر الذي ينزلق فعلاً) */
+  .ts-track { will-change: transform; transform: translateZ(0); }
 }
 
-/* ══════════════════════════
-   HERO – MOBILE
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   2. ROOT SPACING  (≤ 768px : هوامش متساوية)
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    max-width: 100%;
+  }
+  section { padding: 56px 0; overflow-x: hidden; }
+  #stats  { padding: 44px 0; }
+
+  /* عناوين الأقسام */
+  .sec-badge {
+    font-size: 11px;
+    padding: 6px 14px;
+    border-radius: 30px;
+  }
+  .sec-title {
+    font-size: clamp(1.6rem, 6.5vw, 2.1rem) !important;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  .sec-desc {
+    font-size: 13.5px;
+    line-height: 1.8;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .divider { margin: 12px auto; width: 48px; }
+  .text-center .divider { margin-left: auto; margin-right: auto; }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   3. NAVBAR
+════════════════════════════════════════════════════════════ */
+@media (max-width: 991px) {
+  #navbar { border-bottom: 1px solid var(--border); }
+  .nav-inner { padding: 9px 0 !important; }
+  .nav-inner .container { padding-left: 14px !important; padding-right: 14px !important; }
+
+  .nav-logo  { width: 42px; height: 42px; border-radius: 13px; }
+  .nav-logo i { font-size: 20px; }
+  .nav-brand-text .clinic-name { font-size: 14px; font-weight: 900; }
+  .nav-brand-text .clinic-sub  { font-size: 10px; }
+
+  .theme-toggle { width: 38px; height: 38px; font-size: 15px; border-radius: 11px; }
+  .mob-toggle   { width: 40px; height: 40px; border-radius: 11px; }
+  .mob-toggle span { width: 20px; }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   4. HERO  (إعادة تصميم كاملة)
+════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   #hero {
-    padding-top: 80px;
-    min-height: 100svh;
-    padding-bottom: 50px;
+    min-height: auto;
+    padding: 92px 0 50px;
     overflow: hidden;
   }
-  /* hide heavy bg elements */
-  .hero-ring, .orb { display: none !important; }
+  #hero .col-12.col-lg-6.text-center { text-align: center !important; }
 
-  /* badge */
+  /* الشارة العلوية */
   .hero-badge {
-    font-size: 11px; padding: 6px 12px;
-    margin-bottom: 14px; flex-wrap: wrap;
-    text-align: center; justify-content: center;
-    max-width: calc(100vw - 48px);
+    font-size: 10.5px;
+    padding: 6px 14px;
+    margin: 0 auto 16px;
+    max-width: 92vw;
+    white-space: normal;
+    justify-content: center;
+    text-align: center;
+    border-radius: 30px;
   }
 
-  /* title – key fix: no negative margins */
+  /* العنوان */
   .hero-title {
-    font-size: clamp(1.8rem, 7.5vw, 2.4rem) !important;
-    margin-bottom: 12px; text-align: center;
-    word-break: break-word; overflow-wrap: break-word;
-    padding: 0 4px;
+    font-size: clamp(1.9rem, 8vw, 2.5rem) !important;
+    line-height: 1.18;
+    margin-bottom: 14px;
+    word-break: break-word;
   }
+  .hero-title .grad { display: inline-block; }
   .hero-title .line2 {
-    font-size: clamp(0.95rem, 4vw, 1.3rem) !important;
-    margin-top: 6px; display: block;
+    font-size: clamp(0.95rem, 4vw, 1.25rem) !important;
+    margin-top: 8px;
   }
-  .hero-title .grad { display: inline; }
 
-  /* desc */
+  /* الوصف */
   .hero-desc {
-    font-size: 14px; text-align: center;
-    margin-bottom: 22px; max-width: 100%;
-    padding: 0 4px; line-height: 1.8;
+    font-size: 13.5px;
+    line-height: 1.85;
+    margin: 0 auto 22px;
+    max-width: 440px;
   }
 
-  /* buttons – full width stacked */
+  /* الأزرار – عمود كامل */
   .hero-btns {
-    flex-direction: column; gap: 10px;
+    flex-direction: column;
+    gap: 11px;
+    width: 100%;
     align-items: stretch;
   }
   .hero-btns .btn-primary-hero,
   .hero-btns .btn-outline-hero {
-    width: 100%; justify-content: center;
-    padding: 13px 16px; font-size: 14.5px;
-    border-radius: 12px;
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    border-radius: 14px;
+    box-shadow: 0 6px 22px rgba(0,119,182,0.28);
   }
 
-  /* mini stats → 2×2 grid */
+  /* الإحصائيات – شبكة 2×2 ببطاقات أنيقة */
   .hero-mini-stats {
     display: grid !important;
     grid-template-columns: 1fr 1fr;
-    gap: 10px; margin-top: 24px;
-    flex-direction: unset; flex-wrap: unset;
+    gap: 11px;
+    margin-top: 26px;
   }
   .mini-stat-sep { display: none !important; }
   .mini-stat {
     background: var(--glass2);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 12px 8px; text-align: center;
+    border-radius: 16px;
+    padding: 14px 10px;
+    text-align: center;
+    box-shadow: var(--shadow);
   }
-  .mini-stat .num { font-size: 19px; }
-  .mini-stat .lbl { font-size: 11px; }
+  .mini-stat .num { font-size: 20px; font-weight: 900; }
+  .mini-stat .lbl { font-size: 11px; margin-top: 2px; }
 
-  /* image card */
-  .hero-img-wrap   { margin-top: 30px; }
-  .hero-img-card   {
-    width: min(260px, 78vw) !important;
-    border-radius: 22px 22px 55px 22px !important;
+  /* بطاقة صورة الدكتور */
+  .hero-img-wrap { margin-top: 34px; }
+  .hero-img-card {
+    width: min(260px, 76vw) !important;
+    aspect-ratio: 3/4;
+    margin: 0 auto;
+    border-radius: 24px 24px 60px 24px !important;
+    box-shadow: 0 22px 50px rgba(0,80,160,0.22) !important;
+    border: 1px solid var(--border-accent);
   }
-  .float-card      { display: none !important; }
-  .scroll-hint     { display: none !important; }
-
-  /* hero column centering */
-  .col-12.col-lg-6.text-center { text-align: center !important; }
+  .hero-doctor-photo { border-radius: 24px 24px 60px 24px; }
+  .hero-photo-label {
+    padding: 7px 16px;
+    bottom: 14px;
+    border-radius: 24px;
+  }
+  .hero-photo-label span { font-size: 12.5px; }
 }
 
-/* ══════════════════════════
-   ABOUT – MOBILE
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   5. ABOUT
+════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .about-img {
-    max-width: min(320px, 90vw);
-    aspect-ratio: 3/2; margin-bottom: 20px;
+    max-width: min(320px, 86vw);
+    aspect-ratio: 4/3;
+    margin: 0 auto 22px;
+    border-radius: 22px;
   }
-  .about-img-badge {
-    bottom: 10px; right: 10px;
-    padding: 8px 12px;
+  .about-img-badge { bottom: 12px; right: 12px; padding: 10px 16px; border-radius: 14px; }
+  .about-img-badge .bn { font-size: 22px; }
+  .about-img-badge .bl { font-size: 11px; }
+
+  /* بطاقات الميزات – شبكة 2×2 */
+  #about .row.g-3 { --bs-gutter-x: 0.7rem; --bs-gutter-y: 0.7rem; }
+  .feat-card {
+    padding: 18px 14px;
+    border-radius: 18px;
+    height: 100%;
+    box-shadow: var(--shadow);
   }
-  .about-img-badge .bn { font-size: 20px; }
+  .feat-icon { width: 44px; height: 44px; border-radius: 13px; margin-bottom: 12px; }
+  .feat-icon i { font-size: 18px; }
+  .feat-card h5 { font-size: 13.5px; margin-bottom: 6px; }
+  .feat-card p  { font-size: 11.5px; line-height: 1.65; }
 }
 
-/* ══════════════════════════
-   SERVICES – MOBILE
-══════════════════════════ */
-@media (max-width: 576px) {
-  .srv-card       { padding: 18px 14px; border-radius: 18px; }
-  .srv-icon       { width: 56px; height: 56px; border-radius: 15px; margin-bottom: 14px; }
-  .srv-icon i     { font-size: 22px; }
-  .srv-card h4    { font-size: 14px; margin-bottom: 7px; }
-  .srv-card p     { font-size: 12.5px; }
-  .srv-tag        { font-size: 11px; padding: 3px 10px; margin-top: 10px; }
+
+/* ════════════════════════════════════════════════════════════
+   6. SERVICES  (شبكة 2 أعمدة ببطاقات نظيفة)
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  #services .row.g-3,
+  #services .row.g-lg-4 { --bs-gutter-x: 0.75rem; --bs-gutter-y: 0.75rem; }
+
+  .srv-card {
+    padding: 20px 15px;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: var(--shadow);
+  }
+  .srv-icon {
+    width: 56px; height: 56px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2)) !important;
+    border: none;
+  }
+  .srv-icon i { font-size: 24px; color: #fff !important; }
+  .srv-card h4 { font-size: 14px; margin-bottom: 6px; }
+  .srv-card p  { font-size: 12px; line-height: 1.6; }
+  .srv-tag {
+    font-size: 10.5px;
+    padding: 4px 10px;
+    margin-top: 12px;
+    border-radius: 20px;
+  }
 }
 
-/* ══════════════════════════
-   STATS – MOBILE
-══════════════════════════ */
-@media (max-width: 576px) {
-  #stats { padding: 45px 0; }
-  .stat-number  { font-size: clamp(1.8rem, 7vw, 2.6rem) !important; }
-  .stat-label   { font-size: 12px; }
-  .stat-icon-wrap { width: 46px; height: 46px; border-radius: 12px; margin-bottom: 10px; }
-  .stat-icon-wrap i { font-size: 19px; }
-  .stat-block { padding: 16px 8px; }
+
+/* ════════════════════════════════════════════════════════════
+   7. STATS
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  #stats .row { --bs-gutter-x: 0.6rem; --bs-gutter-y: 0.6rem; }
+  .stat-block {
+    padding: 16px 8px;
+    background: var(--glass2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+  .stat-icon-wrap { width: 46px; height: 46px; border-radius: 13px; margin-bottom: 10px; }
+  .stat-icon-wrap i { font-size: 18px; }
+  .stat-number { font-size: clamp(1.7rem, 7vw, 2.3rem) !important; }
+  .stat-label  { font-size: 11.5px; }
 }
 
-/* ══════════════════════════
-   GALLERY – MOBILE
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   8. GALLERY  (شبكة 2 أعمدة مرتبة)
+════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 150px);
-    gap: 10px;
+    gap: 11px;
   }
   .gallery-grid .g-item:first-child { grid-row: span 1; }
+  .g-item { border-radius: 16px; }
+  .g-placeholder i { font-size: 30px; }
+  .g-placeholder span { font-size: 11.5px; }
+  /* على الموبايل: الـ overlay يظهر دائماً (لا hover على اللمس) */
+  .g-overlay { opacity: 1; background: linear-gradient(to top, rgba(0,40,80,0.55) 0%, transparent 60%); }
+  .g-overlay-content i { font-size: 22px; }
+  .g-overlay-content span { font-size: 11.5px; }
 }
-@media (max-width: 480px) {
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(3, 130px); }
-}
-
-/* ══════════════════════════
-   TESTIMONIALS SLIDER – MOBILE
-══════════════════════════ */
-@media (max-width: 768px) {
-  .ts-rating-bar { padding: 14px 16px; gap: 14px; flex-direction: column; align-items: flex-start; }
-  .ts-rating-divider { display: none; }
-  .ts-big-num { font-size: 2.4rem; }
-  .ts-platforms { gap: 16px; }
-  .ts-stage::before, .ts-stage::after { width: 16px; }
-  .ts-card { padding: 22px 18px 20px; }
-  .ts-text { font-size: 13.5px; min-height: unset; }
-  .ts-btn  { width: 42px; height: 42px; font-size: 15px; }
+@media (max-width: 400px) {
+  .gallery-grid { grid-template-rows: repeat(3, 128px); }
 }
 
-/* ══════════════════════════
-   BOOKING – MOBILE
-══════════════════════════ */
-@media (max-width: 768px) {
-  .booking-wrap { padding: 22px 16px !important; border-radius: 18px; }
-  .info-tile    { padding: 12px 14px; margin-bottom: 10px; }
-  .info-icon-w  { width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0; }
-  .info-icon-w i{ font-size: 15px; }
-  .info-lbl     { font-size: 10px; }
-  .info-val     { font-size: 13px; }
-  .btn-submit   { padding: 13px; font-size: 14.5px; }
-  .finput       { padding: 11px 13px; font-size: 13.5px; }
-  .flabel       { font-size: 12.5px; }
-}
 
-/* ══════════════════════════
-   CONTACT – MOBILE
-══════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   9. TEAM  (إعادة تصميم كاملة)
+════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .c-card   { padding: 13px 14px; margin-bottom: 10px; }
-  .c-icon   { width: 42px; height: 42px; border-radius: 11px; flex-shrink: 0; }
-  .c-icon i { font-size: 17px; }
-  .c-lbl    { font-size: 10px; }
-  .c-val    { font-size: 13.5px; }
-  .map-wrap iframe { height: 240px !important; border-radius: 16px !important; }
-  .map-wrap { border-radius: 16px; }
-}
 
-/* ══════════════════════════
-   TEAM – MOBILE
-══════════════════════════ */
-@media (max-width: 768px) {
-  .team-card--founder { flex-direction: column !important; }
+  /* ── بطاقة المؤسس : عمودية فاخرة ── */
+  .team-card--founder {
+    flex-direction: column !important;
+    padding: 0 !important;
+    border-radius: 22px !important;
+    overflow: hidden;
+    box-shadow: 0 16px 44px rgba(0,80,160,0.18) !important;
+  }
   .team-photo-wrap--founder {
-    width: 100% !important; min-width: unset !important;
-    height: 260px; border-radius: 22px 22px 0 0 !important;
+    width: 100% !important;
+    min-width: unset !important;
+    height: 300px !important;
+    border-radius: 22px 22px 0 0 !important;
+    flex-shrink: 0;
+  }
+  .team-card--founder .team-photo {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
   }
   .team-card--founder .team-info {
-    padding: 18px 16px !important; text-align: center !important;
+    padding: 22px 20px 24px !important;
+    text-align: center !important;
   }
-  .team-card--founder .team-stats-row { justify-content: center; gap: 14px; }
-  .team-card--founder .team-name { font-size: 1.3rem !important; }
-  .team-card   { border-radius: 18px; }
-  .team-photo-wrap { border-radius: 18px 18px 0 0; }
-  .team-name   { font-size: 13px; }
-  .team-specialty { font-size: 11.5px; }
-  .team-role-tag  { font-size: 10px; padding: 2px 8px; }
-  .team-info      { padding: 10px 10px 0; }
+  .team-card--founder .team-role-tag { justify-content: center; }
+  .team-card--founder .team-name { font-size: 1.4rem !important; }
+  .team-card--founder .team-specialty { font-size: 13px !important; margin: 0 auto; }
+  .team-card--founder .team-stats-row {
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .team-card--founder .ts-num { font-size: 19px; }
+  .team-founder-badge { bottom: 12px; right: 12px; font-size: 10.5px; padding: 5px 11px; }
+
+  /* ── باقي الفريق : عمودان متساويان ── */
+  .team-grid-members {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .team-grid-members .team-card {
+    border-radius: 16px;
+    padding: 0 0 14px;
+    box-shadow: var(--shadow);
+  }
+  .team-grid-members .team-photo-wrap {
+    aspect-ratio: 1 / 1.08 !important;
+    border-radius: 16px 16px 0 0;
+  }
+  .team-photo {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: top center;
+  }
+  /* على اللمس: نُبقي overlay شفاف خفيف (لا hover) */
+  .team-photo-overlay { opacity: 0 !important; }
+  .team-info { padding: 11px 9px 0 !important; text-align: center; }
+  .team-role-tag {
+    font-size: 9px !important;
+    padding: 2px 8px !important;
+    margin-bottom: 6px;
+    justify-content: center;
+    display: inline-flex;
+  }
+  .team-name { font-size: 12.5px !important; font-weight: 900; margin-bottom: 4px; line-height: 1.3; }
+  .team-specialty {
+    font-size: 10.5px !important; line-height: 1.55;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+}
+@media (max-width: 380px) {
+  .team-grid-members { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .team-grid-members .team-photo-wrap { aspect-ratio: 1 / 1 !important; }
 }
 
-/* ══════════════════════════
-   FOOTER – MOBILE
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   10. ★ TESTIMONIALS  (رأي واحد يملأ الشاشة + سلايدر)
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* شريط التقييم */
+  .ts-rating-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 18px;
+    border-radius: 18px;
+    margin-bottom: 28px;
+  }
+  .ts-rating-divider { display: none; }
+  .ts-rating-score { justify-content: center; }
+  .ts-big-num { font-size: 2.4rem; }
+  .ts-platforms { gap: 18px; justify-content: center; }
+
+  /* المسرح يبقى مقصوصاً (يُظهر بطاقة واحدة فقط) لكن بلا تدرّج جانبي */
+  .ts-stage { border-radius: 18px; overflow: hidden; }
+  .ts-stage::before,
+  .ts-stage::after { display: none !important; }
+
+  /* المسار: بطاقة واحدة بعرض كامل، فجوة صفر = محاذاة مثالية مع السلايدر */
+  .ts-track {
+    gap: 0 !important;
+    padding: 6px 4px 14px;
+  }
+
+  /* ★ كل شريحة = عرض كامل (رأي واحد فقط ظاهر) */
+  .ts-slide {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    opacity: 1 !important;       /* لا تعتيم للبطاقة الوحيدة */
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* الكرت نفسه : تصميم فاخر */
+  .ts-card {
+    padding: 26px 22px 22px;
+    border-radius: 22px;
+    border-color: var(--border-accent);
+    box-shadow: 0 14px 40px rgba(0,80,160,0.12);
+  }
+  .ts-quote-icon { font-size: 30px; opacity: 0.5 !important; margin-bottom: 12px; }
+  .ts-stars { font-size: 16px; margin-bottom: 14px; }
+  .ts-text {
+    font-size: 14px;
+    line-height: 1.85;
+    min-height: unset;
+    margin-bottom: 20px;
+  }
+  .ts-av { width: 46px; height: 46px; font-size: 17px; }
+  .ts-name { font-size: 14px; }
+  .ts-job  { font-size: 12px; }
+  .ts-verified { font-size: 10.5px; padding: 3px 9px; }
+
+  /* أزرار التحكم – كبيرة وسهلة اللمس */
+  .ts-controls { gap: 16px; margin-top: 22px; }
+  .ts-btn {
+    width: 46px; height: 46px;
+    font-size: 16px;
+    box-shadow: 0 6px 18px rgba(0,119,182,0.22);
+  }
+  .ts-dots { gap: 7px; }
+  .ts-dot { width: 7px; height: 7px; }
+  .ts-dot.active { width: 24px; }
+
+  .ts-progress-wrap { margin-top: 18px; }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   11. BOOKING
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .booking-info-panel {
+    padding: 20px 18px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+  }
+  .bip-title { font-size: 16px; margin-bottom: 18px; }
+  .bip-icon  { width: 42px; height: 42px; border-radius: 12px; }
+  .bip-icon i { font-size: 16px; }
+  .bip-lbl { font-size: 10px; }
+  .bip-val { font-size: 14px; }
+  .bip-item { padding: 12px 0; }
+  .bip-actions { gap: 9px; margin-top: 18px; }
+  .bip-actions .btn-primary-hero,
+  .bip-actions .btn-outline-hero { font-size: 14px; padding: 12px 16px; border-radius: 12px; }
+
+  .booking-wrap { padding: 22px 16px !important; border-radius: 20px; box-shadow: var(--shadow); }
+  .booking-wrap h3 { font-size: 16px !important; }
+  #booking .row.g-3 { --bs-gutter-x: 0.75rem; --bs-gutter-y: 0.85rem; }
+  .finput { padding: 12px 14px; font-size: 13.5px; border-radius: 12px; }
+  .flabel { font-size: 12px; }
+  .btn-submit { padding: 14px; font-size: 14.5px; border-radius: 13px; }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   12. CONTACT
+════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .map-wrap { border-radius: 18px; }
+  .map-wrap iframe { height: 260px !important; border-radius: 18px !important; }
+
+  .contact-quick-bar {
+    padding: 14px 14px;
+    border-radius: 18px;
+    gap: 8px;
+    box-shadow: var(--shadow);
+  }
+  .cqb-sep { display: none; }
+  .cqb-item { min-width: calc(50% - 8px); flex: 0 0 calc(50% - 8px); padding: 9px 7px; }
+  .cqb-icon { width: 38px; height: 38px; border-radius: 11px; }
+  .cqb-icon i { font-size: 15px; }
+  .cqb-lbl { font-size: 10px; }
+  .cqb-val { font-size: 12.5px; }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   13. FOOTER
+════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
   footer { padding: 44px 0 22px; }
   .footer-logo-ico { width: 46px; height: 46px; border-radius: 13px; }
   .footer-logo-ico i { font-size: 21px; }
-  .footer-name     { font-size: 14px; }
-  .footer-desc     { font-size: 13px; margin-bottom: 16px; }
-  .footer-bottom {
-    flex-direction: column; text-align: center; gap: 6px;
-    margin-top: 30px; padding-top: 18px;
-  }
-  .footer-copy { font-size: 12px; }
-  .socials     { gap: 8px; }
-  .soc         { width: 38px; height: 38px; font-size: 15px; border-radius: 10px; }
+  .footer-name     { font-size: 15px; }
+  .footer-name-sub { font-size: 11px; }
+  .footer-desc     { font-size: 12.5px; margin-bottom: 16px; }
+  .socials { gap: 8px; }
+  .soc { width: 38px; height: 38px; font-size: 15px; border-radius: 10px; }
+  .footer-links-title { font-size: 14px; margin-bottom: 12px; }
+  .footer-link { font-size: 13px; padding: 5px 0; }
+  .footer-bottom { gap: 8px; margin-top: 26px; padding-top: 18px; }
+  .footer-copy { font-size: 11.5px; }
 }
 
-/* ══════════════════════════
-   SHARED SECTION – MOBILE
-══════════════════════════ */
-@media (max-width: 768px) {
-  section      { padding: 55px 0; }
-  #stats       { padding: 45px 0; }
-  .sec-title   { font-size: clamp(1.55rem, 6vw, 2rem) !important; word-break: break-word; }
-  .sec-desc    { font-size: 13.5px; padding: 0 2px; }
-  .sec-badge   { font-size: 11.5px; padding: 5px 13px; }
-  .divider     { margin: 10px 0; }
-  .feat-card   { padding: 16px 13px; }
-  .feat-icon   { width: 42px; height: 42px; border-radius: 11px; margin-bottom: 11px; }
-  .feat-icon i { font-size: 18px; }
-  .feat-card h5 { font-size: 13.5px; }
-  .feat-card p  { font-size: 12px; }
-}
 
-/* ══════════════════════════
-   MODAL – MOBILE
-══════════════════════════ */
+/* ════════════════════════════════════════════════════════════
+   14. MODAL
+════════════════════════════════════════════════════════════ */
 @media (max-width: 480px) {
-  .modal-box   { padding: 28px 18px; border-radius: 18px; }
-  .modal-check { font-size: 52px; }
+  .modal-box { padding: 28px 18px; border-radius: 20px; }
+  .modal-check { font-size: 54px; }
   .modal-title { font-size: 17px; }
-  .modal-sub   { font-size: 13px; }
+  .modal-sub   { font-size: 12.5px; }
+  .modal-close { padding: 13px; font-size: 14.5px; }
 }
 
-/* ══════════════════════════
-   WHATSAPP FLOAT – MOBILE
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   15. WHATSAPP FLOAT
+════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-  .wa-float  { bottom: 18px; left: 14px; }
-  .wa-btn    { width: 52px; height: 52px; font-size: 23px; }
-  .wa-label  { display: none; }
+  .wa-float { bottom: 18px; left: 16px; }
+  .wa-btn   { width: 54px; height: 54px; font-size: 24px; box-shadow: 0 6px 22px rgba(37,211,102,0.45); }
+  .wa-label { display: none; }
+  .wa-online { display: block; } /* النقطة تبقى بدون وميض */
 }
 
-/* ══════════════════════════
-   TABLET FIXES
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   16. TABLET  (769px – 991px)
+════════════════════════════════════════════════════════════ */
 @media (min-width: 769px) and (max-width: 991px) {
-  .hero-title { font-size: clamp(1.9rem, 4.5vw, 2.8rem) !important; }
-  .float-card { display: none !important; }
-  .hero-img-card { width: min(300px, 55vw) !important; }
+  .hero-title { font-size: clamp(2rem, 4.8vw, 2.9rem) !important; }
+  .hero-img-card { width: min(300px, 48vw) !important; }
+  .hero-img-wrap { margin-top: 30px; }
+
+  .team-grid-members { grid-template-columns: repeat(3, 1fr); gap: 16px; }
 }
 
-/* ══════════════════════════
-   TOUCH OPTIMIZATIONS
-══════════════════════════ */
+
+/* ════════════════════════════════════════════════════════════
+   17. TOUCH  (إلغاء تأثيرات hover على اللمس + ردّ فعل النقر)
+════════════════════════════════════════════════════════════ */
 @media (hover: none) and (pointer: coarse) {
-  .cursor-dot, .cursor-ring { display: none !important; }
-  /* bigger tap targets */
-  .mob-nav-link { padding: 15px 18px; min-height: 48px; }
-  .btn-primary-hero, .btn-outline-hero,
-  .btn-submit, .btn-nav-cta { min-height: 48px; }
-  /* remove hover animations that cause lag */
-  .srv-card:hover, .test-card:hover,
-  .team-card:hover, .feat-card:hover { transform: none; }
+  .srv-card:hover,
+  .team-card:hover,
+  .feat-card:hover,
+  .ts-card:hover,
+  .stat-block:hover,
+  .about-img:hover,
+  .info-tile:hover,
+  .c-card:hover { transform: none !important; box-shadow: var(--shadow) !important; }
+
+  /* أهداف لمس مريحة (≥ 46px) */
+  .mob-nav-link { min-height: 50px; padding: 14px 18px; }
+  .btn-primary-hero,
+  .btn-outline-hero,
+  .btn-submit,
+  .ts-btn { min-height: 48px; }
+
+  /* ردّ فعل بصري لطيف عند الضغط بدل الـ hover */
+  .srv-card:active,
+  .team-card:active,
+  .feat-card:active,
+  .mini-stat:active,
+  .stat-block:active { transform: scale(0.98); transition: transform 0.12s ease; }
+}
+
+
+/* ════════════════════════════════════════════════════════════
+   18. REDUCED MOTION  (احترام تفضيل تقليل الحركة)
+════════════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

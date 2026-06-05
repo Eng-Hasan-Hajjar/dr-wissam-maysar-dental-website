@@ -1,0 +1,53 @@
+# ═══════════════════════════════════════════════════
+# .htaccess  –  Hostinger / Apache Configuration
+# د. وسام ميسر – عيادة الأسنان
+# ═══════════════════════════════════════════════════
+
+# ── Force HTTPS ─────────────────────────────────
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── www → non-www (اختياري) ─────────────────────
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+# ── Default document ────────────────────────────
+DirectoryIndex index.html
+
+# ── GZIP Compression (سرعة أعلى) ────────────────
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# ── Browser Caching (أداء أفضل) ─────────────────
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
+
+# ── Correct MIME types for fonts ────────────────
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+  AddType font/ttf .ttf
+</IfModule>
+
+# ── CORS for fonts (يمنع مشاكل تحميل الخطوط) ─────
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2?|ttf|eot|svg)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  # Security headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# ── Custom error pages (اختياري) ────────────────
+# ErrorDocument 404 /index.html

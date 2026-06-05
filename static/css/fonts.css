@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════════════
+   fonts.css  –  Self-Hosted Arabic Fonts
+   Cairo + Tajawal (محملة محلياً – تعمل في تركيا)
+═══════════════════════════════════════════════════ */
+
+/* ───────────── CAIRO ───────────── */
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/files/cairo-arabic-400-normal.woff2') format('woff2'),
+       url('../fonts/files/cairo-latin-400-normal.woff2') format('woff2');
+  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0898-08E1, U+08E3-08FF, U+FB50-FDFF, U+FE70-FEFF, U+0000-00FF, U+0131, U+0152-0153;
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../fonts/files/cairo-arabic-600-normal.woff2') format('woff2'),
+       url('../fonts/files/cairo-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/files/cairo-arabic-700-normal.woff2') format('woff2'),
+       url('../fonts/files/cairo-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Cairo';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/files/cairo-arabic-900-normal.woff2') format('woff2'),
+       url('../fonts/files/cairo-latin-900-normal.woff2') format('woff2');
+}
+
+/* ───────────── TAJAWAL ───────────── */
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/files/tajawal-arabic-400-normal.woff2') format('woff2'),
+       url('../fonts/files/tajawal-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('../fonts/files/tajawal-arabic-500-normal.woff2') format('woff2'),
+       url('../fonts/files/tajawal-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Tajawal';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/files/tajawal-arabic-700-normal.woff2') format('woff2'),
+       url('../fonts/files/tajawal-latin-700-normal.woff2') format('woff2');
+}

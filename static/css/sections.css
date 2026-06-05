@@ -472,7 +472,7 @@
 
 
 /* ════════════════════════════
-   TESTIMONIALS SECTION
+   TESTIMONIALS SECTION (cards classiques)
 ════════════════════════════ */
 .test-card {
   background:var(--glass2); border:1px solid var(--border);
@@ -706,30 +706,9 @@ footer::before {
 @keyframes fadeInLeft  { from{opacity:0;transform:translateX(-45px);} to{opacity:1;transform:translateX(0);} }
 
 
-/* ════════════════════════════
-   RESPONSIVE
-════════════════════════════ */
-@media (max-width:991px) {
-  .hero-img-wrap { margin-top:40px; }
-  .float-card.fc1, .float-card.fc2, .float-card.fc3 { display:none; }
-  .gallery-grid  { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
-  .gallery-grid .g-item:first-child { grid-row:span 1; }
-}
-
-@media (max-width:767px) {
-  .booking-wrap { padding:28px 20px; }
-  .gallery-grid { grid-template-columns:1fr 1fr; }
-  .hero-title   { font-size:2.1rem; }
-}
-
-@media (max-width:480px) {
-  .gallery-grid { grid-template-columns:1fr; }
-}
-
-
-/* ════════════════════════════
+/* ════════════════════════════════════════════
    TEAM SECTION
-════════════════════════════ */
+════════════════════════════════════════════ */
 #team {
   background: var(--bg-2);
   position: relative;
@@ -789,7 +768,7 @@ footer::before {
   position: relative;
   overflow: hidden;
   border-radius: 24px 24px 0 0;
-  background: #c8dff0;   /* neutral placeholder – not blue */
+  background: #c8dff0;
   flex-shrink: 0;
 }
 
@@ -830,12 +809,12 @@ footer::before {
 }
 .team-card:hover .team-photo-overlay i { transform: scale(1); }
 
-/* fallback icon – hidden by default, shown only via JS onerror */
+/* fallback icon */
 .team-photo-fallback {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
-  display: none;          /* hidden by default */
+  display: none;
   align-items: center;
   justify-content: center;
   font-size: 52px;
@@ -868,7 +847,7 @@ footer::before {
   z-index: 1;
 }
 @keyframes shimmer-team { 0%,100% { left:-60%; } 50% { left:130%; } }
-.team-card--founder::after { display: none; } /* no bottom bar for founder */
+.team-card--founder::after { display: none; }
 
 /* photo side */
 .team-photo-wrap--founder {
@@ -966,33 +945,6 @@ footer::before {
 .ts-lbl  { font-size: 11px; color: var(--text-muted); font-weight: 500; margin-top: 2px; }
 .ts-sep  { width: 1px; height: 36px; background: var(--border); }
 
-/* ── RESPONSIVE ───────────────────────────── */
-@media (max-width: 768px) {
-  /* founder → stacked vertically */
-  .team-card--founder {
-    flex-direction: column !important;
-  }
-  .team-photo-wrap--founder {
-    width: 100% !important;
-    min-width: unset !important;
-    height: 280px;
-    border-radius: 24px 24px 0 0 !important;
-  }
-  .team-card--founder .team-info {
-    padding: 20px 18px !important;
-    text-align: center !important;
-  }
-  .team-card--founder .team-stats-row { justify-content: center; }
-  .team-card--founder .team-name { font-size: 1.4rem !important; }
-
-  /* regular cards */
-  .team-card        { border-radius: 18px; }
-  .team-photo-wrap  { border-radius: 18px 18px 0 0; }
-  .team-name        { font-size: 13.5px; }
-  .team-specialty   { font-size: 12px; }
-  .team-role-tag    { font-size: 10px; padding: 2px 9px; }
-  .team-info        { padding: 12px 12px 0; }
-}
 
 /* ── HERO DOCTOR PHOTO ────────────────────── */
 .hero-doctor-photo {
@@ -1030,11 +982,6 @@ footer::before {
 }
 .hero-photo-label i    { color: var(--accent); font-size: 14px; }
 .hero-photo-label span { color: #fff; font-size: 13px; font-weight: 800; }
-
-@media (max-width: 768px) {
-  .hero-photo-label { padding: 6px 14px; bottom: 14px; }
-  .hero-photo-label span { font-size: 12px; }
-}
 
 
 /* ════════════════════════════════════════════
@@ -1102,7 +1049,6 @@ footer::before {
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
   padding: 16px 8px 24px;
-  /* RTL: slides go right→left */
   direction: rtl;
 }
 
@@ -1126,10 +1072,7 @@ footer::before {
   filter: blur(0);
 }
 
-/* mobile: 1 per view; tablet: 2; desktop: 3 */
-@media (max-width: 768px) {
-  .ts-slide { flex: 0 0 calc(100% - 0px); min-width: calc(100% - 0px); }
-}
+/* Tablet: 2 per view */
 @media (min-width: 769px) and (max-width: 1024px) {
   .ts-slide { flex: 0 0 calc(50% - 12px); min-width: calc(50% - 12px); }
 }
@@ -1254,26 +1197,12 @@ footer::before {
   width: 0%;
 }
 
-/* mobile rating bar */
-@media (max-width: 640px) {
-  .ts-rating-bar { padding: 16px 18px; gap: 16px; }
-  .ts-big-num { font-size: 2.5rem; }
-  .ts-rating-divider { display: none; }
-  .ts-stage::before, .ts-stage::after { width: 20px; }
-}
-
 
 /* ════════════════════════════════════════════
    DESKTOP PAGE WRAPPER – Elegant Side Margins
-   يُعطي الموقع مساحة جانبية على الشاشات الكبيرة
 ════════════════════════════════════════════ */
-
-/* Subtle page wrapper on large screens */
 @media (min-width: 1400px) {
-  body {
-    /* light border frame */
-    position: relative;
-  }
+  body { position: relative; }
   body::before,
   body::after {
     content: '';
@@ -1295,15 +1224,10 @@ footer::before {
   body::after  { left:  0; }
 }
 
-/* On very large screens: constrain + center the whole site */
 @media (min-width: 1600px) {
-  /* container gets comfortable padding */
-  .container {
-    max-width: 1320px;
-  }
+  .container { max-width: 1320px; }
 }
 
-/* Sections get subtle horizontal breathing room on desktop */
 @media (min-width: 1200px) {
   section > .container {
     padding-left:  clamp(16px, 3vw, 48px);
@@ -1358,12 +1282,161 @@ footer::before {
   transform: rotate(15deg) scale(1.2);
 }
 
-/* Dark theme: slightly different shade */
 [data-theme="dark"] .footer-dev-link {
   border-color: rgba(0,200,232,.3);
   background: rgba(0,200,232,.08);
 }
 
-@media (max-width: 576px) {
-  .footer-dev { font-size: 12px; }
+
+/* ── FOOTER BOTTOM – Fix attribution centering ── */
+.footer-bottom {
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 8px !important;
+}
+.footer-bottom .footer-copy:first-child {
+  width: 100%;
+  text-align: center;
+}
+
+/* ── WHATSAPP – raise on desktop so it never overlaps footer text ── */
+@media (min-width: 769px) {
+  .wa-float { bottom: 40px; }
+}
+
+
+/* ════════════════════════════════════════════
+   BOOKING INFO PANEL
+════════════════════════════════════════════ */
+.booking-info-panel {
+  background: var(--glass2);
+  border: 1px solid var(--border-accent);
+  backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 28px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  box-shadow: var(--shadow-accent);
+}
+
+.bip-title {
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--text-h);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.bip-title i { color: var(--accent); font-size: 18px; }
+
+.bip-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: all .3s;
+  color: inherit;
+}
+.bip-item:last-of-type { border-bottom: none; }
+.bip-item:hover { transform: translateX(-4px); }
+.bip-item:hover .bip-val { color: var(--accent); }
+
+.bip-icon {
+  width: 46px; height: 46px;
+  border-radius: 13px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(0,180,232,.28);
+  transition: transform .3s;
+}
+.bip-item:hover .bip-icon { transform: rotate(8deg) scale(1.05); }
+.bip-icon i { color: #fff; font-size: 18px; }
+
+.bip-lbl { font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: .5px; }
+.bip-val { font-size: 15px; color: var(--text-h); font-weight: 800; margin-top: 2px; transition: color .3s; }
+.bip-sub { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+.bip-wa .bip-val { color: #25d366; }
+
+.bip-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+/* ════════════════════════════════════════════
+   CONTACT QUICK BAR
+════════════════════════════════════════════ */
+.contact-quick-bar {
+  display: flex;
+  align-items: center;
+  background: var(--glass2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 16px 28px;
+  gap: 0;
+  flex-wrap: wrap;
+  box-shadow: var(--shadow);
+}
+
+.cqb-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 160px;
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s;
+  padding: 6px 8px;
+  border-radius: 12px;
+}
+.cqb-item:hover { background: rgba(0,180,232,.07); }
+.cqb-item:hover .cqb-val { color: var(--accent); }
+
+.cqb-icon {
+  width: 42px; height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 3px 12px rgba(0,180,232,.25);
+  transition: transform .3s;
+}
+.cqb-item:hover .cqb-icon { transform: scale(1.08) rotate(5deg); }
+.cqb-icon i { color: #fff; font-size: 16px; }
+
+.cqb-lbl { font-size: 11px; color: var(--text-muted); font-weight: 600; }
+.cqb-val { font-size: 13.5px; color: var(--text-h); font-weight: 800; margin-top: 1px; transition: color .3s; }
+
+.cqb-sep {
+  width: 1px;
+  height: 44px;
+  background: var(--border);
+  flex-shrink: 0;
+  margin: 0 4px;
+}
+
+
+/* ════════════════════════════════════════════
+   TEAM GRID – CSS Grid (4 columns desktop)
+════════════════════════════════════════════ */
+.team-grid-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 4px;
+}
+/* Tablet: 3 per row */
+@media (max-width: 1024px) {
+  .team-grid-members { grid-template-columns: repeat(3, 1fr); gap: 16px; }
 }

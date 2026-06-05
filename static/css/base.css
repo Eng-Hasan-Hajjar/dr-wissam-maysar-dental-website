@@ -30,13 +30,25 @@ a {
   color: inherit;
 }
 
-/* ── SCROLLBAR ────────────────────────────────── */
-::-webkit-scrollbar          { width: 6px; }
-::-webkit-scrollbar-track    { background: var(--bg-base); }
-::-webkit-scrollbar-thumb    { background: var(--accent); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent3); }
+/* ── SCROLLBAR (مخفي بالكامل + التمرير يعمل طبيعياً) ──────
+   نُخفي شريط التمرير العمودي والأفقي على كل العناصر في الموقع
+   (الصفحة الرئيسية + العناصر الداخلية)، على كل المتصفحات،
+   مع إبقاء سلوك التمرير بالعجلة/اللمس/لوحة المفاتيح كما هو. */
+html,
+body,
+* {
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none;       /* IE / Edge القديم */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;                  /* Chrome, Safari, Edge, Opera */
+}
 
-/* ── CUSTOM CURSOR ────────────────────────────── */
+/* ── CUSTOM CURSOR (سطح المكتب فقط) ───────────── */
 .cursor-dot {
   position: fixed;
   width: 8px;
@@ -85,7 +97,7 @@ section {
   transition: background 0.5s ease;
 }
 
-/* alternating section backgrounds */
+/* خلفيات الأقسام بالتناوب */
 #hero,
 #services,
 #gallery,
@@ -396,10 +408,4 @@ section {
 @keyframes online-blink {
   0%,100% { box-shadow: 0 0 0 0   rgba(77,255,110,0.4); }
   50%      { box-shadow: 0 0 0 6px rgba(77,255,110,0);   }
-}
-
-/* ── RESPONSIVE ───────────────────────────────── */
-@media (max-width: 767px) {
-  section { padding: 70px 0; }
-  .wa-float { bottom: 20px; left: 20px; }
 }
