@@ -1,12 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
-   mobile.css  –  Mobile Full Redesign v4  (Performance-First)
+   mobile.css  –  Mobile Full Redesign v5  (Bulletproof Edition)
    د. وسام ميسر – عيادة طب وتجميل الأسنان
-
-   فلسفة هذا الملف:
-   • الديسكتوب لا يتغيّر إطلاقاً — كل شيء محصور داخل @media
-   • على الموبايل: لا blur إطلاقاً + لا أنيميشن لانهائي ثقيل
-     → تمرير (scroll) سلس تماماً وبدون تعليق
-   • تصميم نظيف فاخر بأسطح صلبة بدل الزجاج الشفاف
 ═══════════════════════════════════════════════════════════════ */
 
 
@@ -17,6 +11,87 @@ html { overflow-x: hidden; }
 body { overflow-x: hidden; max-width: 100vw; position: relative; }
 * { box-sizing: border-box; }
 img, video, iframe, embed, object, svg { max-width: 100%; height: auto; }
+
+
+/* ════════════════════════════════════════════════════════════
+   ★ CRITICAL FIXES  (تكرار قواعد حاسمة بقوة !important)
+      هذا القسم يضمن عمل الأمور المهمة مهما كانت ظروف التحميل
+════════════════════════════════════════════════════════════ */
+
+/* (1) إخفاء السكرول بار بقوة قصوى — على كل عنصر بكل المتصفحات */
+html,
+body,
+*,
+*::before,
+*::after {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-button {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+  background: transparent !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  -webkit-appearance: none !important;
+}
+
+/* (2) ★ سلايدر آراء المرضى يعمل أفقياً ببطاقة واحدة على الموبايل */
+@media (max-width: 768px) {
+  .ts-root { position: relative !important; }
+
+  .ts-stage {
+    overflow: hidden !important;
+    width: 100% !important;
+    border-radius: 18px !important;
+    position: relative !important;
+  }
+  .ts-stage::before,
+  .ts-stage::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+  }
+
+  .ts-track {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 0 !important;
+    padding: 6px 0 14px !important;
+    direction: rtl !important;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+  }
+
+  .ts-slide {
+    flex: 0 0 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+  /* لا تفعل أي تأثير hover/active على البطاقة على اللمس */
+  .ts-slide .ts-card,
+  .ts-slide.active .ts-card,
+  .ts-slide.adjacent .ts-card { opacity: 1 !important; }
+}
+
+/* (3) ★ بطاقة المؤسس : صورة خلفية + تدرج (القواعد المفصّلة في القسم 9) */
+/* هنا نضع الإصلاح الجوهري فقط — التفاصيل في القسم 9 */
+@media (max-width: 768px) {
+  .team-card.team-card--founder { display: block !important; position: relative !important; }
+  .team-card.team-card--founder > .team-photo-wrap.team-photo-wrap--founder { position: absolute !important; inset: 0 !important; }
+  .team-card.team-card--founder > .team-info { position: absolute !important; bottom: 0 !important; }
+}
 
 
 /* ════════════════════════════════════════════════════════════
@@ -358,81 +433,175 @@ img, video, iframe, embed, object, svg { max-width: 100%; height: auto; }
 
 
 /* ════════════════════════════════════════════════════════════
-   9. TEAM  (إعادة تصميم كاملة)
+   9. ★ TEAM  (تصميم جديد كلياً)
+      المؤسس: بطاقة بصورة خلفية + تدرج + معلومات فوقها
+      باقي الفريق: شريط أفقي يُسحب باللمس (swipe)
 ════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
 
-  /* ── بطاقة المؤسس : عمودية فاخرة ── */
-  .team-card--founder {
-    flex-direction: column !important;
+  /* ═══ بطاقة المؤسس : صورة كاملة + تدرج أنيق ═══ */
+  .team-card.team-card--founder {
+    display: block !important;
+    position: relative !important;
+    height: 420px !important;
     padding: 0 !important;
-    border-radius: 22px !important;
-    overflow: hidden;
-    box-shadow: 0 16px 44px rgba(0,80,160,0.18) !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    box-shadow: 0 20px 60px rgba(0,60,120,0.28) !important;
+    flex-direction: unset !important;
+    align-items: unset !important;
   }
-  .team-photo-wrap--founder {
+
+  /* الصورة تملأ البطاقة كخلفية */
+  .team-card.team-card--founder > .team-photo-wrap.team-photo-wrap--founder {
+    position: absolute !important;
+    inset: 0 !important;
     width: 100% !important;
-    min-width: unset !important;
-    height: 300px !important;
-    border-radius: 22px 22px 0 0 !important;
-    flex-shrink: 0;
+    height: 100% !important;
+    min-width: 0 !important;
+    aspect-ratio: auto !important;
+    border-radius: 24px !important;
+    z-index: 1 !important;
+    overflow: hidden !important;
+    display: block !important;
+    flex: none !important;
   }
-  .team-card--founder .team-photo {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: top center;
+  .team-card.team-card--founder > .team-photo-wrap--founder > .team-photo {
+    width: 100% !important; height: 100% !important;
+    object-fit: cover !important; object-position: top center !important;
+    display: block !important;
   }
-  .team-card--founder .team-info {
-    padding: 22px 20px 24px !important;
+
+  /* المعلومات فوق تدرج داكن أسفل الصورة */
+  .team-card.team-card--founder > .team-info {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 3 !important;
+    padding: 70px 20px 22px !important;
     text-align: center !important;
+    background: linear-gradient(to top,
+      rgba(3,13,31,0.96) 0%,
+      rgba(3,13,31,0.78) 45%,
+      rgba(3,13,31,0.15) 80%,
+      transparent 100%) !important;
+    display: block !important;
+    width: auto !important;
+    flex: none !important;
   }
-  .team-card--founder .team-role-tag { justify-content: center; }
-  .team-card--founder .team-name { font-size: 1.4rem !important; }
-  .team-card--founder .team-specialty { font-size: 13px !important; margin: 0 auto; }
+  .team-card--founder .team-name {
+    font-size: 1.4rem !important;
+    color: #fff !important;
+    margin-bottom: 6px !important;
+  }
+  .team-card--founder .team-specialty {
+    font-size: 12.5px !important;
+    color: rgba(255,255,255,0.78) !important;
+    margin: 0 auto 4px !important;
+    max-width: 300px !important;
+  }
+  .team-card--founder .team-role-tag {
+    justify-content: center;
+    background: rgba(0,200,232,0.22) !important;
+    border-color: rgba(0,200,232,0.45) !important;
+    color: #5ce8ff !important;
+  }
   .team-card--founder .team-stats-row {
     justify-content: center;
     gap: 16px;
-    margin-top: 18px;
+    margin-top: 14px;
   }
-  .team-card--founder .ts-num { font-size: 19px; }
-  .team-founder-badge { bottom: 12px; right: 12px; font-size: 10.5px; padding: 5px 11px; }
+  .team-card--founder .ts-num { font-size: 19px; color: #5ce8ff !important; }
+  .team-card--founder .ts-lbl { color: rgba(255,255,255,0.55) !important; }
+  .team-card--founder .ts-sep { background: rgba(255,255,255,0.18) !important; }
 
-  /* ── باقي الفريق : عمودان متساويان ── */
+  /* شارة المؤسس */
+  .team-founder-badge {
+    z-index: 5 !important;
+    bottom: auto !important;
+    top: 14px !important;
+    right: 14px !important;
+    font-size: 10.5px;
+    padding: 5px 12px;
+  }
+
+  /* overlay الصورة (نلغيه لأن التدرج يكفي) */
+  .team-card--founder .team-photo-overlay { opacity: 0 !important; }
+
+
+  /* ═══ باقي الفريق : شريط أفقي يُسحب باللمس ═══ */
   .team-grid-members {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    gap: 14px !important;
+    padding: 4px 2px 20px !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* إلغاء أي grid سابق */
+    grid-template-columns: none !important;
   }
+
+  /* كل بطاقة عضو */
+  .team-grid-members > div {
+    flex: 0 0 auto !important;
+    width: 155px !important;
+    scroll-snap-align: start;
+  }
+
   .team-grid-members .team-card {
-    border-radius: 16px;
-    padding: 0 0 14px;
-    box-shadow: var(--shadow);
+    width: 155px !important;
+    border-radius: 18px !important;
+    padding: 0 0 14px !important;
+    box-shadow: var(--shadow) !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
   }
+
   .team-grid-members .team-photo-wrap {
-    aspect-ratio: 1 / 1.08 !important;
-    border-radius: 16px 16px 0 0;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 18px 18px 0 0 !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
   }
-  .team-photo {
-    width: 100%; height: 100%;
-    object-fit: cover; object-position: top center;
+  .team-grid-members .team-photo {
+    width: 100% !important; height: 100% !important;
+    object-fit: cover !important; object-position: top center !important;
   }
-  /* على اللمس: نُبقي overlay شفاف خفيف (لا hover) */
-  .team-photo-overlay { opacity: 0 !important; }
-  .team-info { padding: 11px 9px 0 !important; text-align: center; }
-  .team-role-tag {
-    font-size: 9px !important;
-    padding: 2px 8px !important;
-    margin-bottom: 6px;
-    justify-content: center;
-    display: inline-flex;
+  .team-grid-members .team-photo-overlay { opacity: 0 !important; }
+
+  .team-grid-members .team-info {
+    padding: 10px 8px 0 !important;
+    text-align: center !important;
   }
-  .team-name { font-size: 12.5px !important; font-weight: 900; margin-bottom: 4px; line-height: 1.3; }
-  .team-specialty {
-    font-size: 10.5px !important; line-height: 1.55;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  .team-grid-members .team-role-tag {
+    font-size: 8.5px !important;
+    padding: 2px 7px !important;
+    margin-bottom: 5px !important;
+    justify-content: center !important;
+    display: inline-flex !important;
+  }
+  .team-grid-members .team-name {
+    font-size: 12px !important; font-weight: 900 !important;
+    margin-bottom: 4px !important; line-height: 1.3 !important;
+  }
+  .team-grid-members .team-specialty {
+    font-size: 10px !important; line-height: 1.5 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
   }
 }
+
 @media (max-width: 380px) {
-  .team-grid-members { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-  .team-grid-members .team-photo-wrap { aspect-ratio: 1 / 1 !important; }
+  .team-grid-members > div { width: 140px !important; }
+  .team-grid-members .team-card { width: 140px !important; }
 }
 
 

@@ -30,22 +30,31 @@ a {
   color: inherit;
 }
 
-/* ── SCROLLBAR (مخفي بالكامل + التمرير يعمل طبيعياً) ──────
-   نُخفي شريط التمرير العمودي والأفقي على كل العناصر في الموقع
-   (الصفحة الرئيسية + العناصر الداخلية)، على كل المتصفحات،
-   مع إبقاء سلوك التمرير بالعجلة/اللمس/لوحة المفاتيح كما هو. */
+/* ── SCROLLBAR (مخفي بالكامل بقوة قصوى + التمرير يعمل طبيعياً) ──
+   كل العناصر في الموقع — الصفحة الرئيسية والداخلية والقوائم
+   والـ modal — لا يظهر فيها أي شريط تمرير، مع بقاء التمرير
+   نفسه يعمل بالعجلة/اللمس/المفاتيح. */
 html,
 body,
-* {
-  scrollbar-width: none;          /* Firefox */
-  -ms-overflow-style: none;       /* IE / Edge القديم */
+*,
+*::before,
+*::after {
+  scrollbar-width: none !important;          /* Firefox */
+  -ms-overflow-style: none !important;       /* IE / Edge القديم */
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
-*::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;                  /* Chrome, Safari, Edge, Opera */
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-track,
+*::-webkit-scrollbar-corner,
+*::-webkit-scrollbar-button {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;                  /* Chrome, Safari, Edge, Opera */
+  background: transparent !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
 }
 
 /* ── CUSTOM CURSOR (سطح المكتب فقط) ───────────── */
