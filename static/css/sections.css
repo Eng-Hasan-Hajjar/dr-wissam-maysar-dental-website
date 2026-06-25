@@ -226,14 +226,14 @@
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 14px 20px;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  box-shadow: 0 12px 40px rgba(58, 9, 237, 0.3);
   display: flex;
   align-items: center;
   gap: 12px;
 }
-.float-card.fc1 { bottom:60px; left:-60px; animation: fc-float1 4s   ease-in-out infinite; }
-.float-card.fc2 { top:60px;    right:-55px; animation: fc-float2 4.5s ease-in-out infinite; }
-.float-card.fc3 { top:45%;     left:-70px;  animation: fc-float3 5s   ease-in-out infinite; }
+.float-card.fc1 { bottom:60px; left:-10px; animation: fc-float1 4s   ease-in-out infinite; }
+.float-card.fc2 { top:60px;    right:-22px; animation: fc-float2 4.5s ease-in-out infinite; }
+.float-card.fc3 { top:45%;     left:-50px;  animation: fc-float3 5s   ease-in-out infinite; }
 @keyframes fc-float1 { 0%,100%{transform:translateY(0);}            50%{transform:translateY(-12px);} }
 @keyframes fc-float2 { 0%,100%{transform:translateY(-6px);}         50%{transform:translateY(6px);} }
 @keyframes fc-float3 { 0%,100%{transform:translateY(0)rotate(-2deg);}50%{transform:translateY(-8px)rotate(2deg);} }
