@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+  </style>
+</helmet>
+<div style="position: fixed; inset: 0; overflow: hidden;">
+  <x-import component-from-global-scope="EnamoraAnimation" from="./EnamoraAnimation.jsx" hint-size="100%,100%"></x-import>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,43 +1,54 @@
 /* ═══════════════════════════════════════════════════
    variables.css  –  CSS Custom Properties (Themes)
    Default: LIGHT  |  Toggle: DARK
+   الهوية البصرية: Enamora Dental Center
 ═══════════════════════════════════════════════════ */
 
-/* ── LIGHT THEME (default) ────────────────────── */
+/* ── LIGHT THEME (default) – Enamora Brand Colors ── */
 :root,
 [data-theme="light"] {
-  --bg-base:       #f0f7ff;
-  --bg-2:          #e4f0fb;
-  --bg-3:          #d8eaf8;
-  --bg-card:       rgba(255,255,255,0.88);
-  --bg-nav:        rgba(240,247,255,0.96);
+  /* خلفيات – Ivory White مع تدرجات ناعمة */
+  --bg-base:       #FAF7F2;
+  --bg-2:          #F3EFE9;
+  --bg-3:          #EBE6DE;
+  --bg-card:       rgba(255,255,255,0.90);
+  --bg-nav:        rgba(250,247,242,0.96);
 
-  --accent:        #0077b6;
-  --accent2:       #005f94;
-  --accent3:       #00b4d8;
-  --gold:          #b8860b;
+  /* ألوان العلامة التجارية */
+  /* Accent رئيسي: Enamora Aqua #7ECBC7 */
+  --accent:        #5BBDB9;
+  --accent2:       #3DA8A4;
+  --accent3:       #7ECBC7;
+  /* Lavender Glow: اللون المميز البنفسجي */
+  --gold:          #9B8AE8;
 
-  --text-h:        #04213d;
-  --text-p:        rgba(4,33,61,0.75);
-  --text-muted:    rgba(4,33,61,0.48);
+  /* النصوص – داكنة دافئة */
+  --text-h:        #2C2C3A;
+  --text-p:        rgba(44,44,58,0.72);
+  --text-muted:    rgba(44,44,58,0.45);
 
-  --border:        rgba(0,119,182,0.18);
-  --border-accent: rgba(0,119,182,0.45);
+  /* حدود */
+  --border:        rgba(91,189,185,0.18);
+  --border-accent: rgba(91,189,185,0.42);
 
-  --glass:         rgba(255,255,255,0.65);
-  --glass2:        rgba(255,255,255,0.88);
+  /* زجاج */
+  --glass:         rgba(255,255,255,0.68);
+  --glass2:        rgba(255,255,255,0.90);
 
-  --shadow:        0 8px 40px rgba(0,80,160,0.12);
-  --shadow-accent: 0 8px 40px rgba(0,119,182,0.22);
+  /* ظلال */
+  --shadow:        0 8px 40px rgba(91,189,185,0.10);
+  --shadow-accent: 0 8px 40px rgba(91,189,185,0.22);
 
-  --input-bg:      rgba(0,119,182,0.07);
-  --map-bg:        rgba(0,119,182,0.07);
+  /* مدخلات وخريطة */
+  --input-bg:      rgba(91,189,185,0.07);
+  --map-bg:        rgba(91,189,185,0.07);
 
-  --hero-grad1:    rgba(0,119,182,0.10);
-  --hero-grad2:    rgba(0,64,128,0.07);
+  /* تدرجات Hero */
+  --hero-grad1:    rgba(126,203,199,0.10);
+  --hero-grad2:    rgba(184,167,255,0.07);
 }
 
-/* ── DARK THEME ───────────────────────────────── */
+/* ── DARK THEME – يبقى كما هو ───────────────── */
 [data-theme="dark"] {
   --bg-base:       #030d1f;
   --bg-2:          #061428;

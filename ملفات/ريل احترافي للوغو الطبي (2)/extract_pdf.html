@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+<canvas id="c1"></canvas>
+<canvas id="c2"></canvas>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+async function renderPDF() {
+  const response = await fetch('./uploads/enamora.pdf');
+  const arrayBuffer = await response.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+  console.log('Total pages:', pdf.numPages);
+
+  for (let i = 1; i <= Math.min(2, pdf.numPages); i++) {
+    const page = await pdf.getPage(i);
+    const viewport = page.getViewport({ scale: 2 });
+    const canvas = document.getElementById('c' + i);
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport }).promise;
+    
+    // Convert to data URL and log
+    const dataURL = canvas.toDataURL('image/png');
+    console.log('Page ' + i + ' rendered, size:', dataURL.length);
+    
+    // Create download link
+    const a = document.createElement('a');
+    a.href = dataURL;
+    a.download = 'page' + i + '.png';
+    a.textContent = 'Download Page ' + i;
+    document.body.appendChild(a);
+    document.body.appendChild(document.createElement('br'));
+  }
+  console.log('DONE');
+}
+renderPDF();
+</script>
+</body>
+</html>

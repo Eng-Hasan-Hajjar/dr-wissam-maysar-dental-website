@@ -823,3 +823,11 @@ body::-webkit-scrollbar,
     scroll-behavior: auto !important;
   }
 }
+
+
+@media (max-width: 768px) {
+  video.en-logo-img {
+    border-radius: 24px 24px 60px 24px !important;
+  }
+}
+

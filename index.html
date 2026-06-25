@@ -89,12 +89,17 @@
 
           <!-- Brand -->
           <a href="#hero" class="nav-brand" style="flex:1;min-width:0;">
-            <div class="nav-logo flex-shrink-0">
-              <div class="nav-logo-ring"></div>
-              <i class="fas fa-tooth"></i>
+            <div class="nav-logo flex-shrink-0"
+              style="background:transparent;box-shadow:none;border:none;overflow:visible;">
+              <img src="static/images/logo3.png" alt="Enamora" style="width:50px;height:50px;object-fit:contain;"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              <div
+                style="display:none;width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#5BBDB9,#3DA8A4);align-items:center;justify-content:center;">
+                <i class="fas fa-tooth" style="color:#fff;font-size:22px;"></i>
+              </div>
             </div>
             <div class="nav-brand-text" style="min-width:0;">
-              <div class="clinic-name">د. وسام ميسر</div>
+              <div class="clinic-name" style="font-family:'Georgia',serif;letter-spacing:0.5px;">Enamora</div>
               <div class="clinic-sub">لطب وتجميل الأسنان</div>
             </div>
           </a>
@@ -150,12 +155,15 @@
   <!-- ══════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+     HERO – Enamora · عيادة متكاملة بقيادة د. وسام
+══════════════════════════════════════════════ -->
   <section id="hero">
     <div class="hero-mesh"></div>
     <div class="orb"
-      style="width:320px;height:320px;background:rgba(0,119,182,.07);top:10%;left:60%;animation-duration:7s;"></div>
+      style="width:320px;height:320px;background:rgba(126,203,199,.08);top:10%;left:60%;animation-duration:7s;"></div>
     <div class="orb"
-      style="width:200px;height:200px;background:rgba(0,64,128,.06);bottom:15%;right:65%;animation-duration:9s;animation-delay:2s;">
+      style="width:200px;height:200px;background:rgba(184,167,255,.06);bottom:15%;right:65%;animation-duration:9s;animation-delay:2s;">
     </div>
     <div class="hero-ring" style="width:500px;height:500px;top:50%;left:65%;transform:translate(-50%,-50%);"></div>
     <div class="hero-ring"
@@ -166,34 +174,45 @@
     <div class="container">
       <div class="row align-items-center g-4 g-lg-5">
 
-        <!-- Text Column -->
+        <!-- ── عمود النص ── -->
         <div class="col-12 col-lg-6 text-center text-lg-start">
+
+          <!-- شارة Enamora -->
           <div class="hero-badge" style="flex-wrap:wrap;gap:6px;">
             <div class="hero-badge-dot"></div>
-            <i class="fab fa-instagram" style="font-size:12px;"></i> Dr.WesamMuyasser &bull; حلب الجديدة &bull; سوريا
+            <span style="font-family:'Georgia',serif;font-weight:700;letter-spacing:.5px;">Enamora</span>
+            &bull; حلب الجديدة &bull; سوريا
           </div>
 
+          <!-- العنوان الرئيسي -->
           <h1 class="hero-title">
-            <span class="grad">ابتسامتك</span><br />
-            <span class="grad">تبدأ من هنا</span>
-            <span class="line2">د. وسام ميسر &bull; لطب وتجميل الأسنان</span>
+            <span class="grad">علم الصحة.</span><br />
+            <span class="grad">فن الابتسامة.</span>
+            <span class="line2"
+              style="font-size:clamp(1rem,2.5vw,1.5rem);color:var(--text-p);font-weight:500;margin-top:10px;display:block;">
+              عيادة <strong style="color:var(--text-h);font-weight:800;">Enamora</strong>
+              · بقيادة <strong style="color:var(--accent);font-weight:800;">د. وسام ميسر</strong>
+            </span>
           </h1>
 
+          <!-- الوصف -->
           <p class="hero-desc">
-            نقدم رعاية أسنان متكاملة بأحدث التقنيات الطبية العالمية، مع مخبر أسنان
-            متطور داخل العيادة وفريق متخصص لضمان أجمل ابتسامة وأفضل صحة للأسنان.
+            في <strong style="color:var(--text-h);">Enamora</strong> نجمع بين أحدث تقنيات طب الأسنان
+            وفريق طبي متخصص تحت قيادة <strong style="color:var(--text-h);">د. وسام ميسر</strong>،
+            لنصمم لكم ابتسامة واثقة تدوم.
           </p>
 
+          <!-- أزرار الاستدعاء -->
           <div class="hero-btns">
             <button class="btn-primary-hero" onclick="location.href='#booking'">
               <i class="fas fa-calendar-plus"></i> احجز موعدك الآن
             </button>
-            <button class="btn-outline-hero" onclick="location.href='#services'">
-              <i class="fas fa-tooth"></i> تعرف على خدماتنا
+            <button class="btn-outline-hero" onclick="location.href='#team'">
+              <i class="fas fa-users"></i> تعرّف على فريقنا
             </button>
           </div>
 
-          <!-- Mini Stats: 2×2 grid on mobile, row on desktop -->
+          <!-- إحصائيات مصغرة -->
           <div class="hero-mini-stats">
             <div class="mini-stat">
               <div class="num">+5000</div>
@@ -206,8 +225,8 @@
             </div>
             <div class="mini-stat-sep d-none d-lg-block"></div>
             <div class="mini-stat">
-              <div class="num">+1200</div>
-              <div class="lbl">عملية ناجحة</div>
+              <div class="num">7</div>
+              <div class="lbl">متخصصين</div>
             </div>
             <div class="mini-stat-sep d-none d-lg-block"></div>
             <div class="mini-stat">
@@ -215,54 +234,322 @@
               <div class="lbl">رضا المرضى</div>
             </div>
           </div>
+
+          <!-- شريط فريق مصغر (أيقونات أعضاء الفريق) -->
+          <div class="hero-team-strip">
+            <div class="hts-avatars">
+              <!-- أفاتارات الفريق -->
+              <div class="hts-av" style="background:linear-gradient(135deg,#5BBDB9,#3DA8A4);" title="د. وسام ميسر">و
+              </div>
+              <div class="hts-av" style="background:linear-gradient(135deg,#8e44ad,#9b59b6);" title="د. لقمان القصاب">ل
+              </div>
+              <div class="hts-av" style="background:linear-gradient(135deg,#2c3e50,#3498db);" title="د. محمد البيك">م
+              </div>
+              <div class="hts-av" style="background:linear-gradient(135deg,#16a085,#1abc9c);" title="د. مهند سعود">مه
+              </div>
+              <div class="hts-av" style="background:linear-gradient(135deg,#c0392b,#e74c3c);" title="د. بيان عرب">ب
+              </div>
+              <div class="hts-av hts-av--more">+2</div>
+            </div>
+            <div class="hts-text">
+              <span class="hts-label">فريق متكامل من</span>
+              <span class="hts-count">7 متخصصين</span>
+              <span class="hts-label">يعملون تحت سقف واحد</span>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Image Column -->
+        <!-- ── عمود الصورة ── -->
         <div class="col-12 col-lg-6">
+          <!-- ══ بطاقة Hero Enamora المحسّنة ══
+             ابحث في index.html عن: <div class="hero-img-wrap">
+             واستبدل كل محتوياتها بما يلي:
+        ══════════════════════════════════════ -->
           <div class="hero-img-wrap">
-            <div class="hero-img-card">
-              <!-- صورة الدكتور الحقيقية -->
-              <img src="static/images/team/wissam-miser.jpg" alt="د. وسام ميسر – طبيب أسنان متخصص"
-                class="hero-doctor-photo"
-                onerror="this.style.display='none'; document.getElementById('heroFallback').style.display='flex';" />
-              <!-- fallback إذا لم تُحمَّل الصورة -->
-              <div class="hero-placeholder-icon" id="heroFallback" style="display:none;">
-                <i class="fas fa-user-md"></i>
-                <p>د. وسام ميسر</p>
-                <small>طبيب أسنان متخصص</small>
+
+            <!-- ═══ البطاقة الرئيسية ═══ -->
+            <div class="hero-img-card enamora-card">
+
+              <!-- بقع لون ناعمة في الخلفية -->
+              <div class="en-blob en-blob1"></div>
+              <div class="en-blob en-blob2"></div>
+
+              <!-- حلقات دائرية خلفية -->
+              <div class="en-ring" style="width:300px;height:300px;"></div>
+              <div class="en-ring" style="width:400px;height:400px;opacity:.25;"></div>
+
+              <!-- شارة علوية -->
+              <div class="en-top-badge">
+                <span class="en-badge-dot"></span>
+                عيادة متكاملة · حلب الجديدة
               </div>
-              <!-- اسم الدكتور فوق الصورة -->
-              <div class="hero-photo-label">
-                <i class="fas fa-tooth"></i>
-                <span>د. وسام ميسر</span>
+
+              <!-- نجمة Enamora البنفسجية (زخرفة) -->
+              <div class="en-star-deco en-star-tl">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#B8A7FF" opacity="0.7">
+                  <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" />
+                </svg>
+              </div>
+              <div class="en-star-deco en-star-br" style="bottom:60px;left:18px;opacity:.4;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#7ECBC7">
+                  <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" />
+                </svg>
+              </div>
+
+              <!-- الصورة الرئيسية – شعار Enamora -->
+              <video class="hero-doctor-photo en-logo-img" autoplay loop muted playsinline
+                poster="static/images/main8.png">
+                <source src="static/images/hero-video.mp4" type="video/mp4" />
+              </video>
+              <!-- Fallback إذا لم تُحمَّل main2.png -->
+              <div class="hero-placeholder-icon" id="heroFallback" style="display:none;">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+                  style="width:70%;height:auto;filter:drop-shadow(0 8px 24px rgba(91,189,185,0.4));">
+                  <defs>
+                    <radialGradient id="gA" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#7ECBC7" stop-opacity=".9" />
+                      <stop offset="100%" stop-color="#3DA8A4" stop-opacity=".5" />
+                    </radialGradient>
+                    <radialGradient id="gP" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#B8A7FF" stop-opacity=".85" />
+                      <stop offset="100%" stop-color="#9B8AE8" stop-opacity=".5" />
+                    </radialGradient>
+                  </defs>
+                  <ellipse cx="100" cy="100" rx="90" ry="90" fill="none" stroke="#7ECBC7" stroke-width="1.5"
+                    opacity=".35" />
+                  <ellipse cx="100" cy="100" rx="72" ry="72" fill="none" stroke="#B8A7FF" stroke-width="1"
+                    opacity=".25" />
+                  <path
+                    d="M100 18 C100 18 110 68 162 100 C110 132 100 182 100 182 C100 182 90 132 38 100 C90 68 100 18 100 18Z"
+                    fill="url(#gA)" opacity=".85" />
+                  <path
+                    d="M100 44 C100 44 113 80 150 100 C113 120 100 156 100 156 C100 156 87 120 50 100 C87 80 100 44 100 44Z"
+                    fill="url(#gP)" opacity=".7" />
+                  <circle cx="100" cy="100" r="9" fill="#fff" opacity=".9" />
+                  <circle cx="100" cy="100" r="4" fill="#B8A7FF" />
+                </svg>
+                <p
+                  style="font-family:'Georgia',serif;font-size:20px;font-weight:700;margin-top:12px;color:var(--text-h);">
+                  Enamora</p>
+                <small style="color:var(--text-muted);font-size:12px;">Dental Center</small>
+              </div>
+
+              <!-- تسمية الأسفل -->
+              <div class="hero-photo-label en-photo-label">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8A7FF" style="flex-shrink:0;">
+                  <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" />
+                </svg>
+                <span style="font-family:'Georgia',serif;font-weight:700;letter-spacing:.5px;">Enamora</span>
+                <span
+                  style="width:1px;height:14px;background:rgba(255,255,255,.25);display:inline-block;margin:0 2px;"></span>
+                <span style="opacity:.65;font-size:11px;">د. وسام ميسر</span>
               </div>
             </div>
-            <!-- Floating cards – hidden on mobile via CSS -->
+
+            <!-- ═══ البطاقات العائمة ═══ -->
             <div class="float-card fc1">
-              <div class="fc-icon" style="background:linear-gradient(135deg,var(--accent),var(--accent2));"><i
-                  class="fas fa-tooth"></i></div>
+              <div class="fc-icon" style="background:linear-gradient(135deg,var(--accent),var(--accent2));">
+                <i class="fas fa-tooth"></i>
+              </div>
               <div>
                 <div class="fc-num">+1200</div>
                 <div class="fc-lbl">عملية ناجحة</div>
               </div>
             </div>
             <div class="float-card fc2">
-              <div class="fc-icon" style="background:linear-gradient(135deg,var(--gold),#a0692e);"><i
-                  class="fas fa-award"></i></div>
+              <div class="fc-icon" style="background:linear-gradient(135deg,#B8A7FF,#9B8AE8);">
+                <i class="fas fa-users"></i>
+              </div>
               <div>
-                <div class="fc-num">15+</div>
-                <div class="fc-lbl">سنة خبرة</div>
+                <div class="fc-num">7</div>
+                <div class="fc-lbl">متخصصين</div>
               </div>
             </div>
             <div class="float-card fc3">
-              <div class="fc-icon" style="background:linear-gradient(135deg,#2ecc71,#1a9e2e);"><i
-                  class="fas fa-heart"></i></div>
+              <div class="fc-icon" style="background:linear-gradient(135deg,#2ecc71,#1a9e2e);">
+                <i class="fas fa-heart"></i>
+              </div>
               <div>
                 <div class="fc-num">98%</div>
                 <div class="fc-lbl">رضا المرضى</div>
               </div>
             </div>
-          </div>
+
+          </div><!-- end hero-img-wrap -->
+
+          <!-- ══ CSS البطاقة المحسّنة – ضعه في <style> في <head> ══ -->
+          <style>
+            /* ── بطاقة Enamora ── */
+            .enamora-card {
+              background: linear-gradient(145deg,
+                  rgba(240, 250, 249, 0.9) 0%,
+                  rgba(250, 247, 242, 0.95) 45%,
+                  rgba(240, 237, 248, 0.85) 100%) !important;
+              border: 1px solid rgba(91, 189, 185, 0.28) !important;
+              box-shadow:
+                0 30px 80px rgba(91, 189, 185, 0.18),
+                0 8px 32px rgba(184, 167, 255, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: center !important;
+              justify-content: center !important;
+              overflow: hidden !important;
+            }
+
+            /* بقع الألوان */
+            .en-blob {
+              position: absolute;
+              border-radius: 50%;
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            .en-blob1 {
+              width: 200px;
+              height: 200px;
+              background: rgba(91, 189, 185, 0.12);
+              top: -60px;
+              right: -60px;
+              filter: blur(50px);
+            }
+
+            .en-blob2 {
+              width: 160px;
+              height: 160px;
+              background: rgba(184, 167, 255, 0.14);
+              bottom: 30px;
+              left: -40px;
+              filter: blur(40px);
+            }
+
+            /* الحلقات */
+            .en-ring {
+              position: absolute;
+              border-radius: 50%;
+              border: 1px solid rgba(91, 189, 185, 0.14);
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            /* شارة علوية */
+            .en-top-badge {
+              position: absolute;
+              top: 16px;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 4;
+              background: rgba(255, 255, 255, 0.82);
+              border: 1px solid rgba(91, 189, 185, 0.25);
+              border-radius: 20px;
+              padding: 5px 14px;
+              font-size: 10.5px;
+              font-weight: 700;
+              color: #3DA8A4;
+              display: flex;
+              align-items: center;
+              gap: 6px;
+              white-space: nowrap;
+              backdrop-filter: blur(8px);
+            }
+
+            .en-badge-dot {
+              width: 6px;
+              height: 6px;
+              border-radius: 50%;
+              background: #5BBDB9;
+              box-shadow: 0 0 5px #5BBDB9;
+              animation: blink 1.5s ease-in-out infinite;
+            }
+
+            @keyframes blink {
+
+              0%,
+              100% {
+                opacity: 1;
+              }
+
+              50% {
+                opacity: .3;
+              }
+            }
+
+            /* نجوم زخرفية */
+            .en-star-deco {
+              position: absolute;
+              z-index: 3;
+              pointer-events: none;
+            }
+
+            .en-star-tl {
+              top: 16px;
+              right: 16px;
+            }
+
+            /* الصورة / الشعار */
+            .en-logo-img {
+              position: relative !important;
+              z-index: 2 !important;
+              width: 82% !important;
+              height: auto !important;
+              object-fit: contain !important;
+              border-radius: 0 !important;
+              filter:
+                drop-shadow(0 16px 40px rgba(91, 189, 185, 0.35)) drop-shadow(0 4px 16px rgba(184, 167, 255, 0.25)) !important;
+              animation: logo-float 7s ease-in-out infinite !important;
+            }
+
+            @keyframes logo-float {
+
+              0%,
+              100% {
+                transform: perspective(800px) translateY(0) rotateX(0deg);
+              }
+
+              50% {
+                transform: perspective(800px) translateY(-12px) rotateX(1.5deg);
+              }
+            }
+
+            /* تسمية الأسفل المحسّنة */
+            .en-photo-label {
+              background: rgba(4, 14, 32, 0.80) !important;
+              border: 1px solid rgba(91, 189, 185, 0.35) !important;
+              border-radius: 30px !important;
+              padding: 9px 22px !important;
+              gap: 8px !important;
+            }
+
+            /* Dark mode تعديلات */
+            [data-theme="dark"] .enamora-card {
+              background: linear-gradient(145deg,
+                  rgba(10, 30, 50, 0.9) 0%,
+                  rgba(15, 25, 45, 0.95) 45%,
+                  rgba(20, 15, 45, 0.85) 100%) !important;
+              border-color: rgba(91, 189, 185, 0.22) !important;
+            }
+
+            [data-theme="dark"] .en-top-badge {
+              background: rgba(10, 25, 50, 0.82) !important;
+              color: #7ECBC7 !important;
+            }
+
+            /* موبايل */
+            @media (max-width: 768px) {
+              .en-logo-img {
+                width: 78% !important;
+              }
+
+              .en-top-badge {
+                font-size: 9.5px;
+                padding: 4px 10px;
+              }
+            }
+          </style>
         </div>
 
       </div>
@@ -274,6 +561,94 @@
       </div>
       <span>اكتشف المزيد</span>
     </div>
+
+    <!-- ══ CSS شريط الفريق المصغر ══ -->
+    <style>
+      /* ── شريط فريق Enamora ── */
+      .hero-team-strip {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 28px;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.9s 0.65s ease both;
+      }
+
+      .hts-avatars {
+        display: flex;
+        align-items: center;
+      }
+
+      .hts-av {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 2.5px solid var(--bg-base);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 800;
+        color: #fff;
+        margin-left: -10px;
+        transition: transform 0.25s;
+        cursor: default;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      .hts-av:first-child {
+        margin-left: 0;
+      }
+
+      .hts-av:hover {
+        transform: translateY(-4px) scale(1.15);
+        z-index: 5;
+      }
+
+      .hts-av--more {
+        background: var(--glass2);
+        border-color: var(--border-accent);
+        color: var(--accent);
+        font-size: 10px;
+      }
+
+      .hts-text {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+
+      .hts-label {
+        font-size: 13px;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      .hts-count {
+        font-size: 14px;
+        font-weight: 900;
+        color: var(--accent);
+        background: rgba(91, 189, 185, 0.1);
+        border: 1px solid rgba(91, 189, 185, 0.25);
+        border-radius: 20px;
+        padding: 2px 10px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-team-strip {
+          justify-content: center;
+          margin-top: 20px;
+        }
+
+        .hts-av {
+          width: 32px;
+          height: 32px;
+          font-size: 11px;
+        }
+      }
+    </style>
+
   </section>
 
   <!-- ══════════════════════════════════════════════
@@ -641,48 +1016,420 @@
   <!-- ══════════════════════════════════════════════
      GALLERY
 ══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+   GALLERY – قسم المعرض بالتصميم الأصلي + صور حقيقية
+   استبدل هذا القسم كاملاً بدل القسم القديم في index.html
+══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════
+     GALLERY – قبل وبعد (سلايدر تفاعلي بالسحب)
+     نفس تصميم gallery-grid الأصلي
+══════════════════════════════════════════════ -->
   <section id="gallery">
     <div class="container">
       <div class="text-center mb-4 mb-lg-5 reveal up">
         <div class="sec-badge"><i class="fas fa-images"></i> معرض الصور</div>
         <h2 class="sec-title">قبل <span>وبعد</span> العلاج</h2>
-        <p class="sec-desc mx-auto">تحولات مذهلة حقيقية أنجزتها عيادتنا لمرضانا الكرام</p>
+        <p class="sec-desc mx-auto">تحولات مذهلة حقيقية أنجزتها عيادتنا لمرضانا الكرام – اسحب للمقارنة</p>
       </div>
-      <div class="gallery-grid reveal up">
-        <div class="g-item">
-          <div class="g-placeholder"><i class="fas fa-tooth"></i><span>زراعة أسنان</span></div>
-          <div class="g-overlay">
-            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>قبل وبعد الزراعة</span></div>
-          </div>
-        </div>
-        <div class="g-item">
-          <div class="g-placeholder"><i class="fas fa-star"></i><span>الابتسامة الهوليودية</span></div>
-          <div class="g-overlay">
-            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>ابتسامة هوليودية</span></div>
-          </div>
-        </div>
-        <div class="g-item">
-          <div class="g-placeholder"><i class="fas fa-magic"></i><span>تبييض الأسنان</span></div>
-          <div class="g-overlay">
-            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>تبييض ليزر</span></div>
-          </div>
-        </div>
-        <div class="g-item">
-          <div class="g-placeholder"><i class="fas fa-crown"></i><span>تركيبات الزيركون</span></div>
-          <div class="g-overlay">
-            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>تركيبات فاخرة</span></div>
-          </div>
-        </div>
-        <div class="g-item">
-          <div class="g-placeholder"><i class="fas fa-flask"></i><span>مخبر الأسنان</span></div>
-          <div class="g-overlay">
-            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>مخبرنا المتطور</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
+      <div class="gallery-grid reveal up">
+
+        <!-- ── خانة 1: زراعة أسنان (كبيرة – span 2 rows) ── -->
+        <div class="g-item">
+          <div class="ba-slider" data-label="زراعة أسنان">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-01-before.jpg" alt="قبل زراعة الأسنان" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-01-after.jpg" alt="بعد زراعة الأسنان" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle">
+                <i class="fas fa-arrows-alt-h"></i>
+              </div>
+            </div>
+          </div>
+          <!-- fallback إذا لم تُحمَّل الصور -->
+          <div class="g-placeholder g-placeholder--hidden">
+            <i class="fas fa-tooth"></i><span>زراعة أسنان</span>
+          </div>
+          <div class="g-overlay">
+            <div class="g-overlay-content">
+              <i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── خانة 2: ابتسامة هوليودية ── -->
+        <div class="g-item">
+          <div class="ba-slider" data-label="الابتسامة الهوليودية">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-02-before.jpg" alt="قبل الابتسامة الهوليودية" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-02-after.jpg" alt="بعد الابتسامة الهوليودية" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="g-placeholder g-placeholder--hidden">
+            <i class="fas fa-star"></i><span>الابتسامة الهوليودية</span>
+          </div>
+          <div class="g-overlay">
+            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
+          </div>
+        </div>
+
+        <!-- ── خانة 3: تبييض الأسنان ── -->
+        <div class="g-item">
+          <div class="ba-slider" data-label="تبييض الأسنان">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-03-before.jpg" alt="قبل تبييض الأسنان" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-03-after.jpg" alt="بعد تبييض الأسنان" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="g-placeholder g-placeholder--hidden">
+            <i class="fas fa-magic"></i><span>تبييض الأسنان</span>
+          </div>
+          <div class="g-overlay">
+            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
+          </div>
+        </div>
+
+        <!-- ── خانة 4: تركيبات الزيركون ── -->
+        <div class="g-item">
+          <div class="ba-slider" data-label="تركيبات الزيركون">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-04-before.jpg" alt="قبل تركيبات الزيركون" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-04-after.jpg" alt="بعد تركيبات الزيركون" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="g-placeholder g-placeholder--hidden">
+            <i class="fas fa-crown"></i><span>تركيبات الزيركون</span>
+          </div>
+          <div class="g-overlay">
+            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
+          </div>
+        </div>
+
+        <!-- ── خانة 5: مخبر الأسنان ── -->
+        <div class="g-item">
+          <div class="ba-slider" data-label="مخبر الأسنان">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-05-before.jpg" alt="قبل مخبر الأسنان" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-05-after.jpg" alt="بعد مخبر الأسنان" loading="lazy"
+                onerror="this.src=''" />
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="g-placeholder g-placeholder--hidden">
+            <i class="fas fa-flask"></i><span>مخبر الأسنان</span>
+          </div>
+          <div class="g-overlay">
+            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
+          </div>
+        </div>
+
+      </div><!-- end gallery-grid -->
+    </div>
+
+    <!-- ══ CSS السلايدر ══ -->
+    <style>
+      /* ── السلايدر يملأ الخانة كاملاً ── */
+      .ba-slider {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        cursor: col-resize;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      /* ── صورة "قبل" – خلفية ثابتة ── */
+      .ba-before,
+      .ba-after {
+        position: absolute;
+        inset: 0;
+      }
+
+      .ba-before img,
+      .ba-after img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        pointer-events: none;
+        transition: none;
+      }
+
+      /* ── صورة "بعد" – مقصوصة بـ clip-path تتحرك ── */
+      .ba-after {
+        clip-path: inset(0 50% 0 0);
+        /* نبدأ من المنتصف */
+        transition: clip-path 0s;
+      }
+
+      /* ── تاجات قبل / بعد ── */
+      .ba-tag {
+        position: absolute;
+        bottom: 10px;
+        font-size: 10px;
+        font-weight: 800;
+        padding: 3px 11px;
+        border-radius: 20px;
+        letter-spacing: 0.5px;
+        pointer-events: none;
+        z-index: 5;
+      }
+
+      .ba-tag--before {
+        right: 10px;
+        background: rgba(0, 0, 0, 0.55);
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .ba-tag--after {
+        left: 10px;
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 2px 8px rgba(91, 189, 185, 0.4);
+      }
+
+      /* ── الخط الفاصل ── */
+      .ba-handle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        pointer-events: none;
+      }
+
+      .ba-line {
+        width: 2px;
+        flex: 1;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .ba-circle {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid var(--accent);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+        color: var(--accent);
+        font-size: 13px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      .ba-slider:active .ba-circle,
+      .ba-slider.dragging .ba-circle {
+        transform: translateY(-50%) scale(1.15);
+        box-shadow: 0 6px 20px rgba(91, 189, 185, 0.5);
+      }
+
+      /* ── Placeholder مخفي يظهر فقط عند فشل الصور ── */
+      .g-placeholder--hidden {
+        display: none !important;
+      }
+
+      .g-item.no-images .ba-slider {
+        display: none;
+      }
+
+      .g-item.no-images .g-placeholder--hidden {
+        display: flex !important;
+      }
+
+      /* ── إيقاف hover overlay عند السحب ── */
+      .ba-slider:active~.g-overlay,
+      .ba-slider.dragging~.g-overlay {
+        opacity: 0 !important;
+      }
+
+      /* ── تلميح الاستخدام عند أول دخول ── */
+      .ba-hint {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 5px 14px;
+        border-radius: 20px;
+        pointer-events: none;
+        z-index: 20;
+        white-space: nowrap;
+        opacity: 1;
+        transition: opacity 0.4s;
+      }
+
+      .ba-hint.hidden {
+        opacity: 0;
+      }
+
+      /* موبايل: دائرة أكبر قليلاً للمس */
+      @media (max-width: 768px) {
+        .ba-circle {
+          width: 42px;
+          height: 42px;
+          font-size: 15px;
+        }
+      }
+    </style>
+
+    <!-- ══ JavaScript السلايدر ══ -->
+    <script>
+      (function () {
+        'use strict';
+
+        function initSlider(slider) {
+          var afterEl = slider.querySelector('.ba-after');
+          var handle = slider.querySelector('.ba-handle');
+          var isDragging = false;
+          var pct = 50; // نسبة مئوية (0–100)
+
+          // تلميح الاستخدام
+          var hint = document.createElement('div');
+          hint.className = 'ba-hint';
+          hint.textContent = 'اسحب للمقارنة';
+          slider.appendChild(hint);
+
+          function setPosition(x) {
+            var rect = slider.getBoundingClientRect();
+            var relX = x - rect.left;
+            pct = Math.max(2, Math.min(98, (relX / rect.width) * 100));
+            afterEl.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+            handle.style.left = pct + '%';
+          }
+
+          function onMove(e) {
+            if (!isDragging) return;
+            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            setPosition(clientX);
+          }
+
+          function onStart(e) {
+            isDragging = true;
+            slider.classList.add('dragging');
+            hint.classList.add('hidden');
+            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+            setPosition(clientX);
+            e.preventDefault();
+          }
+
+          function onEnd() {
+            isDragging = false;
+            slider.classList.remove('dragging');
+          }
+
+          // أحداث الماوس
+          slider.addEventListener('mousedown', onStart);
+          window.addEventListener('mousemove', onMove);
+          window.addEventListener('mouseup', onEnd);
+
+          // أحداث اللمس
+          slider.addEventListener('touchstart', onStart, { passive: false });
+          window.addEventListener('touchmove', onMove, { passive: false });
+          window.addEventListener('touchend', onEnd);
+
+          // إخفاء التلميح بعد 2 ثانية
+          setTimeout(function () { hint.classList.add('hidden'); }, 2200);
+
+          // التحقق من تحميل الصور
+          var imgs = slider.querySelectorAll('img');
+          var loadedCount = 0;
+          var failedCount = 0;
+
+          imgs.forEach(function (img) {
+            if (img.complete && img.naturalWidth > 0) {
+              loadedCount++;
+            } else if (img.complete) {
+              failedCount++;
+            } else {
+              img.addEventListener('load', function () {
+                loadedCount++;
+              });
+              img.addEventListener('error', function () {
+                failedCount++;
+                if (failedCount >= 2) {
+                  slider.closest('.g-item').classList.add('no-images');
+                }
+              });
+            }
+          });
+        }
+
+        // تهيئة كل السلايدرات
+        function initAll() {
+          document.querySelectorAll('.ba-slider').forEach(function (slider) {
+            initSlider(slider);
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initAll);
+        } else {
+          initAll();
+        }
+      })();
+    </script>
+
+  </section>
   <!-- ══════════════════════════════════════════════
      TESTIMONIALS – PREMIUM SLIDER
 ══════════════════════════════════════════════ -->
@@ -828,6 +1575,175 @@
                 </div>
               </div>
             </div>
+            <!-- ══════════════════════════════════════════════
+   تعليقات المرضى الجدد – انسخ هذه الشرائح
+   وضعها داخل <div class="ts-track" id="tsTrack">
+   بعد آخر slide موجود (slide 6)
+══════════════════════════════════════════════ -->
+
+            <!-- slide 7 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"من أفضل العيادات اللي راحتلها بحياتي! الدكتور وسام شرح لي بالتفصيل كل خطوة قبل ما
+                  يبدأ بالعلاج. الفينيرز طلع طبيعي جداً وما حدا عرف إنو تركيبات."</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#7b2d8b,#a855f7);">ن</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">نور الهدى سليمان</div>
+                    <div class="ts-job">فينيرز · 2024</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 8 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"زرعت ضرس العقل وكنت خايف كتير من الألم، بس الدكتور محمد البيك تعامل معي باحترافية
+                  عالية والعملية انتهت بدون أي إحساس. شكراً للفريق الرائع!"</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#1e3a5f,#2980b9);">ط</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">طارق الأحمد</div>
+                    <div class="ts-job">جراحة أسنان · 2024</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 9 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"جبت ابنتي الصغيرة عند الدكتورة بيان لعلاج تسوس، وصراحة ما توقعت إنها ترجع من العيادة
+                  وهي مبسوطة! الدكتورة تعاملت معها بأسلوب ولاد جميل جداً."</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">أ</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">أم عبدالله الحسن</div>
+                    <div class="ts-job">أسنان أطفال · 2023</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 10 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"عملت Invisalign عند الدكتور مهند وبعد ١٨ شهر النتيجة مذهلة. الأسنان مرتبة تماماً
+                  والتقويم الشفاف ما حدا لاحظه خلال فترة العلاج. توصية من القلب!"</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#16a085,#1abc9c);">س</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">سلمى القاضي</div>
+                    <div class="ts-job">Invisalign · 2024</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 11 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"المخبر الداخلي للعيادة من أحسن الأشياء اللي شفتها! الأستاذ حسام شرح لي كيف يشتغل
+                  وعمل التركيبات بدقة فائقة. التيجان طلعت مضبوطة من أول جلسة."</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#8e44ad,#9b59b6);">ع</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">عمر الديب</div>
+                    <div class="ts-job">تيجان زيركون · 2023</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 12 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"أنا من المغتربين وكنت دايماً مؤجل علاج أسناني. لما رجعت لحلب قررت أجي هون، وما ندمت
+                  أبداً! الأسعار منطقية والجودة عالمية. رح أرسل كل عيلتي."</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#2c3e50,#3498db);">م</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">محمود النجار</div>
+                    <div class="ts-job">علاج شامل · 2024</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 13 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"التصميم الرقمي للأسنان اللي عمله الأستاذ عدنان كان خرافي! شفت كيف رح تطلع ابتسامتي
+                  قبل ما يبدأ العلاج أصلاً. هيك تقنيات بس بالعيادات الكبيرة."</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#d35400,#e67e22);">ه</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">هيفاء الزعبي</div>
+                    <div class="ts-job">تصميم ابتسامة · 2024</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 14 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"كنت أعاني من التهاب في اللثة من سنتين وجربت أكثر من مكان. جيت هون وبعد جلستين حسيت
+                  بفرق كبير! العلاج كان دقيق والنظافة والتعقيم ممتازين."</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#27ae60,#2ecc71);">ر</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">رامي الشيخ</div>
+                    <div class="ts-job">علاج اللثة · 2023</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- slide 15 -->
+            <div class="ts-slide">
+              <div class="ts-card">
+                <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
+                <div class="ts-stars">★★★★★</div>
+                <p class="ts-text">"بعد الزراعة الفورية حسيت إنو عندي أسنان طبيعية من أول! الدكتور وسام شرح لي كل خطوة
+                  وأعطاني تعليمات واضحة للعناية. نتيجة رائعة ومريض 100%."</p>
+                <div class="ts-author">
+                  <div class="ts-av" style="background:linear-gradient(135deg,#5bbdb9,#3da8a4);">ي</div>
+                  <div class="ts-meta">
+                    <div class="ts-name">ياسر العمر</div>
+                    <div class="ts-job">زراعة فورية · 2024</div>
+                  </div>
+                  <div class="ts-verified"><i class="fas fa-check-circle"></i> موثق</div>
+                </div>
+              </div>
+            </div>
+
+
 
           </div><!-- end track -->
         </div><!-- end stage -->
@@ -1210,6 +2126,7 @@
       loadScript('static/js/booking.js', 'booking.js');
       // main.js: في static/js دائماً
       loadScript('static/js/main.js');
+      loadScript('static/js/testimonials-slider.js');
     })();
   </script>
 

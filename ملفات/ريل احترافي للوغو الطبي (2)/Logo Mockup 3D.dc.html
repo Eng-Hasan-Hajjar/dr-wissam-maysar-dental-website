@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    @keyframes gentleFloat {
+      0%,100% { transform: translateY(0px); }
+      50%      { transform: translateY(-16px); }
+    }
+    @keyframes glowBreathe {
+      0%,100% { opacity: 0.38; transform: translate(-50%,-60%) scale(1.00); }
+      50%      { opacity: 0.68; transform: translate(-50%,-60%) scale(1.10); }
+    }
+    @keyframes fadeUpIn {
+      from { opacity:0; transform:translateY(18px); }
+      to   { opacity:1; transform:translateY(0px); }
+    }
+    @keyframes shadowPulse {
+      0%,100% { transform: translateX(-50%) scaleX(1.00); opacity: 0.28; }
+      50%      { transform: translateX(-50%) scaleX(0.72); opacity: 0.14; }
+    }
+  </style>
+</helmet>
+
+<div style="position:relative; width:100%; min-height:100vh; background:#F5F1EC; display:flex; flex-direction:column; align-items:center; justify-content:center; overflow:hidden;">
+
+  <!-- Soft background teal glow (center) -->
+  <div style="position:absolute; left:50%; top:42%; transform:translate(-50%,-60%); width:880px; height:880px; border-radius:50%; background:radial-gradient(circle, rgba(62,155,155,0.13) 0%, rgba(62,155,155,0.04) 46%, transparent 70%); animation:glowBreathe 6.5s ease-in-out infinite; pointer-events:none;"></div>
+
+  <!-- Ambient purple tint lower -->
+  <div style="position:absolute; left:50%; bottom:0; transform:translateX(-50%); width:700px; height:320px; background:radial-gradient(ellipse 55% 60% at 50% 100%, rgba(139,107,224,0.06) 0%, transparent 100%); pointer-events:none;"></div>
+
+  <!-- Subtle dot grid -->
+  <div style="position:absolute; inset:0; background-image:radial-gradient(rgba(62,155,155,0.12) 1px, transparent 1px); background-size:38px 38px; opacity:0.35; pointer-events:none;"></div>
+
+  <!-- Main composition (floats together) -->
+  <div style="position:relative; display:flex; flex-direction:column; align-items:center; z-index:10; animation:gentleFloat 7s ease-in-out infinite;">
+
+    <!-- Glass crystal star (3D perspective tilt) -->
+    <div style="transform:perspective(1000px) rotateX(9deg) rotateY(-7deg); filter:drop-shadow(0px 28px 42px rgba(62,155,155,0.17)) drop-shadow(0px 8px 16px rgba(0,0,0,0.09));">
+      <svg width="320" height="320" viewBox="-220 -220 440 440" style="display:block; overflow:visible;">
+        <defs>
+          <!-- Glass main body: pure white UL → whisper aqua LR -->
+          <radialGradient id="Gg" cx="26%" cy="20%" r="85%">
+            <stop offset="0%"   stopColor="#FFFFFF"  stopOpacity="0.98"/>
+            <stop offset="8%"   stopColor="#F2FAFA"  stopOpacity="0.90"/>
+            <stop offset="25%"  stopColor="#C5E6E6"  stopOpacity="0.60"/>
+            <stop offset="50%"  stopColor="#84C4C4"  stopOpacity="0.26"/>
+            <stop offset="78%"  stopColor="#44AAAA"  stopOpacity="0.09"/>
+            <stop offset="100%" stopColor="#3E9B9B"  stopOpacity="0.02"/>
+          </radialGradient>
+
+          <!-- Glass inner depth layer -->
+          <radialGradient id="Gil" cx="38%" cy="30%" r="70%">
+            <stop offset="0%"   stopColor="#FFFFFF"  stopOpacity="0.54"/>
+            <stop offset="40%"  stopColor="#D4EEEE"  stopOpacity="0.17"/>
+            <stop offset="100%" stopColor="#3E9B9B"  stopOpacity="0.01"/>
+          </radialGradient>
+
+          <!-- Orb (glass bubble) -->
+          <radialGradient id="Gorb" cx="30%" cy="24%" r="74%">
+            <stop offset="0%"   stopColor="#FFFFFF"  stopOpacity="0.22"/>
+            <stop offset="42%"  stopColor="#D8F0F0"  stopOpacity="0.07"/>
+            <stop offset="100%" stopColor="#3E9B9B"  stopOpacity="0.01"/>
+          </radialGradient>
+
+          <!-- Purple inner star -->
+          <radialGradient id="Gp" cx="38%" cy="30%" r="66%">
+            <stop offset="0%"   stopColor="#D4B8FC"/>
+            <stop offset="44%"  stopColor="#8B6BE0"/>
+            <stop offset="100%" stopColor="#4C30B4"/>
+          </radialGradient>
+
+          <!-- Purple glow around inner star -->
+          <radialGradient id="Gpg" cx="50%" cy="50%" r="65%">
+            <stop offset="0%"   stopColor="#8B6BE0"  stopOpacity="0.48"/>
+            <stop offset="100%" stopColor="#8B6BE0"  stopOpacity="0.00"/>
+          </radialGradient>
+
+          <!-- Filters -->
+          <filter id="Fblm" x="-80%" y="-80%" width="260%" height="260%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="30"/>
+          </filter>
+          <filter id="Fpg" x="-120%" y="-120%" width="340%" height="340%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="18"/>
+          </filter>
+          <filter id="Fsg" x="-60%" y="-60%" width="220%" height="220%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="b"/>
+            <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Star r=180  c=23.4 | Orb r=210 -->
+
+        <!-- ① Outer teal bloom haze -->
+        <path d="M0,-180 C23.4,-23.4 23.4,-23.4 180,0 C23.4,23.4 23.4,23.4 0,180 C-23.4,23.4 -23.4,23.4 -180,0 C-23.4,-23.4 -23.4,-23.4 0,-180Z"
+          fill="#3E9B9B" opacity="0.10" filter="url(#Fblm)"/>
+
+        <!-- ② Glass orb circle -->
+        <circle r="210" fill="url(#Gorb)"/>
+        <circle r="210" fill="none" stroke="rgba(255,255,255,0.30)" strokeWidth="1.2"/>
+        <ellipse cx="-64" cy="-106" rx="40" ry="15" fill="white" opacity="0.20" transform="rotate(-42,-64,-106)"/>
+        <circle cx="-28" cy="-142" r="6" fill="white" opacity="0.14"/>
+
+        <!-- ③ Star depth/shadow (below+right, aqua tinted) -->
+        <path d="M0,-180 C23.4,-23.4 23.4,-23.4 180,0 C23.4,23.4 23.4,23.4 0,180 C-23.4,23.4 -23.4,23.4 -180,0 C-23.4,-23.4 -23.4,-23.4 0,-180Z"
+          fill="rgba(62,155,155,0.15)" transform="translate(7,9)"/>
+
+        <!-- ④ Glass inner depth copy (smaller, offset) -->
+        <path d="M0,-148 C19.24,-19.24 19.24,-19.24 148,0 C19.24,19.24 19.24,19.24 0,148 C-19.24,19.24 -19.24,19.24 -148,0 C-19.24,-19.24 -19.24,-19.24 0,-148Z"
+          fill="url(#Gil)" transform="translate(3,5)"/>
+
+        <!-- ⑤ Main glass body -->
+        <path d="M0,-180 C23.4,-23.4 23.4,-23.4 180,0 C23.4,23.4 23.4,23.4 0,180 C-23.4,23.4 -23.4,23.4 -180,0 C-23.4,-23.4 -23.4,-23.4 0,-180Z"
+          fill="url(#Gg)"/>
+
+        <!-- ⑥ Outer edge white highlight stroke -->
+        <path d="M0,-180 C23.4,-23.4 23.4,-23.4 180,0 C23.4,23.4 23.4,23.4 0,180 C-23.4,23.4 -23.4,23.4 -180,0 C-23.4,-23.4 -23.4,-23.4 0,-180Z"
+          fill="none" stroke="rgba(255,255,255,0.74)" strokeWidth="2.0"/>
+
+        <!-- ⑦ Inner surface edge line -->
+        <path d="M0,-153 C19.89,-19.89 19.89,-19.89 153,0 C19.89,19.89 19.89,19.89 0,153 C-19.89,19.89 -19.89,19.89 -153,0 C-19.89,-19.89 -19.89,-19.89 0,-153Z"
+          fill="none" stroke="rgba(255,255,255,0.20)" strokeWidth="1.0"/>
+
+        <!-- ⑧ Purple inner glow -->
+        <path d="M0,-52 C6.76,-6.76 6.76,-6.76 52,0 C6.76,6.76 6.76,6.76 0,52 C-6.76,6.76 -6.76,6.76 -52,0 C-6.76,-6.76 -6.76,-6.76 0,-52Z"
+          fill="url(#Gpg)" filter="url(#Fpg)"/>
+
+        <!-- ⑨ Purple inner star (brand mark) -->
+        <g filter="url(#Fsg)">
+          <path d="M0,-44 C5.72,-5.72 5.72,-5.72 44,0 C5.72,5.72 5.72,5.72 0,44 C-5.72,5.72 -5.72,5.72 -44,0 C-5.72,-5.72 -5.72,-5.72 0,-44Z"
+            fill="url(#Gp)"/>
+        </g>
+
+        <!-- ⑩ Specular highlights -->
+        <!-- Primary: large bright ellipse, top-left lobe -->
+        <ellipse cx="-46" cy="-136" rx="26" ry="10" fill="white" opacity="0.94"
+          transform="rotate(-38,-46,-136)"/>
+        <!-- Secondary: right lobe glint -->
+        <ellipse cx="136" cy="-20" rx="15" ry="6" fill="white" opacity="0.60"
+          transform="rotate(8,136,-20)"/>
+        <!-- Tertiary dots -->
+        <circle cx="-16" cy="-172" r="4.5" fill="white" opacity="0.82"/>
+        <circle cx="-82" cy="-100" r="2.5" fill="white" opacity="0.36"/>
+        <!-- Edge specular sweep, upper-left -->
+        <path d="M-5,-165 C-74,-85 -94,-57 -156,-5" fill="none" stroke="rgba(255,255,255,0.38)" strokeWidth="1.5"/>
+      </svg>
+    </div>
+
+    <!-- LOGO: Enamora wordmark -->
+    <div style="margin-top:-14px; text-align:center; white-space:nowrap;">
+      <div style="font-family:'Cormorant Garamond',Georgia,serif; font-size:88px; font-weight:400; color:#3E9B9B; letter-spacing:-0.015em; line-height:1; display:inline-block; white-space:nowrap;">Enam<span style="position:relative; display:inline-block;">o<span style="position:absolute; left:50%; top:52%; transform:translate(-50%,-50%); display:flex; align-items:center; justify-content:center; pointer-events:none; z-index:2;"><svg width="17" height="17" viewBox="-9 -9 18 18" style="display:block;"><path d="M0,-7.5 C0.975,-0.975 0.975,-0.975 7.5,0 C0.975,0.975 0.975,0.975 0,7.5 C-0.975,0.975 -0.975,0.975 -7.5,0 C-0.975,-0.975 -0.975,-0.975 0,-7.5Z" fill="#8B6BE0"/></svg></span></span>ra</div>
+    </div>
+
+    <!-- DENTAL CENTER -->
+    <div style="margin-top:6px; text-align:center;">
+      <div style="font-family:'Montserrat',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.55em; padding-left:0.55em; color:#3E9B9B; text-transform:uppercase;">DENTAL CENTER</div>
+    </div>
+
+    <!-- Accent sparkle -->
+    <div style="margin-top:12px;">
+      <svg width="13" height="13" viewBox="-7 -7 14 14" style="display:block;">
+        <path d="M0,-6.5 C0.845,-0.845 0.845,-0.845 6.5,0 C0.845,0.845 0.845,0.845 0,6.5 C-0.845,0.845 -0.845,0.845 -6.5,0 C-0.845,-0.845 -0.845,-0.845 0,-6.5Z" fill="#8B6BE0" opacity="0.68"/>
+      </svg>
+    </div>
+
+    <!-- Tagline -->
+    <div style="margin-top:16px; text-align:center;">
+      <div style="font-family:'Montserrat',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.36em; padding-left:0.36em; color:rgba(62,155,155,0.52); text-transform:uppercase;">Science. Artistry. <span style="color:#3E9B9B; font-weight:600;">You.</span></div>
+    </div>
+  </div>
+
+  <!-- Floor glow / shadow (stays fixed to enhance float illusion) -->
+  <div style="position:absolute; left:50%; top:58%; transform:translateX(-50%); width:300px; height:44px; border-radius:50%; background:radial-gradient(ellipse, rgba(62,155,155,0.11) 0%, transparent 70%); animation:shadowPulse 7s ease-in-out infinite; pointer-events:none;"></div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1920,&quot;height&quot;:1080}}">
+class Component extends DCLogic {}
+</script>
+</body>
+</html>

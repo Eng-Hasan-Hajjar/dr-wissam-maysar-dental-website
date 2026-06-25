@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body { margin: 0; background: #fff; }
+canvas { display: block; border: 1px solid red; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+<div id="status">Loading...</div>
+<canvas id="c1" style="max-width:100%"></canvas>
+<canvas id="c2" style="max-width:100%"></canvas>
+<script>
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+async function renderPDF() {
+  document.getElementById('status').textContent = 'Fetching PDF...';
+  const response = await fetch('./uploads/enamora.pdf');
+  const arrayBuffer = await response.arrayBuffer();
+  document.getElementById('status').textContent = 'Parsing PDF...';
+  const pdf = await pdfjsLib.getDocument({ data: new Uint8Array(arrayBuffer) }).promise;
+  document.getElementById('status').textContent = 'Pages: ' + pdf.numPages + ' - Rendering...';
+
+  for (let i = 1; i <= Math.min(2, pdf.numPages); i++) {
+    const page = await pdf.getPage(i);
+    const viewport = page.getViewport({ scale: 1.5 });
+    const canvas = document.getElementById('c' + i);
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    const ctx = canvas.getContext('2d');
+    await page.render({ canvasContext: ctx, viewport }).promise;
+    document.getElementById('status').textContent = 'Page ' + i + ' done! w=' + canvas.width + ' h=' + canvas.height;
+  }
+  document.getElementById('status').textContent = 'ALL DONE';
+}
+renderPDF().catch(e => { document.getElementById('status').textContent = 'ERROR: ' + e.message; console.error(e); });
+</script>
+</body>
+</html>
