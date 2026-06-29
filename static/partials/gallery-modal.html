@@ -1,0 +1,381 @@
+<!-- ═══════════════════════════════════════════════════
+   gallery-modal.html  –  HTML Partial فقط
+   Enamora Dental Center
+
+   مسار الملف: static/partials/gallery-modal.html
+   يتم تحميله تلقائياً بواسطة gallery-modal.js
+   لا تضف هنا <script> أو <link> أو <style>
+═══════════════════════════════════════════════════ -->
+
+<!-- ── زر شاهد المزيد ── -->
+<div class="text-center mt-4 mt-lg-5 reveal up">
+  <button class="gallery-more-btn" id="galleryMoreBtn" onclick="openGalleryModal()">
+    <span class="gmb-icon">
+      <svg width="18" height="18" viewBox="0 0 24 24">
+        <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gStar)"/>
+      </svg>
+    </span>
+    شاهد المزيد من الحالات
+    <span class="gmb-count">+10 حالات</span>
+    <span class="gmb-arrow">
+      <i class="fas fa-chevron-down"></i>
+    </span>
+  </button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+   GALLERY MODAL
+═══════════════════════════════════════════════════ -->
+<div class="gallery-modal-overlay" id="galleryModal"
+     role="dialog" aria-modal="true" aria-label="معرض الحالات الكامل">
+
+  <div class="gallery-modal-box">
+
+    <!-- ── Header ── -->
+    <div class="gm-header">
+      <div class="gm-header-info">
+        <svg width="18" height="18" viewBox="0 0 24 24" style="flex-shrink:0;">
+          <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="url(#gStar)"/>
+        </svg>
+        <div>
+          <h3 class="gm-title">معرض الحالات الكامل</h3>
+          <p class="gm-sub">اسحب للمقارنة بين قبل وبعد العلاج</p>
+        </div>
+      </div>
+      <button class="gm-close" onclick="closeGalleryModal()" aria-label="إغلاق">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <!-- ── Filter Tabs ── -->
+    <div class="gm-filters">
+      <button class="gm-filter active" data-filter="all">الكل</button>
+      <button class="gm-filter" data-filter="implants">
+        <i class="fas fa-tooth"></i> زراعة
+      </button>
+      <button class="gm-filter" data-filter="whitening">
+        <i class="fas fa-magic"></i> تبييض
+      </button>
+      <button class="gm-filter" data-filter="hollywood">
+        <i class="fas fa-star"></i> هوليوود
+      </button>
+      <button class="gm-filter" data-filter="braces">
+        <i class="fas fa-teeth-open"></i> تقويم
+      </button>
+      <button class="gm-filter" data-filter="crowns">
+        <i class="fas fa-crown"></i> تركيبات
+      </button>
+    </div>
+
+    <!-- ── Grid ── -->
+    <div class="gm-body">
+      <div class="gm-grid" id="gmGrid">
+
+        <!-- ════ حالة 6: تبييض ════ -->
+        <div class="gm-item" data-category="whitening">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-06-before.jpg"
+                   alt="قبل تبييض الأسنان" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-06-after.jpg"
+                   alt="بعد تبييض الأسنان" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">تبييض الأسنان بالليزر</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-magic"></i><span>تبييض الأسنان</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 7: هوليوود ════ -->
+        <div class="gm-item" data-category="hollywood">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-07-before.jpg"
+                   alt="قبل الابتسامة الهوليودية" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-07-after.jpg"
+                   alt="بعد الابتسامة الهوليودية" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">ابتسامة هوليوود – فينيرز</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-star"></i><span>ابتسامة هوليوود</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 8: زراعة ════ -->
+        <div class="gm-item" data-category="implants">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-08-before.jpg"
+                   alt="قبل الزراعة" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-08-after.jpg"
+                   alt="بعد الزراعة" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">زراعة الأسنان الفورية</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-tooth"></i><span>زراعة أسنان</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 9: تقويم ════ -->
+        <div class="gm-item" data-category="braces">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-09-before.jpg"
+                   alt="قبل التقويم" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-09-after.jpg"
+                   alt="بعد التقويم" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">تقويم Invisalign الشفاف</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-teeth-open"></i><span>تقويم أسنان</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 10: تركيبات ════ -->
+        <div class="gm-item" data-category="crowns">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-10-before.jpg"
+                   alt="قبل تركيبات الزيركون" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-10-after.jpg"
+                   alt="بعد تركيبات الزيركون" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">تركيبات الزيركون</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-crown"></i><span>تركيبات زيركون</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 11: تبييض ════ -->
+        <div class="gm-item" data-category="whitening">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-11-before.jpg"
+                   alt="قبل" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-11-after.jpg"
+                   alt="بعد" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">تبييض احترافي</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-magic"></i><span>تبييض الأسنان</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 12: هوليوود ════ -->
+        <div class="gm-item" data-category="hollywood">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-12-before.jpg"
+                   alt="قبل" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-12-after.jpg"
+                   alt="بعد" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">ابتسامة هوليوود</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-star"></i><span>فينيرز</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 13: زراعة ════ -->
+        <div class="gm-item" data-category="implants">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-13-before.jpg"
+                   alt="قبل" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-13-after.jpg"
+                   alt="بعد" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">زراعة متعددة</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-tooth"></i><span>زراعة متعددة</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 14: تركيبات ════ -->
+        <div class="gm-item" data-category="crowns">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-14-before.jpg"
+                   alt="قبل" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-14-after.jpg"
+                   alt="بعد" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">تيجان بورسلين</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-crown"></i><span>تيجان بورسلين</span>
+          </div>
+        </div>
+
+        <!-- ════ حالة 15: تقويم ════ -->
+        <div class="gm-item" data-category="braces">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-15-before.jpg"
+                   alt="قبل" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-15-after.jpg"
+                   alt="بعد" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">تقويم ثابت</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-teeth-open"></i><span>تقويم ثابت</span>
+          </div>
+        </div>
+
+        <!-- ════ لإضافة حالة جديدة: انسخ هذه القالب ════
+        <div class="gm-item" data-category="[whitening|hollywood|implants|braces|crowns]">
+          <div class="ba-slider modal-slider">
+            <div class="ba-before">
+              <img src="static/images/dd/gallery-XX-before.jpg" alt="قبل" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--before">قبل</span>
+            </div>
+            <div class="ba-after">
+              <img src="static/images/dd/gallery-XX-after.jpg" alt="بعد" loading="lazy"
+                   onerror="this.closest('.gm-item').classList.add('gm-no-img')"/>
+              <span class="ba-tag ba-tag--after">بعد</span>
+            </div>
+            <div class="ba-handle">
+              <div class="ba-line"></div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
+            </div>
+          </div>
+          <div class="gm-label">اسم الحالة</div>
+          <div class="gm-item-placeholder">
+            <i class="fas fa-tooth"></i><span>اسم الحالة</span>
+          </div>
+        </div>
+        ════ ═══════════════════════════════════════════ -->
+
+      </div><!-- end gm-grid -->
+    </div><!-- end gm-body -->
+
+    <!-- ── Footer ── -->
+    <div class="gm-footer">
+      <div class="gm-footer-text">
+        <svg width="10" height="10" viewBox="0 0 24 24" style="flex-shrink:0;">
+          <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#B8A7FF"/>
+        </svg>
+        جميع الحالات من مرضى حقيقيين بإذنهم
+      </div>
+      <a href="https://wa.me/963999020549?text=مرحباً%2C%20أريد%20الاستفسار%20عن%20حالة%20مشابهة%20لما%20رأيته%20في%20المعرض"
+         target="_blank" rel="noopener" class="gm-footer-btn">
+        <i class="fab fa-whatsapp"></i>
+        استفسر عن حالتك
+      </a>
+    </div>
+
+  </div><!-- end gallery-modal-box -->
+</div><!-- end gallery-modal-overlay -->

@@ -1,0 +1,812 @@
+/* ═══════════════════════════════════════════════════
+   dark-overrides.css
+   تعديلات الدارك موด: يحل اللافندر (#B8A7FF) محل الأبيض
+   Enamora Dental Center
+   
+   أضف رابط هذا الملف في <head> في index.html:
+   <link rel="stylesheet" href="static/css/dark-overrides.css?v=1" />
+═══════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════
+   NAVBAR – Dark Mode
+══════════════════════════════════════════════════ */
+
+/* خط المتحرك العلوي: أكوا → لافندر → أكوا */
+[data-theme="dark"] .nav-top-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    var(--lavender),
+    var(--lavender),
+    var(--accent),
+    transparent
+  );
+}
+
+/* نقطة active في الروابط → لافندر */
+[data-theme="dark"] .nav-link-item:hover::after,
+[data-theme="dark"] .nav-link-item.active::after {
+  background: var(--lavender);
+}
+
+/* اسم العيادة في الناف */
+[data-theme="dark"] .nav-brand-text .clinic-name {
+  color: #EDE8FF;
+}
+
+/* Subtitle star */
+[data-theme="dark"] .nav-brand-text .clinic-sub::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='%23B8A7FF'/%3E%3C/svg%3E");
+}
+
+/* ══════════════════════════════════════════════════
+   HERO – Dark Mode
+══════════════════════════════════════════════════ */
+
+/* Hero badge border → lavender glow */
+[data-theme="dark"] .hero-badge {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.30);
+  color: var(--lavender);
+}
+
+/* Hero title gradient: لافندر → أكوا بدل الأخضر المزرق */
+[data-theme="dark"] .hero-title .grad {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Team strip count badge */
+[data-theme="dark"] .hts-count {
+  background: rgba(184, 167, 255, 0.12);
+  border-color: rgba(184, 167, 255, 0.28);
+  color: var(--lavender);
+}
+
+/* Mini stats border */
+[data-theme="dark"] .hero-mini-stats {
+  background: rgba(184, 167, 255, 0.06);
+  border-color: rgba(184, 167, 255, 0.18);
+}
+
+[data-theme="dark"] .mini-stat .num {
+  color: var(--lavender);
+}
+
+/* Scroll hint */
+[data-theme="dark"] .scroll-hint .mouse {
+  border-color: rgba(184, 167, 255, 0.35);
+}
+[data-theme="dark"] .scroll-hint .mouse-dot {
+  background: var(--lavender);
+}
+
+/* ══════════════════════════════════════════════════
+   SECTION HEADERS – Dark Mode
+   sec-badge + sec-title span → Lavender
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .sec-badge {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.28);
+  color: var(--lavender);
+}
+
+/* الكلمة الملونة في العنوان → لافندر */
+[data-theme="dark"] .sec-title span {
+  color: var(--lavender);
+}
+
+/* الخط + النجمة في divider */
+[data-theme="dark"] .divider::before {
+  background: linear-gradient(90deg, var(--lavender), transparent);
+}
+
+/* Brand tagline في الدارك */
+[data-theme="dark"] .brand-tagline {
+  color: var(--lavender);
+}
+
+/* ══════════════════════════════════════════════════
+   ABOUT – Dark Mode
+══════════════════════════════════════════════════ */
+
+/* Feature cards في الدارك */
+[data-theme="dark"] .feat-card {
+  background: rgba(184, 167, 255, 0.05);
+  border-color: rgba(184, 167, 255, 0.14);
+}
+[data-theme="dark"] .feat-card::after {
+  background: linear-gradient(90deg, var(--lavender), var(--accent));
+}
+[data-theme="dark"] .feat-icon {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.22);
+}
+[data-theme="dark"] .feat-icon i { color: var(--lavender); }
+[data-theme="dark"] .feat-card:hover .feat-icon {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+}
+
+/* About image badge */
+[data-theme="dark"] .about-img-badge .bn { color: var(--lavender); }
+
+/* ══════════════════════════════════════════════════
+   TEAM – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .team-card {
+  background: rgba(184, 167, 255, 0.04);
+  border-color: rgba(184, 167, 255, 0.14);
+}
+[data-theme="dark"] .team-card::after {
+  background: linear-gradient(90deg, var(--lavender), var(--accent));
+}
+[data-theme="dark"] .team-role-tag {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.25);
+  color: var(--lavender);
+}
+[data-theme="dark"] .ts-num { color: var(--lavender); }
+[data-theme="dark"] .team-stats-row {
+  background: rgba(184, 167, 255, 0.07);
+  border-color: rgba(184, 167, 255, 0.15);
+}
+[data-theme="dark"] .team-photo-wrap {
+  border-color: rgba(184, 167, 255, 0.25);
+}
+[data-theme="dark"] .team-founder-badge {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+}
+
+/* ══════════════════════════════════════════════════
+   SERVICES – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .srv-card {
+  background: rgba(184, 167, 255, 0.04);
+  border-color: rgba(184, 167, 255, 0.12);
+}
+[data-theme="dark"] .srv-card::before {
+  background: linear-gradient(135deg, rgba(184,167,255,0.08), rgba(126,203,199,0.06));
+}
+[data-theme="dark"] .srv-card::after {
+  background: linear-gradient(90deg, var(--lavender), var(--accent));
+}
+[data-theme="dark"] .srv-icon {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.22);
+}
+[data-theme="dark"] .srv-icon i { color: var(--lavender); }
+[data-theme="dark"] .srv-card:hover .srv-icon {
+  box-shadow: 0 8px 30px rgba(184, 167, 255, 0.35);
+}
+[data-theme="dark"] .srv-card:hover .srv-icon::before {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+  opacity: 1;
+}
+[data-theme="dark"] .srv-tag {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.22);
+  color: var(--lavender);
+}
+[data-theme="dark"] .srv-card:hover .srv-tag {
+  background: rgba(184, 167, 255, 0.20);
+  border-color: rgba(184, 167, 255, 0.40);
+}
+
+/* ══════════════════════════════════════════════════
+   STATS – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .stat-icon-wrap {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.22);
+}
+[data-theme="dark"] .stat-icon-wrap i { color: var(--lavender); }
+[data-theme="dark"] .stat-block:hover .stat-icon-wrap {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+  border-color: transparent;
+}
+
+/* الأرقام الكبيرة: لافندر → أكوا */
+[data-theme="dark"] .stat-number {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ══════════════════════════════════════════════════
+   GALLERY – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .g-item {
+  border-color: rgba(184, 167, 255, 0.14);
+}
+[data-theme="dark"] .g-item:hover {
+  border-color: rgba(184, 167, 255, 0.40);
+  box-shadow: 0 20px 60px rgba(184, 167, 255, 0.18);
+}
+[data-theme="dark"] .g-overlay {
+  background: linear-gradient(to top, rgba(3,13,31,0.85) 0%, rgba(184,167,255,0.15) 100%);
+}
+[data-theme="dark"] .ba-tag--after {
+  background: var(--lavender);
+  box-shadow: 0 2px 8px rgba(184, 167, 255, 0.4);
+}
+[data-theme="dark"] .ba-circle {
+  border-color: var(--lavender);
+  color: var(--lavender);
+}
+[data-theme="dark"] .ba-slider:active .ba-circle,
+[data-theme="dark"] .ba-slider.dragging .ba-circle {
+  box-shadow: 0 6px 20px rgba(184, 167, 255, 0.5);
+}
+
+/* ══════════════════════════════════════════════════
+   TESTIMONIALS – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .ts-root {
+  background: rgba(184, 167, 255, 0.04);
+  border-color: rgba(184, 167, 255, 0.15);
+}
+[data-theme="dark"] .ts-rating-bar {
+  background: linear-gradient(135deg, rgba(184,167,255,0.06), rgba(126,203,199,0.04));
+  border-bottom-color: rgba(184, 167, 255, 0.15);
+}
+[data-theme="dark"] .ts-big-num { color: var(--lavender); }
+[data-theme="dark"] .ts-card {
+  background: rgba(184, 167, 255, 0.05);
+  border-color: rgba(184, 167, 255, 0.14);
+}
+[data-theme="dark"] .ts-card::before {
+  color: rgba(184, 167, 255, 0.08);
+}
+[data-theme="dark"] .ts-card:hover::before { color: rgba(184, 167, 255, 0.14); }
+[data-theme="dark"] .ts-card:hover {
+  border-color: rgba(184, 167, 255, 0.35);
+  box-shadow: 0 8px 40px rgba(184, 167, 255, 0.18);
+}
+[data-theme="dark"] .ts-quote-icon { color: rgba(184, 167, 255, 0.20); }
+[data-theme="dark"] .ts-verified { color: var(--lavender); }
+[data-theme="dark"] .ts-btn {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.25);
+  color: var(--lavender);
+}
+[data-theme="dark"] .ts-btn:hover {
+  background: var(--lavender);
+  color: #fff;
+  border-color: var(--lavender);
+}
+[data-theme="dark"] .ts-dot { background: rgba(184, 167, 255, 0.25); }
+[data-theme="dark"] .ts-dot.active { background: var(--lavender); }
+[data-theme="dark"] .ts-progress-bar {
+  background: linear-gradient(90deg, var(--lavender), var(--accent));
+}
+[data-theme="dark"] .ts-controls {
+  border-top-color: rgba(184, 167, 255, 0.12);
+}
+[data-theme="dark"] .ts-rating-divider {
+  background: rgba(184, 167, 255, 0.20);
+}
+
+/* ══════════════════════════════════════════════════
+   BOOKING – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .booking-wrap {
+  background: rgba(184, 167, 255, 0.05);
+  border-color: rgba(184, 167, 255, 0.20);
+  box-shadow: 0 30px 80px rgba(184, 167, 255, 0.10);
+}
+[data-theme="dark"] .booking-info-panel {
+  background: rgba(184, 167, 255, 0.05);
+  border-color: rgba(184, 167, 255, 0.18);
+}
+[data-theme="dark"] .bip-item {
+  background: rgba(184, 167, 255, 0.05);
+  border-color: rgba(184, 167, 255, 0.12);
+}
+[data-theme="dark"] .bip-item:hover {
+  background: rgba(184, 167, 255, 0.10);
+  border-color: rgba(184, 167, 255, 0.30);
+}
+[data-theme="dark"] .bip-icon {
+  background: rgba(184, 167, 255, 0.12);
+  border-color: rgba(184, 167, 255, 0.20);
+}
+[data-theme="dark"] .bip-icon i { color: var(--lavender); }
+[data-theme="dark"] .finput {
+  background: rgba(184, 167, 255, 0.06);
+  border-color: rgba(184, 167, 255, 0.18);
+  color: var(--text-h);
+}
+[data-theme="dark"] .finput:focus {
+  border-color: var(--lavender);
+  background: rgba(184, 167, 255, 0.09);
+  box-shadow: 0 0 0 4px rgba(184, 167, 255, 0.12);
+}
+[data-theme="dark"] .finput::placeholder { color: var(--text-muted); }
+
+/* ══════════════════════════════════════════════════
+   CONTACT – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] .contact-quick-bar {
+  background: rgba(184, 167, 255, 0.05);
+  border-color: rgba(184, 167, 255, 0.15);
+}
+[data-theme="dark"] .cqb-item:hover {
+  background: rgba(184, 167, 255, 0.07);
+}
+[data-theme="dark"] .cqb-sep {
+  background: rgba(184, 167, 255, 0.15);
+}
+
+/* ══════════════════════════════════════════════════
+   FOOTER – Dark Mode
+══════════════════════════════════════════════════ */
+
+[data-theme="dark"] footer {
+  background: #040d1e;
+  border-top-color: rgba(184, 167, 255, 0.15);
+}
+[data-theme="dark"] .footer-logo-ico {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+}
+[data-theme="dark"] .footer-name { color: #EDE8FF; }
+[data-theme="dark"] .footer-name-sub { color: var(--lavender); }
+[data-theme="dark"] .footer-tagline-bar { color: var(--lavender); }
+[data-theme="dark"] .footer-links-title { color: #EDE8FF; }
+[data-theme="dark"] .footer-link i { color: var(--lavender); }
+[data-theme="dark"] .footer-link:hover { color: var(--lavender); }
+[data-theme="dark"] .footer-bottom {
+  border-top-color: rgba(184, 167, 255, 0.12);
+}
+[data-theme="dark"] .soc {
+  background: rgba(184, 167, 255, 0.06);
+  border-color: rgba(184, 167, 255, 0.15);
+}
+
+/* ══════════════════════════════════════════════════
+   BUTTONS – Dark Mode
+══════════════════════════════════════════════════ */
+
+/* Primary button: لافندر → أكوا gradient */
+[data-theme="dark"] .btn-primary-hero {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+  box-shadow: 0 6px 28px rgba(184, 167, 255, 0.40);
+}
+[data-theme="dark"] .btn-primary-hero:hover {
+  box-shadow: 0 12px 36px rgba(184, 167, 255, 0.55);
+}
+
+/* Outline button */
+[data-theme="dark"] .btn-outline-hero {
+  color: var(--lavender);
+  border-color: var(--lavender);
+}
+[data-theme="dark"] .btn-outline-hero:hover {
+  background: var(--lavender);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(184, 167, 255, 0.40);
+}
+
+/* Nav CTA */
+[data-theme="dark"] .btn-nav-cta {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+  box-shadow: 0 4px 20px rgba(184, 167, 255, 0.38);
+}
+[data-theme="dark"] .btn-nav-cta:hover {
+  box-shadow: 0 8px 28px rgba(184, 167, 255, 0.55);
+}
+
+/* Submit button */
+[data-theme="dark"] .btn-submit {
+  background: linear-gradient(135deg, var(--lavender), var(--accent));
+  box-shadow: 0 8px 28px rgba(184, 167, 255, 0.40);
+}
+[data-theme="dark"] .btn-submit:hover {
+  box-shadow: 0 14px 40px rgba(184, 167, 255, 0.55);
+}
+
+/* ══════════════════════════════════════════════════
+   PROGRESS BAR – Dark Mode
+══════════════════════════════════════════════════ */
+[data-theme="dark"] #progress-bar {
+  background: linear-gradient(90deg, var(--lavender), var(--accent));
+}
+
+/* ══════════════════════════════════════════════════
+   CURSOR – Dark Mode
+══════════════════════════════════════════════════ */
+[data-theme="dark"] .cursor-dot  { background: var(--lavender); }
+[data-theme="dark"] .cursor-ring { border-color: var(--lavender); }
+
+/* ══════════════════════════════════════════════════
+   SCROLLBAR – Dark Mode
+══════════════════════════════════════════════════ */
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--lavender);
+}
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #030d1f;
+}
+
+/* ══════════════════════════════════════════════════
+   MOBILE DRAWER – Dark Mode
+══════════════════════════════════════════════════ */
+[data-theme="dark"] .mob-toggle span { background: var(--lavender); }
+[data-theme="dark"] .mob-nav-link i { color: var(--lavender); }
+[data-theme="dark"] .mob-nav-link:hover {
+  background: rgba(184, 167, 255, 0.08);
+  border-color: rgba(184, 167, 255, 0.25);
+  color: var(--lavender);
+}
+
+/* ══════════════════════════════════════════════════
+   THEME TOGGLE – Dark Mode
+══════════════════════════════════════════════════ */
+[data-theme="dark"] .theme-toggle:hover {
+  border-color: var(--lavender);
+  color: var(--lavender);
+  background: rgba(184, 167, 255, 0.10);
+}
+
+/* ══════════════════════════════════════════════════
+   HERO FLOATING CARDS – Dark Mode
+══════════════════════════════════════════════════ */
+[data-theme="dark"] .float-card {
+  background: rgba(10, 20, 50, 0.85);
+  border-color: rgba(184, 167, 255, 0.18);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.40);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   CRITICAL FIX – Section Backgrounds in Dark Mode
+   
+   المشكلة: بعض الأقسام في index.html تحتوي على inline style
+   بألوان الـ Ivory الفاتحة (مثل: style="background:#FAF7F2...")
+   الحل: نستخدم !important لتجاوز الـ inline styles
+═══════════════════════════════════════════════════════════ */
+
+/* ── كل الأقسام: خلفية داكنة ── */
+[data-theme="dark"] #about,
+[data-theme="dark"] #team,
+[data-theme="dark"] #services,
+[data-theme="dark"] #stats,
+[data-theme="dark"] #gallery,
+[data-theme="dark"] #testimonials,
+[data-theme="dark"] #booking,
+[data-theme="dark"] #contact {
+  background: var(--bg-base) !important;
+}
+
+/* ── أقسام ثانوية: لون أغمى قليلاً (تناوب) ── */
+[data-theme="dark"] #team {
+  background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg-base) 100%) !important;
+}
+
+[data-theme="dark"] #services {
+  background: linear-gradient(180deg, var(--bg-base) 0%, var(--bg-2) 100%) !important;
+}
+
+[data-theme="dark"] #testimonials {
+  background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg-base) 100%) !important;
+}
+
+[data-theme="dark"] #contact {
+  background: linear-gradient(180deg, var(--bg-2) 0%, var(--bg-base) 100%) !important;
+}
+
+[data-theme="dark"] #gallery {
+  background: var(--bg-base) !important;
+}
+
+[data-theme="dark"] #booking {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(184,167,255,0.08), transparent 60%),
+    var(--bg-2) !important;
+}
+
+/* Hero section */
+[data-theme="dark"] #hero {
+  background:
+    radial-gradient(ellipse at 70% 30%, rgba(126, 203, 199, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 80%, rgba(184, 167, 255, 0.07) 0%, transparent 45%),
+    var(--bg-base) !important;
+}
+
+/* Stats section */
+[data-theme="dark"] #stats {
+  background: linear-gradient(135deg, rgba(184,167,255,0.06), rgba(126,203,199,0.05)),
+              var(--bg-2) !important;
+  border-top-color: rgba(184, 167, 255, 0.15) !important;
+  border-bottom-color: rgba(184, 167, 255, 0.15) !important;
+}
+
+/* Footer */
+[data-theme="dark"] footer {
+  background: #040d1e !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TEAM SECTION – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .team-card {
+  background: rgba(10, 25, 55, 0.85) !important;
+  border-color: rgba(184, 167, 255, 0.18) !important;
+}
+
+[data-theme="dark"] .team-card--founder {
+  background: linear-gradient(135deg,
+    rgba(184, 167, 255, 0.07),
+    rgba(126, 203, 199, 0.05)) !important;
+  border-color: rgba(184, 167, 255, 0.30) !important;
+}
+
+[data-theme="dark"] .team-stats-row {
+  background: rgba(184, 167, 255, 0.08) !important;
+  border-color: rgba(184, 167, 255, 0.18) !important;
+}
+
+[data-theme="dark"] .team-name {
+  color: #EDE8FF !important;
+}
+
+[data-theme="dark"] .team-specialty {
+  color: rgba(210, 205, 235, 0.70) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TESTIMONIALS SECTION – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .ts-root {
+  background: rgba(8, 20, 50, 0.90) !important;
+  border-color: rgba(184, 167, 255, 0.20) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.40) !important;
+}
+
+[data-theme="dark"] .ts-rating-bar {
+  background: linear-gradient(135deg,
+    rgba(184, 167, 255, 0.07),
+    rgba(126, 203, 199, 0.05)) !important;
+  border-bottom-color: rgba(184, 167, 255, 0.18) !important;
+}
+
+[data-theme="dark"] .ts-card {
+  background: rgba(12, 28, 60, 0.90) !important;
+  border-color: rgba(184, 167, 255, 0.16) !important;
+}
+
+[data-theme="dark"] .ts-card:hover {
+  background: rgba(15, 32, 70, 0.95) !important;
+  border-color: rgba(184, 167, 255, 0.38) !important;
+  box-shadow: 0 8px 40px rgba(184, 167, 255, 0.20) !important;
+}
+
+[data-theme="dark"] .ts-stage {
+  background: transparent !important;
+}
+
+[data-theme="dark"] .ts-controls {
+  border-top-color: rgba(184, 167, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .ts-progress-wrap {
+  background: rgba(184, 167, 255, 0.10) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CONTACT SECTION – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .contact-quick-bar {
+  background: rgba(8, 20, 50, 0.90) !important;
+  border-color: rgba(184, 167, 255, 0.18) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+[data-theme="dark"] .cqb-item:hover {
+  background: rgba(184, 167, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .cqb-sep {
+  background: rgba(184, 167, 255, 0.15) !important;
+}
+
+[data-theme="dark"] .cqb-lbl {
+  color: rgba(210, 205, 235, 0.50) !important;
+}
+
+[data-theme="dark"] .cqb-val {
+  color: #EDE8FF !important;
+}
+
+/* Map border */
+[data-theme="dark"] .map-wrap {
+  border-color: rgba(184, 167, 255, 0.28) !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.40) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ABOUT SECTION – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .about-img {
+  background: linear-gradient(145deg,
+    rgba(184, 167, 255, 0.08),
+    rgba(126, 203, 199, 0.06)) !important;
+  border-color: rgba(184, 167, 255, 0.25) !important;
+}
+
+[data-theme="dark"] .about-img-badge {
+  background: rgba(8, 20, 50, 0.90) !important;
+  border-color: rgba(184, 167, 255, 0.20) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GALLERY SECTION – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .g-item {
+  background: linear-gradient(145deg,
+    rgba(10, 25, 55, 0.90),
+    rgba(6, 20, 40, 0.95)) !important;
+  border-color: rgba(184, 167, 255, 0.16) !important;
+}
+
+[data-theme="dark"] .g-item:hover {
+  border-color: rgba(184, 167, 255, 0.40) !important;
+  box-shadow: 0 20px 60px rgba(184, 167, 255, 0.18),
+              0 0 0 1px rgba(184, 167, 255, 0.20) !important;
+}
+
+[data-theme="dark"] .g-placeholder i {
+  color: var(--lavender) !important;
+  opacity: 0.45 !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BOOKING SECTION – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .booking-wrap {
+  background: rgba(8, 20, 50, 0.90) !important;
+  border-color: rgba(184, 167, 255, 0.22) !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.40) !important;
+}
+
+[data-theme="dark"] .booking-info-panel {
+  background: rgba(8, 20, 50, 0.90) !important;
+  border-color: rgba(184, 167, 255, 0.20) !important;
+}
+
+[data-theme="dark"] .bip-item {
+  background: rgba(184, 167, 255, 0.06) !important;
+  border-color: rgba(184, 167, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .bip-item:hover {
+  background: rgba(184, 167, 255, 0.12) !important;
+  border-color: rgba(184, 167, 255, 0.32) !important;
+}
+
+[data-theme="dark"] .bip-title {
+  color: #EDE8FF !important;
+  border-bottom-color: rgba(184, 167, 255, 0.16) !important;
+}
+
+[data-theme="dark"] .bip-val { color: #EDE8FF !important; }
+
+[data-theme="dark"] .finput {
+  background: rgba(184, 167, 255, 0.07) !important;
+  border-color: rgba(184, 167, 255, 0.20) !important;
+  color: #EDE8FF !important;
+}
+
+[data-theme="dark"] .finput:focus {
+  border-color: var(--lavender) !important;
+  background: rgba(184, 167, 255, 0.10) !important;
+  box-shadow: 0 0 0 4px rgba(184, 167, 255, 0.14) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SERVICES SECTION – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .srv-card {
+  background: rgba(8, 20, 50, 0.85) !important;
+  border-color: rgba(184, 167, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .srv-card:hover {
+  background: rgba(12, 28, 65, 0.95) !important;
+  border-color: rgba(184, 167, 255, 0.38) !important;
+  box-shadow: 0 24px 60px rgba(184, 167, 255, 0.18) !important;
+}
+
+[data-theme="dark"] .srv-card h4 { color: #EDE8FF !important; }
+[data-theme="dark"] .srv-card p  { color: rgba(210, 205, 235, 0.70) !important; }
+
+/* ═══════════════════════════════════════════════════════════
+   FEAT CARDS (About) – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .feat-card {
+  background: rgba(8, 20, 50, 0.85) !important;
+  border-color: rgba(184, 167, 255, 0.16) !important;
+}
+
+[data-theme="dark"] .feat-card h5 { color: #EDE8FF !important; }
+[data-theme="dark"] .feat-card p  { color: rgba(210, 205, 235, 0.70) !important; }
+
+/* ═══════════════════════════════════════════════════════════
+   HERO FLOATING CARDS – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .float-card {
+  background: rgba(8, 20, 50, 0.92) !important;
+  border-color: rgba(184, 167, 255, 0.22) !important;
+}
+
+[data-theme="dark"] .hero-mini-stats {
+  background: rgba(8, 20, 50, 0.75) !important;
+  border-color: rgba(184, 167, 255, 0.20) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+[data-theme="dark"] .mini-stat-sep {
+  background: rgba(184, 167, 255, 0.20) !important;
+}
+
+/* Enamora card in dark mode */
+[data-theme="dark"] .enamora-card {
+  background: linear-gradient(145deg,
+    rgba(10, 30, 50, 0.92) 0%,
+    rgba(15, 25, 50, 0.96) 45%,
+    rgba(20, 15, 50, 0.88) 100%) !important;
+  border-color: rgba(184, 167, 255, 0.25) !important;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.50),
+    0 8px 32px rgba(184, 167, 255, 0.15),
+    inset 0 1px 0 rgba(184, 167, 255, 0.12) !important;
+}
+
+[data-theme="dark"] .en-top-badge {
+  background: rgba(8, 20, 50, 0.88) !important;
+  border-color: rgba(184, 167, 255, 0.28) !important;
+  color: var(--lavender) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MODAL – Dark Mode
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .modal-box {
+  background: #0a1428 !important;
+  border-color: rgba(184, 167, 255, 0.25) !important;
+  box-shadow: 0 30px 80px rgba(184, 167, 255, 0.20) !important;
+}
+
+[data-theme="dark"] .modal-title { color: #EDE8FF !important; }
+[data-theme="dark"] .modal-sub   { color: rgba(210, 205, 235, 0.75) !important; }
+[data-theme="dark"] .modal-check { color: var(--lavender) !important; }
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE DRAWER – Dark Mode Fixes
+═══════════════════════════════════════════════════════════ */
+
+[data-theme="dark"] .mobile-drawer {
+  background: rgba(3, 13, 31, 0.97) !important;
+  border-left-color: rgba(184, 167, 255, 0.18) !important;
+}

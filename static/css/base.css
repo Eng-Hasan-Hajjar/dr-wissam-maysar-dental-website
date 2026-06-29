@@ -1,137 +1,191 @@
 /* ═══════════════════════════════════════════════════
-   base.css  –  Reset, Typography & Global Base
-   د. وسام ميسر – عيادة الأسنان
+   base.css  –  Reset, Typography, Brand Elements
+   Enamora Dental Center – عيادة Enamora لطب وتجميل الأسنان
 ═══════════════════════════════════════════════════ */
 
-/* ── RESET ────────────────────────────────────── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* ── FONTS ────────────────────────────────────── */
+/* NOTE: Add these to <head> in index.html for light-mode typography:
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700;800&family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+*/
 
-html {
-  scroll-behavior: smooth;
-}
+/* ── RESET ────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+a    { text-decoration: none; }
+img  { max-width: 100%; }
+ul   { list-style: none; padding: 0; }
 
 body {
   font-family: 'Cairo', 'Tajawal', sans-serif;
   background: var(--bg-base);
-  color: var(--text-h);
+  color: var(--text-p);
   overflow-x: hidden;
-  direction: rtl;
-  transition: background 0.5s ease, color 0.5s ease;
+  transition: background 0.4s, color 0.4s;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* ── SCROLLBAR (مخفي بالكامل بقوة قصوى + التمرير يعمل طبيعياً) ──
-   كل العناصر في الموقع — الصفحة الرئيسية والداخلية والقوائم
-   والـ modal — لا يظهر فيها أي شريط تمرير، مع بقاء التمرير
-   نفسه يعمل بالعجلة/اللمس/المفاتيح. */
-html,
-body,
-*,
-*::before,
-*::after {
-  scrollbar-width: none !important;          /* Firefox */
-  -ms-overflow-style: none !important;       /* IE / Edge القديم */
-}
-html::-webkit-scrollbar,
-body::-webkit-scrollbar,
-*::-webkit-scrollbar,
-*::-webkit-scrollbar-thumb,
-*::-webkit-scrollbar-track,
-*::-webkit-scrollbar-corner,
-*::-webkit-scrollbar-button {
-  width: 0 !important;
-  height: 0 !important;
-  display: none !important;                  /* Chrome, Safari, Edge, Opera */
-  background: transparent !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-}
-
-/* ── CUSTOM CURSOR (سطح المكتب فقط) ───────────── */
-.cursor-dot {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s;
-}
-
-.cursor-ring {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1.5px solid var(--accent);
-  pointer-events: none;
-  z-index: 99999;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, opacity 0.3s;
-  opacity: 0.6;
-}
-
-@media (hover: none) {
-  .cursor-dot,
-  .cursor-ring { display: none; }
-}
+/* ── SCROLLBAR ────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
 
 /* ── PROGRESS BAR ─────────────────────────────── */
 #progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  background: linear-gradient(90deg, var(--accent), var(--accent3));
-  z-index: 99998;
-  transition: width 0.1s linear;
+  position: fixed; top: 0; right: 0; height: 3px; width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--lavender));
+  z-index: 10000; transition: width 0.1s;
 }
 
-/* ── SECTION COMMON ───────────────────────────── */
-section {
-  padding: 100px 0;
-  transition: background 0.5s ease;
+/* ── CUSTOM CURSOR ────────────────────────────── */
+@media (pointer: fine) {
+  .cursor-dot, .cursor-ring { position: fixed; pointer-events: none; z-index: 9999; }
+  .cursor-dot  { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); transform: translate(-50%,-50%); transition: transform 0.1s; }
+  .cursor-ring { width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid var(--accent); transform: translate(-50%,-50%); transition: transform 0.18s cubic-bezier(0.4,0,0.2,1), opacity 0.3s; opacity: 0.6; }
 }
 
-/* خلفيات الأقسام بالتناوب */
-#hero,
-#services,
-#gallery,
-#booking    { background: var(--bg-base); }
+/* ════════════════════════════════════════════════
+   ✦ ENAMORA BRAND ELEMENTS — SIGNATURE STAR
+   The core symbol: precision, brilliance, excellence
+════════════════════════════════════════════════ */
 
-#about,
-#stats,
-#testimonials,
-#contact    { background: var(--bg-2); }
+/*
+  SVG Path for the Enamora 4-pointed Sparkle Star (24×24 viewBox):
+  M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z
+  — Each arm is a cubic-bezier lune, creating the signature concave sparkle shape
+*/
 
-/* ── SHARED COMPONENT CLASSES ─────────────────── */
+/* Base star element */
+.brand-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='sg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23B8A7FF'/%3E%3Cstop offset='100%25' stop-color='%239B8AE8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='url(%23sg)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* Size variants */
+.brand-star-xs { width: 10px; height: 10px; }
+.brand-star-sm { width: 14px; height: 14px; }
+.brand-star-md { width: 20px; height: 20px; }
+.brand-star-lg { width: 30px; height: 30px; }
+.brand-star-xl { width: 44px; height: 44px; }
+.brand-star-2xl{ width: 64px; height: 64px; }
+
+/* Aqua star variant */
+.brand-star-aqua {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='aq' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%237ECBC7'/%3E%3Cstop offset='100%25' stop-color='%235BBDB9'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='url(%23aq)'/%3E%3C/svg%3E");
+}
+
+/* Outline star variant (for dark mode or subtle accents) */
+.brand-star-outline {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='none' stroke='%23B8A7FF' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Animated star (pulse) */
+.brand-star-pulse {
+  animation: star-pulse 2.4s ease-in-out infinite;
+}
+@keyframes star-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.18); opacity: 0.8; }
+}
+
+/* Spinning star */
+.brand-star-spin {
+  animation: star-spin 8s linear infinite;
+}
+@keyframes star-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ════════════════════════════════════════════════
+   ✦ FRAME ELEMENT — Rounded rectangle with star accents
+   Used to highlight content and add premium touch
+════════════════════════════════════════════════ */
+.brand-frame {
+  position: relative;
+  border: 1.5px solid var(--accent);
+  border-radius: 24px;
+  padding: 28px;
+}
+
+/* Star accent at top center */
+.brand-frame::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='sf' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23B8A7FF'/%3E%3Cstop offset='100%25' stop-color='%237ECBC7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='url(%23sf)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--bg-base);
+  padding: 0 4px;
+  background-origin: content-box;
+}
+
+/* Star accent at bottom center */
+.brand-frame::after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='sf2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23B8A7FF'/%3E%3Cstop offset='100%25' stop-color='%237ECBC7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='url(%23sf2)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--bg-base);
+  padding: 0 4px;
+  background-origin: content-box;
+}
+
+/* ════════════════════════════════════════════════
+   ✦ STAR PATTERN — Decorative grid of small stars
+   Used as a subtle background / accent pattern
+════════════════════════════════════════════════ */
+.star-pattern-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M8 4 C8.2 5.5 9.5 7 8 8 C6.5 7 8 5.5 8 4Z M8 8 C9.5 9 8 10.5 8 12 C7.8 10.5 6.5 9 8 8Z M4 8 C5.5 8.2 7 9.5 8 8 C7 6.5 5.5 8 4 8Z M12 8 C10.5 7.8 9 6.5 8 8 C9 9.5 10.5 8 12 8Z' fill='%23B8A7FF' opacity='0.25'/%3E%3Cpath d='M32 20 C32.2 21.5 33.5 23 32 24 C30.5 23 32 21.5 32 20Z M32 24 C33.5 25 32 26.5 32 28 C31.8 26.5 30.5 25 32 24Z M28 24 C29.5 24.2 31 25.5 32 24 C31 22.5 29.5 24 28 24Z M36 24 C34.5 23.8 33 22.5 32 24 C33 25.5 34.5 24 36 24Z' fill='%237ECBC7' opacity='0.20'/%3E%3Cpath d='M16 36 C16.2 37.5 17.5 39 16 40 C14.5 39 16 37.5 16 36Z M16 40 C17.5 41 16 42.5 16 44 C15.8 42.5 14.5 41 16 40Z M12 40 C13.5 40.2 15 41.5 16 40 C15 38.5 13.5 40 12 40Z M20 40 C18.5 39.8 17 38.5 16 40 C17 41.5 18.5 40 20 40Z' fill='%23B8A7FF' opacity='0.18'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 48px 48px;
+}
+
+/* ════════════════════════════════════════════════
+   SHARED COMPONENT CLASSES
+════════════════════════════════════════════════ */
+
+/* Section badge (above title) */
 .sec-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 200, 232, 0.10);
-  border: 1px solid rgba(0, 200, 232, 0.28);
+  background: rgba(126, 203, 199, 0.12);
+  border: 1px solid rgba(126, 203, 199, 0.32);
   border-radius: 40px;
   padding: 6px 18px;
-  margin-bottom: 14px;
-  color: var(--accent);
-  font-size: 13px;
+  margin-bottom: 16px;
+  color: var(--accent2);
+  font-size: 12px;
   font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
+[data-theme="dark"] .sec-badge {
+  background: rgba(0, 200, 232, 0.10);
+  border-color: rgba(0, 200, 232, 0.28);
+  color: var(--accent);
+}
+
+/* Section title */
 .sec-title {
   font-size: clamp(1.9rem, 3.8vw, 3rem);
   font-weight: 900;
@@ -141,6 +195,7 @@ section {
 }
 .sec-title span { color: var(--accent); }
 
+/* Section description */
 .sec-desc {
   color: var(--text-p);
   font-size: 15px;
@@ -148,12 +203,46 @@ section {
   max-width: 580px;
 }
 
+/* Divider line with star accent */
 .divider {
-  width: 56px;
-  height: 3px;
-  border-radius: 2px;
-  background: linear-gradient(90deg, var(--accent), transparent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 16px 0;
+}
+.divider::before {
+  content: '';
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.divider::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='%23B8A7FF'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+[data-theme="dark"] .divider::before {
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+/* ── Utility: star in section header ── */
+.sec-star-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.sec-star-row .line-dec {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-lav), transparent);
+  max-width: 60px;
 }
 
 /* ── SCROLL REVEAL ────────────────────────────── */
@@ -192,461 +281,46 @@ section {
   font-family: inherit;
   border: none;
   cursor: pointer;
-  box-shadow: 0 6px 28px rgba(0, 200, 232, 0.4);
+  box-shadow: 0 6px 28px rgba(126, 203, 199, 0.40);
   transition: all 0.35s;
-  position: relative;
-  overflow: hidden;
 }
-.btn-primary-hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.btn-primary-hero:hover::after { opacity: 1; }
 .btn-primary-hero:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 14px 40px rgba(0, 200, 232, 0.55);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(126, 203, 199, 0.55);
   color: #fff;
+}
+
+[data-theme="dark"] .btn-primary-hero {
+  box-shadow: 0 6px 28px rgba(0, 200, 232, 0.40);
+}
+[data-theme="dark"] .btn-primary-hero:hover {
+  box-shadow: 0 12px 36px rgba(0, 200, 232, 0.55);
 }
 
 .btn-outline-hero {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--glass2);
-  border: 1.5px solid var(--border);
-  color: var(--text-h);
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
   border-radius: 14px;
   padding: 14px 28px;
   font-size: 15px;
   font-weight: 700;
   font-family: inherit;
   cursor: pointer;
-  backdrop-filter: blur(12px);
   transition: all 0.35s;
 }
 .btn-outline-hero:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-4px);
-}
-
-/* ── FEATURE / INFO CARD ──────────────────────── */
-.feat-card {
-  background: var(--glass2);
-  border: 1px solid var(--border);
-  backdrop-filter: blur(14px);
-  border-radius: 20px;
-  padding: 22px 20px;
-  transition: all 0.4s;
-  position: relative;
-  overflow: hidden;
-}
-.feat-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), var(--accent3), transparent);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.4s;
-}
-.feat-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--border-accent);
-  box-shadow: var(--shadow-accent);
-}
-.feat-card:hover::after { transform: scaleX(1); }
-
-.feat-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-  box-shadow: 0 4px 18px rgba(0, 200, 232, 0.3);
-  transition: all 0.4s;
-}
-.feat-card:hover .feat-icon { transform: rotate(8deg) scale(1.1); }
-.feat-icon i { color: #fff; font-size: 22px; }
-.feat-card h5 { font-size: 15px; font-weight: 800; color: var(--text-h); margin-bottom: 6px; }
-.feat-card p  { font-size: 13px; color: var(--text-p); line-height: 1.75; }
-
-/* ── MODAL ────────────────────────────────────── */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  z-index: 99999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(8px);
-  padding: 20px;
-}
-.modal-overlay.show { display: flex; }
-
-.modal-box {
-  background: var(--bg-2);
-  border: 1px solid var(--border);
-  border-radius: 26px;
-  padding: 44px 36px;
-  max-width: 440px;
-  width: 100%;
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
-  animation: modal-pop 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.modal-box::before {
-  content: '';
-  position: absolute;
-  top: -60px; right: -60px;
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,200,232,0.12), transparent 70%);
-  pointer-events: none;
-}
-@keyframes modal-pop {
-  from { opacity: 0; transform: scale(0.8) translateY(20px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
-}
-.modal-check {
-  font-size: 70px;
-  color: #4dff6e;
-  margin-bottom: 14px;
-  animation: check-bounce 0.5s 0.3s ease both;
-}
-@keyframes check-bounce {
-  from { transform: scale(0) rotate(-180deg); }
-  to   { transform: scale(1) rotate(0); }
-}
-.modal-title { font-size: 22px; font-weight: 900; color: var(--text-h); margin-bottom: 10px; }
-.modal-sub   { color: var(--text-p); font-size: 14px; line-height: 1.8; margin-bottom: 24px; }
-
-.modal-close {
-  width: 100%;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  border: none;
-  border-radius: 13px;
-  padding: 14px;
+  background: var(--accent);
   color: #fff;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.modal-close:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0, 200, 232, 0.45);
+  box-shadow: 0 8px 24px rgba(126, 203, 199, 0.35);
 }
 
-/* ── WHATSAPP FLOAT ───────────────────────────── */
-.wa-float {
-  position: fixed;
-  bottom: 30px;
-  left: 30px;
-  z-index: 9990;
-  display: flex;
-  align-items: flex-end;
-  flex-direction: column;
-  gap: 8px;
-}
+/* ── SECTION SPACING ──────────────────────────── */
+section { padding: 96px 0; }
 
-.wa-label {
-  background: var(--bg-nav);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(37, 211, 102, 0.3);
-  border-radius: 12px;
-  padding: 10px 16px;
-  color: var(--text-h);
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-  box-shadow: var(--shadow);
-  opacity: 0;
-  transform: translateX(-10px) scale(0.9);
-  transition: all 0.35s;
-  pointer-events: none;
-}
-.wa-label span { color: #25d366; }
-
-.wa-btn {
-  width: 62px; height: 62px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #25d366, #128c7e);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 29px;
-  color: #fff;
-  text-decoration: none;
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.45);
-  animation: wa-ring 2.5s ease-in-out infinite;
-  transition: all 0.35s;
-  position: relative;
-}
-@keyframes wa-ring {
-  0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,0.45), 0 0 0 0   rgba(37,211,102,0.4); }
-  50%      { box-shadow: 0 6px 28px rgba(37,211,102,0.45), 0 0 0 18px rgba(37,211,102,0);   }
-}
-.wa-btn:hover {
-  transform: scale(1.12) rotate(-8deg);
-  color: #fff;
-  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
-}
-
-.wa-online {
-  position: absolute;
-  top: 2px; right: 2px;
-  width: 15px; height: 15px;
-  border-radius: 50%;
-  background: #4dff6e;
-  border: 2.5px solid var(--bg-base);
-  animation: online-blink 2s ease-in-out infinite;
-}
-@keyframes online-blink {
-  0%,100% { box-shadow: 0 0 0 0   rgba(77,255,110,0.4); }
-  50%      { box-shadow: 0 0 0 6px rgba(77,255,110,0);   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ══════════════════════════════════════════════
-   تكبير صورة الشعار داخل بطاقة الهيرو
-   أضف هذا في نهاية <style> في <head>
-   أو في نهاية base.css
-══════════════════════════════════════════════ */
-
-/* ── البطاقة: flex لتمركز الصورة ── */
-.enamora-card {
-  position: relative !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-  background: linear-gradient(145deg,
-    #edf8f7 0%,
-    #faf7f2 50%,
-    #ece9f8 100%
-  ) !important;
-  border-radius: 32px 32px 80px 32px !important;
-  border: 1px solid rgba(91,189,185,0.28) !important;
-  box-shadow:
-    0 30px 80px rgba(91,189,185,0.18),
-    0 8px 32px rgba(184,167,255,0.12) !important;
-}
-
-/* ── الصورة: كبيرة جداً تملأ معظم البطاقة ── */
-.en-logo-img {
-  position: relative !important;
-  inset: auto !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-  border-radius: 0 !important;
-  z-index: 2 !important;
-  /* تكبير الصورة بـ scale */
-  transform: scale(1.35) !important;
-  filter:
-    drop-shadow(0 12px 36px rgba(91,189,185,0.4))
-    drop-shadow(0 4px 16px rgba(184,167,255,0.3)) !important;
-  animation: logo-zoom-float 7s ease-in-out infinite !important;
-}
-
-@keyframes logo-zoom-float {
-  0%,100% { transform: scale(1.35) translateY(0); }
-  50%     { transform: scale(1.38) translateY(-10px); }
-}
-
-/* ── حلقات خلفية تبقى ── */
-.en-ring {
-  display: block !important;
-  position: absolute !important;
-  border-radius: 50% !important;
-  border: 1px solid rgba(91,189,185,0.12) !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%,-50%) !important;
-  pointer-events: none !important;
-  z-index: 0 !important;
-}
-
-/* ── بقع الألوان ── */
-.en-blob { display: block !important; }
-.en-blob1 {
-  position: absolute !important;
-  width: 220px !important; height: 220px !important;
-  background: rgba(91,189,185,0.14) !important;
-  top: -70px !important; right: -70px !important;
-  filter: blur(55px) !important;
-  border-radius: 50% !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-}
-.en-blob2 {
-  position: absolute !important;
-  width: 180px !important; height: 180px !important;
-  background: rgba(184,167,255,0.16) !important;
-  bottom: 20px !important; left: -50px !important;
-  filter: blur(45px) !important;
-  border-radius: 50% !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-}
-
-/* ── تدرج من الأسفل ── */
-.enamora-card::after {
-  content: '' !important;
-  position: absolute !important;
-  bottom: 0 !important; left: 0 !important; right: 0 !important;
-  height: 38% !important;
-  background: linear-gradient(
-    to top,
-    rgba(4,14,32,0.72) 0%,
-    rgba(4,14,32,0.25) 55%,
-    transparent 100%
-  ) !important;
-  z-index: 3 !important;
-  pointer-events: none !important;
-  border-radius: 0 0 32px 80px !important;
-}
-.enamora-card::before { display: none !important; }
-
-/* ── التسمية والشارة فوق كل شيء ── */
-.en-photo-label {
-  position: absolute !important;
-  bottom: 22px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 6 !important;
-  background: rgba(4,14,32,0.72) !important;
-  border: 1px solid rgba(91,189,185,0.38) !important;
-  border-radius: 30px !important;
-  padding: 9px 22px !important;
-  gap: 8px !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  white-space: nowrap !important;
-}
-
-.en-top-badge {
-  position: absolute !important;
-  top: 16px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  z-index: 6 !important;
-  background: rgba(255,255,255,0.90) !important;
-  border: 1px solid rgba(91,189,185,0.3) !important;
-  border-radius: 20px !important;
-  padding: 5px 14px !important;
-  font-size: 10.5px !important;
-  font-weight: 700 !important;
-  color: #3DA8A4 !important;
-  display: flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  white-space: nowrap !important;
-  backdrop-filter: blur(8px) !important;
-}
-
-.en-star-deco { z-index: 6 !important; }
-
-.hero-placeholder-icon {
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 4 !important;
-}
-
-/* Dark mode */
-[data-theme="dark"] .enamora-card {
-  background: linear-gradient(145deg,
-    #0a1e32 0%, #0f1929 50%, #13102e 100%
-  ) !important;
-  border-color: rgba(91,189,185,0.22) !important;
-}
-[data-theme="dark"] .en-top-badge {
-  background: rgba(10,25,50,0.90) !important;
-  color: #7ECBC7 !important;
-}
-
-/* موبايل */
-@media (max-width: 768px) {
-  .en-logo-img {
-    transform: scale(1.25) !important;
-  }
-  @keyframes logo-zoom-float {
-    0%,100% { transform: scale(1.25) translateY(0); }
-    50%     { transform: scale(1.28) translateY(-8px); }
-  }
-  .en-top-badge { font-size: 9.5px !important; padding: 4px 10px !important; }
-  .en-photo-label { bottom: 14px !important; }
-}
-
-
-
-
-
-
-
-/* ── فيديو الهيرو – يملأ البطاقة كاملاً ── */
-video.en-logo-img {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  border-radius: 32px 32px 80px 32px !important;
-  z-index: 2 !important;
-  filter: none !important;
-  animation: none !important;
-  transform: none !important;
-}
-
-/* إخفاء الزخارف التي تغطي الفيديو */
-.enamora-card .en-blob,
-.enamora-card .en-ring,
-.enamora-card .en-star-deco { display: none !important; }
-
-/* البطاقة بدون خلفية تتداخل */
-.enamora-card {
-  background: transparent !important;
-  padding: 0 !important;
-}
+[data-theme="light"] body { background: var(--bg-base); }
+[data-theme="dark"]  body { background: var(--bg-base); }

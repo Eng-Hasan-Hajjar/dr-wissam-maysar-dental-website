@@ -1,82 +1,95 @@
 /* ═══════════════════════════════════════════════════
    variables.css  –  CSS Custom Properties (Themes)
-   Default: LIGHT  |  Toggle: DARK
-   الهوية البصرية: Enamora Dental Center
+   Enamora Dental Center
+   
+   DARK MODE: Lavender Glow (#B8A7FF) replaces white as highlight color
+   LIGHT MODE: Enamora Aqua (#7ECBC7) on Ivory White (#FAF7F2)
 ═══════════════════════════════════════════════════ */
 
-/* ── LIGHT THEME (default) – Enamora Brand Colors ── */
+/* ── DARK THEME ───────────────────────────────── */
 :root,
-[data-theme="light"] {
-  /* خلفيات – Ivory White مع تدرجات ناعمة */
-  --bg-base:       #FAF7F2;
-  --bg-2:          #F3EFE9;
-  --bg-3:          #EBE6DE;
-  --bg-card:       rgba(255,255,255,0.90);
-  --bg-nav:        rgba(250,247,242,0.96);
-
-  /* ألوان العلامة التجارية */
-  /* Accent رئيسي: Enamora Aqua #7ECBC7 */
-  --accent:        #5BBDB9;
-  --accent2:       #3DA8A4;
-  --accent3:       #7ECBC7;
-  /* Lavender Glow: اللون المميز البنفسجي */
-  --gold:          #9B8AE8;
-
-  /* النصوص – داكنة دافئة */
-  --text-h:        #2C2C3A;
-  --text-p:        rgba(44,44,58,0.72);
-  --text-muted:    rgba(44,44,58,0.45);
-
-  /* حدود */
-  --border:        rgba(91,189,185,0.18);
-  --border-accent: rgba(91,189,185,0.42);
-
-  /* زجاج */
-  --glass:         rgba(255,255,255,0.68);
-  --glass2:        rgba(255,255,255,0.90);
-
-  /* ظلال */
-  --shadow:        0 8px 40px rgba(91,189,185,0.10);
-  --shadow-accent: 0 8px 40px rgba(91,189,185,0.22);
-
-  /* مدخلات وخريطة */
-  --input-bg:      rgba(91,189,185,0.07);
-  --map-bg:        rgba(91,189,185,0.07);
-
-  /* تدرجات Hero */
-  --hero-grad1:    rgba(126,203,199,0.10);
-  --hero-grad2:    rgba(184,167,255,0.07);
-}
-
-/* ── DARK THEME – يبقى كما هو ───────────────── */
 [data-theme="dark"] {
-  --bg-base:       #030d1f;
-  --bg-2:          #061428;
-  --bg-3:          #0a1e38;
-  --bg-card:       rgba(10,30,60,0.55);
-  --bg-nav:        rgba(3,13,31,0.92);
+  --bg-base:      #030d1f;
+  --bg-2:         #061428;
+  --bg-3:         #0a1e38;
+  --bg-card:      rgba(10, 30, 60, 0.55);
+  --bg-nav:       rgba(3, 13, 31, 0.92);
 
-  --accent:        #00c8e8;
-  --accent2:       #0096c7;
-  --accent3:       #00e5ff;
+  /* ══ Brand Colors – Dark Mode ══
+     Aqua = primary action color
+     Lavender = highlight / accent glow  */
+  --accent:        #7ECBC7;    /* Enamora Aqua */
+  --accent2:       #5BBDB9;
+  --accent3:       #9EDBD8;
+  --lavender:      #B8A7FF;    /* ← Lavender Glow: يحل محل الأبيض */
+  --lavender2:     #9B8AE8;
+  --warm-stone:    #D6CEC4;
   --gold:          #c9a84c;
 
-  --text-h:        #ffffff;
-  --text-p:        rgba(255,255,255,0.72);
-  --text-muted:    rgba(255,255,255,0.42);
+  /* النص الرئيسي: أبيض بنفسجي ناعم */
+  --text-h:        #EDE8FF;
+  --text-p:        rgba(210, 205, 235, 0.75);
+  --text-muted:    rgba(190, 185, 215, 0.45);
 
-  --border:        rgba(255,255,255,0.10);
-  --border-accent: rgba(0,200,232,0.35);
+  /* Borders: lavender-tinted */
+  --border:        rgba(184, 167, 255, 0.13);
+  --border-accent: rgba(184, 167, 255, 0.38);
+  --border-lav:    rgba(184, 167, 255, 0.38);
 
-  --glass:         rgba(255,255,255,0.05);
-  --glass2:        rgba(255,255,255,0.09);
+  /* Glass surfaces */
+  --glass:         rgba(184, 167, 255, 0.05);
+  --glass2:        rgba(184, 167, 255, 0.10);
 
-  --shadow:        0 8px 40px rgba(0,0,0,0.45);
-  --shadow-accent: 0 8px 40px rgba(0,200,232,0.20);
+  /* Shadows */
+  --shadow:        0 8px 40px rgba(0, 0, 0, 0.50);
+  --shadow-accent: 0 8px 40px rgba(184, 167, 255, 0.25);
+  --shadow-lav:    0 8px 40px rgba(184, 167, 255, 0.30);
 
-  --input-bg:      rgba(255,255,255,0.06);
-  --map-bg:        rgba(0,200,232,0.07);
+  /* Inputs */
+  --input-bg:      rgba(184, 167, 255, 0.07);
+  --map-bg:        rgba(126, 203, 199, 0.07);
 
-  --hero-grad1:    rgba(0,200,232,0.13);
-  --hero-grad2:    rgba(0,100,180,0.12);
+  /* Stars */
+  --star-fill:     #B8A7FF;
+  --star-fill2:    #9B8AE8;
+  --star-aqua:     #7ECBC7;
+}
+
+/* ── LIGHT THEME — ENAMORA BRAND ──────────────── */
+[data-theme="light"] {
+  --bg-base:      #FAF7F2;    /* Ivory White */
+  --bg-2:         #F4EFE8;
+  --bg-3:         #EBE5DC;
+  --bg-card:      rgba(255, 255, 255, 0.97);
+  --bg-nav:       rgba(250, 247, 242, 0.97);
+
+  --accent:        #7ECBC7;   /* Enamora Aqua */
+  --accent2:       #5BBDB9;
+  --accent3:       #9EDBD8;
+  --lavender:      #B8A7FF;   /* Lavender Glow */
+  --lavender2:     #9B8AE8;
+  --warm-stone:    #D6CEC4;   /* Warm Stone */
+  --gold:          #b8860b;
+
+  --text-h:        #2D3748;
+  --text-p:        rgba(45, 55, 72, 0.80);
+  --text-muted:    rgba(45, 55, 72, 0.48);
+
+  --border:        rgba(126, 203, 199, 0.22);
+  --border-accent: rgba(126, 203, 199, 0.55);
+  --border-lav:    rgba(184, 167, 255, 0.40);
+
+  --glass:         rgba(255, 255, 255, 0.65);
+  --glass2:        rgba(255, 255, 255, 0.97);
+
+  --shadow:        0 8px 40px rgba(126, 203, 199, 0.14);
+  --shadow-accent: 0 8px 40px rgba(126, 203, 199, 0.30);
+  --shadow-lav:    0 8px 40px rgba(184, 167, 255, 0.22);
+
+  --input-bg:      rgba(126, 203, 199, 0.09);
+  --map-bg:        rgba(126, 203, 199, 0.07);
+
+  --star-fill:     #B8A7FF;
+  --star-fill2:    #9B8AE8;
+  --star-aqua:     #7ECBC7;
 }

@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════
    navbar.css  –  Navigation Bar Styles
-   د. وسام ميسر – عيادة الأسنان
+   Enamora Dental Center – عيادة Enamora لطب وتجميل الأسنان
 ═══════════════════════════════════════════════════ */
 
 /* ── WRAPPER ──────────────────────────────────── */
@@ -15,17 +15,17 @@
 
 /* ── ANIMATED TOP LINE ────────────────────────── */
 .nav-top-line {
-  height: 3px;
+  height: 2.5px;
   background: linear-gradient(
     90deg,
     transparent,
     var(--accent),
-    var(--accent3),
+    var(--lavender),
     var(--accent),
     transparent
   );
   background-size: 200% 100%;
-  animation: line-slide 4s linear infinite;
+  animation: line-slide 5s linear infinite;
 }
 @keyframes line-slide {
   0%   { background-position: 200% 0; }
@@ -47,6 +47,10 @@
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
+  box-shadow: 0 4px 30px rgba(126, 203, 199, 0.12);
+}
+
+[data-theme="dark"] #navbar.scrolled .nav-inner {
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
 }
 
@@ -57,67 +61,100 @@
   gap: 14px;
 }
 
+/* Logo circle — uses the star as icon on light mode */
 .nav-logo {
   position: relative;
-  width: 52px; height: 52px;
+  width: 48px; height: 48px;
   flex-shrink: 0;
-  border-radius: 16px;
+  border-radius: 14px;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(0, 200, 232, 0.4);
+  box-shadow: 0 0 20px rgba(126, 203, 199, 0.45);
   transition: all 0.4s;
   overflow: hidden;
 }
+[data-theme="dark"] .nav-logo {
+  box-shadow: 0 0 20px rgba(0, 200, 232, 0.4);
+}
+
 .nav-logo::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent);
 }
+
+/* Star icon inside logo (light mode) */
+.nav-logo::after {
+  content: '';
+  position: absolute;
+  width: 22px; height: 22px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='rgba(255,255,255,0.92)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  z-index: 1;
+}
+
+.nav-logo i {
+  display: none; /* hidden since we use the star ::after */
+}
+
 .nav-logo:hover {
-  transform: rotate(8deg) scale(1.1);
+  transform: scale(1.08);
+  box-shadow: 0 0 32px rgba(126, 203, 199, 0.6);
+}
+[data-theme="dark"] .nav-logo:hover {
   box-shadow: 0 0 32px rgba(0, 200, 232, 0.6);
 }
-.nav-logo i { color: #fff; font-size: 24px; position: relative; z-index: 1; }
 
 /* spinning dashed ring */
 .nav-logo-ring {
   position: absolute;
   inset: -4px;
-  border-radius: 20px;
-  border: 1.5px dashed rgba(0, 200, 232, 0.4);
-  animation: spin-slow 8s linear infinite;
+  border-radius: 18px;
+  border: 1.5px dashed rgba(126, 203, 199, 0.45);
+  animation: spin-slow 10s linear infinite;
 }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 
 /* brand text */
 .nav-brand-text .clinic-name {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 900;
   color: var(--text-h);
   letter-spacing: 0.3px;
   line-height: 1.2;
   transition: color 0.4s;
+  /* Use serif font in light mode (Enamora brand font) */
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
+
+[data-theme="dark"] .nav-brand-text .clinic-name {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  font-size: 16px;
+}
+
 .nav-brand-text .clinic-sub {
   font-size: 11px;
-  color: var(--accent);
+  color: var(--accent2);
   font-weight: 600;
+  letter-spacing: 1px;
   display: flex;
   align-items: center;
   gap: 6px;
 }
+
+/* Star before subtitle */
 .nav-brand-text .clinic-sub::before {
   content: '';
-  width: 16px; height: 1.5px;
-  background: var(--accent);
-  animation: expand-line 2s ease-in-out infinite;
-}
-@keyframes expand-line {
-  0%,100% { width: 16px; }
-  50%     { width: 28px; }
+  width: 8px; height: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z' fill='%23B8A7FF'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
 }
 
 /* ── DESKTOP LINKS ────────────────────────────── */
@@ -143,19 +180,19 @@
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 200, 232, 0.12),
-    rgba(0, 200, 232, 0.05)
-  );
+  background: rgba(126, 203, 199, 0.10);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.3s;
 }
+[data-theme="dark"] .nav-link-item::before {
+  background: rgba(0, 200, 232, 0.12);
+}
+
 .nav-link-item:hover::before,
 .nav-link-item.active::before { transform: scaleX(1); }
 .nav-link-item:hover,
-.nav-link-item.active         { color: var(--accent); }
+.nav-link-item.active { color: var(--accent); }
 
 /* dot indicator */
 .nav-link-item::after {
@@ -165,7 +202,7 @@
   transform: translateX(-50%) scale(0);
   width: 4px; height: 4px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--lavender);
   transition: transform 0.3s;
 }
 .nav-link-item:hover::after,
@@ -182,7 +219,7 @@
   padding: 10px 22px;
   font-size: 13.5px;
   font-weight: 800;
-  box-shadow: 0 4px 20px rgba(0, 200, 232, 0.35);
+  box-shadow: 0 4px 20px rgba(126, 203, 199, 0.38);
   transition: all 0.35s;
   border: none;
   position: relative;
@@ -199,8 +236,15 @@
 .btn-nav-cta:hover::before { right: 100%; }
 .btn-nav-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(0, 200, 232, 0.5);
+  box-shadow: 0 8px 28px rgba(126, 203, 199, 0.55);
   color: #fff;
+}
+
+[data-theme="dark"] .btn-nav-cta {
+  box-shadow: 0 4px 20px rgba(0, 200, 232, 0.35);
+}
+[data-theme="dark"] .btn-nav-cta:hover {
+  box-shadow: 0 8px 28px rgba(0, 200, 232, 0.5);
 }
 
 /* ── THEME TOGGLE ─────────────────────────────── */
@@ -219,9 +263,9 @@
   flex-shrink: 0;
 }
 .theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: rgba(0, 200, 232, 0.1);
+  border-color: var(--lavender);
+  color: var(--lavender);
+  background: rgba(184, 167, 255, 0.10);
   transform: rotate(20deg);
 }
 
@@ -290,7 +334,7 @@
   text-align: center;
 }
 .mob-nav-link:hover {
-  background: var(--glass2);
+  background: rgba(126, 203, 199, 0.10);
   border-color: var(--border-accent);
   color: var(--accent);
 }
@@ -299,7 +343,7 @@
 .mob-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 9995;
   opacity: 0;
   pointer-events: none;

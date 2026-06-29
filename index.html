@@ -7,32 +7,33 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <!-- ── SEO ─────────────────────────────────── -->
-  <title>د. وسام ميسر – لطب وتجميل الأسنان | حلب الجديدة</title>
+  <title>Enamora – لطب وتجميل الأسنان | د. وسام ميسر | حلب الجديدة</title>
   <meta name="description"
-    content="عيادة د. وسام ميسر لطب وتجميل الأسنان في حلب الجديدة – زراعة وتقويم وتجميل الأسنان بأحدث التقنيات العالمية." />
-  <meta name="keywords" content="طبيب أسنان حلب, زراعة أسنان, تقويم أسنان, تجميل أسنان, د وسام ميسر" />
-  <meta name="author" content="د. وسام ميسر" />
-  <meta property="og:title" content="د. وسام ميسر – لطب وتجميل الأسنان" />
-  <meta property="og:description" content="مركز طبي متكامل في حلب الجديدة" />
+    content="عيادة Enamora لطب وتجميل الأسنان في حلب الجديدة – زراعة وتقويم وتجميل الأسنان بأحدث التقنيات العالمية بإشراف د. وسام ميسر." />
+  <meta name="keywords" content="طبيب أسنان حلب, زراعة أسنان, تقويم أسنان, تجميل أسنان, Enamora, د وسام ميسر" />
+  <meta name="author" content="Enamora Dental Center" />
+  <meta property="og:title" content="Enamora – لطب وتجميل الأسنان | حلب الجديدة" />
+  <meta property="og:description" content="Science. Artistry. You. – مركز طبي متكامل في حلب الجديدة" />
   <meta property="og:type" content="website" />
 
-  <!-- ══════════════════════════════════════════
-       SELF-HOSTED ASSETS – كل شيء محلي
-       يعمل في تركيا بدون VPN (لا CDN خارجي)
-  ══════════════════════════════════════════ -->
+  <!-- ── SELF-HOSTED ASSETS ── -->
   <link rel="stylesheet" href="static/vendor/css/bootstrap.rtl.min.css" />
   <link rel="stylesheet" href="static/vendor/css/fontawesome.min.css" />
   <link rel="stylesheet" href="static/vendor/css/fonts.css" />
 
   <!-- ── Project CSS ── -->
-  <link rel="stylesheet" href="static/css/variables.css" />
-  <link rel="stylesheet" href="static/css/base.css" />
-  <link rel="stylesheet" href="static/css/navbar.css" />
-  <link rel="stylesheet" href="static/css/sections.css" />
-  <link rel="stylesheet" href="static/css/mobile.css" />
+  <link rel="stylesheet" href="static/css/variables.css?v=3" />
+  <link rel="stylesheet" href="static/css/dark-overrides.css?v=1" />
+  <link rel="stylesheet" href="static/css/gallery-modal.css?v=1" />
+  <link rel="stylesheet" href="static/css/base.css?v=3" />
+  <link rel="stylesheet" href="static/css/navbar.css?v=3" />
+  <link rel="stylesheet" href="static/css/sections.css?v=3" />
+  <link rel="stylesheet" href="static/css/mobile.css?v=3" />
 
   <style>
-    /* CRITICAL – Font + Overflow fix */
+    /* ═══════════════════════════════
+       CRITICAL + ENAMORA OVERRIDES
+    ═══════════════════════════════ */
     html {
       overflow-x: hidden;
     }
@@ -41,11 +42,1223 @@
       font-family: 'Cairo', 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif;
       overflow-x: hidden;
       max-width: 100vw;
+      background: #FAF7F2;
     }
 
-    /* Prevent any child from causing horizontal scroll */
     .container {
       max-width: 100%;
+    }
+
+    /* ── Enamora Inline Star ── */
+    .s-star {
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    .s-star-pulse {
+      animation: s-pulse 2.4s ease-in-out infinite;
+    }
+
+    @keyframes s-pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 0.75;
+      }
+    }
+
+    /* ── Section header star row ── */
+    .brand-title-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Tagline bar ── */
+    .brand-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+      font-weight: 800;
+      color: #7ECBC7;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── Hero overrides ── */
+    .hero-title .grad {
+      background: linear-gradient(135deg, #5BBDB9, #7ECBC7);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-desc {
+      font-size: 15.5px;
+      color: var(--text-p);
+      line-height: 1.85;
+      max-width: 520px;
+      margin-bottom: 32px;
+      animation: fadeInUp 0.9s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      animation: fadeInUp 0.9s 0.3s ease both;
+    }
+
+    .hero-mini-stats {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-top: 32px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(126, 203, 199, 0.22);
+      border-radius: 18px;
+      padding: 14px 22px;
+      animation: fadeInUp 0.9s 0.45s ease both;
+    }
+
+    .mini-stat {
+      text-align: center;
+      padding: 0 16px;
+    }
+
+    .mini-stat .num {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .mini-stat .lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .mini-stat-sep {
+      width: 1px;
+      height: 36px;
+      background: rgba(126, 203, 199, 0.25);
+    }
+
+    /* ── Hero team strip ── */
+    .hero-team-strip {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.9s 0.6s ease both;
+    }
+
+    .hts-avatars {
+      display: flex;
+      align-items: center;
+    }
+
+    .hts-av {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2.5px solid #FAF7F2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: #fff;
+      margin-left: -10px;
+      transition: transform 0.25s;
+      cursor: default;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+
+    .hts-av:first-child {
+      margin-left: 0;
+    }
+
+    .hts-av:hover {
+      transform: translateY(-4px) scale(1.15);
+      z-index: 5;
+    }
+
+    .hts-av--more {
+      background: rgba(255, 255, 255, 0.9);
+      border-color: rgba(126, 203, 199, 0.40);
+      color: #7ECBC7;
+      font-size: 10px;
+    }
+
+    .hts-text {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .hts-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .hts-count {
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--accent);
+      background: rgba(126, 203, 199, 0.10);
+      border: 1px solid rgba(126, 203, 199, 0.25);
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+
+    /* ── Feature cards (about) ── */
+    .feat-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(126, 203, 199, 0.22);
+      border-radius: 20px;
+      padding: 22px 18px;
+      height: 100%;
+      transition: all 0.4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #7ECBC7, #B8A7FF);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+
+    .feat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(126, 203, 199, 0.18);
+      border-color: rgba(126, 203, 199, 0.45);
+    }
+
+    .feat-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .feat-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(126, 203, 199, 0.12), rgba(184, 167, 255, 0.10));
+      border: 1.5px solid rgba(126, 203, 199, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      transition: all 0.4s;
+    }
+
+    .feat-icon i {
+      color: var(--accent);
+      font-size: 22px;
+      transition: all 0.4s;
+    }
+
+    .feat-card:hover .feat-icon {
+      background: linear-gradient(135deg, #7ECBC7, #B8A7FF);
+      border-color: transparent;
+    }
+
+    .feat-card:hover .feat-icon i {
+      color: #fff;
+    }
+
+    .feat-card h5 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--text-h);
+      margin-bottom: 6px;
+    }
+
+    .feat-card p {
+      font-size: 13px;
+      color: var(--text-p);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Team Cards ── */
+    .team-card {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(126, 203, 199, 0.22);
+      border-radius: 24px;
+      padding: 28px 24px;
+      transition: all 0.4s;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #7ECBC7, #B8A7FF);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(126, 203, 199, 0.18);
+    }
+
+    .team-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .team-card--founder {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      text-align: right;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(126, 203, 199, 0.05), rgba(184, 167, 255, 0.04));
+      border-color: rgba(126, 203, 199, 0.35);
+    }
+
+    .team-photo-wrap {
+      position: relative;
+      flex-shrink: 0;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(126, 203, 199, 0.12), rgba(184, 167, 255, 0.10));
+      border: 2px solid rgba(126, 203, 199, 0.30);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .team-photo-wrap--founder {
+      width: 160px;
+      height: 160px;
+    }
+
+    .team-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .team-photo-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: var(--accent);
+      opacity: 0.4;
+    }
+
+    .team-photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(91, 189, 185, 0.4), transparent 50%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 8px;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .team-card:hover .team-photo-overlay {
+      opacity: 1;
+    }
+
+    .team-founder-badge {
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #7ECBC7, #B8A7FF);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 800;
+      padding: 3px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .team-info {
+      flex: 1;
+    }
+
+    .team-role-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(126, 203, 199, 0.10);
+      border: 1px solid rgba(126, 203, 199, 0.25);
+      color: #5BBDB9;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .team-name {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--text-h);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .team-name.center-name {
+      justify-content: center;
+    }
+
+    .team-specialty {
+      font-size: 13.5px;
+      color: var(--text-p);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .team-stats-row {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      background: rgba(126, 203, 199, 0.07);
+      border: 1px solid rgba(126, 203, 199, 0.18);
+      border-radius: 16px;
+      padding: 12px 20px;
+    }
+
+    .ts-item {
+      text-align: center;
+      flex: 1;
+    }
+
+    .ts-num {
+      font-size: 20px;
+      font-weight: 900;
+      color: #7ECBC7;
+      line-height: 1;
+    }
+
+    .ts-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .ts-sep {
+      width: 1px;
+      height: 36px;
+      background: rgba(126, 203, 199, 0.22);
+    }
+
+    .team-grid-members {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    /* ── Testimonials Slider ── */
+    .ts-root {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(126, 203, 199, 0.22);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(126, 203, 199, 0.10);
+    }
+
+    .ts-rating-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 22px 32px;
+      border-bottom: 1px solid rgba(126, 203, 199, 0.18);
+      background: linear-gradient(135deg, rgba(126, 203, 199, 0.05), rgba(184, 167, 255, 0.04));
+    }
+
+    .ts-rating-score {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .ts-big-num {
+      font-size: 48px;
+      font-weight: 900;
+      color: #7ECBC7;
+      line-height: 1;
+    }
+
+    .ts-stars-big {
+      color: #f4c430;
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    .ts-rating-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .ts-rating-divider {
+      width: 1px;
+      height: 50px;
+      background: rgba(126, 203, 199, 0.22);
+    }
+
+    .ts-platforms {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .ts-plat {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-p);
+    }
+
+    .ts-plat strong {
+      color: var(--text-h);
+      font-weight: 800;
+    }
+
+    .ts-stage {
+      overflow: hidden;
+      padding: 28px 32px;
+    }
+
+    .ts-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ts-slide {
+      min-width: 100%;
+    }
+
+    .ts-card {
+      background: rgba(250, 247, 242, 0.8);
+      border: 1px solid rgba(126, 203, 199, 0.20);
+      border-radius: 20px;
+      padding: 28px 24px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s;
+    }
+
+    .ts-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(126, 203, 199, 0.40);
+    }
+
+    .ts-quote-icon {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      color: rgba(126, 203, 199, 0.18);
+      font-size: 36px;
+    }
+
+    .ts-stars {
+      color: #f4c430;
+      font-size: 16px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+
+    .ts-text {
+      font-size: 14.5px;
+      color: var(--text-p);
+      line-height: 1.85;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .ts-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .ts-av {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .ts-name {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-h);
+    }
+
+    .ts-job {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .ts-verified {
+      margin-right: auto;
+      font-size: 11px;
+      color: #7ECBC7;
+      font-weight: 700;
+    }
+
+    .ts-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 16px 32px 20px;
+      border-top: 1px solid rgba(126, 203, 199, 0.14);
+    }
+
+    .ts-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(126, 203, 199, 0.10);
+      border: 1px solid rgba(126, 203, 199, 0.25);
+      color: var(--accent);
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ts-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .ts-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .ts-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(126, 203, 199, 0.25);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .ts-dot.active {
+      background: var(--accent);
+      width: 22px;
+      border-radius: 4px;
+    }
+
+    .ts-progress-wrap {
+      height: 3px;
+      background: rgba(126, 203, 199, 0.12);
+    }
+
+    .ts-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, #7ECBC7, #B8A7FF);
+      transition: width 0.4s;
+    }
+
+    /* ── Booking Info Panel ── */
+    .booking-info-panel {
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(126, 203, 199, 0.25);
+      border-radius: 24px;
+      padding: 28px 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bip-title {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--text-h);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(126, 203, 199, 0.18);
+    }
+
+    .bip-title i {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .bip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(126, 203, 199, 0.16);
+      background: rgba(250, 247, 242, 0.7);
+      transition: all 0.3s;
+      color: inherit;
+    }
+
+    .bip-item:hover {
+      border-color: rgba(126, 203, 199, 0.40);
+      background: rgba(126, 203, 199, 0.06);
+      transform: translateX(-3px);
+    }
+
+    .bip-item.bip-wa:hover {
+      border-color: rgba(37, 211, 102, 0.35);
+      background: rgba(37, 211, 102, 0.05);
+    }
+
+    .bip-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(126, 203, 199, 0.12), rgba(184, 167, 255, 0.10));
+      border: 1px solid rgba(126, 203, 199, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .bip-icon i {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .bip-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .bip-val {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-h);
+    }
+
+    .bip-sub {
+      font-size: 11.5px;
+      color: var(--text-p);
+      margin-top: 2px;
+    }
+
+    .bip-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 8px;
+    }
+
+    /* ── Contact Quick Bar ── */
+    .contact-quick-bar {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid rgba(126, 203, 199, 0.22);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(126, 203, 199, 0.10);
+    }
+
+    .cqb-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 24px;
+      flex: 1;
+      min-width: 160px;
+      transition: all 0.3s;
+      color: inherit;
+    }
+
+    .cqb-item:hover {
+      background: rgba(126, 203, 199, 0.06);
+    }
+
+    .cqb-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #7ECBC7, #5BBDB9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cqb-icon i {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .cqb-lbl {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .cqb-val {
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--text-h);
+    }
+
+    .cqb-sep {
+      width: 1px;
+      height: 48px;
+      background: rgba(126, 203, 199, 0.18);
+      align-self: center;
+    }
+
+    /* ── Map ── */
+    .map-wrap {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1.5px solid rgba(126, 203, 199, 0.30);
+      box-shadow: 0 20px 60px rgba(126, 203, 199, 0.12);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #F4EFE8;
+      padding: 70px 0 30px;
+      border-top: 1px solid rgba(126, 203, 199, 0.18);
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Cpath d='M20 10 C20.4 12.5 22 14.5 20 17 C18 14.5 20 12.5 20 10Z M20 17 C22 19 20 21.5 20 24 C19.6 21.5 18 19 20 17Z M17 17 C19 17.4 20.5 19 20 17 C20 15 18.5 17 17 17Z M23 17 C21 16.6 19.5 15 20 17 C20 19 21.5 17 23 17Z' fill='%23B8A7FF' opacity='0.07'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 80px 80px;
+      pointer-events: none;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .footer-logo-ico {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #7ECBC7, #B8A7FF);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .footer-logo-ico i {
+      color: #fff;
+      font-size: 22px;
+    }
+
+    .footer-name {
+      font-size: 20px;
+      font-weight: 900;
+      color: var(--text-h);
+      font-family: Georgia, serif;
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .footer-name-sub {
+      font-size: 11px;
+      color: #7ECBC7;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+
+    .footer-desc {
+      font-size: 14px;
+      color: var(--text-p);
+      line-height: 1.85;
+      margin: 14px 0 20px;
+      max-width: 320px;
+    }
+
+    .footer-tagline-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 800;
+      color: #7ECBC7;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .soc {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(126, 203, 199, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      color: var(--text-muted);
+      transition: all 0.35s;
+      cursor: pointer;
+    }
+
+    .soc:hover {
+      transform: translateY(-3px);
+    }
+
+    .soc.fb:hover {
+      background: #1877f2;
+      color: #fff;
+      border-color: #1877f2;
+    }
+
+    .soc.ig:hover {
+      background: linear-gradient(135deg, #f09433, #dc2743, #bc1888);
+      color: #fff;
+      border-color: #e1306c;
+    }
+
+    .soc.wa:hover {
+      background: #25d366;
+      color: #fff;
+      border-color: #25d366;
+    }
+
+    .soc.tk2:hover {
+      background: #ff0050;
+      color: #fff;
+      border-color: #ff0050;
+    }
+
+    .soc.yt:hover {
+      background: #ff0000;
+      color: #fff;
+      border-color: #ff0000;
+    }
+
+    .soc.sn:hover,
+    .soc.sn2:hover {
+      background: #fffc00;
+      color: #000;
+      border-color: #fffc00;
+    }
+
+    .footer-links-title {
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--text-h);
+      margin-bottom: 16px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .footer-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 13.5px;
+      padding: 5px 0;
+      transition: all 0.3s;
+    }
+
+    .footer-link i {
+      font-size: 10px;
+      color: var(--accent);
+      transition: transform 0.3s;
+    }
+
+    .footer-link:hover {
+      color: var(--accent);
+      padding-right: 6px;
+    }
+
+    .footer-link:hover i {
+      transform: translateX(-4px);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(126, 203, 199, 0.16);
+      margin-top: 50px;
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 12.5px;
+    }
+
+    .footer-dev {
+      color: var(--text-muted);
+      font-size: 12.5px;
+    }
+
+    .footer-dev-link {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .footer-dev-link:hover {
+      color: var(--lavender);
+    }
+
+    /* ── WhatsApp Float ── */
+    .wa-float {
+      position: fixed;
+      bottom: 28px;
+      left: 28px;
+      z-index: 9990;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-direction: row-reverse;
+    }
+
+    .wa-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #25d366, #1ebe5b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+      text-decoration: none;
+      transition: all 0.35s;
+      position: relative;
+      animation: wa-bounce 3s ease-in-out infinite;
+    }
+
+    @keyframes wa-bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-7px);
+      }
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.55);
+      animation: none;
+    }
+
+    .wa-online {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid #25d366;
+      box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.3);
+      animation: wa-pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes wa-pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.3);
+      }
+
+      50% {
+        box-shadow: 0 0 0 6px rgba(37, 211, 102, 0);
+      }
+    }
+
+    .wa-label {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid rgba(37, 211, 102, 0.25);
+      border-radius: 14px;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2D3748;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10);
+      white-space: nowrap;
+      opacity: 0;
+      transform: translateX(8px);
+      transition: all 0.3s;
+    }
+
+    .wa-label span {
+      color: #25d366;
+      font-weight: 900;
+    }
+
+    .wa-float:hover .wa-label {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ── Success Modal ── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(45, 55, 72, 0.55);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s;
+    }
+
+    .modal-overlay.show {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal-box {
+      background: #fff;
+      border-radius: 28px;
+      padding: 40px 36px;
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 30px 80px rgba(126, 203, 199, 0.25);
+      border: 1px solid rgba(126, 203, 199, 0.25);
+      transform: scale(0.9);
+      transition: transform 0.35s;
+    }
+
+    .modal-overlay.show .modal-box {
+      transform: scale(1);
+    }
+
+    .modal-check {
+      font-size: 56px;
+      color: #7ECBC7;
+      margin-bottom: 16px;
+    }
+
+    .modal-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--text-h);
+      margin-bottom: 10px;
+    }
+
+    .modal-sub {
+      font-size: 14px;
+      color: var(--text-p);
+      line-height: 1.8;
+      margin-bottom: 24px;
+    }
+
+    .modal-close {
+      background: linear-gradient(135deg, #7ECBC7, #5BBDB9);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 13px 32px;
+      font-size: 15px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+
+    .modal-close:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(126, 203, 199, 0.4);
     }
 
     @media (max-width: 768px) {
@@ -64,6 +1277,35 @@
       section {
         overflow-x: hidden;
       }
+
+      .team-card--founder {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .team-name {
+        justify-content: center;
+      }
+
+      .ts-stage {
+        padding: 20px 16px;
+      }
+
+      .ts-rating-bar {
+        padding: 16px 20px;
+      }
+
+      .ts-controls {
+        padding: 14px 20px 18px;
+      }
+
+      .cqb-sep {
+        display: none;
+      }
+
+      .cqb-item {
+        min-width: 50%;
+      }
     }
   </style>
 
@@ -71,16 +1313,37 @@
 
 <body>
 
-  <!-- Custom Cursor (desktop only) -->
+  <!-- ── Hidden SVG Defs for inline stars ── -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+    <defs>
+      <linearGradient id="gStar" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#B8A7FF" />
+        <stop offset="100%" stop-color="#7ECBC7" />
+      </linearGradient>
+      <linearGradient id="gAqua" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#7ECBC7" />
+        <stop offset="100%" stop-color="#5BBDB9" />
+      </linearGradient>
+      <linearGradient id="gLav" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#B8A7FF" />
+        <stop offset="100%" stop-color="#9B8AE8" />
+      </linearGradient>
+      <symbol id="icon-star" viewBox="0 0 24 24">
+        <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Custom Cursor -->
   <div class="cursor-dot" id="cursorDot"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
   <!-- Reading Progress Bar -->
   <div id="progress-bar"></div>
 
-  <!-- ══════════════════════════════════════════════
-     NAVBAR
-══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════ -->
   <nav id="navbar">
     <div class="nav-top-line"></div>
     <div class="nav-inner">
@@ -88,19 +1351,30 @@
         <div class="d-flex align-items-center justify-content-between gap-2">
 
           <!-- Brand -->
-          <a href="#hero" class="nav-brand" style="flex:1;min-width:0;">
+          <a href="#hero" class="nav-brand" style="flex:1;min-width:0;text-decoration:none;">
             <div class="nav-logo flex-shrink-0"
-              style="background:transparent;box-shadow:none;border:none;overflow:visible;">
-              <img src="static/images/logo3.png" alt="Enamora" style="width:50px;height:50px;object-fit:contain;"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+              style="background:transparent;box-shadow:none;border:none;overflow:visible;width:48px;height:48px;position:relative;">
+              <img src="static/images/logo3.png" alt="Enamora" style="width:48px;height:48px;object-fit:contain;"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
               <div
-                style="display:none;width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#5BBDB9,#3DA8A4);align-items:center;justify-content:center;">
-                <i class="fas fa-tooth" style="color:#fff;font-size:22px;"></i>
+                style="display:none;width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#7ECBC7,#5BBDB9);align-items:center;justify-content:center;position:absolute;inset:0;">
+                <svg width="22" height="22" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="rgba(255,255,255,0.92)" />
+                </svg>
               </div>
             </div>
             <div class="nav-brand-text" style="min-width:0;">
-              <div class="clinic-name" style="font-family:'Georgia',serif;letter-spacing:0.5px;">Enamora</div>
-              <div class="clinic-sub">لطب وتجميل الأسنان</div>
+              <div class="clinic-name" style="font-family:'Georgia',serif;letter-spacing:0.5px;font-size:18px;">Enamora
+              </div>
+              <div class="clinic-sub"
+                style="display:flex;align-items:center;gap:6px;font-size:11px;color:#7ECBC7;font-weight:700;letter-spacing:0.5px;">
+                <svg width="8" height="8" viewBox="0 0 24 24" style="flex-shrink:0;">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#B8A7FF" />
+                </svg>
+                لطب وتجميل الأسنان
+              </div>
             </div>
           </a>
 
@@ -152,12 +1426,9 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-     HERO
-══════════════════════════════════════════════ -->
-  <!-- ══════════════════════════════════════════════
-     HERO – Enamora · عيادة متكاملة بإشراف د. وسام
-══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
   <section id="hero">
     <div class="hero-mesh"></div>
     <div class="orb"
@@ -167,42 +1438,45 @@
     </div>
     <div class="hero-ring" style="width:500px;height:500px;top:50%;left:65%;transform:translate(-50%,-50%);"></div>
     <div class="hero-ring"
-      style="width:640px;height:640px;top:50%;left:65%;transform:translate(-50%,-50%);animation-delay:2s;opacity:.18;">
+      style="width:640px;height:640px;top:50%;left:65%;transform:translate(-50%,-50%);animation-delay:2s;opacity:.15;">
     </div>
     <div class="particle-field" id="particleField"></div>
 
     <div class="container">
       <div class="row align-items-center g-4 g-lg-5">
 
-        <!-- ── عمود النص ── -->
+        <!-- ── Text Column ── -->
         <div class="col-12 col-lg-6 text-center text-lg-start">
 
-          <!-- شارة Enamora -->
-          <div class="hero-badge" style="flex-wrap:wrap;gap:6px;">
-            <div class="hero-badge-dot"></div>
+          <!-- Enamora badge with star -->
+          <div class="hero-badge">
+            <svg class="hero-badge-dot s-star-pulse" width="10" height="10" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#B8A7FF" />
+            </svg>
             <span style="font-family:'Georgia',serif;font-weight:700;letter-spacing:.5px;">Enamora</span>
             &bull; حلب الجديدة &bull; سوريا
           </div>
 
-          <!-- العنوان الرئيسي -->
+          <!-- Title -->
           <h1 class="hero-title">
             <span class="grad">علم الصحة.</span><br />
             <span class="grad">فن الابتسامة.</span>
             <span class="line2"
-              style="font-size:clamp(1rem,2.5vw,1.5rem);color:var(--text-p);font-weight:500;margin-top:10px;display:block;">
-              عيادة <strong style="color:var(--text-h);font-weight:800;">Enamora</strong>
-              · بإشراف <strong style="color:var(--accent);font-weight:800;">د. وسام ميسر</strong>
+              style="font-size:clamp(1rem,2.5vw,1.4rem);color:var(--text-p);font-weight:500;margin-top:10px;display:block;">
+              عيادة <strong style="color:var(--text-h);font-weight:900;">Enamora</strong>
+              &nbsp;·&nbsp; بإشراف <strong style="color:#7ECBC7;font-weight:900;">د. وسام ميسر</strong>
             </span>
           </h1>
 
-          <!-- الوصف -->
+          <!-- Description -->
           <p class="hero-desc">
             في <strong style="color:var(--text-h);">Enamora</strong> نجمع بين أحدث تقنيات طب الأسنان
-            وفريق طبي متخصص تحت قيادة <strong style="color:var(--text-h);">د. وسام ميسر</strong>،
+            وفريق طبي متخصص تحت إشراف <strong style="color:var(--text-h);">د. وسام ميسر</strong>،
             لنصمم لكم ابتسامة واثقة تدوم.
           </p>
 
-          <!-- أزرار الاستدعاء -->
+          <!-- CTA Buttons -->
           <div class="hero-btns">
             <button class="btn-primary-hero" onclick="location.href='#booking'">
               <i class="fas fa-calendar-plus"></i> احجز موعدك الآن
@@ -212,7 +1486,7 @@
             </button>
           </div>
 
-          <!-- إحصائيات مصغرة -->
+          <!-- Mini Stats -->
           <div class="hero-mini-stats">
             <div class="mini-stat">
               <div class="num">+5000</div>
@@ -235,10 +1509,9 @@
             </div>
           </div>
 
-          <!-- شريط فريق مصغر (أيقونات أعضاء الفريق) -->
+          <!-- Team Strip -->
           <div class="hero-team-strip">
             <div class="hts-avatars">
-              <!-- أفاتارات الفريق -->
               <div class="hts-av" style="background:linear-gradient(135deg,#5BBDB9,#3DA8A4);" title="د. وسام ميسر">و
               </div>
               <div class="hts-av" style="background:linear-gradient(135deg,#8e44ad,#9b59b6);" title="د. لقمان القصاب">ل
@@ -253,108 +1526,130 @@
             </div>
             <div class="hts-text">
               <span class="hts-label">فريق متكامل من</span>
-              <span class="hts-count">7 متخصصين</span>
+              <span class="hts-count">
+                <svg width="10" height="10" viewBox="0 0 24 24" style="vertical-align:middle;margin-left:3px;">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#B8A7FF" />
+                </svg>
+                7 متخصصين
+              </span>
               <span class="hts-label">يعملون تحت سقف واحد</span>
             </div>
           </div>
 
         </div>
 
-        <!-- ── عمود الصورة ── -->
+        <!-- ── Image Column ── -->
         <div class="col-12 col-lg-6">
-          <!-- ══ بطاقة Hero Enamora المحسّنة ══
-             ابحث في index.html عن: <div class="hero-img-wrap">
-             واستبدل كل محتوياتها بما يلي:
-        ══════════════════════════════════════ -->
           <div class="hero-img-wrap">
 
-            <!-- ═══ البطاقة الرئيسية ═══ -->
-            <div class="hero-img-card enamora-card">
+            <!-- Brand Frame (star top + bottom) -->
+            <div class="hero-img-frame">
+              <!-- Star TOP of frame -->
+              <svg style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);z-index:3;" width="22"
+                height="22" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="url(#gStar)" />
+              </svg>
+              <!-- Star BOTTOM of frame -->
+              <svg style="position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);z-index:3;" width="22"
+                height="22" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="url(#gStar)" />
+              </svg>
 
-              <!-- بقع لون ناعمة في الخلفية -->
-              <div class="en-blob en-blob1"></div>
-              <div class="en-blob en-blob2"></div>
+              <!-- Main Card -->
+              <div class="hero-img-card enamora-card">
+                <div class="en-blob en-blob1"></div>
+                <div class="en-blob en-blob2"></div>
+                <div class="en-ring" style="width:300px;height:300px;"></div>
+                <div class="en-ring" style="width:400px;height:400px;opacity:.22;"></div>
 
-              <!-- حلقات دائرية خلفية -->
-              <div class="en-ring" style="width:300px;height:300px;"></div>
-              <div class="en-ring" style="width:400px;height:400px;opacity:.25;"></div>
+                <!-- Top badge -->
+                <div class="en-top-badge">
+                  <span class="en-badge-dot"></span>
+                  عيادة متكاملة · حلب الجديدة
+                </div>
 
-              <!-- شارة علوية -->
-              <div class="en-top-badge">
-                <span class="en-badge-dot"></span>
-                عيادة متكاملة · حلب الجديدة
+                <!-- Enamora star deco (top-right) -->
+                <div class="en-star-deco en-star-tl">
+                  <svg width="22" height="22" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                      fill="#B8A7FF" opacity="0.75" />
+                  </svg>
+                </div>
+                <!-- Small aqua star (bottom-left) -->
+                <div class="en-star-deco" style="bottom:65px;left:18px;opacity:.45;">
+                  <svg width="13" height="13" viewBox="0 0 24 24">
+                    <path
+                      d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                      fill="#7ECBC7" />
+                  </svg>
+                </div>
+
+                <!-- Hero image / video -->
+                <video class="hero-doctor-photo en-logo-img" autoplay loop muted playsinline
+                  poster="static/images/main8.png">
+                  <source src="static/images/hero-video.mp4" type="video/mp4" />
+                </video>
+
+                <!-- Fallback -->
+                <div class="hero-placeholder-icon" id="heroFallback" style="display:none;">
+                  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
+                    style="width:70%;height:auto;filter:drop-shadow(0 8px 24px rgba(91,189,185,0.4));">
+                    <defs>
+                      <radialGradient id="gA2" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#7ECBC7" stop-opacity=".9" />
+                        <stop offset="100%" stop-color="#3DA8A4" stop-opacity=".5" />
+                      </radialGradient>
+                      <radialGradient id="gP2" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#B8A7FF" stop-opacity=".85" />
+                        <stop offset="100%" stop-color="#9B8AE8" stop-opacity=".5" />
+                      </radialGradient>
+                    </defs>
+                    <ellipse cx="100" cy="100" rx="90" ry="90" fill="none" stroke="#7ECBC7" stroke-width="1.5"
+                      opacity=".35" />
+                    <ellipse cx="100" cy="100" rx="72" ry="72" fill="none" stroke="#B8A7FF" stroke-width="1"
+                      opacity=".25" />
+                    <path
+                      d="M100 18 C100 18 110 68 162 100 C110 132 100 182 100 182 C100 182 90 132 38 100 C90 68 100 18 100 18Z"
+                      fill="url(#gA2)" opacity=".85" />
+                    <path
+                      d="M100 44 C100 44 113 80 150 100 C113 120 100 156 100 156 C100 156 87 120 50 100 C87 80 100 44 100 44Z"
+                      fill="url(#gP2)" opacity=".7" />
+                    <circle cx="100" cy="100" r="9" fill="#fff" opacity=".9" />
+                    <circle cx="100" cy="100" r="4" fill="#B8A7FF" />
+                  </svg>
+                  <p
+                    style="font-family:'Georgia',serif;font-size:20px;font-weight:700;margin-top:12px;color:var(--text-h);">
+                    Enamora</p>
+                  <small style="color:var(--text-muted);font-size:12px;">Dental Center</small>
+                </div>
+
+                <!-- Bottom label -->
+                <div class="hero-photo-label en-photo-label">
+                  <svg width="12" height="12" viewBox="0 0 24 24" style="flex-shrink:0;">
+                    <path
+                      d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                      fill="#B8A7FF" />
+                  </svg>
+                  <span style="font-family:'Georgia',serif;font-weight:700;letter-spacing:.5px;">Enamora</span>
+                  <span
+                    style="width:1px;height:14px;background:rgba(255,255,255,.25);display:inline-block;margin:0 2px;"></span>
+                  <span style="opacity:.65;font-size:11px;">د. وسام ميسر</span>
+                </div>
               </div>
+            </div><!-- end hero-img-frame -->
 
-              <!-- نجمة Enamora البنفسجية (زخرفة) -->
-              <div class="en-star-deco en-star-tl">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#B8A7FF" opacity="0.7">
-                  <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" />
-                </svg>
-              </div>
-              <div class="en-star-deco en-star-br" style="bottom:60px;left:18px;opacity:.4;">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="#7ECBC7">
-                  <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" />
-                </svg>
-              </div>
-
-              <!-- الصورة الرئيسية – شعار Enamora -->
-              <video class="hero-doctor-photo en-logo-img" autoplay loop muted playsinline
-                poster="static/images/main8.png">
-                <source src="static/images/hero-video.mp4" type="video/mp4" />
-              </video>
-              <!-- Fallback إذا لم تُحمَّل main2.png -->
-              <div class="hero-placeholder-icon" id="heroFallback" style="display:none;">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"
-                  style="width:70%;height:auto;filter:drop-shadow(0 8px 24px rgba(91,189,185,0.4));">
-                  <defs>
-                    <radialGradient id="gA" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stop-color="#7ECBC7" stop-opacity=".9" />
-                      <stop offset="100%" stop-color="#3DA8A4" stop-opacity=".5" />
-                    </radialGradient>
-                    <radialGradient id="gP" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stop-color="#B8A7FF" stop-opacity=".85" />
-                      <stop offset="100%" stop-color="#9B8AE8" stop-opacity=".5" />
-                    </radialGradient>
-                  </defs>
-                  <ellipse cx="100" cy="100" rx="90" ry="90" fill="none" stroke="#7ECBC7" stroke-width="1.5"
-                    opacity=".35" />
-                  <ellipse cx="100" cy="100" rx="72" ry="72" fill="none" stroke="#B8A7FF" stroke-width="1"
-                    opacity=".25" />
-                  <path
-                    d="M100 18 C100 18 110 68 162 100 C110 132 100 182 100 182 C100 182 90 132 38 100 C90 68 100 18 100 18Z"
-                    fill="url(#gA)" opacity=".85" />
-                  <path
-                    d="M100 44 C100 44 113 80 150 100 C113 120 100 156 100 156 C100 156 87 120 50 100 C87 80 100 44 100 44Z"
-                    fill="url(#gP)" opacity=".7" />
-                  <circle cx="100" cy="100" r="9" fill="#fff" opacity=".9" />
-                  <circle cx="100" cy="100" r="4" fill="#B8A7FF" />
-                </svg>
-                <p
-                  style="font-family:'Georgia',serif;font-size:20px;font-weight:700;margin-top:12px;color:var(--text-h);">
-                  Enamora</p>
-                <small style="color:var(--text-muted);font-size:12px;">Dental Center</small>
-              </div>
-
-              <!-- تسمية الأسفل -->
-              <div class="hero-photo-label en-photo-label">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="#B8A7FF" style="flex-shrink:0;">
-                  <path d="M12 2 L13.8 9.5 L21 12 L13.8 14.5 L12 22 L10.2 14.5 L3 12 L10.2 9.5 Z" />
-                </svg>
-                <span style="font-family:'Georgia',serif;font-weight:700;letter-spacing:.5px;">Enamora</span>
-                <span
-                  style="width:1px;height:14px;background:rgba(255,255,255,.25);display:inline-block;margin:0 2px;"></span>
-                <span style="opacity:.65;font-size:11px;">د. وسام ميسر</span>
-              </div>
-            </div>
-
-            <!-- ═══ البطاقات العائمة ═══ -->
+            <!-- Floating Cards -->
             <div class="float-card fc1">
-              <div class="fc-icon" style="background:linear-gradient(135deg,var(--accent),var(--accent2));">
+              <div class="fc-icon" style="background:linear-gradient(135deg,#7ECBC7,#5BBDB9);">
                 <i class="fas fa-tooth"></i>
               </div>
               <div>
-                <div class="fc-num">+1200</div>
-                <div class="fc-lbl">عملية ناجحة</div>
+                <div class="fc-num" style="font-size:20px;font-weight:900;color:var(--text-h);">+1200</div>
+                <div class="fc-lbl" style="font-size:11px;color:var(--text-muted);">عملية ناجحة</div>
               </div>
             </div>
             <div class="float-card fc2">
@@ -362,8 +1657,8 @@
                 <i class="fas fa-users"></i>
               </div>
               <div>
-                <div class="fc-num">7</div>
-                <div class="fc-lbl">متخصصين</div>
+                <div class="fc-num" style="font-size:20px;font-weight:900;color:var(--text-h);">7</div>
+                <div class="fc-lbl" style="font-size:11px;color:var(--text-muted);">متخصصين</div>
               </div>
             </div>
             <div class="float-card fc3">
@@ -371,187 +1666,13 @@
                 <i class="fas fa-heart"></i>
               </div>
               <div>
-                <div class="fc-num">98%</div>
-                <div class="fc-lbl">رضا المرضى</div>
+                <div class="fc-num" style="font-size:20px;font-weight:900;color:var(--text-h);">98%</div>
+                <div class="fc-lbl" style="font-size:11px;color:var(--text-muted);">رضا المرضى</div>
               </div>
             </div>
 
           </div><!-- end hero-img-wrap -->
-
-          <!-- ══ CSS البطاقة المحسّنة – ضعه في <style> في <head> ══ -->
-          <style>
-            /* ── بطاقة Enamora ── */
-            .enamora-card {
-              background: linear-gradient(145deg,
-                  rgba(240, 250, 249, 0.9) 0%,
-                  rgba(250, 247, 242, 0.95) 45%,
-                  rgba(240, 237, 248, 0.85) 100%) !important;
-              border: 1px solid rgba(91, 189, 185, 0.28) !important;
-              box-shadow:
-                0 30px 80px rgba(91, 189, 185, 0.18),
-                0 8px 32px rgba(184, 167, 255, 0.12),
-                inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
-              display: flex !important;
-              flex-direction: column !important;
-              align-items: center !important;
-              justify-content: center !important;
-              overflow: hidden !important;
-            }
-
-            /* بقع الألوان */
-            .en-blob {
-              position: absolute;
-              border-radius: 50%;
-              pointer-events: none;
-              z-index: 0;
-            }
-
-            .en-blob1 {
-              width: 200px;
-              height: 200px;
-              background: rgba(91, 189, 185, 0.12);
-              top: -60px;
-              right: -60px;
-              filter: blur(50px);
-            }
-
-            .en-blob2 {
-              width: 160px;
-              height: 160px;
-              background: rgba(184, 167, 255, 0.14);
-              bottom: 30px;
-              left: -40px;
-              filter: blur(40px);
-            }
-
-            /* الحلقات */
-            .en-ring {
-              position: absolute;
-              border-radius: 50%;
-              border: 1px solid rgba(91, 189, 185, 0.14);
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              pointer-events: none;
-              z-index: 0;
-            }
-
-            /* شارة علوية */
-            .en-top-badge {
-              position: absolute;
-              top: 16px;
-              left: 50%;
-              transform: translateX(-50%);
-              z-index: 4;
-              background: rgba(255, 255, 255, 0.82);
-              border: 1px solid rgba(91, 189, 185, 0.25);
-              border-radius: 20px;
-              padding: 5px 14px;
-              font-size: 10.5px;
-              font-weight: 700;
-              color: #3DA8A4;
-              display: flex;
-              align-items: center;
-              gap: 6px;
-              white-space: nowrap;
-              backdrop-filter: blur(8px);
-            }
-
-            .en-badge-dot {
-              width: 6px;
-              height: 6px;
-              border-radius: 50%;
-              background: #5BBDB9;
-              box-shadow: 0 0 5px #5BBDB9;
-              animation: blink 1.5s ease-in-out infinite;
-            }
-
-            @keyframes blink {
-
-              0%,
-              100% {
-                opacity: 1;
-              }
-
-              50% {
-                opacity: .3;
-              }
-            }
-
-            /* نجوم زخرفية */
-            .en-star-deco {
-              position: absolute;
-              z-index: 3;
-              pointer-events: none;
-            }
-
-            .en-star-tl {
-              top: 16px;
-              right: 16px;
-            }
-
-            /* الصورة / الشعار */
-            .en-logo-img {
-              position: relative !important;
-              z-index: 2 !important;
-              width: 82% !important;
-              height: auto !important;
-              object-fit: contain !important;
-              border-radius: 0 !important;
-              filter:
-                drop-shadow(0 16px 40px rgba(91, 189, 185, 0.35)) drop-shadow(0 4px 16px rgba(184, 167, 255, 0.25)) !important;
-              animation: logo-float 7s ease-in-out infinite !important;
-            }
-
-            @keyframes logo-float {
-
-              0%,
-              100% {
-                transform: perspective(800px) translateY(0) rotateX(0deg);
-              }
-
-              50% {
-                transform: perspective(800px) translateY(-12px) rotateX(1.5deg);
-              }
-            }
-
-            /* تسمية الأسفل المحسّنة */
-            .en-photo-label {
-              background: rgba(4, 14, 32, 0.80) !important;
-              border: 1px solid rgba(91, 189, 185, 0.35) !important;
-              border-radius: 30px !important;
-              padding: 9px 22px !important;
-              gap: 8px !important;
-            }
-
-            /* Dark mode تعديلات */
-            [data-theme="dark"] .enamora-card {
-              background: linear-gradient(145deg,
-                  rgba(10, 30, 50, 0.9) 0%,
-                  rgba(15, 25, 45, 0.95) 45%,
-                  rgba(20, 15, 45, 0.85) 100%) !important;
-              border-color: rgba(91, 189, 185, 0.22) !important;
-            }
-
-            [data-theme="dark"] .en-top-badge {
-              background: rgba(10, 25, 50, 0.82) !important;
-              color: #7ECBC7 !important;
-            }
-
-            /* موبايل */
-            @media (max-width: 768px) {
-              .en-logo-img {
-                width: 78% !important;
-              }
-
-              .en-top-badge {
-                font-size: 9.5px;
-                padding: 4px 10px;
-              }
-            }
-          </style>
         </div>
-
       </div>
     </div>
 
@@ -561,108 +1682,21 @@
       </div>
       <span>اكتشف المزيد</span>
     </div>
-
-    <!-- ══ CSS شريط الفريق المصغر ══ -->
-    <style>
-      /* ── شريط فريق Enamora ── */
-      .hero-team-strip {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        margin-top: 28px;
-        flex-wrap: wrap;
-        animation: fadeInUp 0.9s 0.65s ease both;
-      }
-
-      .hts-avatars {
-        display: flex;
-        align-items: center;
-      }
-
-      .hts-av {
-        width: 36px;
-        height: 36px;
-        border-radius: 50%;
-        border: 2.5px solid var(--bg-base);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        font-weight: 800;
-        color: #fff;
-        margin-left: -10px;
-        transition: transform 0.25s;
-        cursor: default;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-      }
-
-      .hts-av:first-child {
-        margin-left: 0;
-      }
-
-      .hts-av:hover {
-        transform: translateY(-4px) scale(1.15);
-        z-index: 5;
-      }
-
-      .hts-av--more {
-        background: var(--glass2);
-        border-color: var(--border-accent);
-        color: var(--accent);
-        font-size: 10px;
-      }
-
-      .hts-text {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        flex-wrap: wrap;
-      }
-
-      .hts-label {
-        font-size: 13px;
-        color: var(--text-muted);
-        font-weight: 500;
-      }
-
-      .hts-count {
-        font-size: 14px;
-        font-weight: 900;
-        color: var(--accent);
-        background: rgba(91, 189, 185, 0.1);
-        border: 1px solid rgba(91, 189, 185, 0.25);
-        border-radius: 20px;
-        padding: 2px 10px;
-      }
-
-      @media (max-width: 768px) {
-        .hero-team-strip {
-          justify-content: center;
-          margin-top: 20px;
-        }
-
-        .hts-av {
-          width: 32px;
-          height: 32px;
-          font-size: 11px;
-        }
-      }
-    </style>
-
   </section>
 
-  <!-- ══════════════════════════════════════════════
-     ABOUT
-══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       ABOUT
+  ══════════════════════════════════ -->
   <section id="about">
     <div class="container">
       <div class="row align-items-center g-4 g-lg-5">
+
         <div class="col-12 col-lg-5">
           <div class="about-img reveal left">
             <div style="color:var(--text-muted);text-align:center;">
               <i class="fas fa-hospital"
-                style="font-size:70px;color:var(--accent);opacity:.35;display:block;margin-bottom:14px;animation:icon-pulse 3s ease-in-out infinite;"></i>
-              <p style="font-size:15px;font-weight:700;">المركز الطبي المتكامل</p>
+                style="font-size:70px;color:var(--accent);opacity:.35;display:block;margin-bottom:14px;animation:s-pulse 3s ease-in-out infinite;"></i>
+              <p style="font-size:15px;font-weight:700;color:var(--text-p);">المركز الطبي المتكامل</p>
             </div>
             <div class="about-img-badge">
               <div class="bn">15+</div>
@@ -670,16 +1704,51 @@
             </div>
           </div>
         </div>
+
         <div class="col-12 col-lg-7">
           <div class="reveal right">
-            <div class="sec-badge"><i class="fas fa-info-circle"></i> من نحن</div>
-            <h2 class="sec-title">مركز طبي متكامل<br /><span>بمعايير عالمية</span></h2>
+            <div class="sec-badge">
+              <i class="fas fa-info-circle"></i> من نحن
+            </div>
+
+            <!-- Title with star accent -->
+            <div class="brand-title-row">
+              <svg class="s-star" width="20" height="20" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="url(#gStar)" />
+              </svg>
+              <h2 class="sec-title mb-0">مركز طبي متكامل<br /><span>بمعايير عالمية</span></h2>
+            </div>
+
+            <!-- Divider with star -->
             <div class="divider"></div>
+
             <p class="sec-desc mb-4">
-              يجمع مركز <strong style="color:var(--text-h)">د. وسام ميسر</strong> بين الخبرة الطبية الممتازة
+              يجمع مركز <strong style="color:var(--text-h);">Enamora</strong> بإشراف
+              <strong style="color:var(--text-h);">د. وسام ميسر</strong> بين الخبرة الطبية الممتازة
               والتقنيات الحديثة، لنقدم رعاية أسنان لا مثيل لها في حلب وسوريا.
             </p>
+
+            <!-- Tagline "Science. Artistry. You." -->
+            <div class="brand-tagline" style="margin-bottom:24px;">
+              <svg width="10" height="10" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="#B8A7FF" />
+              </svg>
+              SCIENCE
+              <svg width="10" height="10" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="#7ECBC7" />
+              </svg>
+              ARTISTRY
+              <svg width="10" height="10" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="#B8A7FF" />
+              </svg>
+              YOU.
+            </div>
           </div>
+
           <div class="row g-3 mt-1">
             <div class="col-6 reveal up d1">
               <div class="feat-card">
@@ -692,7 +1761,7 @@
               <div class="feat-card">
                 <div class="feat-icon"><i class="fas fa-tooth"></i></div>
                 <h5>علاج اللثة والأسنان</h5>
-                <p>علاج أمراض اللثة والتهاباتها بأحدث الأساليب.</p>
+                <p>علاج أمراض اللثة بأحدث الأساليب.</p>
               </div>
             </div>
             <div class="col-6 reveal up d3">
@@ -711,51 +1780,61 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-     TEAM
-══════════════════════════════════════════════ -->
-  <section id="team">
+  <!-- ══════════════════════════════════
+       TEAM
+  ══════════════════════════════════ -->
+  <section id="team" style="background:linear-gradient(180deg,#FAF7F2 0%,#F4EFE8 100%);">
     <div class="container">
 
-      <!-- Header -->
       <div class="text-center mb-5 reveal up">
         <div class="sec-badge"><i class="fas fa-user-md"></i> كادرنا الطبي</div>
-        <h2 class="sec-title">تعرّف على <span>فريقنا</span></h2>
+        <div class="brand-title-row justify-content-center">
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gLav)" />
+          </svg>
+          <h2 class="sec-title mb-0">تعرّف على <span>فريقنا</span></h2>
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gLav)" />
+          </svg>
+        </div>
+        <div class="divider" style="justify-content:center;"></div>
         <p class="sec-desc mx-auto">نخبة من أمهر الأطباء والمتخصصين يعملون تحت سقف واحد لتقديم أفضل رعاية أسنان في حلب
         </p>
       </div>
 
-      <!-- ── FOUNDER CARD ── -->
+      <!-- Founder Card -->
       <div class="row justify-content-center mb-4">
         <div class="col-12 col-lg-9 reveal up d1">
           <div class="team-card team-card--founder">
-
-            <!-- صورة المؤسس -->
             <div class="team-photo-wrap team-photo-wrap--founder">
               <img src="static/images/team/wissam-miser.jpg" alt="د. وسام ميسر" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb && fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
-              <div class="team-photo-fallback" style="display:none;">
-                <i class="fas fa-user-md"></i>
-              </div>
-              <div class="team-photo-overlay">
-                <i class="fas fa-crown" style="color:var(--gold);font-size:22px;"></i>
-              </div>
-              <div class="team-founder-badge">
-                <i class="fas fa-crown"></i> مؤسس العيادة
-              </div>
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+              <div class="team-photo-fallback" style="display:none;"><i class="fas fa-user-md"></i></div>
+              <div class="team-photo-overlay"><i class="fas fa-crown" style="color:#D6CEC4;font-size:20px;"></i></div>
+              <div class="team-founder-badge"><i class="fas fa-crown"></i> مؤسس العيادة</div>
             </div>
-
-            <!-- معلومات المؤسس -->
             <div class="team-info">
               <div class="team-role-tag">
-                <i class="fas fa-star"></i>
+                <svg width="9" height="9" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#B8A7FF" />
+                </svg>
                 تجميل الأسنان · علاج الجذور · الحشوات
               </div>
-              <h3 class="team-name">د. وسام ميسر</h3>
+              <h3 class="team-name">
+                <svg width="16" height="16" viewBox="0 0 24 24" style="flex-shrink:0;">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="url(#gStar)" />
+                </svg>
+                د. وسام ميسر
+              </h3>
               <p class="team-specialty">دكتور في التجميل اللاجراحي في طب الأسنان وعلاج الجذور والحشوات</p>
               <div class="team-stats-row">
                 <div class="ts-item"><span class="ts-num">15+</span><span class="ts-lbl">سنة خبرة</span></div>
@@ -765,150 +1844,185 @@
                 <div class="ts-item"><span class="ts-num">+1200</span><span class="ts-lbl">عملية ناجحة</span></div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
 
-      <!-- ── REST OF TEAM ── -->
+      <!-- Rest of Team -->
       <div class="team-grid-members" hidden>
-
-        <!-- أ. حسام ميسر -->
         <div class="reveal up d1">
           <div class="team-card">
             <div class="team-photo-wrap">
               <img src="static/images/team/hussam-miser.jpg" alt="أ. حسام ميسر" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
               <div class="team-photo-fallback" style="display:none;"><i class="fas fa-flask"></i></div>
               <div class="team-photo-overlay"><i class="fas fa-flask"></i></div>
             </div>
             <div class="team-info text-center">
               <div class="team-role-tag">مخبر الأسنان</div>
-              <h4 class="team-name">أ. حسام ميسر</h4>
+              <h4 class="team-name center-name">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#B8A7FF" />
+                </svg>
+                أ. حسام ميسر
+              </h4>
               <p class="team-specialty">أستاذ في المعهد التقاني لمخابر الأسنان – جامعة حلب</p>
             </div>
           </div>
         </div>
-
-        <!-- أ. عدنان صباهي -->
         <div class="reveal up d2">
           <div class="team-card">
             <div class="team-photo-wrap">
               <img src="static/images/team/adnan-sabahi.jpg" alt="أ. عدنان صباهي" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
               <div class="team-photo-fallback" style="display:none;"><i class="fas fa-drafting-compass"></i></div>
               <div class="team-photo-overlay"><i class="fas fa-drafting-compass"></i></div>
             </div>
             <div class="team-info text-center">
               <div class="team-role-tag">تصميم رقمي</div>
-              <h4 class="team-name">أ. عدنان صباهي</h4>
+              <h4 class="team-name center-name">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#7ECBC7" />
+                </svg>
+                أ. عدنان صباهي
+              </h4>
               <p class="team-specialty">تقني ديزاين الأسنان والتصميم الرقمي الدقيق</p>
             </div>
           </div>
         </div>
-
-        <!-- د. بيان عرب -->
         <div class="reveal up d3">
           <div class="team-card">
             <div class="team-photo-wrap">
               <img src="static/images/team/bayan-arab.jpg" alt="د. بيان عرب" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
               <div class="team-photo-fallback" style="display:none;"><i class="fas fa-baby"></i></div>
               <div class="team-photo-overlay"><i class="fas fa-baby"></i></div>
             </div>
             <div class="team-info text-center">
               <div class="team-role-tag">صحة الفم · أسنان الأطفال</div>
-              <h4 class="team-name">د. بيان عرب</h4>
+              <h4 class="team-name center-name">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#B8A7FF" />
+                </svg>
+                د. بيان عرب
+              </h4>
               <p class="team-specialty">دكتورة في صحة الفم الوقائي وطب أسنان الأطفال</p>
             </div>
           </div>
         </div>
-
-        <!-- م. رولا صباغ -->
         <div class="reveal up d4">
           <div class="team-card">
             <div class="team-photo-wrap">
               <img src="static/images/team/rola-sabbagh.jpg" alt="م. رولا صباغ" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
               <div class="team-photo-fallback" style="display:none;"><i class="fas fa-shield-alt"></i></div>
               <div class="team-photo-overlay"><i class="fas fa-shield-alt"></i></div>
             </div>
             <div class="team-info text-center">
               <div class="team-role-tag">تمريض · تعقيم</div>
-              <h4 class="team-name">م. رولا صباغ</h4>
+              <h4 class="team-name center-name">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#7ECBC7" />
+                </svg>
+                م. رولا صباغ
+              </h4>
               <p class="team-specialty">مديرة قسم التمريض والتعقيم في المركز</p>
             </div>
           </div>
         </div>
-
-        <!-- د. لقمان القصاب -->
         <div class="reveal up d1">
           <div class="team-card">
             <div class="team-photo-wrap">
               <img src="static/images/team/luqman-qassab.jpg" alt="د. لقمان القصاب" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
               <div class="team-photo-fallback" style="display:none;"><i class="fas fa-star"></i></div>
               <div class="team-photo-overlay"><i class="fas fa-star"></i></div>
             </div>
             <div class="team-info text-center">
               <div class="team-role-tag">ابتسامة هوليوود · زيركون</div>
-              <h4 class="team-name">د. لقمان القصاب</h4>
+              <h4 class="team-name center-name">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#B8A7FF" />
+                </svg>
+                د. لقمان القصاب
+              </h4>
               <p class="team-specialty">مختص في ابتسامة المشاهير والهوليوود وتركيبات الزيركونيا</p>
             </div>
           </div>
         </div>
-
-        <!-- د. محمد البيك -->
         <div class="reveal up d2">
           <div class="team-card">
             <div class="team-photo-wrap">
               <img src="static/images/team/muhammad-albik.jpg" alt="د. محمد البيك" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
               <div class="team-photo-fallback" style="display:none;"><i class="fas fa-tooth"></i></div>
               <div class="team-photo-overlay"><i class="fas fa-tooth"></i></div>
             </div>
             <div class="team-info text-center">
               <div class="team-role-tag">جراحة · زراعة أسنان</div>
-              <h4 class="team-name">د. محمد البيك</h4>
+              <h4 class="team-name center-name">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#7ECBC7" />
+                </svg>
+                د. محمد البيك
+              </h4>
               <p class="team-specialty">أخصائي جراحة الوجه والفكين وزراعة الأسنان</p>
             </div>
           </div>
         </div>
-
-        <!-- د. مهند سعود -->
         <div class="reveal up d3">
           <div class="team-card">
             <div class="team-photo-wrap">
               <img src="static/images/team/muhannad-saud.jpg" alt="د. مهند سعود" class="team-photo"
-                onerror="this.style.display='none'; var fb=this.nextElementSibling; if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
+                onerror="this.style.display='none';var fb=this.nextElementSibling;if(fb&&fb.classList.contains('team-photo-fallback')){fb.style.display='flex';}" />
               <div class="team-photo-fallback" style="display:none;"><i class="fas fa-teeth-open"></i></div>
               <div class="team-photo-overlay"><i class="fas fa-teeth-open"></i></div>
             </div>
             <div class="team-info text-center">
               <div class="team-role-tag">تقويم · Invisalign</div>
-              <h4 class="team-name">د. مهند سعود</h4>
+              <h4 class="team-name center-name">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#B8A7FF" />
+                </svg>
+                د. مهند سعود
+              </h4>
               <p class="team-specialty">أخصائي تقويم الأسنان والتقويم الشفاف Invisalign</p>
             </div>
           </div>
         </div>
+      </div>
 
-      </div><!-- end team-grid-members -->
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-     SERVICES
-══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       SERVICES
+  ══════════════════════════════════ -->
   <section id="services">
     <div class="container">
       <div class="text-center mb-4 mb-lg-5 reveal up">
         <div class="sec-badge"><i class="fas fa-teeth"></i> خدماتنا الطبية</div>
-        <h2 class="sec-title">خدمات <span>متكاملة</span> لأسنانك</h2>
+        <div class="brand-title-row justify-content-center">
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gAqua)" />
+          </svg>
+          <h2 class="sec-title mb-0">خدمات <span>متكاملة</span> لأسنانك</h2>
+        </div>
+        <div class="divider" style="justify-content:center;"></div>
         <p class="sec-desc mx-auto">نقدم طيفاً شاملاً من خدمات طب وتجميل الأسنان بأحدث التقنيات</p>
       </div>
       <div class="row g-3 g-lg-4">
         <div class="col-6 col-md-6 col-lg-3 reveal up d1">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-tooth"></i></div>
             <h4>زراعة الأسنان</h4>
             <p>زراعة فورية بأحدث تقنيات الغرسات.</p>
@@ -917,6 +2031,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-3 reveal up d2">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-teeth-open"></i></div>
             <h4>تقويم الأسنان</h4>
             <p>تقويم ثابت وشفاف Invisalign.</p>
@@ -925,6 +2040,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-3 reveal up d3">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-star"></i></div>
             <h4>تجميل الأسنان</h4>
             <p>فينيرز والابتسامة الهوليودية.</p>
@@ -933,6 +2049,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-3 reveal up d4">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-magic"></i></div>
             <h4>تبييض الأسنان</h4>
             <p>تبييض بالليزر ونتائج فورية.</p>
@@ -941,6 +2058,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-3 reveal up d1">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-crown"></i></div>
             <h4>التركيبات السنية</h4>
             <p>تيجان وجسور البورسلين والزيركون.</p>
@@ -949,6 +2067,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-3 reveal up d2">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-flask"></i></div>
             <h4>مخبر الأسنان</h4>
             <p>مخبر داخلي بدقة وسرعة عالية.</p>
@@ -957,6 +2076,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-3 reveal up d3">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-baby"></i></div>
             <h4>معالجة الأطفال</h4>
             <p>رعاية في بيئة ودية ومريحة.</p>
@@ -965,6 +2085,7 @@
         </div>
         <div class="col-6 col-md-6 col-lg-3 reveal up d4">
           <div class="srv-card">
+            <span class="srv-card-star"></span>
             <div class="srv-icon"><i class="fas fa-procedures"></i></div>
             <h4>علاج الجذور</h4>
             <p>قنوات الجذر بالروتاري بدون ألم.</p>
@@ -975,12 +2096,15 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
+  <!-- ══════════════════════════════════
+       STATS
+  ══════════════════════════════════ -->
+  <!-- ══════════════════════════════════
      STATS
-══════════════════════════════════════════════ -->
+══════════════════════════════════ -->
   <section id="stats">
     <div class="container">
-      <div class="row text-center g-2 g-md-3">
+      <div class="row text-center g-2 g-md-4">
         <div class="col-6 col-lg-3 reveal scale d1">
           <div class="stat-block">
             <div class="stat-icon-wrap"><i class="fas fa-users"></i></div>
@@ -1010,171 +2134,163 @@
           </div>
         </div>
       </div>
+
+      <!-- Tagline تحت الإحصائيات – خارج .row تماماً -->
+      <div class="text-center mt-4 reveal up">
+        <div class="brand-tagline" style="justify-content:center;">
+          <svg width="10" height="10" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="#B8A7FF" />
+          </svg>
+          PRECISION · CARE · EXCELLENCE · TRUST
+          <svg width="10" height="10" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="#B8A7FF" />
+          </svg>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-     GALLERY
-══════════════════════════════════════════════ -->
-  <!-- ══════════════════════════════════════════════
-   GALLERY – قسم المعرض بالتصميم الأصلي + صور حقيقية
-   استبدل هذا القسم كاملاً بدل القسم القديم في index.html
-══════════════════════════════════════════════ -->
-  <!-- ══════════════════════════════════════════════
-     GALLERY – قبل وبعد (سلايدر تفاعلي بالسحب)
-     نفس تصميم gallery-grid الأصلي
-══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       GALLERY
+  ══════════════════════════════════ -->
   <section id="gallery">
     <div class="container">
       <div class="text-center mb-4 mb-lg-5 reveal up">
         <div class="sec-badge"><i class="fas fa-images"></i> معرض الصور</div>
-        <h2 class="sec-title">قبل <span>وبعد</span> العلاج</h2>
+        <div class="brand-title-row justify-content-center">
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gStar)" />
+          </svg>
+          <h2 class="sec-title mb-0">قبل <span>وبعد</span> العلاج</h2>
+        </div>
+        <div class="divider" style="justify-content:center;"></div>
         <p class="sec-desc mx-auto">تحولات مذهلة حقيقية أنجزتها عيادتنا لمرضانا الكرام – اسحب للمقارنة</p>
       </div>
 
       <div class="gallery-grid reveal up">
 
-        <!-- ── خانة 1: زراعة أسنان (كبيرة – span 2 rows) ── -->
         <div class="g-item">
           <div class="ba-slider" data-label="زراعة أسنان">
             <div class="ba-before">
-              <img src="static/images/dd/gallery-01-before.jpg" alt="قبل زراعة الأسنان" loading="lazy"
-                onerror="this.src=''" />
+              <img src="static/images/dd/gallery-01-before.jpg" alt="قبل" loading="lazy" onerror="this.src=''" />
               <span class="ba-tag ba-tag--before">قبل</span>
             </div>
             <div class="ba-after">
-              <img src="static/images/dd/gallery-01-after.jpg" alt="بعد زراعة الأسنان" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--after">بعد</span>
+              <img src="static/images/dd/gallery-01-after.jpg" alt="بعد" loading="lazy" onerror="this.src=''" />
+              <span class="ba-tag ba-tag--after">
+                <svg width="7" height="7" viewBox="0 0 24 24" style="vertical-align:middle;margin-left:3px;">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="#fff" />
+                </svg>
+                بعد
+              </span>
             </div>
             <div class="ba-handle">
               <div class="ba-line"></div>
-              <div class="ba-circle">
-                <i class="fas fa-arrows-alt-h"></i>
-              </div>
+              <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
             </div>
           </div>
-          <!-- fallback إذا لم تُحمَّل الصور -->
-          <div class="g-placeholder g-placeholder--hidden">
-            <i class="fas fa-tooth"></i><span>زراعة أسنان</span>
-          </div>
+          <div class="g-placeholder g-placeholder--hidden"><i class="fas fa-tooth"></i><span>زراعة أسنان</span></div>
           <div class="g-overlay">
-            <div class="g-overlay-content">
-              <i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span>
-            </div>
+            <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
           </div>
         </div>
 
-        <!-- ── خانة 2: ابتسامة هوليودية ── -->
         <div class="g-item">
           <div class="ba-slider" data-label="الابتسامة الهوليودية">
-            <div class="ba-before">
-              <img src="static/images/dd/gallery-02-before.jpg" alt="قبل الابتسامة الهوليودية" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--before">قبل</span>
-            </div>
-            <div class="ba-after">
-              <img src="static/images/dd/gallery-02-after.jpg" alt="بعد الابتسامة الهوليودية" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--after">بعد</span>
-            </div>
+            <div class="ba-before"><img src="static/images/dd/gallery-02-before.jpg" alt="قبل" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--before">قبل</span></div>
+            <div class="ba-after"><img src="static/images/dd/gallery-02-after.jpg" alt="بعد" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--after">بعد</span></div>
             <div class="ba-handle">
               <div class="ba-line"></div>
               <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
             </div>
           </div>
-          <div class="g-placeholder g-placeholder--hidden">
-            <i class="fas fa-star"></i><span>الابتسامة الهوليودية</span>
+          <div class="g-placeholder g-placeholder--hidden"><i class="fas fa-star"></i><span>الابتسامة الهوليودية</span>
           </div>
           <div class="g-overlay">
             <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
           </div>
         </div>
 
-        <!-- ── خانة 3: تبييض الأسنان ── -->
         <div class="g-item">
           <div class="ba-slider" data-label="تبييض الأسنان">
-            <div class="ba-before">
-              <img src="static/images/dd/gallery-03-before.jpg" alt="قبل تبييض الأسنان" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--before">قبل</span>
-            </div>
-            <div class="ba-after">
-              <img src="static/images/dd/gallery-03-after.jpg" alt="بعد تبييض الأسنان" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--after">بعد</span>
-            </div>
+            <div class="ba-before"><img src="static/images/dd/gallery-03-before.jpg" alt="قبل" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--before">قبل</span></div>
+            <div class="ba-after"><img src="static/images/dd/gallery-03-after.jpg" alt="بعد" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--after">بعد</span></div>
             <div class="ba-handle">
               <div class="ba-line"></div>
               <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
             </div>
           </div>
-          <div class="g-placeholder g-placeholder--hidden">
-            <i class="fas fa-magic"></i><span>تبييض الأسنان</span>
-          </div>
+          <div class="g-placeholder g-placeholder--hidden"><i class="fas fa-magic"></i><span>تبييض الأسنان</span></div>
           <div class="g-overlay">
             <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
           </div>
         </div>
 
-        <!-- ── خانة 4: تركيبات الزيركون ── -->
         <div class="g-item">
           <div class="ba-slider" data-label="تركيبات الزيركون">
-            <div class="ba-before">
-              <img src="static/images/dd/gallery-04-before.jpg" alt="قبل تركيبات الزيركون" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--before">قبل</span>
-            </div>
-            <div class="ba-after">
-              <img src="static/images/dd/gallery-04-after.jpg" alt="بعد تركيبات الزيركون" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--after">بعد</span>
-            </div>
+            <div class="ba-before"><img src="static/images/dd/gallery-04-before.jpg" alt="قبل" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--before">قبل</span></div>
+            <div class="ba-after"><img src="static/images/dd/gallery-04-after.jpg" alt="بعد" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--after">بعد</span></div>
             <div class="ba-handle">
               <div class="ba-line"></div>
               <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
             </div>
           </div>
-          <div class="g-placeholder g-placeholder--hidden">
-            <i class="fas fa-crown"></i><span>تركيبات الزيركون</span>
+          <div class="g-placeholder g-placeholder--hidden"><i class="fas fa-crown"></i><span>تركيبات الزيركون</span>
           </div>
           <div class="g-overlay">
             <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
           </div>
         </div>
 
-        <!-- ── خانة 5: مخبر الأسنان ── -->
         <div class="g-item">
           <div class="ba-slider" data-label="مخبر الأسنان">
-            <div class="ba-before">
-              <img src="static/images/dd/gallery-05-before.jpg" alt="قبل مخبر الأسنان" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--before">قبل</span>
-            </div>
-            <div class="ba-after">
-              <img src="static/images/dd/gallery-05-after.jpg" alt="بعد مخبر الأسنان" loading="lazy"
-                onerror="this.src=''" />
-              <span class="ba-tag ba-tag--after">بعد</span>
-            </div>
+            <div class="ba-before"><img src="static/images/dd/gallery-05-before.jpg" alt="قبل" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--before">قبل</span></div>
+            <div class="ba-after"><img src="static/images/dd/gallery-05-after.jpg" alt="بعد" loading="lazy"
+                onerror="this.src=''" /><span class="ba-tag ba-tag--after">بعد</span></div>
             <div class="ba-handle">
               <div class="ba-line"></div>
               <div class="ba-circle"><i class="fas fa-arrows-alt-h"></i></div>
             </div>
           </div>
-          <div class="g-placeholder g-placeholder--hidden">
-            <i class="fas fa-flask"></i><span>مخبر الأسنان</span>
-          </div>
+          <div class="g-placeholder g-placeholder--hidden"><i class="fas fa-flask"></i><span>مخبر الأسنان</span></div>
           <div class="g-overlay">
             <div class="g-overlay-content"><i class="fas fa-expand-alt"></i><span>اسحب للمقارنة</span></div>
           </div>
         </div>
 
-      </div><!-- end gallery-grid -->
+      </div>
+    </div>
+    <!-- ── زر شاهد المزيد ── مباشرة في الـ HTML -->
+    <div class="text-center mt-4 mt-lg-5" style="padding:0 0 10px;">
+      <button class="gallery-more-btn" id="galleryMoreBtn" onclick="openGalleryModal()">
+        <span class="gmb-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gStar)" />
+          </svg>
+        </span>
+        شاهد المزيد من الحالات
+        <span class="gmb-count">+10 حالات</span>
+        <span class="gmb-arrow"><i class="fas fa-chevron-down"></i></span>
+      </button>
     </div>
 
-    <!-- ══ CSS السلايدر ══ -->
+    <!-- حاوية المودال فقط -->
+    <div id="gallery-modal-container"></div>
+
+    <!-- BA Slider CSS + JS (unchanged logic, updated brand colors) -->
     <style>
-      /* ── السلايدر يملأ الخانة كاملاً ── */
       .ba-slider {
         position: absolute;
         inset: 0;
@@ -1184,7 +2300,6 @@
         -webkit-user-select: none;
       }
 
-      /* ── صورة "قبل" – خلفية ثابتة ── */
       .ba-before,
       .ba-after {
         position: absolute;
@@ -1199,17 +2314,12 @@
         object-position: center;
         display: block;
         pointer-events: none;
-        transition: none;
       }
 
-      /* ── صورة "بعد" – مقصوصة بـ clip-path تتحرك ── */
       .ba-after {
         clip-path: inset(0 50% 0 0);
-        /* نبدأ من المنتصف */
-        transition: clip-path 0s;
       }
 
-      /* ── تاجات قبل / بعد ── */
       .ba-tag {
         position: absolute;
         bottom: 10px;
@@ -1217,25 +2327,27 @@
         font-weight: 800;
         padding: 3px 11px;
         border-radius: 20px;
-        letter-spacing: 0.5px;
+        letter-spacing: .5px;
         pointer-events: none;
         z-index: 5;
+        display: flex;
+        align-items: center;
+        gap: 4px;
       }
 
       .ba-tag--before {
         right: 10px;
-        background: rgba(0, 0, 0, 0.55);
-        color: rgba(255, 255, 255, 0.88);
+        background: rgba(45, 55, 72, 0.55);
+        color: rgba(255, 255, 255, .88);
       }
 
       .ba-tag--after {
         left: 10px;
-        background: var(--accent);
+        background: #7ECBC7;
         color: #fff;
-        box-shadow: 0 2px 8px rgba(91, 189, 185, 0.4);
+        box-shadow: 0 2px 8px rgba(126, 203, 199, .4);
       }
 
-      /* ── الخط الفاصل ── */
       .ba-handle {
         position: absolute;
         top: 0;
@@ -1253,7 +2365,7 @@
         width: 2px;
         flex: 1;
         background: #fff;
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 0 8px rgba(0, 0, 0, .4);
       }
 
       .ba-circle {
@@ -1261,26 +2373,25 @@
         height: 36px;
         border-radius: 50%;
         background: #fff;
-        border: 2px solid var(--accent);
+        border: 2px solid #7ECBC7;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-        color: var(--accent);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+        color: #7ECBC7;
         font-size: 13px;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        transition: transform 0.2s, box-shadow 0.2s;
+        transition: transform .2s, box-shadow .2s;
       }
 
       .ba-slider:active .ba-circle,
       .ba-slider.dragging .ba-circle {
         transform: translateY(-50%) scale(1.15);
-        box-shadow: 0 6px 20px rgba(91, 189, 185, 0.5);
+        box-shadow: 0 6px 20px rgba(126, 203, 199, .5);
       }
 
-      /* ── Placeholder مخفي يظهر فقط عند فشل الصور ── */
       .g-placeholder--hidden {
         display: none !important;
       }
@@ -1293,19 +2404,12 @@
         display: flex !important;
       }
 
-      /* ── إيقاف hover overlay عند السحب ── */
-      .ba-slider:active~.g-overlay,
-      .ba-slider.dragging~.g-overlay {
-        opacity: 0 !important;
-      }
-
-      /* ── تلميح الاستخدام عند أول دخول ── */
       .ba-hint {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.6);
+        background: rgba(45, 55, 72, 0.65);
         color: #fff;
         font-size: 11px;
         font-weight: 700;
@@ -1315,15 +2419,14 @@
         z-index: 20;
         white-space: nowrap;
         opacity: 1;
-        transition: opacity 0.4s;
+        transition: opacity .4s;
       }
 
       .ba-hint.hidden {
         opacity: 0;
       }
 
-      /* موبايل: دائرة أكبر قليلاً للمس */
-      @media (max-width: 768px) {
+      @media(max-width:768px) {
         .ba-circle {
           width: 42px;
           height: 42px;
@@ -1331,120 +2434,70 @@
         }
       }
     </style>
-
-    <!-- ══ JavaScript السلايدر ══ -->
     <script>
       (function () {
         'use strict';
-
         function initSlider(slider) {
           var afterEl = slider.querySelector('.ba-after');
           var handle = slider.querySelector('.ba-handle');
           var isDragging = false;
-          var pct = 50; // نسبة مئوية (0–100)
-
-          // تلميح الاستخدام
           var hint = document.createElement('div');
-          hint.className = 'ba-hint';
-          hint.textContent = 'اسحب للمقارنة';
+          hint.className = 'ba-hint'; hint.textContent = 'اسحب للمقارنة';
           slider.appendChild(hint);
-
           function setPosition(x) {
             var rect = slider.getBoundingClientRect();
-            var relX = x - rect.left;
-            pct = Math.max(2, Math.min(98, (relX / rect.width) * 100));
+            var pct = Math.max(2, Math.min(98, ((x - rect.left) / rect.width) * 100));
             afterEl.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
             handle.style.left = pct + '%';
           }
-
-          function onMove(e) {
-            if (!isDragging) return;
-            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            setPosition(clientX);
-          }
-
-          function onStart(e) {
-            isDragging = true;
-            slider.classList.add('dragging');
-            hint.classList.add('hidden');
-            var clientX = e.touches ? e.touches[0].clientX : e.clientX;
-            setPosition(clientX);
-            e.preventDefault();
-          }
-
-          function onEnd() {
-            isDragging = false;
-            slider.classList.remove('dragging');
-          }
-
-          // أحداث الماوس
+          function onMove(e) { if (!isDragging) return; setPosition(e.touches ? e.touches[0].clientX : e.clientX); }
+          function onStart(e) { isDragging = true; slider.classList.add('dragging'); hint.classList.add('hidden'); setPosition(e.touches ? e.touches[0].clientX : e.clientX); e.preventDefault(); }
+          function onEnd() { isDragging = false; slider.classList.remove('dragging'); }
           slider.addEventListener('mousedown', onStart);
           window.addEventListener('mousemove', onMove);
           window.addEventListener('mouseup', onEnd);
-
-          // أحداث اللمس
           slider.addEventListener('touchstart', onStart, { passive: false });
           window.addEventListener('touchmove', onMove, { passive: false });
           window.addEventListener('touchend', onEnd);
-
-          // إخفاء التلميح بعد 2 ثانية
           setTimeout(function () { hint.classList.add('hidden'); }, 2200);
-
-          // التحقق من تحميل الصور
-          var imgs = slider.querySelectorAll('img');
-          var loadedCount = 0;
-          var failedCount = 0;
-
+          var imgs = slider.querySelectorAll('img'), failed = 0;
           imgs.forEach(function (img) {
-            if (img.complete && img.naturalWidth > 0) {
-              loadedCount++;
-            } else if (img.complete) {
-              failedCount++;
-            } else {
-              img.addEventListener('load', function () {
-                loadedCount++;
-              });
-              img.addEventListener('error', function () {
-                failedCount++;
-                if (failedCount >= 2) {
-                  slider.closest('.g-item').classList.add('no-images');
-                }
-              });
-            }
+            if (img.complete && !img.naturalWidth) failed++;
+            else img.addEventListener('error', function () { if (++failed >= 2) slider.closest('.g-item').classList.add('no-images'); });
           });
         }
-
-        // تهيئة كل السلايدرات
-        function initAll() {
-          document.querySelectorAll('.ba-slider').forEach(function (slider) {
-            initSlider(slider);
-          });
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', initAll);
-        } else {
-          initAll();
-        }
+        function initAll() { document.querySelectorAll('.ba-slider').forEach(initSlider); }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initAll);
+        else initAll();
       })();
     </script>
-
   </section>
-  <!-- ══════════════════════════════════════════════
-     TESTIMONIALS – PREMIUM SLIDER
-══════════════════════════════════════════════ -->
-  <section id="testimonials">
+
+  <!-- ══════════════════════════════════
+       TESTIMONIALS
+  ══════════════════════════════════ -->
+  <section id="testimonials" style="background:linear-gradient(180deg,#F4EFE8 0%,#FAF7F2 100%);">
     <div class="container">
       <div class="text-center mb-5 reveal up">
         <div class="sec-badge"><i class="fas fa-comment-alt"></i> آراء المرضى</div>
-        <h2 class="sec-title">ماذا يقول <span>مرضانا</span></h2>
+        <div class="brand-title-row justify-content-center">
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gLav)" />
+          </svg>
+          <h2 class="sec-title mb-0">ماذا يقول <span>مرضانا</span></h2>
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gLav)" />
+          </svg>
+        </div>
+        <div class="divider" style="justify-content:center;"></div>
         <p class="sec-desc mx-auto">قصص نجاح حقيقية من مرضانا الكرام في حلب وسوريا</p>
       </div>
 
-      <!-- SLIDER WRAPPER -->
       <div class="ts-root reveal up">
 
-        <!-- Rating summary bar -->
+        <!-- Rating bar -->
         <div class="ts-rating-bar">
           <div class="ts-rating-score">
             <span class="ts-big-num">4.9</span>
@@ -1464,16 +2517,15 @@
           </div>
         </div>
 
-        <!-- TRACK -->
+        <!-- Track -->
         <div class="ts-stage" id="tsStage">
           <div class="ts-track" id="tsTrack">
 
-            <!-- slide 1 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
-                <p class="ts-text">"تجربتي في عيادة د. وسام كانت رائعة جداً. الطاقم الطبي محترف والنتيجة فوق التوقعات.
+                <p class="ts-text">"تجربتي في عيادة Enamora كانت رائعة جداً. الطاقم الطبي محترف والنتيجة فوق التوقعات.
                   ابتسامتي تغيرت كلياً بعد عملية الزراعة."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#0077b6,#00b4d8);">أ</div>
@@ -1486,7 +2538,6 @@
               </div>
             </div>
 
-            <!-- slide 2 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
@@ -1504,7 +2555,6 @@
               </div>
             </div>
 
-            <!-- slide 3 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
@@ -1522,13 +2572,12 @@
               </div>
             </div>
 
-            <!-- slide 4 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
                 <p class="ts-text">"ابني عمل تقويم أسنان هنا والنتائج ممتازة جداً. العيادة متخصصة في الأطفال والدكتور
-                  صبور جداً معهم وبيخليهم مبسوطين."</p>
+                  صبور جداً معهم."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#2ecc71,#16a085);">م</div>
                   <div class="ts-meta">
@@ -1540,7 +2589,6 @@
               </div>
             </div>
 
-            <!-- slide 5 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
@@ -1558,13 +2606,12 @@
               </div>
             </div>
 
-            <!-- slide 6 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
                 <p class="ts-text">"كنت خايفة من علاج الجذور بس الدكتور طمنني وعمل العلاج بدون ألم خالص. الأجهزة حديثة
-                  جداً والفريق محترف ومتعاون."</p>
+                  جداً والفريق محترف."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#1abc9c,#148f77);">ل</div>
                   <div class="ts-meta">
@@ -1575,19 +2622,13 @@
                 </div>
               </div>
             </div>
-            <!-- ══════════════════════════════════════════════
-   تعليقات المرضى الجدد – انسخ هذه الشرائح
-   وضعها داخل <div class="ts-track" id="tsTrack">
-   بعد آخر slide موجود (slide 6)
-══════════════════════════════════════════════ -->
 
-            <!-- slide 7 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
-                <p class="ts-text">"من أفضل العيادات اللي راحتلها بحياتي! الدكتور وسام شرح لي بالتفصيل كل خطوة قبل ما
-                  يبدأ بالعلاج. الفينيرز طلع طبيعي جداً وما حدا عرف إنو تركيبات."</p>
+                <p class="ts-text">"من أفضل العيادات اللي راحتلها بحياتي! الدكتور وسام شرح لي بالتفصيل كل خطوة. الفينيرز
+                  طلع طبيعي جداً وما حدا عرف إنو تركيبات."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#7b2d8b,#a855f7);">ن</div>
                   <div class="ts-meta">
@@ -1599,13 +2640,12 @@
               </div>
             </div>
 
-            <!-- slide 8 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
                 <p class="ts-text">"زرعت ضرس العقل وكنت خايف كتير من الألم، بس الدكتور محمد البيك تعامل معي باحترافية
-                  عالية والعملية انتهت بدون أي إحساس. شكراً للفريق الرائع!"</p>
+                  عالية والعملية انتهت بدون أي إحساس."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#1e3a5f,#2980b9);">ط</div>
                   <div class="ts-meta">
@@ -1617,13 +2657,12 @@
               </div>
             </div>
 
-            <!-- slide 9 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
                 <p class="ts-text">"جبت ابنتي الصغيرة عند الدكتورة بيان لعلاج تسوس، وصراحة ما توقعت إنها ترجع من العيادة
-                  وهي مبسوطة! الدكتورة تعاملت معها بأسلوب ولاد جميل جداً."</p>
+                  وهي مبسوطة! الدكتورة تعاملت معها بأسلوب رائع."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#c0392b,#e74c3c);">أ</div>
                   <div class="ts-meta">
@@ -1635,13 +2674,12 @@
               </div>
             </div>
 
-            <!-- slide 10 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
                 <p class="ts-text">"عملت Invisalign عند الدكتور مهند وبعد ١٨ شهر النتيجة مذهلة. الأسنان مرتبة تماماً
-                  والتقويم الشفاف ما حدا لاحظه خلال فترة العلاج. توصية من القلب!"</p>
+                  والتقويم الشفاف ما حدا لاحظه خلال فترة العلاج."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#16a085,#1abc9c);">س</div>
                   <div class="ts-meta">
@@ -1653,13 +2691,12 @@
               </div>
             </div>
 
-            <!-- slide 11 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
-                <p class="ts-text">"المخبر الداخلي للعيادة من أحسن الأشياء اللي شفتها! الأستاذ حسام شرح لي كيف يشتغل
-                  وعمل التركيبات بدقة فائقة. التيجان طلعت مضبوطة من أول جلسة."</p>
+                <p class="ts-text">"المخبر الداخلي للعيادة من أحسن الأشياء اللي شفتها! الأستاذ حسام عمل التركيبات بدقة
+                  فائقة. التيجان طلعت مضبوطة من أول جلسة."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#8e44ad,#9b59b6);">ع</div>
                   <div class="ts-meta">
@@ -1671,13 +2708,12 @@
               </div>
             </div>
 
-            <!-- slide 12 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
-                <p class="ts-text">"أنا من المغتربين وكنت دايماً مؤجل علاج أسناني. لما رجعت لحلب قررت أجي هون، وما ندمت
-                  أبداً! الأسعار منطقية والجودة عالمية. رح أرسل كل عيلتي."</p>
+                <p class="ts-text">"أنا من المغتربين وكنت دايماً مؤجل علاج أسناني. لما رجعت لحلب جيت هون، وما ندمت
+                  أبداً! الأسعار منطقية والجودة عالمية."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#2c3e50,#3498db);">م</div>
                   <div class="ts-meta">
@@ -1689,13 +2725,12 @@
               </div>
             </div>
 
-            <!-- slide 13 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
                 <p class="ts-text">"التصميم الرقمي للأسنان اللي عمله الأستاذ عدنان كان خرافي! شفت كيف رح تطلع ابتسامتي
-                  قبل ما يبدأ العلاج أصلاً. هيك تقنيات بس بالعيادات الكبيرة."</p>
+                  قبل ما يبدأ العلاج أصلاً."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#d35400,#e67e22);">ه</div>
                   <div class="ts-meta">
@@ -1707,13 +2742,12 @@
               </div>
             </div>
 
-            <!-- slide 14 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
-                <p class="ts-text">"كنت أعاني من التهاب في اللثة من سنتين وجربت أكثر من مكان. جيت هون وبعد جلستين حسيت
-                  بفرق كبير! العلاج كان دقيق والنظافة والتعقيم ممتازين."</p>
+                <p class="ts-text">"كنت أعاني من التهاب في اللثة من سنتين. جيت هون وبعد جلستين حسيت بفرق كبير! العلاج
+                  كان دقيق والنظافة والتعقيم ممتازين."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#27ae60,#2ecc71);">ر</div>
                   <div class="ts-meta">
@@ -1725,13 +2759,12 @@
               </div>
             </div>
 
-            <!-- slide 15 -->
             <div class="ts-slide">
               <div class="ts-card">
                 <div class="ts-quote-icon"><i class="fas fa-quote-right"></i></div>
                 <div class="ts-stars">★★★★★</div>
                 <p class="ts-text">"بعد الزراعة الفورية حسيت إنو عندي أسنان طبيعية من أول! الدكتور وسام شرح لي كل خطوة
-                  وأعطاني تعليمات واضحة للعناية. نتيجة رائعة ومريض 100%."</p>
+                  وأعطاني تعليمات واضحة. نتيجة رائعة."</p>
                 <div class="ts-author">
                   <div class="ts-av" style="background:linear-gradient(135deg,#5bbdb9,#3da8a4);">ي</div>
                   <div class="ts-meta">
@@ -1743,119 +2776,114 @@
               </div>
             </div>
 
-
-
-          </div><!-- end track -->
-        </div><!-- end stage -->
-
-        <!-- CONTROLS -->
-        <div class="ts-controls">
-          <button class="ts-btn ts-prev" id="tsPrev" aria-label="السابق">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-          <div class="ts-dots" id="tsDots"></div>
-          <button class="ts-btn ts-next" id="tsNext" aria-label="التالي">
-            <i class="fas fa-chevron-left"></i>
-          </button>
+          </div>
         </div>
 
-        <!-- PROGRESS BAR -->
+        <div class="ts-controls">
+          <button class="ts-btn ts-prev" id="tsPrev" aria-label="السابق"><i class="fas fa-chevron-right"></i></button>
+          <div class="ts-dots" id="tsDots"></div>
+          <button class="ts-btn ts-next" id="tsNext" aria-label="التالي"><i class="fas fa-chevron-left"></i></button>
+        </div>
         <div class="ts-progress-wrap">
           <div class="ts-progress-bar" id="tsProgress"></div>
         </div>
 
-      </div><!-- end root -->
+      </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-     BOOKING
-══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       BOOKING
+  ══════════════════════════════════ -->
   <section id="booking">
     <div class="container">
-
-      <!-- Header -->
       <div class="text-center mb-5 reveal up">
         <div class="sec-badge"><i class="fas fa-calendar-check"></i> حجز موعد</div>
-        <h2 class="sec-title">احجز موعدك <span>الآن</span></h2>
+        <div class="brand-title-row justify-content-center">
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gAqua)" />
+          </svg>
+          <h2 class="sec-title mb-0">احجز موعدك <span>الآن</span></h2>
+        </div>
+        <div class="divider" style="justify-content:center;"></div>
         <p class="sec-desc mx-auto">أرسل طلبك مباشرةً عبر واتساب وسيتواصل معك فريقنا للتأكيد الفوري.</p>
       </div>
 
       <div class="row g-4 g-lg-5 align-items-stretch">
 
-        <!-- ── معلومات الاتصال (مرة واحدة هنا فقط) ── -->
+        <!-- Info Panel -->
         <div class="col-12 col-lg-4 reveal left">
           <div class="booking-info-panel">
-
             <div class="bip-title">
               <i class="fas fa-headset"></i>
               تواصل معنا
             </div>
-
-            <!-- phone -->
             <a href="tel:0999020549" class="bip-item">
-              <div class="bip-icon" style="background:linear-gradient(135deg,var(--accent),var(--accent2));">
-                <i class="fas fa-phone-alt"></i>
-              </div>
+              <div class="bip-icon"><i class="fas fa-phone-alt"></i></div>
               <div>
                 <div class="bip-lbl">اتصل بنا مباشرة</div>
                 <div class="bip-val">0999020549</div>
               </div>
             </a>
-
-            <!-- whatsapp -->
             <a href="https://wa.me/963999020549" target="_blank" rel="noopener" class="bip-item bip-wa">
-              <div class="bip-icon" style="background:linear-gradient(135deg,#25d366,#128c7e);">
-                <i class="fab fa-whatsapp"></i>
-              </div>
+              <div class="bip-icon"
+                style="background:linear-gradient(135deg,#25d366,#128c7e);border-color:transparent;"><i
+                  class="fab fa-whatsapp" style="color:#fff;"></i></div>
               <div>
                 <div class="bip-lbl">واتساب مباشر</div>
                 <div class="bip-val">0999020549</div>
               </div>
             </a>
-
-            <!-- hours -->
             <div class="bip-item">
-              <div class="bip-icon">
-                <i class="fas fa-clock"></i>
-              </div>
+              <div class="bip-icon"><i class="fas fa-clock"></i></div>
               <div>
                 <div class="bip-lbl">ساعات الدوام</div>
                 <div class="bip-val">السبت – الخميس</div>
                 <div class="bip-sub">9 صباحاً – 8 مساءً</div>
               </div>
             </div>
-
-            <!-- address -->
             <div class="bip-item">
-              <div class="bip-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
+              <div class="bip-icon"><i class="fas fa-map-marker-alt"></i></div>
               <div>
                 <div class="bip-lbl">العنوان</div>
                 <div class="bip-val">حلب الجديدة – سوريا</div>
               </div>
             </div>
-
-            <!-- CTA buttons -->
             <div class="bip-actions">
               <a href="https://wa.me/963999020549" target="_blank" rel="noopener" class="btn-primary-hero"
-                style="width:100%;justify-content:center;">
+                style="width:100%;justify-content:center;text-decoration:none;">
                 <i class="fab fa-whatsapp"></i> ابدأ المحادثة
               </a>
-              <a href="tel:0999020549" class="btn-outline-hero" style="width:100%;justify-content:center;">
+              <a href="tel:0999020549" class="btn-outline-hero"
+                style="width:100%;justify-content:center;text-decoration:none;">
                 <i class="fas fa-phone-alt"></i> اتصل الآن
               </a>
             </div>
-
           </div>
         </div>
 
-        <!-- ── النموذج ── -->
+        <!-- Form with brand frame (star top + bottom) -->
         <div class="col-12 col-lg-8 reveal right">
-          <div class="booking-wrap" style="height:100%;">
-            <h3 style="font-size:18px;font-weight:900;color:var(--text-h);margin-bottom:22px;">
-              <i class="fas fa-calendar-plus" style="color:var(--accent);margin-left:10px;"></i>
+          <div class="booking-wrap" style="height:100%;position:relative;">
+            <!-- Frame stars -->
+            <svg style="position:absolute;top:-11px;left:50%;transform:translateX(-50%);z-index:3;" width="22"
+              height="22" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="url(#gStar)" />
+            </svg>
+            <svg style="position:absolute;bottom:-11px;left:50%;transform:translateX(-50%);z-index:3;" width="22"
+              height="22" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="url(#gStar)" />
+            </svg>
+
+            <h3
+              style="font-size:17px;font-weight:900;color:var(--text-h);margin-bottom:22px;display:flex;align-items:center;gap:8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="#B8A7FF" />
+              </svg>
               نموذج حجز الموعد
             </h3>
             <div class="row g-3">
@@ -1912,37 +2940,42 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-     CONTACT – الخريطة + روابط سريعة (بدون تكرار)
-══════════════════════════════════════════════ -->
-  <section id="contact">
+  <!-- ══════════════════════════════════
+       CONTACT
+  ══════════════════════════════════ -->
+  <section id="contact" style="background:linear-gradient(180deg,#F4EFE8 0%,#FAF7F2 100%);">
     <div class="container">
       <div class="text-center mb-5 reveal up">
         <div class="sec-badge"><i class="fas fa-map-marker-alt"></i> موقعنا</div>
-        <h2 class="sec-title">كيف تصل <span>إلينا</span></h2>
+        <div class="brand-title-row justify-content-center">
+          <svg class="s-star" width="18" height="18" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="url(#gStar)" />
+          </svg>
+          <h2 class="sec-title mb-0">كيف تصل <span>إلينا</span></h2>
+        </div>
+        <div class="divider" style="justify-content:center;"></div>
         <p class="sec-desc mx-auto">حلب الجديدة – سوريا. يسعدنا استقبالك في عيادتنا</p>
       </div>
 
-      <!-- الخريطة كاملة العرض -->
-      <!-- الخريطة كاملة العرض -->
+      <!-- Map -->
       <div class="reveal up">
         <div class="map-wrap" style="position:relative;">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3219.5060822989235!2d37.09798049926758!3d36.20288848876953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzbCsDEyJzEwLjQiTiAzN8KwMDUnNTIuNyJF!5e0!3m2!1sen!2suk!4v1748966400000!5m2!1sen!2suk"
-            width="100%" height="420" style="border:0;display:block;border-radius:22px;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="موقع عيادة د. وسام ميسر – حلب الجديدة">
+            width="100%" height="420" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="موقع عيادة Enamora – حلب الجديدة">
           </iframe>
-          <!-- Address label overlay -->
           <div
-            style="position:absolute;bottom:0;right:0;left:0;background:linear-gradient(to top,rgba(4,33,61,0.9) 0%,transparent 100%);padding:20px 24px 16px;border-radius:0 0 22px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+            style="position:absolute;bottom:0;right:0;left:0;background:linear-gradient(to top,rgba(45,55,72,0.88) 0%,transparent 100%);padding:20px 24px 16px;border-radius:0 0 22px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
             <div style="display:flex;align-items:center;gap:12px;">
               <div
-                style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#7ECBC7,#5BBDB9);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
                 <i class="fas fa-map-marker-alt" style="color:#fff;font-size:16px;"></i>
               </div>
               <div>
                 <div style="font-size:14px;font-weight:800;color:#fff;">سوريا – حلب – حلب الجديدة</div>
-                <div style="font-size:12px;color:rgba(255,255,255,0.65);">السبت – الخميس · 9 ص – 8 م</div>
+                <div style="font-size:12px;color:rgba(255,255,255,.65);">السبت – الخميس · 9 ص – 8 م</div>
               </div>
             </div>
             <a href="https://maps.google.com/?q=36.20288848876953,37.09798049926758" target="_blank" rel="noopener"
@@ -1956,9 +2989,9 @@
         </div>
       </div>
 
-      <!-- شريط معلومات سريعة تحت الخريطة -->
+      <!-- Quick bar -->
       <div class="contact-quick-bar reveal up" style="margin-top:24px;">
-        <a href="tel:0999020549" class="cqb-item">
+        <a href="tel:0999020549" class="cqb-item" style="text-decoration:none;">
           <div class="cqb-icon"><i class="fas fa-phone-alt"></i></div>
           <div>
             <div class="cqb-lbl">هاتف</div>
@@ -1966,7 +2999,8 @@
           </div>
         </a>
         <div class="cqb-sep"></div>
-        <a href="https://wa.me/963999020549" target="_blank" rel="noopener" class="cqb-item">
+        <a href="https://wa.me/963999020549" target="_blank" rel="noopener" class="cqb-item"
+          style="text-decoration:none;">
           <div class="cqb-icon" style="background:linear-gradient(135deg,#25d366,#128c7e);"><i
               class="fab fa-whatsapp"></i></div>
           <div>
@@ -1995,22 +3029,55 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
   <footer>
-    <div class="container">
+    <div class="container" style="position:relative;z-index:1;">
       <div class="row g-4 g-lg-5">
+
         <div class="col-12 col-lg-4">
           <div class="footer-logo">
-            <div class="footer-logo-ico"><i class="fas fa-tooth"></i></div>
+            <div class="footer-logo-ico">
+              <svg width="22" height="22" viewBox="0 0 24 24">
+                <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                  fill="rgba(255,255,255,0.92)" />
+              </svg>
+            </div>
             <div>
-              <div class="footer-name">د. وسام ميسر</div>
-              <div class="footer-name-sub">لطب وتجميل الأسنان</div>
+              <div class="footer-name">
+                <svg width="14" height="14" viewBox="0 0 24 24" style="flex-shrink:0;">
+                  <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                    fill="url(#gStar)" />
+                </svg>
+                Enamora
+              </div>
+              <div class="footer-name-sub">لطب وتجميل الأسنان – د. وسام ميسر</div>
             </div>
           </div>
-          <p class="footer-desc">مركز طبي متكامل في قلب حلب الجديدة، نقدم أرقى خدمات طب وتجميل الأسنان بأحدث التقنيات
-            العالمية.</p>
+
+          <p class="footer-desc">مركز طبي متكامل في قلب حلب الجديدة، نقدم أرقى خدمات طب الأسنان والتجميل السني بأحدث
+            التقنيات العالمية.</p>
+
+          <!-- Science. Artistry. You. -->
+          <div class="footer-tagline-bar">
+            <svg width="10" height="10" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#B8A7FF" />
+            </svg>
+            SCIENCE
+            <svg width="10" height="10" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#7ECBC7" />
+            </svg>
+            ARTISTRY
+            <svg width="10" height="10" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#B8A7FF" />
+            </svg>
+            YOU.
+          </div>
+
           <div class="socials">
             <a href="https://www.facebook.com/wissam.miassar" target="_blank" rel="noopener" class="soc fb"
               title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
@@ -2028,8 +3095,15 @@
               title="سناب شات 2"><i class="fab fa-snapchat-ghost"></i></a>
           </div>
         </div>
+
         <div class="col-6 col-lg-2">
-          <div class="footer-links-title">روابط سريعة</div>
+          <div class="footer-links-title">
+            <svg width="10" height="10" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#B8A7FF" />
+            </svg>
+            روابط سريعة
+          </div>
           <a href="#hero" class="footer-link"><i class="fas fa-chevron-left"></i> الرئيسية</a>
           <a href="#about" class="footer-link"><i class="fas fa-chevron-left"></i> من نحن</a>
           <a href="#team" class="footer-link"><i class="fas fa-chevron-left"></i> فريقنا</a>
@@ -2038,8 +3112,15 @@
           <a href="#testimonials" class="footer-link"><i class="fas fa-chevron-left"></i> آراء المرضى</a>
           <a href="#contact" class="footer-link"><i class="fas fa-chevron-left"></i> اتصل بنا</a>
         </div>
+
         <div class="col-6 col-lg-3">
-          <div class="footer-links-title">خدماتنا</div>
+          <div class="footer-links-title">
+            <svg width="10" height="10" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#7ECBC7" />
+            </svg>
+            خدماتنا
+          </div>
           <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> زراعة الأسنان</a>
           <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تقويم الأسنان</a>
           <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> تجميل الأسنان</a>
@@ -2047,38 +3128,56 @@
           <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> التركيبات السنية</a>
           <a href="#services" class="footer-link"><i class="fas fa-chevron-left"></i> مخبر الأسنان</a>
         </div>
+
         <div class="col-12 col-lg-3">
-          <div class="footer-links-title">معلومات التواصل</div>
+          <div class="footer-links-title">
+            <svg width="10" height="10" viewBox="0 0 24 24">
+              <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+                fill="#B8A7FF" />
+            </svg>
+            معلومات التواصل
+          </div>
           <div style="display:flex;flex-direction:column;gap:12px;">
             <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:13px;"><i
-                class="fas fa-map-marker-alt" style="color:var(--accent);width:16px;"></i>سوريا - حلب - حلب الجديدة
-            </div>
+                class="fas fa-map-marker-alt" style="color:#7ECBC7;width:16px;"></i>سوريا - حلب - حلب الجديدة</div>
             <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:13px;"><i
-                class="fas fa-phone" style="color:var(--accent);width:16px;"></i>0999020549</div>
+                class="fas fa-phone" style="color:#7ECBC7;width:16px;"></i>0999020549</div>
             <div style="display:flex;align-items:center;gap:10px;color:var(--text-muted);font-size:13px;"><i
-                class="fas fa-clock" style="color:var(--accent);width:16px;"></i>السبت – الخميس · 9 ص – 8 م</div>
+                class="fas fa-clock" style="color:#7ECBC7;width:16px;"></i>السبت – الخميس · 9 ص – 8 م</div>
           </div>
-          <a href="#booking" class="btn-primary-hero mt-3 d-inline-flex" style="font-size:13px;padding:11px 20px;">
+          <a href="#booking" class="btn-primary-hero mt-3 d-inline-flex"
+            style="font-size:13px;padding:11px 20px;text-decoration:none;">
             <i class="fas fa-calendar-plus"></i> احجز موعد
           </a>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <div class="footer-copy">© 2025 د. وسام ميسر لطب وتجميل الأسنان · جميع الحقوق محفوظة</div>
-        <div class="footer-copy footer-dev"
-          style="width:100%;text-align:center;justify-content:center;margin-top:10px;padding-bottom:6px;">
-          تم التطوير بواسطة&nbsp;
+        <div class="footer-copy">© 2025 Enamora Dental Center – د. وسام ميسر · جميع الحقوق محفوظة</div>
+        <!-- Brand tagline bottom-right -->
+        <div class="brand-tagline">
+          <svg width="9" height="9" viewBox="0 0 24 24">
+            <path d="M12 0 C12.5 6 18 11.5 24 12 C18 12.5 12.5 18 12 24 C11.5 18 6 12.5 0 12 C6 11.5 11.5 6 12 0Z"
+              fill="#B8A7FF" />
+          </svg>
+          SCIENCE. ARTISTRY. YOU.
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:12px;padding-bottom:4px;">
+        <span class="footer-dev">تم التطوير بواسطة&nbsp;
           <a href="https://aqlraqami.com/" target="_blank" rel="noopener noreferrer" class="footer-dev-link">
             <i class="fas fa-brain"></i> عقل رقمي
           </a>
-        </div>
+        </span>
       </div>
     </div>
   </footer>
 
-  <!-- WHATSAPP FLOAT -->
+  <!-- WhatsApp Float -->
   <div class="wa-float">
-    <a href="https://wa.me/963999020549" target="_blank" rel="noopener" class="wa-btn" title="تواصل عبر واتساب"
+    <a href="https://wa.me/963999020549" target="_blank" rel="noopener" class="wa-btn" title="واتساب"
       aria-label="واتساب">
       <i class="fab fa-whatsapp"></i>
       <div class="wa-online"></div>
@@ -2086,7 +3185,7 @@
     <div class="wa-label">تواصل معنا&nbsp;<span>0999020549</span></div>
   </div>
 
-  <!-- SUCCESS MODAL -->
+  <!-- Success Modal -->
   <div class="modal-overlay" id="successModal" role="dialog" aria-modal="true">
     <div class="modal-box">
       <div class="modal-check"><i class="fas fa-check-circle"></i></div>
@@ -2098,38 +3197,253 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════════════
-     VENDORS JS – محلي (يعمل في تركيا بدون VPN)
-══════════════════════════════════════════════ -->
+  <!-- ── Enamora Card CSS ── -->
+  <style>
+    .enamora-card {
+      background: linear-gradient(145deg, rgba(240, 250, 249, .92) 0%, rgba(250, 247, 242, .96) 45%, rgba(240, 237, 248, .88) 100%) !important;
+      border: 1px solid rgba(91, 189, 185, .28) !important;
+      box-shadow: 0 30px 80px rgba(91, 189, 185, .18), 0 8px 32px rgba(184, 167, 255, .12), inset 0 1px 0 rgba(255, 255, 255, .7) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+    }
+
+    .en-blob {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .en-blob1 {
+      width: 200px;
+      height: 200px;
+      background: rgba(91, 189, 185, .12);
+      top: -60px;
+      right: -60px;
+      filter: blur(50px);
+    }
+
+    .en-blob2 {
+      width: 160px;
+      height: 160px;
+      background: rgba(184, 167, 255, .14);
+      bottom: 30px;
+      left: -40px;
+      filter: blur(40px);
+    }
+
+    .en-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(91, 189, 185, .14);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .en-top-badge {
+      position: absolute;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      background: rgba(255, 255, 255, .82);
+      border: 1px solid rgba(91, 189, 185, .25);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #3DA8A4;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      backdrop-filter: blur(8px);
+    }
+
+    .en-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #5BBDB9;
+      box-shadow: 0 0 5px #5BBDB9;
+      animation: blink-dot 1.5s ease-in-out infinite;
+    }
+
+    @keyframes blink-dot {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    .en-star-deco {
+      position: absolute;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .en-star-tl {
+      top: 16px;
+      right: 16px;
+    }
+
+    .en-logo-img {
+      position: relative !important;
+      z-index: 2 !important;
+      width: 82% !important;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 0 !important;
+      filter: drop-shadow(0 16px 40px rgba(91, 189, 185, .35)) drop-shadow(0 4px 16px rgba(184, 167, 255, .25)) !important;
+      animation: logo-float 7s ease-in-out infinite !important;
+    }
+
+    @keyframes logo-float {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+
+    .en-photo-label {
+      background: rgba(45, 55, 72, .78) !important;
+      border: 1px solid rgba(91, 189, 185, .35) !important;
+      border-radius: 30px !important;
+      padding: 9px 22px !important;
+      gap: 8px !important;
+    }
+
+    /* hero-img-frame override for light mode */
+    .hero-img-frame {
+      position: relative;
+      border: 1.5px solid rgba(126, 203, 199, .35);
+      border-radius: 30px;
+      padding: 6px;
+    }
+
+    /* float card */
+    .float-card {
+      background: rgba(255, 255, 255, .95);
+      border: 1px solid rgba(126, 203, 199, .22);
+      border-radius: 18px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 12px 40px rgba(126, 203, 199, .14);
+      position: absolute;
+      animation: card-float ease-in-out infinite alternate;
+    }
+
+    @keyframes card-float {
+      from {
+        transform: translateY(0)
+      }
+
+      to {
+        transform: translateY(-10px)
+      }
+    }
+
+    .float-card.fc1 {
+      bottom: 60px;
+      right: -30px;
+      animation-duration: 3s;
+    }
+
+    .float-card.fc2 {
+      top: 60px;
+      right: -30px;
+      animation-duration: 4s;
+      animation-delay: .5s;
+    }
+
+    .float-card.fc3 {
+      bottom: 160px;
+      left: -30px;
+      animation-duration: 3.5s;
+      animation-delay: 1s;
+    }
+
+    .fc-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .fc-icon i {
+      color: #fff;
+      font-size: 17px;
+    }
+
+    @media(max-width:991px) {
+      .float-card {
+        display: none;
+      }
+    }
+
+    @media(max-width:768px) {
+      .hts-av {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+      }
+
+      .hero-team-strip {
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .en-logo-img {
+        width: 78% !important;
+      }
+    }
+  </style>
+
+  <!-- ── Vendors JS ── -->
   <script src="static/vendor/bootstrap.bundle.min.js"></script>
 
-  <!-- ══════════════════════════════════════════════
-     PROJECT JS
-     ملاحظة: booking.js موجود في جذر المشروع
-══════════════════════════════════════════════ -->
+  <!-- ── Project JS ── -->
   <script>
-    // تحميل booking.js من الموقع الصحيح تلقائياً
     (function () {
       function loadScript(src, fallback) {
-        var s = document.createElement('script');
-        s.src = src;
-        s.onerror = function () {
-          if (fallback) {
-            var s2 = document.createElement('script');
-            s2.src = fallback;
-            document.body.appendChild(s2);
-          }
-        };
+        var s = document.createElement('script'); s.src = src;
+        s.onerror = function () { if (fallback) { var s2 = document.createElement('script'); s2.src = fallback; document.body.appendChild(s2); } };
         document.body.appendChild(s);
       }
-      // booking.js: جرب static/js أولاً ثم الجذر
       loadScript('static/js/booking.js', 'booking.js');
-      // main.js: في static/js دائماً
       loadScript('static/js/main.js');
       loadScript('static/js/testimonials-slider.js');
     })();
   </script>
 
+
+
+
+  <script src="static/js/gallery-modal.js"></script>
+<script src="static/js/booking.js?v=15"></script>
+<script src="static/js/main.js?v=13"></script>
+<script src="static/js/testimonials-slider.js?v=13"></script>
 </body>
 
 </html>
