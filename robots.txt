@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://myassardental.com/sitemap.xml

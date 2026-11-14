@@ -1,440 +1,53 @@
-# 🦷 Dr. Wissam Maysar — Dental & Cosmetic Clinic Website
-
-> **Developed by [Aql Raqami (عقل رقمي)](https://aqlraqami.com)** — Digital solutions for modern businesses.
-
----
-
-## 📋 Overview
-
-A fully responsive, modern single-page website for **Dr. Wissam Maysar's Dental & Cosmetic Clinic**, located in New Aleppo (حلب الجديدة), Syria. The site is built with pure HTML, CSS, and vanilla JavaScript — no frameworks required — and features a premium dark Glassmorphism aesthetic with full Arabic (RTL) support.
-
----
-
-## ✨ Features
-
-- **RTL Arabic Support** — Native right-to-left layout using `dir="rtl"` and Arabic-optimized fonts (Cairo & Tajawal).
-- **Glassmorphism Design** — Dark-themed UI with frosted glass cards, glowing accents, and gradient backgrounds.
-- **Fully Responsive** — Optimized for desktop, tablet, and mobile devices using Bootstrap 5 RTL.
-- **Animated UI** — Scroll-reveal animations, floating particles, counter animations, and CSS keyframe effects.
-- **WhatsApp Booking Integration** — Appointment form that builds a pre-filled WhatsApp message and opens it directly.
-- **Sticky Navigation** — Transparent navbar that becomes frosted glass on scroll, with active-section highlighting.
-- **Sections Included:**
-  - Hero with animated stats
-  - About the clinic
-  - Services (8 dental specialties)
-  - Statistics counter
-  - Before & After gallery
-  - Patient testimonials
-  - Appointment booking form
-  - Contact & location info
-  - Footer with social links
-  - Floating WhatsApp button
-
----
-
-## 🛠️ Tech Stack
-
-| Technology | Purpose |
-|---|---|
-| HTML5 | Page structure & semantics |
-| CSS3 | Custom styling, animations, Glassmorphism |
-| Vanilla JavaScript | Interactivity, scroll effects, counters |
-| Bootstrap 5 RTL | Responsive grid & RTL layout |
-| Font Awesome 6 | Icons |
-| Google Fonts | Cairo & Tajawal Arabic typography |
-
----
-
-## 📁 Project Structure
-
-```
-dr-wissam-maysar-dental-website/
-│
-├── index.html          # Main (and only) HTML file — all CSS & JS included inline
-├── README.md           # Project documentation
-└── assets/             # (Optional) Images and media when added
-    └── images/
-```
-
-> All styles and scripts are embedded within `index.html` for zero-dependency deployment.
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-No build tools or package managers required.
-
-### Run Locally
-```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/dr-wissam-maysar-dental-website.git
-
-# Open in browser
-cd dr-wissam-maysar-dental-website
-open index.html
-```
-
-Or simply open `index.html` in any modern browser.
-
----
-
-## 📱 Sections Breakdown
-
-| Section | Description |
-|---|---|
-| **Navbar** | Fixed, scrollable, mobile-responsive with hamburger menu |
-| **Hero** | Full-screen with animated particles, glow effects, and floating stat cards |
-| **About** | Clinic overview with feature cards (lab, 3D imaging, team, sterilization) |
-| **Services** | 8 service cards: Implants, Braces, Veneers, Whitening, Crowns, Lab, Pediatrics, Root Canal |
-| **Stats** | Animated counters: 5000+ patients, 15+ years, 1200+ procedures, 98% satisfaction |
-| **Gallery** | Masonry-style before/after grid |
-| **Testimonials** | 6 patient reviews with star ratings |
-| **Booking** | Form with WhatsApp integration and success modal |
-| **Contact** | Phone, WhatsApp, address, hours, Google Maps link |
-| **Footer** | Links, services, contact info, social media icons |
-
----
-
-## ⚙️ Customization
-
-### Update Contact Info
-Search for `0933912076` and `963933912076` in `index.html` and replace with the actual phone number.
-
-### Update WhatsApp Link
-All WhatsApp links use the format:
-```
-https://wa.me/963XXXXXXXXX
-```
-
-### Add Doctor's Photo
-Replace the placeholder in `.hero-img-card` with an actual `<img>` tag:
-```html
-<img src="assets/images/doctor.jpg" alt="د. وسام ميسر" />
-```
-
-### Add Gallery Images
-Replace `.gallery-placeholder` divs inside `.gallery-item` elements with actual images.
-
----
-
-## 🌐 Deployment
-
-This is a static site and can be hosted on any platform:
-
-- **GitHub Pages** — Free hosting directly from this repository
-- **Netlify / Vercel** — Drop the folder and deploy instantly
-- **Traditional hosting** — Upload `index.html` via FTP
-
----
-
-## 📞 Clinic Information
-
-| Detail | Value |
-|---|---|
-| **Doctor** | Dr. Wissam Maysar (د. وسام ميسر) |
-| **Specialty** | Dentistry & Cosmetic Dentistry |
-| **Location** | New Aleppo (حلب الجديدة), Syria |
-| **Phone / WhatsApp** | 0933912076 |
-| **Working Hours** | Saturday – Thursday, 9:00 AM – 8:00 PM |
-| **Email** | info@drwissam-dental.com |
-
----
-
-## 🏢 Developer
-
-**Aql Raqami — عقل رقمي**
-Digital solutions & web development agency.
-
----
-
-## 📄 License
-
-© 2025 Dr. Wissam Maysar Dental Clinic. All rights reserved.
-This project is proprietary. Redistribution or reuse without written permission is not permitted.
-
----
-
----
----
-
-# 🦷 د. وسام ميسر — موقع عيادة طب وتجميل الأسنان
-
-> **تطوير [عقل رقمي](https://aqlraqami.com)** — حلول رقمية للأعمال الحديثة.
-
----
-
-## 📋 نظرة عامة
-
-موقع إلكتروني متكامل وذو تصميم احترافي لعيادة **د. وسام ميسر لطب وتجميل الأسنان** الواقعة في حلب الجديدة، سوريا. مبني بـ HTML وCSS وJavaScript خالص دون الحاجة لأي إطار عمل، مع واجهة مستخدم فاخرة بأسلوب Glassmorphism الداكن ودعم كامل للغة العربية.
-
----
-
-## ✨ المميزات
-
-- **دعم كامل للغة العربية (RTL)** — تخطيط أصلي من اليمين لليسار مع خطوط Cairo وTajawal.
-- **تصميم Glassmorphism** — واجهة داكنة بكروت شفافة، إضاءة متوهجة، وخلفيات متدرجة.
-- **تصميم متجاوب بالكامل** — يعمل على الحواسيب، الأجهزة اللوحية، والجوالات باستخدام Bootstrap 5 RTL.
-- **تأثيرات حركية** — أنيميشن عند التمرير، جزيئات متحركة، عدادات رقمية، وتأثيرات CSS.
-- **حجز عبر واتساب** — نموذج الحجز يبني رسالة واتساب جاهزة ويفتحها مباشرة.
-- **شريط تنقل ثابت** — شفاف ويتحول لزجاج مثلج عند التمرير، مع تمييز القسم النشط.
-- **الأقسام المتضمنة:**
-  - الهيرو مع إحصائيات متحركة
-  - عن العيادة
-  - الخدمات (8 تخصصات سنية)
-  - عداد الإحصائيات
-  - معرض قبل وبعد
-  - آراء المرضى
-  - نموذج حجز المواعيد
-  - التواصل والموقع
-  - الفوتر مع روابط التواصل الاجتماعي
-  - زر واتساب عائم
-
----
-
-## 🛠️ التقنيات المستخدمة
-
-| التقنية | الغرض |
-|---|---|
-| HTML5 | هيكلة الصفحة والمحتوى |
-| CSS3 | التنسيق والأنيميشن وتأثير Glassmorphism |
-| Vanilla JavaScript | التفاعلية وتأثيرات التمرير والعدادات |
-| Bootstrap 5 RTL | الشبكة المتجاوبة ودعم RTL |
-| Font Awesome 6 | الأيقونات |
-| Google Fonts | خطا Cairo وTajawal العربيان |
-
----
-
-## 📁 هيكل المشروع
-
-```
-dr-wissam-maysar-dental-website/
-│
-├── index.html          # الملف الرئيسي — CSS وJS مضمنان بداخله
-├── README.md           # توثيق المشروع
-└── assets/             # (اختياري) الصور والملفات المرئية
-    └── images/
-```
-
-> جميع الأنماط والسكريبتات مضمنة داخل `index.html` للنشر بدون تبعيات.
-
----
-
-## 🚀 تشغيل المشروع محلياً
-
-```bash
-# استنساخ المستودع
-git clone https://github.com/YOUR_USERNAME/dr-wissam-maysar-dental-website.git
-
-# فتح الملف في المتصفح
-cd dr-wissam-maysar-dental-website
-open index.html
-```
-
-أو افتح `index.html` مباشرة في أي متصفح حديث.
-
----
-
-## ⚙️ التخصيص
-
-### تحديث بيانات التواصل
-ابحث عن `0933912076` و`963933912076` في `index.html` واستبدلها بالرقم الصحيح.
-
-### إضافة صورة الطبيب
-استبدل العنصر النائب في `.hero-img-card` بوسم `<img>` حقيقي:
-```html
-<img src="assets/images/doctor.jpg" alt="د. وسام ميسر" />
-```
-
-### إضافة صور المعرض
-استبدل عناصر `.gallery-placeholder` داخل `.gallery-item` بصور حقيقية.
-
----
-
-## 🌐 النشر
-
-هذا موقع ستاتيكي ويمكن استضافته على أي منصة:
-
-- **GitHub Pages** — استضافة مجانية مباشرة من هذا المستودع
-- **Netlify / Vercel** — ارفع المجلد وانشر فوراً
-- **استضافة تقليدية** — ارفع `index.html` عبر FTP
-
----
-
-## 📞 معلومات العيادة
-
-| التفصيل | القيمة |
-|---|---|
-| **الطبيب** | د. وسام ميسر |
-| **التخصص** | طب وتجميل الأسنان |
-| **الموقع** | سوريا - حلب - حلب الجديدة |
-| **الهاتف / واتساب** | 0933912076 |
-| **ساعات العمل** | السبت – الخميس · 9 ص – 8 م |
-| **البريد الإلكتروني** | info@drwissam-dental.com |
-
----
-
-## 🏢 المطوِّر
-
-**عقل رقمي — Aql Raqami**
-شركة متخصصة في الحلول الرقمية وتطوير المواقع الإلكترونية.
-
----
-
-## 📄 الترخيص
-
-© 2025 د. وسام ميسر لطب وتجميل الأسنان. جميع الحقوق محفوظة.
-هذا المشروع ملكية خاصة. يُمنع إعادة التوزيع أو الاستخدام دون إذن كتابي مسبق.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 🦷 د. وسام ميسر – عيادة الأسنان
-### موقع ويب احترافي | Front-end جاهز للتوسع مع Flask
-
----
-
-## 📁 هيكل المشروع
-
-```
-dental-project/
-│
-├── index.html                  ← الصفحة الرئيسية (Entry Point)
-│
-├── static/
-│   ├── css/
-│   │   ├── variables.css       ← متغيرات الألوان (Dark / Light Themes)
-│   │   ├── base.css            ← Reset، Typography، عناصر مشتركة
-│   │   ├── navbar.css          ← شريط التنقل بالكامل
-│   │   └── sections.css        ← كل الأقسام (Hero, About, Services, ...)
-│   │
-│   ├── js/
-│   │   ├── main.js             ← Cursor, Navbar, Theme, Reveal, Counters
-│   │   └── booking.js          ← نموذج الحجز + إرسال واتساب
-│   │
-│   └── images/                 ← مجلد الصور (أضف صورك هنا)
-│       └── .gitkeep
-│
-└── README.md                   ← هذا الملف
-```
-
----
-
-## 🚀 تشغيل الموقع (حالياً – Front-end فقط)
-
-افتح `index.html` مباشرةً في المتصفح.
-
-> **ملاحظة:** بسبب `fetch()` قد تحتاج لخادم محلي بسيط:
-> ```bash
-> # Python 3
-> python -m http.server 8000
-> # ثم افتح: http://localhost:8000
-> ```
-
----
-
-## 🔌 إضافة Flask لاحقاً (Back-end)
-
-هيكل المشروع مصمم ليتحول بسهولة إلى Flask:
-
-### الخطوات:
-
-**1. إنشاء بيئة Python:**
-```bash
-python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
-pip install flask
-```
-
-**2. إنشاء `app.py` في جذر المشروع:**
-```python
-from flask import Flask, render_template, request, jsonify
-
-app = Flask(__name__)
-
-# الصفحة الرئيسية
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-# استقبال بيانات الحجز (مستقبلاً)
-@app.route('/api/booking', methods=['POST'])
-def booking():
-    data = request.get_json()
-    name    = data.get('name')
-    phone   = data.get('phone')
-    service = data.get('service')
-    date    = data.get('date')
-    note    = data.get('note', '')
-    # يمكنك هنا: حفظ في قاعدة بيانات، إرسال إيميل، SMS ...
-    return jsonify({'status': 'ok', 'message': 'تم استلام طلبك'})
-
-if __name__ == '__main__':
-    app.run(debug=True)
-```
-
-**3. نقل `index.html` إلى مجلد `templates/`:**
-```bash
-mkdir templates
-mv index.html templates/index.html
-```
-
-**4. Flask يخدم `static/` تلقائياً** – لا تغيير على روابط CSS/JS.
-
-**5. تشغيل Flask:**
-```bash
-python app.py
-# http://localhost:5000
-```
-
----
-
-## 🎨 تخصيص الألوان
-
-افتح `static/css/variables.css` وعدّل المتغيرات:
-
-```css
-/* اللون الرئيسي */
---accent:  #00c8e8;   /* Dark Theme */
---accent:  #0077b6;   /* Light Theme */
-```
-
----
-
-## 📱 المميزات
-
-| الميزة | الوصف |
-|--------|-------|
-| ✅ RTL كامل | Arabic Right-to-Left |
-| ✅ Dark / Light Mode | زر تبديل المظهر مع حفظ في localStorage |
-| ✅ Responsive | موبايل + تابلت + كمبيوتر |
-| ✅ WhatsApp Booking | الحجز يُرسَل مباشرةً عبر واتساب |
-| ✅ Scroll Reveal | أنيميشن عند التمرير |
-| ✅ Animated Counters | أرقام متحركة |
-| ✅ Custom Cursor | مؤشر مخصص |
-| ✅ Progress Bar | شريط تقدم القراءة |
-| ✅ Mobile Drawer | قائمة جانبية للموبايل |
-| ✅ SEO Ready | Meta tags جاهزة |
-
----
-
-## 📞 معلومات العيادة
-
-- **الطبيب:** د. وسام ميسر
-- **الموقع:** سوريا – حلب – حلب الجديدة  
-- **الهاتف/واتساب:** 0933912076
-- **الدوام:** السبت – الخميس · 9 ص – 8 م
+# Enamora Dental Center · مشهد الرحلة إلى حلب
+
+واجهة عربية RTL لمركز Enamora في حلب الجديدة بإشراف د. وسام ميسر. هذه النسخة مبنية على محتوى المستودع الرسمي عند المراجعة `99cbe9d`. هي موقع ثابت يعمل دون قاعدة بيانات أو إطار عمل أو خطوة بناء. يستبدل هذا الإصدار صورة الهيرو بمشهد متحرك، ويحافظ على بنية الموقع ومحتواه.
+
+## التجربة على Windows
+
+1. فك ضغط الحزمة كاملة، مع ترك المجلد `static` في مكانه بجانب `index.html`.
+2. افتح `index.html` مباشرة في Chrome أو Edge.
+3. لاختبار بيئة أقرب إلى الاستضافة، افتح موجّه الأوامر في المجلد، وشغّل `py -m http.server 8000`، ثم افتح `http://localhost:8000`. لا حاجة إلى الأمر إذا اخترت فتح الملف مباشرة.
+4. جرّب تشغيل مشهد الهيرو وإيقافه وإعادته، وأزرار الخدمات، وقائمة الهاتف، والمقارنات، وفيديو الهوية. اختبار الحجز يفتح مسودة في واتساب ولا يرسلها تلقائيًا.
+
+## النشر على استضافة ثابتة أو Hostinger
+
+- خذ نسخة من الملفات المنشورة الحالية، ثم جرّب النسخة الجديدة داخل مجلد اختبار أو نطاق فرعي.
+- عند اعتمادها، ارفع `index.html` و`static/` و`robots.txt` و`sitemap.xml` إلى مجلد الموقع الفعلي. ملفات الخطوط والصور مضمنة، فلا تستبدل `index.html` وحده.
+- أبقِ ملف `.htaccess` الموجود على الاستضافة وإعدادات HTTPS الحالية. لا تتطلب النسخة قواعد إعادة كتابة جديدة. لا حاجة إلى رفع مجلد `social` أو الملفات الإرشادية، لأنها مخصّصة للتسليم والنشر اليدوي.
+- في حال تغيير النطاق، حدّث canonical وحقول Open Graph وJSON-LD وملفي `robots.txt` و`sitemap.xml`. النطاق الحالي في الحزمة هو `https://myassardental.com/`.
+- راجع رقم الاستقبال ومواعيد العمل ونقطة الخريطة مع المركز عند النشر. تحقق من موافقة المركز على صور الحالات المعروضة قبل نقلها إلى النسخة العامة.
+
+## تخصيص المحتوى
+
+| ما تريد تعديله | أين تعدّله |
+| --- | --- |
+| النصوص والخدمات والفريق والاتصال والموقع | `index.html` |
+| خريطة الهيرو وأسماء المدن والمسارات | عنصر SVG داخل `index.html` |
+| ألوان المشهد وزمنه وحركات الظهور | `static/css/journey.css` و`static/js/journey.js` |
+| صورة القلعة وبطاقة المشاركة | `static/images/journey/` |
+| الريل العمودي الجاهز للنشر | `social/Enamora-Aleppo-Reel.mp4` |
+| الألوان والخطوط والتجاوب | `static/css/enamora.css` |
+| القائمة والمعرض ونموذج واتساب | `static/js/enamora.js` |
+| صور الفريق، مجلد الحالات، فيديو الهوية وعلامة المركز | `static/images/` |
+| الخطوط المحلية وتراخيصها | `static/fonts/` و`static/fonts/licenses/` |
+
+## ملاحظات الأصول والبيانات
+
+- يعرض الهيرو خريطة أولًا ثم يرسم أربعة مسارات إلى حلب ويكشف صورة القلعة. مدة المشهد داخل الموقع 6.8 ثوانٍ، ويعمل مرة عند دخول المشهد إلى مجال الرؤية. يمكن إيقافه أو إعادته أو الانتقال مباشرة إلى صورة القلعة. عند تفعيل تقليل الحركة تظهر الخريطة والمسارات دون تشغيل تلقائي، ويمكن عرض القلعة دون انتقال متحرك.
+- الخريطة مبنية على طبقة Natural Earth 1:50m ضمن الملك العام. المسارات خطوط توضيحية وليست خطوط طيران أو طرق سفر فعلية. الخريطة المحلية لا تعتمد على Google Maps أو اتصال بخدمة خارجية.
+- صورة القلعة حقيقية بعد إعادة التحجيم والاقتصاص حسب العرض وإضافة تدرج فوقها، وهي من تصوير James (Jim) Gordon بترخيص CC BY 2.0. تظهر النسبة في الواجهة والريل، وروابط المصدر والترخيص في ملف `MEDIA-CREDITS.md`.
+- الريل المضمّن مستقل عن الموقع، وهو فيديو عمودي صامت بنسبة 9:16، بدقة 1080×1920 ومدته 9 ثوانٍ. يمكن رفعه يدويًا إلى حساب الدكتور. عند نشره، انسخ سطر النسبة المقترح في ملف `MEDIA-CREDITS.md` إلى وصف الفيديو. لم تتم أي عملية نشر.
+- روابط فيديوهات الدكتور تعيد استخدام حساب إنستغرام وقناة يوتيوب من الموقع السابق. فيديو الهوية الأصلي ما زال متاحًا داخل قسم المركز.
+- بقيت ملفات الصور الأصلية بأسمائها دون تعديل، بما فيها جميع ملفات الحالات والشعارات. يعرض الموقع عشرة أزواج موجودة أصلًا في معرض المستودع (06–15). لم يتحول تكرار الصورة نفسها في مجموعات 01–05 إلى مقارنة، وبقي الزوج 16 غير المنشور سابقًا محفوظًا في الحزمة.
+- تصفية الحالات ترتكز على أسلوب التصوير، لا على تشخيص طبي أو تسمية علاج مستنتجة من الصور. لم تُدرج نسب الرضا أو مراجعات منسوبة لمرضى بلا روابط توثيق، وأضيف دليل الزيارة الأولى بدلًا منها.
+- نموذج الحجز لا يرسل إلى خادم الموقع ولا يخزّن المدخلات. يفتح رابط واتساب بمسودة تحتوي الاسم والرقم والخيار والتاريخ عند إدخالهما. المستخدم يراجعها ويرسلها بنفسه، ويؤكد المركز الموعد.
+- الخطوط محلية ولا تتطلب اتصالًا بخدمة خطوط. المعرض يعرض صورًا ثابتة بدون JavaScript، ويتوفر رابط واتساب مباشر في جميع الأحوال. الخريطة التوضيحية لا ترسل طلبًا إلى Google إلا عند النقر على رابط خارجي.
+- عند تحديث الخدمات، استخدم القيمة ذاتها في `data-service` وخيار `select`. عند تغيير رقم العيادة، حدّث روابط الاتصال وواتساب والرقم المرئي والبيانات المنظمة في `index.html`.
+
+## المراجع التصميمية
+
+- [Mercado Dental Studio، ساكرامنتو](https://www.mercadodentalstudio.com/) لإبراز طلب الموعد وتنظيم الخدمات وتقديم إرشادات واضحة للمريض الجديد.
+- [الجمعية الأمريكية لطب الأسنان](https://www.ada.org/resources/practice/practice-management/27_websitedevelopment_designandcontent) لتركيز التصميم على احتياجات المرضى وهوية العيادة.
+- [عرض DDS Web Solutions لتصاميم العيادات في 2026](https://ddswebsolutions.com/best-dental-website-designs) لأمثلة تجربة الاتصال والمسار المتوافق مع الهاتف.
+
+المرجع لهذه النسخة: [مستودع Enamora على GitHub](https://github.com/Eng-Hasan-Hajjar/dr-wissam-maysar-dental-website).
